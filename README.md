@@ -9,8 +9,8 @@ Progress of practicing data structures, algorithms and job interview questions.
    - MoveZero2-20180531.java (easy+)
 
 ### Stacks & Queques
-   - QueueByTwoStack-20180516.java (medium)
-   - StackWithMinOp-20180517.java (easy)
+   - [Queue By Two Stacks (medium)](./src/queueStackRelated/QueueByTwoStack.java)
+   - [Stack With Min() (easy)](./src/queueStackRelated/QueueByTwoStack.java)
 
 ### LinkedList
    - ReverseLinkedList-20180514.java (easy)
@@ -35,10 +35,10 @@ Progress of practicing data structures, algorithms and job interview questions.
 ## Algorithms
 
 ### Sorting Algorithms 
-   - BasicSorting-20180513.java : Bubble Sort, Selection Sort, Insertion Sort
-   - MergeSort-20180516.java (medium)
-   - QuickSort-20180521.java (medium)
-   - RainbowSort-20180528.java (medium)
+   - [Bubble Sort, Selection Sort, Insertion Sort (easy)](./src/sortingRelated/BasicSorting.java)
+   - [Merge Sort(medium)](./src/sortingRelated/MergeSort.java)
+   - [Quick Sort (medium)](./src/sortingRelated/QuickSort.java)
+   - [Rainbow Sort (medium)](./src/sortingRelated/RainbowSort.java)
    
 ### Binary Search
    - [Classical Binary Search (easy)](./src/BinarySearchRelated/ClassicalBinarySearch.java)
