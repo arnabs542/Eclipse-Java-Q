@@ -42,10 +42,10 @@ Progress of practicing data structures, algorithms and job interview questions.
    
 ### Binary Search
    - [Classical Binary Search (easy)](./src/BinarySearchRelated/ClassicalBinarySearch.java)
-   - [FirstOccur Binary Search (medium)](./src/BinarySearchRelated/ClosestInSortedArray.java)
-   - [LastOccur Binary Search (medium)](./src/BinarySearchRelated/LastOccurBinarySearch.jva)
-   - [Closest In Sorted Array (medium)](./src/BinarySearchRelated/ClosestInSortedArray.jva)
-   - [K Closest In Sorted Array (medium)](./src/BinarySearchRelated/KClosestInSortedArray.jva)
+   - [FirstOccur Binary Search (medium)](./src/BinarySearchRelated/FirstOccurBinarySearch.java)
+   - [LastOccur Binary Search (medium)](./src/BinarySearchRelated/LastOccurBinarySearch.java)
+   - [Closest In Sorted Array (medium)](./src/BinarySearchRelated/ClosestInSortedArray.java)
+   - [K Closest In Sorted Array (medium)](./src/BinarySearchRelated/KClosestInSortedArray.java)
 
 ### BFS & DFS
    
