@@ -1,4 +1,5 @@
 /bin/
+.setting
 .DS_Store
 ../.DS_Store
 ../.classpath
