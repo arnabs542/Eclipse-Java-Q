@@ -41,11 +41,11 @@ Progress of practicing data structures, algorithms and job interview questions.
    - RainbowSort-20180528.java (medium)
    
 ### Binary Search
-   - [ClassicalBinarySearch-20180518.java (easy)](./src/BinarySearchRelated/ClassicalBinarySearch.java)
-   - FirstOccurBinarySearch-20180518.java (medium)
-   - LastOccurBinarySearch-20180518.java (medium)
-   - ClosestInSortedArray-20180601.java (medium)
-   - KClosestInSortedArray-20180604.java (medium)
+   - [Classical Binary Search (easy)](./src/BinarySearchRelated/ClassicalBinarySearch.java)
+   - [FirstOccur Binary Search (medium)](./src/BinarySearchRelated/ClosestInSortedArray.java)
+   - [LastOccur Binary Search (medium)](./src/BinarySearchRelated/LastOccurBinarySearch.jva)
+   - [Closest In Sorted Array (medium)](./src/BinarySearchRelated/ClosestInSortedArray.jva)
+   - [K Closest In Sorted Array (medium)](./src/BinarySearchRelated/KClosestInSortedArray.jva)
 
 ### BFS & DFS
    
