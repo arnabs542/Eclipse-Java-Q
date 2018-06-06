@@ -46,7 +46,7 @@ public class HasCycle {
 		System.out.println(ret);
 						
 		// 1 -> 2 -> 3 -> 4 -> 5 -> 6
-		//				  ^---------|	
+        //                ^---------|	
 		node1.next.next.next = node1;
 		ret = hasCycle(head);
 		System.out.println(ret);

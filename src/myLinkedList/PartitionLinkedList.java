@@ -1,11 +1,20 @@
-// Created Date: May 29,2018
-// Question: Partition Linked List (Medium)
-// Given a linked list and a target value T, partition it such that 
-//		all nodes less than T are listed before the nodes larger than or equal to target value T. 
-// 		The original relative order of the nodes in each of the two partitions should be preserved.
-// 	eg: L = 2 -> 4 -> 3 -> 5 -> 1 -> null, T = 3, is partitioned to 2 -> 1 -> 4 -> 3 -> 5 -> null
+/*
+ * Created Date: May 29, 2018
+ * 
+ * Question - Partition Linked List (Medium) :
+ *   Given a linked list and a target value T, partition it such that 
+ *   all nodes less than T are listed before the nodes larger than or equal to target value T. 
+ *   The original relative order of the nodes in each of the two partitions should be preserved.
+ *   
+ *   Example: 
+ *     L = 2 -> 4 -> 3 -> 5 -> 1 -> null, T = 3, is partitioned to 2 -> 1 -> 4 -> 3 -> 5 -> null
+ *   
+ * Updated:
+ *   June 5, 2018: Review
+ * 
+ */
 
-package myMain;
+package myLinkedList;
 
 public class PartitionLinkedList {
 	
@@ -34,20 +43,6 @@ public class PartitionLinkedList {
 	    return dummyH1.next;
 	}
 	
-	private static void printList(ListNode head) {
-		if(head == null) {
-			System.out.print("null \n");
-			return;
-		}
-		
-		ListNode curr = head;
-		
-		while(curr != null) {
-			System.out.print(curr.value +" ");
-			curr = curr.next;
-		}		
-		System.out.print("\n");
-	}
 	
 	public static void main(String[] args) {
 		ListNode head = new ListNode(5);
@@ -55,9 +50,20 @@ public class PartitionLinkedList {
 		head.next.next = new ListNode(5);
 		head.next.next.next = new ListNode(5);
 		head.next.next.next.next = new ListNode(4);
-		printList(head);		
+		head.printList(head);		
 		
 		head = partitionLL(head, 5);
-		printList(head);		
+		head.printList(head);
+
+		ListNode head1 = new ListNode(2);
+		head1.next = new ListNode(4);
+		head1.next.next = new ListNode(3);
+		head1.next.next.next = new ListNode(5);
+		head1.next.next.next.next = new ListNode(1);
+		head1.printList(head1);		
+		
+		head1 = partitionLL(head1, 3);
+		head1.printList(head1); // expected: 2 -> 1 -> 4 -> 3 -> 5 -> null		
 	}
 }
+

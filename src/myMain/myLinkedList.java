@@ -55,22 +55,6 @@ public class myLinkedList {
         
         return al;        
     }
-
-	
-	// Time Complexity: ? O(n/2);
-	// Space Complexity: O(1);
-	public static ListNode FindMiddleNode (ListNode head) {
-		if(head == null) return null;
-		
-		ListNode fast = head;
-		ListNode slow = head;
-		
-		while(fast.next != null && fast.next.next != null) {
-			slow = slow.next;
-			fast = fast.next.next;			
-		}
-		return slow;
-	}
 	
 	// Time Complexity: O(n);
 	// Space Complexity: O(1);
@@ -139,7 +123,6 @@ public class myLinkedList {
 	}
 	
 
-	
 	public static void main(String[] args) {	
 		
 		ListNode newhead;
@@ -168,9 +151,6 @@ public class myLinkedList {
 		newhead = myInsert(newhead, 0);
 		
 		newhead = myInsert(newhead, 6);
-		
-		rst = FindMiddleNode(newhead);
-		System.out.println(rst.value);
 		
 	}	
 }

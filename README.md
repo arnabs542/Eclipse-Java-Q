@@ -14,8 +14,8 @@ Progress of practicing data structures, algorithms and job interview questions.
 
 ### LinkedList
    - [Reverse a singly-linked list iteratively and recursively (easy)] (./src/myLinkedList/ReverseLinkedList.java)
-   - [Check If Linked List Has A Cycle (medium)] (./src/myLinkedList/HasCycle.java)
-   - [Find Middle Node Of Linked List](./src/myLinkedList/FindMidNode.java)
+   - [Check If Linked List Has A Cycle (easy)] (./src/myLinkedList/HasCycle.java)
+   - [Find Middle Node Of Linked List (easy)](./src/myLinkedList/FindMidNode.java)
    - Merge2LinkedList-20180517.java (easy)
    - InsertInLinkedList-20180517.java (easy)
    - ReorderedLinkedList-20180522.java (hard)
