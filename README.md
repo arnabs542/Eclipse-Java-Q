@@ -18,7 +18,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Find Middle Node Of Linked List (easy)](./src/myLinkedList/FindMidNode.java)
    - [Reverse a singly-linked list iteratively and recursively (easy)](./src/myLinkedList/ReverseLinkedList.java)
    - [Merge Two Sorted Linked Lists (easy)](./src/myLinkedList/Merge2SortedLinkedLists.java)
-   - ReorderedLinkedList-20180522.java (hard)
+   - [Reorder Linked List (hard)](./src/myLinkedList/ReOrderLinkedList.java)
    - [Partition Linked List (Medium)](./src/myLinkedList/PartitionLinkedList.java)
    - NumberOfNodes-20180530.java (easy)
    - InsertInLinkedList-20180517.java (easy)

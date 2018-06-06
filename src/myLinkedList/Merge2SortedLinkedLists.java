@@ -44,6 +44,8 @@ public class Merge2SortedLinkedLists {
 		}
 		return dummyHead.next;
 	}
+	// Time Complexity: O(size1 + size2)
+	// Space Complexity: O(1);
 	
 	public static void main(String[] args) {	
 		

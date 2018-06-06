@@ -26,4 +26,14 @@ public class ListNode {
 		}		
 		System.out.print("\n");
 	}
+	
+	public static ListNode genLinkedList(int[] a) {
+		ListNode head = null;	
+		for (int i = a.length - 1; i >= 0 ; i--) {
+			ListNode node = new ListNode(a[i]);
+			node.next = head;
+			head = node;
+		}		
+		return head;
+	}
 }
