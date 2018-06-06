@@ -13,10 +13,11 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Stack With Min() (easy)](./src/queueStackRelated/QueueByTwoStack.java)
 
 ### LinkedList
-   - ReverseLinkedList-20180514.java (easy)
+   - [Reverse a singly-linked list iteratively and recursively (easy)] (./src/myLinkedList/ReverseLinkedList.java)
+   - [Check If Linked List Has A Cycle (medium)] (./src/myLinkedList/HasCycle.java)
+   - [Find Middle Node Of Linked List](./src/myLinkedList/FindMidNode.java)
    - Merge2LinkedList-20180517.java (easy)
    - InsertInLinkedList-20180517.java (easy)
-   - TwoPrtLinkedList-20180518.java: Find Middle Node Of Linked List; Check If Linked List Has A Cycle (medium)
    - ReorderedLinkedList-20180522.java (hard)
    - PartitionLinkedList-20180529.java (medium)
    - NumberOfNodes-20180530.java (easy)
