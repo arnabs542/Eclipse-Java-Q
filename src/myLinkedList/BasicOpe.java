@@ -1,6 +1,6 @@
-package myMain;
+package myLinkedList;
 
-public class BasicLinkedListOpe {
+public class BasicOpe {
 	
 	public static int getLength(ListNode head) {
 		ListNode curr = head;
@@ -40,7 +40,7 @@ public class BasicLinkedListOpe {
 		head.next.next = new ListNode(5);
 		head.next.next.next = new ListNode(7);
 		head.next.next.next.next = new ListNode(9);
-		myLinkedList.printList(head);
+		head.printList(head);
 		
 		System.out.println(getLength(head));
 	}	

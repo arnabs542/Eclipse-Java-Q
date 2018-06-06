@@ -55,23 +55,7 @@ public class myLinkedList {
         
         return al;        
     }
-	
-	// Question: Check if a given linked list has a cycle. 
-    //		 Return true if it does, otherwise return false.
-	public static boolean hasCycle(ListNode head) {
-		
-		if(head == null) return false;
-		
-		ListNode fast = head;
-		ListNode slow = head;
-		
-		while(fast.next != null && fast.next.next != null) {
-			fast = fast.next.next;
-			slow = slow.next;
-			if(fast == slow) return true;
-		}		
-		return false;
-	}
+
 	
 	// Time Complexity: ? O(n/2);
 	// Space Complexity: O(1);
@@ -153,59 +137,9 @@ public class myLinkedList {
 					
 		return dummyHead.next;
 	}
-		
-	// Time Complexity: O(n);
-	// Space Complexity: O(1);
-	public static ListNode IterativeReverse(ListNode head) {
-				
-		ListNode prev = null;
-		ListNode curr = head;
-		ListNode next = null;
-		
-		while(curr != null) {			
-			
-			next = curr.next;
-			curr.next = prev;		
-			
-			prev = curr;	
-			curr = next;						
-		}			
-		return prev;
-	}
 	
-	// Time Complexity: O(n);
-	// Space Complexity: O(1);
-	public static ListNode RecursiveReverse(ListNode head) {
-		
-		if(head == null || head.next == null) return head;
-		
-		ListNode newHead = RecursiveReverse(head.next);
-		
-		ListNode node = head.next;
-		node.next = head;
-		head.next = null;
-				
-		return newHead;
-	}
+
 	
-	// Time Complexity: O(n);
-	// Space Complexity: O(1);
-	public static void printList(ListNode head) {
-		if(head == null) {
-			System.out.print("null \n");
-			return;
-		}
-		
-		ListNode curr = head;
-		
-		while(curr != null) {
-			System.out.print(curr.value +" ");
-			curr = curr.next;
-		}		
-		System.out.print("\n");
-	}
-	
-		
 	public static void main(String[] args) {	
 		
 		ListNode newhead;
@@ -216,54 +150,28 @@ public class myLinkedList {
 		head.next.next = new ListNode(5);
 		head.next.next.next = new ListNode(7);
 		head.next.next.next.next = new ListNode(9);
-		printList(head);
 		//printListFromTailToHead(head);
 		
 		//System.out.println(getLength(head));
 		
-		newhead  = RecursiveReverse(head);
-		printList(newhead);
-		
-		newhead = IterativeReverse(newhead);
-		printList(newhead);
 		
 		ListNode head2 = new ListNode(2);;
 		head2.next = new ListNode(4);
 		head2.next.next = new ListNode(6);
 		head2.next.next.next = new ListNode(8);
 		head2.next.next.next.next = new ListNode(10);
-		printList(head2);
 		
 		newhead = merge(head, head2);
-		printList(newhead);
 				
 		newhead = myInsert(newhead, 20);
-		printList(newhead);
 		
 		newhead = myInsert(newhead, 0);
-		printList(newhead);
 		
 		newhead = myInsert(newhead, 6);
-		printList(newhead);
 		
 		rst = FindMiddleNode(newhead);
 		System.out.println(rst.value);
 		
-		ListNode head3 = new ListNode(1);
-		head3.next = new ListNode(2);
-		head3.next.next = new ListNode(3);
-		ListNode node1 = new ListNode(4);
-		head3.next.next.next = node1;
-		node1.next = new ListNode(5);
-		node1.next.next = new ListNode(6);
-		
-		boolean ret = hasCycle(head3);
-		System.out.println(ret);
-		printList(head3);
-		
-		node1.next.next.next = node1;
-		ret = hasCycle(head3);
-		System.out.println(ret);
 	}	
 }
 
