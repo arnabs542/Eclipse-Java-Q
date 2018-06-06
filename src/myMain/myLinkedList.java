@@ -126,7 +126,6 @@ public class myLinkedList {
 	public static void main(String[] args) {	
 		
 		ListNode newhead;
-		ListNode rst;
 		
 		ListNode head = new ListNode(1);
 		head.next = new ListNode(3);
@@ -155,28 +154,6 @@ public class myLinkedList {
 	}	
 }
 
-/* Alt Test Case 0:
- * 
- * ListNode head = null;
- * printList(head);
- * ListNode head2 = null;
- * printList(head2);
- * 
- * ListNode newhead = merge(head, head2);
- * printList(newhead);
- * 
- * */
 
-/* Alt Test Case 1:
- * 
- * ListNode head = new ListNode(0);
- * printList(head);
- * ListNode head2 = null;
- * printList(head2);
- * 
- * ListNode newhead = merge(head, head2);
- * printList(newhead);
- * 
- * */
 
 

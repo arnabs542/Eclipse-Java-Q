@@ -15,16 +15,14 @@ public class ListNode {
 	}
 	
 	public void printList(ListNode head) {
-		if(head == null) {
+		if (head == null) {
 			System.out.print("null \n");
 			return;
 		}
-		
-		ListNode curr = head;
-		
-		while(curr != null) {
-			System.out.print(curr.value +" ");
-			curr = curr.next;
+			
+		while (head != null) {
+			System.out.print(head.value +" ");
+			head = head.next;
 		}		
 		System.out.print("\n");
 	}

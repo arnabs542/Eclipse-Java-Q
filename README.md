@@ -17,11 +17,11 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Check If Linked List Has A Cycle (easy)](./src/myLinkedList/HasCycle.java)
    - [Find Middle Node Of Linked List (easy)](./src/myLinkedList/FindMidNode.java)
    - [Reverse a singly-linked list iteratively and recursively (easy)](./src/myLinkedList/ReverseLinkedList.java)
-   - Merge2LinkedList-20180517.java (easy)
-   - InsertInLinkedList-20180517.java (easy)
+   - [Merge Two Sorted Linked Lists (easy)](./src/myLinkedList/Merge2SortedLinkedLists.java)
    - ReorderedLinkedList-20180522.java (hard)
-   - [PartitionLinkedList-20180529.java (medium)](./src/myLinkedList/PartitionLinkedList.java)
+   - [Partition Linked List (Medium)](./src/myLinkedList/PartitionLinkedList.java)
    - NumberOfNodes-20180530.java (easy)
+   - InsertInLinkedList-20180517.java (easy)
    - LLInsertAtIndex-20180531.java (easy+)
 
 ### Binary Tree & Binary Search Tree
