@@ -13,19 +13,14 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Stack With Min() (easy)](./src/queueStackRelated/QueueByTwoStack.java)
 
 ### LinkedList
-<<<<<<< HEAD
-   - [Reverse a singly-linked list iteratively and recursively (easy)] (./src/myLinkedList/ReverseLinkedList.java)
-   - [Check If Linked List Has A Cycle (easy)] (./src/myLinkedList/HasCycle.java)
-   - [Find Middle Node Of Linked List (easy)](./src/myLinkedList/FindMidNode.java)
-=======
    - [Reverse a singly-linked list iteratively and recursively (easy)](./src/myLinkedList/ReverseLinkedList.java)
-   - [Check If Linked List Has A Cycle (medium)](./src/myLinkedList/HasCycle.java)
-   - [Find Middle Node Of Linked List](./src/myLinkedList/FindMidNode.java)
->>>>>>> 7ac2f0fc89dccb3e02b22ccd41f596ab23315815
+   - [Check If Linked List Has A Cycle (easy)](./src/myLinkedList/HasCycle.java)
+   - [Find Middle Node Of Linked List (easy)](./src/myLinkedList/FindMidNode.java)
+   - [Reverse a singly-linked list iteratively and recursively (easy)](./src/myLinkedList/ReverseLinkedList.java)
    - Merge2LinkedList-20180517.java (easy)
    - InsertInLinkedList-20180517.java (easy)
    - ReorderedLinkedList-20180522.java (hard)
-   - PartitionLinkedList-20180529.java (medium)
+   - [PartitionLinkedList-20180529.java (medium)](./src/myLinkedList/PartitionLinkedList.java)
    - NumberOfNodes-20180530.java (easy)
    - LLInsertAtIndex-20180531.java (easy+)
 
