@@ -23,6 +23,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - NumberOfNodes-20180530.java (easy)
    - InsertInLinkedList-20180517.java (easy)
    - LLInsertAtIndex-20180531.java (easy+)
+   - [Remove Linked List Elements (easy)](./src/myLinkedList/RemoveLinkedListElements.java)
 
 ### Binary Tree & Binary Search Tree
    - BinaryTreeTraversal-20180518.java: Recursive and iterative Pre-Order, In-Order, Post-Order Binary Tree Traversal (medium)
@@ -48,6 +49,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [LastOccur Binary Search (medium)](./src/BinarySearchRelated/LastOccurBinarySearch.java)
    - [Closest In Sorted Array (medium)](./src/BinarySearchRelated/ClosestInSortedArray.java)
    - [K Closest In Sorted Array (medium)](./src/BinarySearchRelated/KClosestInSortedArray.java)
+   - [Search In Sorted Matrix I (medium)](./src/BinarySearchRelated/SearchInSortedMatrixI.java)
 
 ### BFS & DFS
    

@@ -5,7 +5,10 @@
  * 	Given a target integer T and an integer array A sorted in ascending order, 
  * 	find the index i such that A[i] == T or return -1 if there is no such index.
  * 
- * Follow up questions: First Occurrence; Last Occurrence
+ * Follow up questions: 
+ * 		First Occurrence,
+ * 		Last Occurrence,
+ * 		Search In Sorted Matrix I
  * 
  * Updated: June 3, 2018 : review 
  * 

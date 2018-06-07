@@ -37,24 +37,24 @@ public class myLinkedList {
     		
         ListNode curr = listNode;
         
-        while(curr != null) {        	
+        while (curr != null) {        	
         		stack.push(curr.value);
         		curr = curr.next;
         }
-         
-        int length = stack.size();
-        for(int i = 0; i < length; i++) {
-        		System.out.print("stack.size():" + stack.size() + "\n");
+        
+        while (!stack.isEmpty()) {
     			al.add(stack.pop());
     		}
         
-        for(int i = 0; i < al.size(); i++) {
-        		System.out.print((Integer)al.get(i));
+        for (int i = 0; i < al.size(); i++) {
+        		System.out.print((Integer)al.get(i) + " ");
         }
         System.out.print("\n");
         
         return al;        
     }
+	// Time Complexity: O(n);
+	// Space Complexity: O(n);
 	
 	// Time Complexity: O(n);
 	// Space Complexity: O(1);
@@ -86,43 +86,6 @@ public class myLinkedList {
 		}			
 	}
 		
-	// Time Complexity: ? O(size1+size2)
-	// Space Complexity: O(1);
-	public static ListNode merge(ListNode one, ListNode two) {
-		
-		if(one == null && two == null) return null;
-		
-		ListNode dummyHead = new ListNode(-1);
-		ListNode curr = dummyHead;
-		
-		ListNode ptrOne = one;
-		ListNode ptrTwo = two;
-		
-		while(ptrOne != null || ptrTwo != null) {
-					
-			if(ptrOne == null) {
-				curr.next = ptrTwo;
-				break;
-			}
-			else if(ptrTwo == null) {
-				curr.next = ptrOne;
-				break;
-			}
-			else if(ptrOne.value <= ptrTwo.value) {
-				curr.next = ptrOne;
-				ptrOne = ptrOne.next;
-			}
-			else {
-				curr.next = ptrTwo;
-				ptrTwo = ptrTwo.next;
-			}
-			curr = curr.next;
-		}
-					
-		return dummyHead.next;
-	}
-	
-
 	public static void main(String[] args) {	
 		
 		ListNode newhead;
@@ -132,20 +95,17 @@ public class myLinkedList {
 		head.next.next = new ListNode(5);
 		head.next.next.next = new ListNode(7);
 		head.next.next.next.next = new ListNode(9);
-		//printListFromTailToHead(head);
+		printListFromTailToHead(head);
 		
 		//System.out.println(getLength(head));
-		
-		
+			
 		ListNode head2 = new ListNode(2);;
 		head2.next = new ListNode(4);
 		head2.next.next = new ListNode(6);
 		head2.next.next.next = new ListNode(8);
 		head2.next.next.next.next = new ListNode(10);
-		
-		newhead = merge(head, head2);
-				
-		newhead = myInsert(newhead, 20);
+
+		newhead = myInsert(head, 20);
 		
 		newhead = myInsert(newhead, 0);
 		
