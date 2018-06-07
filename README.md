@@ -4,9 +4,9 @@ Progress of practicing data structures, algorithms and job interview questions.
 
 ## Data Structures
 
-### Array
-   - MoveZero1-20180529.java (easy)
-   - MoveZero2-20180531.java (easy+)
+### Array 
+   - [Move 0s To The End I (easy) (easy)](./src/arrayRelated/MoveZeroToEnd1.java)
+   - [Move 0s To The End II (easy) (easy)](./src/arrayRelated/MoveZeroToEnd2.java)
 
 ### Stacks & Queques
    - [Queue By Two Stacks (medium)](./src/queueStackRelated/QueueByTwoStack.java)
@@ -29,11 +29,6 @@ Progress of practicing data structures, algorithms and job interview questions.
    - BinaryTreeTraversal-20180518.java: Recursive and iterative Pre-Order, In-Order, Post-Order Binary Tree Traversal (medium)
    - CheckBalanced-20180522.java (medium)
    - isSymmetricBT-20180523.java (easy+)
-    
-### String
-### Hash Tables
-### Heaps
-### Graphs
 
 ## Algorithms
 
@@ -50,12 +45,17 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Closest In Sorted Array (medium)](./src/BinarySearchRelated/ClosestInSortedArray.java)
    - [K Closest In Sorted Array (medium)](./src/BinarySearchRelated/KClosestInSortedArray.java)
    - [Search In Sorted Matrix I (medium)](./src/BinarySearchRelated/SearchInSortedMatrixI.java)
-
-### BFS & DFS
-   
+ 
 ### Recursion
    - RecursionPower-20180514.java : Calculate power using recursion
    - Fibonacci-20180514.java
  
+## Future Plan
+### BFS & DFS
 ### Bit manipulation
 ### Dynamic Programming
+
+### String
+### Hash Tables
+### Heaps
+### Graphs
