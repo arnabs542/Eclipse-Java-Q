@@ -5,8 +5,8 @@ Progress of practicing data structures, algorithms and job interview questions.
 ## Data Structures
 
 ### Array 
-   - [Move 0s To The End I (easy) (easy)](./src/arrayRelated/MoveZeroToEnd1.java)
-   - [Move 0s To The End II (easy) (easy)](./src/arrayRelated/MoveZeroToEnd2.java)
+   - [Move 0s To The End I (easy)](./src/arrayRelated/MoveZeroToEnd1.java)
+   - [Move 0s To The End II (easy+)](./src/arrayRelated/MoveZeroToEnd2.java)
 
 ### Stacks & Queques
    - [Queue By Two Stacks (medium)](./src/queueStackRelated/QueueByTwoStack.java)
