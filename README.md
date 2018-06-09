@@ -29,7 +29,10 @@ Progress of practicing data structures, algorithms and job interview questions.
 ### Binary Tree & Binary Search Tree
    - BinaryTreeTraversal-20180518.java: Recursive and iterative Pre-Order, In-Order, Post-Order Binary Tree Traversal (medium)
    - CheckBalanced-20180522.java (medium)
-   - isSymmetricBT-20180523.java (easy+)
+   - [Is Binary Search Tree Or Not (medium)](./src/binaryTreeRelated/IsBinarySearchTree.java)
+   - [Tweaked Identical Binary Trees (medium)](./src/binaryTreeRelated/IsTweakedIdentical.java)
+   - [Symmetric Binary Tree (easy)](./src/binaryTreeRelated/isSymmetric.java)
+   - [Get Keys In Binary Search Tree In Given Range (easy)](./src/binaryTreeRelated/GetValInGivenRange.java)
 
 ## Algorithms
 
