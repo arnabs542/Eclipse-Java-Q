@@ -9,7 +9,6 @@
  * 
  */
 
-
 package myLinkedList;
 
 public class ImplementQueue {
@@ -72,8 +71,7 @@ public class ImplementQueue {
 	
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
-		
-		
+			
 		ImplementQueue myQ = new ImplementQueue();
 		
 		/* Test Case 0*/
@@ -83,7 +81,7 @@ public class ImplementQueue {
 		/* Test Case 1*/
 		myQ.offer(1);
 		myQ.offer(2);
-		myQ.offer(3);
+		myQ.offer(3); // 3 -> 2 -> 1 -- head
 		System.out.println(myQ.size()); // expected: 3
 		System.out.println(myQ.isEmpty()); // expected: false
 		
@@ -91,8 +89,8 @@ public class ImplementQueue {
 		System.out.println(myQ.peek()); // expected: 1
 		
 		/* Test Case 3*/
-		System.out.println(myQ.poll()); // expected: 1
-		System.out.println(myQ.poll()); // expected: 2
+		System.out.println(myQ.poll()); // expected: 1 // 3 -> 2 -- head
+		System.out.println(myQ.poll()); // expected: 2 // 3 -- head
 		System.out.println(myQ.poll()); // expected: 3
 		System.out.println(myQ.poll()); // expected: null
 		System.out.println(myQ.size()); // expected: 0
