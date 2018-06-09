@@ -1,7 +1,7 @@
 /*
- * Created Date: May 21,2018
+ * Created Date: May 29,2018
  * 
- * Application: basic operation of linked list
+ * Application: Practice Class basic operation of linked list
  * 
  */
 
@@ -12,32 +12,44 @@ public class BasicOpe {
 	public static int getLength(ListNode head) {
 		ListNode curr = head;
 		int length = 0;
-		while(curr != null) {
+		while (curr != null) {
 			length++;
 			curr = curr.next;
 		}
 		return length;
 	}
 	
-	// ?
-	// Integer type has "null", but int type doesn't
-	public static Integer getIndexVal(ListNode head, int index) {
-		
+	public static Integer getIndexVal(ListNode head, int index) {		
 		ListNode curr = head;
-		for(int i = 0; i < index; i++) {
+		for (int i = 0; i < index; i++) {
 			curr = curr.next;
 		}
-		if(curr == null) return null;
+		if (curr == null) {
+			return null;// Integer type has "null", but int type doesn't
+		}
 		return curr.value;
 	} 
 	// mistake: i <= index
 	
-	public static ListNode appendHead(ListNode head, int newValue) {
-		ListNode newHead = new ListNode(newValue);
+	public static ListNode appendHead(ListNode head, int val) {
+		ListNode newHead = new ListNode(val);
 		newHead.next = head;
-//		head = newHead;
-//		return head; // no need
+//		head = newHead; 
+//		return head; // Java is pass by Value, "head" is just a copy, operate it here won't have any effect
 		return newHead;
+	}
+	
+	public static ListNode appendTail(ListNode head, int val) {
+		if (head == null) {
+			return new ListNode(val);
+		} else {
+			ListNode tail = head;
+			while (tail.next != null) {
+				tail = tail.next;
+			}
+			tail.next = new ListNode(val);
+			return head;
+		}
 	}
 	
 	public static void main(String[] args) {

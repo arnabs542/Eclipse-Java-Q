@@ -1,6 +1,10 @@
 /*
  * Created Date: May 21, 2018
- * Application: Practice Quick Sort
+ * 
+ * Application: Quick Sort
+ * 
+ * Updated:
+ * 	June, 8, 2018: Review
  * 
  */
 
@@ -47,7 +51,7 @@ public class QuickSort {
 			}
 		}		
 		// swap back the pivot element
-		swap(array, leftBound, right);			
+		swap(array, leftBound, right);		// why swap with leftBound, not 	rightBound ?
 		return leftBound;
 	}
 	
@@ -63,11 +67,27 @@ public class QuickSort {
 		array[b] = temp;
 	}
 	
+	/* ----------------------< test stub >-------------------------*/
+	
 	public static void main(String[] args) {
-		int[] array = {20, 18, 5, 21, 8, 4, 4};
+		
 		QuickSort myQuickSort = new QuickSort();
-		myQuickSort.quickSort(array);
-		for(int i : array) {
+		
+		/* Test Case 1*/
+		int[] array1 = {20, 18, 5, 21, 8, 4, 4};
+		
+		myQuickSort.quickSort(array1);
+		for (int i : array1) {
+			System.out.print(i + " ");
+		}
+		System.out.print("\n");
+		
+		/* Test Case 1*/
+		
+		int[] array2 = {1, 4, 6, 5, 3, 2};
+		
+		myQuickSort.quickSort(array2);
+		for (int i : array2) {
 			System.out.print(i + " ");
 		}
 	}
