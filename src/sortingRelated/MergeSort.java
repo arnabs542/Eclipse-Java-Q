@@ -1,6 +1,10 @@
 /*
  * Created Date: May 16, 2018
+ * 
  * Application: Practice Merge Sort using recursion method
+ * 
+ * Mirror Question:
+ *   Merge Sort Linked List
  * 
  */
 
@@ -9,9 +13,12 @@ package sortingRelated;
 public class MergeSort {
 	
 	public static int[] mergeSort(int[] array) {
-		if(array == null) return null;
-		if(array.length == 0) return array;	
-		
+		if (array == null) {
+			return null;
+		}
+		if(array.length == 0) {
+			return array;	
+		}		
 		int[] aux = new int[array.length];
 		mergeSort(array, aux, 0, array.length - 1);
 		return array;		
@@ -19,7 +26,9 @@ public class MergeSort {
 		
 	private static int[] mergeSort(int[] array, int[] aux, int lo, int hi) {
 						
-		if(lo == hi) return array;
+		if (lo == hi) {
+			return array;
+		}
 		System.out.print("merge sort: [" + array[lo] + "," + array[hi] +"]\n");
 		
 		int mid = lo + (hi - lo)/2;
@@ -36,21 +45,21 @@ public class MergeSort {
 		System.out.print("merge: [" + array[lo] + "," + array[mid] +"]");
 		System.out.print(" and [" + array[mid + 1] + "," + array[hi] +"]\n");
 	
-		for(int k = lo; k <= hi; k++) {
+		for (int k = lo; k <= hi; k++) {
 			aux[k] = array[k];
 		}
 
 		int i = lo;
 		int j = mid + 1;
 		
-		for(int k = lo; k <= hi; k++) {
-			if(i > mid) {			
+		for (int k = lo; k <= hi; k++) {
+			if (i > mid) {			
 				array[k] = aux[j++];
 			} 
-			else if(j > hi) {		
+			else if (j > hi) {		
 				array[k] = aux[i++];						
 			} 
-			else if(aux[i] <= aux[j]) {			
+			else if (aux[i] <= aux[j]) {			
 				array[k] = aux[i++];	
 			} 
 			else {			
@@ -58,7 +67,7 @@ public class MergeSort {
 			}
 		}
 		
-		for(int index: array) {
+		for (int index: array) {
 			System.out.print(index + " ");
 		}
 		System.out.print("\n");

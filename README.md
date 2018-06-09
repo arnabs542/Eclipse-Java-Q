@@ -25,6 +25,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Remove Linked List Elements (easy)](./src/myLinkedList/RemoveLinkedListElements.java)
    - [Implement Queue with Linked List](./src/myLinkedList/ImplementQueue.java)
    - [Implement Stack with Linked List](./src/myLinkedList/ImplementStack.java)
+   - [Merge Sort Linked List (medium)](./src/myLinkedList/MergeSortLinkedList.java)
 
 ### Binary Tree & Binary Search Tree
    - BinaryTreeTraversal-20180518.java: Recursive and iterative Pre-Order, In-Order, Post-Order Binary Tree Traversal (medium)
