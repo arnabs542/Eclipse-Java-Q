@@ -72,16 +72,6 @@ public class BinaryTreeTraversal {
 		}			
 	}
 		
-	// Pre-Order Traversal using recursion
-	// Time Complexity: O(n)
-	// Space Complexity: O(height), worst case: O(n), balanced BST: O(logn)
-	public static void preOrder(TreeNode node) {
-		if(node == null) return;
-		
-		System.out.print(node.value + " ");
-		preOrder(node.left);
-		preOrder(node.right);	
-	}
 
 	// Time Complexity: O(n) 
 	// Space Complexity: O(height + n) = O(n)	
@@ -101,25 +91,10 @@ public class BinaryTreeTraversal {
 		}		
 	}	
 	
-	// In-Order Traversal using recursion
-	public static void inOrder(TreeNode node) {
-		if(node == null) return;
-			
-		inOrder(node.left);
-		System.out.print(node.value + " ");
-		inOrder(node.right);	
-	}
-	
+
 	// if there's parent pointer? how to do traversal
 	
-	// Post-Order Traversal using recursion
-	public static void postOrder(TreeNode node) {
-		if(node == null) return;
-		
-		postOrder(node.left);
-		postOrder(node.right);
-		System.out.print(node.value + " ");	
-	}
+
 	
 	public static void main(String[] args) {
 		
@@ -132,19 +107,12 @@ public class BinaryTreeTraversal {
 		root.right.left = new TreeNode(12);
 		root.right.right = new TreeNode(20);	
 		
-		preOrder(root);
-		System.out.print("\n");
 		
 		preOrderIterative(root);
 		System.out.print("\n");
 		
-		inOrder(root);
-		System.out.print("\n");
 		
 		inOrderIterative(root);
-		System.out.print("\n");	
-		
-		postOrder(root);	
 		System.out.print("\n");	
 		
 		int h = getHeight(root);

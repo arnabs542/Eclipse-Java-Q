@@ -19,7 +19,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Reverse a singly-linked list iteratively and recursively (easy)](./src/myLinkedList/ReverseLinkedList.java)
    - [Merge Two Sorted Linked Lists (easy)](./src/myLinkedList/Merge2SortedLinkedLists.java)
    - [Reorder Linked List (hard)](./src/myLinkedList/ReOrderLinkedList.java)
-   - [Partition Linked List (Medium)](./src/myLinkedList/PartitionLinkedList.java)
+   - [Partition Linked List (medium)](./src/myLinkedList/PartitionLinkedList.java)
    - [Insert In Sorted Linked List (easy)](./src/myLinkedList/InsertInSortedLinkedList.java)
    - [Linked List Insert At Index (easy+)](./src/myLinkedList/InsertAtIndex.java)
    - [Remove Linked List Elements (easy)](./src/myLinkedList/RemoveLinkedListElements.java)
@@ -28,11 +28,12 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Merge Sort Linked List (medium)](./src/myLinkedList/MergeSortLinkedList.java)
 
 ### Binary Tree & Binary Search Tree
-   - BinaryTreeTraversal-20180518.java: Recursive and iterative Pre-Order, In-Order, Post-Order Binary Tree Traversal (medium)
+   - [Binary Search Tree Traversal Recursively (easy)](./src/binaryTreeRelated/RecursiveTraversal.java)
+   - BinaryTreeTraversal-20180518.java: Pre-Order, In-Order, Post-Order Binary Tree Traversal Iterative(medium)
    - CheckBalanced-20180522.java (medium)
    - [Is Binary Search Tree Or Not (medium)](./src/binaryTreeRelated/IsBinarySearchTree.java)
    - [Tweaked Identical Binary Trees (medium)](./src/binaryTreeRelated/IsTweakedIdentical.java)
-   - [Symmetric Binary Tree (easy)](./src/binaryTreeRelated/isSymmetric.java)
+   - [Symmetric Binary Tree (easy)](./src/binaryTreeRelated/IsSymmetric.java)
    - [Get Keys In Binary Search Tree In Given Range (easy)](./src/binaryTreeRelated/GetValInGivenRange.java)
 
 ## Algorithms

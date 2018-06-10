@@ -44,7 +44,7 @@
 
 package binaryTreeRelated;
 
-public class isSymmetric {
+public class IsSymmetric {
 	
 	public boolean isSymmetricBT(TreeNode root) {
 		if (root == null) { // corner case
