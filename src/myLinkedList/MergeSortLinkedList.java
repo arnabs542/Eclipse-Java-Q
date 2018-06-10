@@ -12,18 +12,21 @@ package myLinkedList;
 
 public class MergeSortLinkedList {
 	
+	// Time Complexity: O(nlogn);
+	// Space Complexity: O(logn);
+	
 	public ListNode mergeSort(ListNode head) {
 		if (head == null || head.next == null) {
 			return head;
 		}
 		
 		ListNode mid = findMidNode(head);
-		ListNode two = mid.next;
+		ListNode rightHalf = mid.next;
 		mid.next = null;
 		
-		ListNode one = mergeSort(head);
-		two = mergeSort(two);
-		return merge(one, two);
+		ListNode leftHalf = mergeSort(head);
+		rightHalf = mergeSort(rightHalf);
+		return merge(leftHalf, rightHalf);
 	}
 	
 	private ListNode merge(ListNode one, ListNode two) {
@@ -95,11 +98,6 @@ public class MergeSortLinkedList {
 		head2.printList(head2);
 		
 		head2 = myList.mergeSort(head2);
-		head2.printList(head2);
-		
-		/* Test Case 3 */
-		System.out.println("---< Test Case 3 >---");
-		
+		head2.printList(head2);		
 	}
-
 }

@@ -9,12 +9,9 @@ package sortingRelated;
 
 public class BasicSorting {
 	
-	static void bubbleSort(int[] arr) {
-		
-		for(int i = arr.length - 1; i > 0; i--) {
-			
-			for(int k = 0; k < i; k++) {
-				
+	public static void bubbleSort(int[] arr) {		
+		for (int i = arr.length - 1; i > 0; i--) {			
+			for(int k = 0; k < i; k++) {				
 				if(arr[k] > arr[k+1]) {
 					int temp = arr[k];
 					arr[k] = arr[k+1];
@@ -24,7 +21,7 @@ public class BasicSorting {
 		}	
 	}
 	
-	static void selectionSort(int[] arr) {
+	public static void selectionSort(int[] arr) {
 		if (arr == null) {
 			return;
 		}
@@ -41,19 +38,13 @@ public class BasicSorting {
 		}		
 	}
 	
-	static void insertionSort(int[] arr) {
-
-		for(int i = 0; i < arr.length; i++) {
-			
-			int temp = arr[i];
-			
-			for(int k = 0; k < i; k++) {
-				
-				if(temp <= arr[k]) {
-					
-					for(int j = i; j > k; j--) {
-						
-						arr[j] = arr[j-1];
+	public static void insertionSort(int[] arr) {
+		for (int i = 0; i < arr.length; i++) {			
+			int temp = arr[i];			
+			for (int k = 0; k < i; k++) {				
+				if (temp <= arr[k]) {					
+					for (int j = i; j > k; j--) {						
+						arr[j] = arr[j - 1];
 					}				
 					arr[k] = temp;	
 					break;
