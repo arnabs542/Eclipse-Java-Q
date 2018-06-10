@@ -1,7 +1,7 @@
 /*
  * Created Date: June 9, 2018
  * 
- * Question - Insert In Binary Search Tree
+ * Question - Insert In Binary Search Tree (easy) :
  *   Insert a key in a binary search tree 
  *   if the binary search tree does not already contain the key. 
  *   Return the root of the binary search tree.
