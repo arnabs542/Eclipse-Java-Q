@@ -27,7 +27,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Implement Stack with Linked List](./src/myLinkedList/ImplementStack.java)
    - [Merge Sort Linked List (medium)](./src/myLinkedList/MergeSortLinkedList.java)
 
-### Binary Tree & Binary Search Tree
+### Binary Tree
    - [Binary Search Tree Traversal Recursively (easy)](./src/binaryTreeRelated/RecursiveTraversal.java)
    - BinaryTreeTraversal-20180518.java: Pre-Order, In-Order, Post-Order Binary Tree Traversal Iterative(medium)
    - CheckBalanced-20180522.java (medium)
@@ -35,6 +35,10 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Tweaked Identical Binary Trees (medium)](./src/binaryTreeRelated/IsTweakedIdentical.java)
    - [Symmetric Binary Tree (easy)](./src/binaryTreeRelated/IsSymmetric.java)
    - [Get Keys In Binary Search Tree In Given Range (easy)](./src/binaryTreeRelated/GetValInGivenRange.java)
+
+### Binary Search Tree 
+   - [Insert In Binary Search Tree (easy)](./src/binarySearchTreeRelated/InsertInBinarySearchTree.java)
+   - [Search In Binary Search Tree (easy)](./src/binarySearchTreeRelated/SearchInBinarySearchTree.java)
 
 ## Algorithms
 
