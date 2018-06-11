@@ -56,7 +56,7 @@ public class TreeNode {
 		return new TreeNode(key);
 	}
 	
-	/* -----------< print BST >---------------*/
+	/* -----------< print BST in-order >---------------*/
 	public static void printInOrder(TreeNode root) {
 		Deque<TreeNode> stack = new LinkedList<>();
 		TreeNode curr = root;

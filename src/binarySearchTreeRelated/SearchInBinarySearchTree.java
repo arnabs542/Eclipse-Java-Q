@@ -14,7 +14,9 @@ package binarySearchTreeRelated;
 
 public class SearchInBinarySearchTree {
 	
-	public TreeNode search(TreeNode root, int key) {	   
+	// Time Complexity: O( log(height) )
+	// Space Complexity: O(1)
+	public static TreeNode search(TreeNode root, int key) {	   
 		TreeNode curr = root;
 	    while (curr != null) {
 	    	    if (curr.value == key) {
@@ -29,4 +31,30 @@ public class SearchInBinarySearchTree {
 	}
 	
 	// how to do it recursively ?
+//	public TreeNode recursiveSearch(TreeNode root, int key) {	
+//		
+//
+//	}
+	
+
+	
+	/* ----------------------< test stub >-------------------------*/
+	public static void main(String[] args) {
+		
+		/* Test Case 0 */
+		System.out.println("---< Test Case 0 >---");
+		
+		TreeNode root0 = null;
+		root0 = search(root0, 1);
+		
+		/* Test Case 1 */
+		System.out.println("---< Test Case 1 >---");
+		
+		/* Test Case 2 */
+		System.out.println("---< Test Case 2 >---");
+		
+		/* Test Case 3 */
+		System.out.println("---< Test Case 3 >---");
+		
+	}
 }
