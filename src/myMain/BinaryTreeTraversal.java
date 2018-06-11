@@ -79,8 +79,8 @@ public class BinaryTreeTraversal {
 		if(root == null) return;
 		Deque<TreeNode> stack = new LinkedList<TreeNode>();
 		TreeNode curr = root;
-		while(curr != null || !stack.isEmpty()) {
-			if(curr != null) {
+		while (curr != null || !stack.isEmpty()) {
+			if (curr != null) {
 				stack.push(curr);
 				curr = curr.left;
 			} else {

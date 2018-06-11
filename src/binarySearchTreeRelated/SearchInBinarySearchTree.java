@@ -1,7 +1,7 @@
 /*
  * Created Date: June 9, 2018
  * 
- * Question - Search In Binary Search Tree:
+ * Question - Search In Binary Search Tree (easy) :
  *   Find the target key K in the given binary search tree, 
  *   return the node that contains the key if K is found, otherwise return null.
  *   

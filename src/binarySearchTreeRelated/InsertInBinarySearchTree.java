@@ -61,5 +61,16 @@ public class InsertInBinarySearchTree {
 		return new TreeNode(key);
 	}
 	
-	// how to do it recursively ?
+	// how to do it recursively ?	
+	public TreeNode recursiveInsert(TreeNode root, int key) { 
+		if (root == null) {
+			return new TreeNode(key);
+		} else if (root.value < key) {
+			root.right = recursiveInsert(root.right, key);
+		} else if (root.value > key) {
+			root.left = recursiveInsert(root.left, key);
+		}
+		return root;
+	}
+
 }
