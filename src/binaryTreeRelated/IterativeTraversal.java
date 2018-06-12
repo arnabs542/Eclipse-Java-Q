@@ -45,8 +45,7 @@ public class IterativeTraversal {
 		}
 		Deque<TreeNode> stack = new LinkedList<TreeNode>();
 		TreeNode curr = root;
-		stack.offerFirst(root);
-		while (!stack.isEmpty()) {
+		while (curr!= null || !stack.isEmpty()) {
 			if (curr != null) {
 				stack.offerFirst(curr);
 				curr = curr.left;
@@ -61,13 +60,24 @@ public class IterativeTraversal {
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
 		
+		/* Test Case
+		 *             10
+		 *          /       \
+		 *         5         15
+		 *       /   \      /  \
+		 *      2     7    13   20
+		 *     /
+		 *    1
+		 *     
+		 */
+		
 		TreeNode root = new TreeNode(10);
 		root.left = new TreeNode(5);
 		root.left.left = new TreeNode(2);
 		root.left.left.left = new TreeNode(1);
 		root.left.right = new TreeNode(7);
 		root.right = new TreeNode(15);
-		root.right.left = new TreeNode(12);
+		root.right.left = new TreeNode(13);
 		root.right.right = new TreeNode(20);	
 				
 		preOrderIterative(root);

@@ -55,6 +55,8 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Closest In Sorted Array (medium)](./src/BinarySearchRelated/ClosestInSortedArray.java)
    - [K Closest In Sorted Array (medium)](./src/BinarySearchRelated/KClosestInSortedArray.java)
    - [Search In Sorted Matrix I (medium)](./src/BinarySearchRelated/SearchInSortedMatrixI.java)
+   - [Delete In Binary Search Tree (medium)](./src/BinarySearchRelated/DeleteInBst.java)
+   - [Sorted Array To Binary Search Tree (medium)](./src/BinarySearchRelated/SortedArrayToBst.java)
  
 ### Recursion
    - RecursionPower-20180514.java : Calculate power using recursion

@@ -58,16 +58,18 @@ public class TreeNode {
 	
 	/* -----------< print BST in-order >---------------*/
 	public static void printInOrder(TreeNode root) {
-		Deque<TreeNode> stack = new LinkedList<>();
-		TreeNode curr = root;
-		while (!stack.isEmpty() || curr != null) {
-			if (curr == null) {
-				curr = stack.pop();
-				System.out.print(curr.value + " ");
-				curr = curr.right;
+		if (root == null) {
+			System.out.print("null");
+		}
+		Deque<TreeNode> stack = new LinkedList<>();		
+		while (root!= null || !stack.isEmpty()) {
+			if (root == null) {
+				root = stack.pop();
+				System.out.print(root.value + " ");
+				root = root.right;
 			} else {
-				stack.push(curr);
-				curr = curr.left;
+				stack.push(root);
+				root = root.left;
 			}
 		}
 		System.out.print("\n");
@@ -82,7 +84,7 @@ public class TreeNode {
 		/* Test Case 1 */
 		System.out.println("---< Test Case 1 >---");
 		
-		int[] arr1 = {3, 1, 2};
+		int[] arr1 = {1, 2, 3, 4, 5};
 		TreeNode root1 = TreeNode.genBst(arr1);
 		TreeNode.printInOrder(root1);
 		
