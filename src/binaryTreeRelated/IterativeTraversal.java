@@ -28,7 +28,7 @@ public class IterativeTraversal {
 		while (!stack.isEmpty()) {			
 			if (curr != null) {
 				System.out.print(curr.value + " ");
-				if (curr.right != null) stack.push(curr.right);
+				if (curr.right != null) stack.offerFirst(curr.right);
 				curr = curr.left;
 			}
 			else {
