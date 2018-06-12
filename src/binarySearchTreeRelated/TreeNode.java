@@ -1,6 +1,10 @@
 /*
  * Created Date: June 9, 2018
  * 
+ * Updated:
+ *   June 11, 2018: genBst(); printInOrder()
+ *   
+ * 
  */
 
 package binarySearchTreeRelated;

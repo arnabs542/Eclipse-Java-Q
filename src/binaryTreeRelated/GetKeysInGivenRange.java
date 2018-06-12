@@ -19,9 +19,9 @@
 
 package binaryTreeRelated;
 
-public class GetValInGivenRange {
+public class GetKeysInGivenRange {
 	
-	public void getVal(TreeNode root, int min, int max) {	
+	public static void getVal(TreeNode root, int min, int max) {	
 		if (root == null) {
 			return;
 		}	
@@ -34,5 +34,28 @@ public class GetValInGivenRange {
 		if (root.value < max) {
 			getVal(root.right, min, max);
 		}
+	}
+	
+	/* ----------------------< test stub >-------------------------*/
+	public static void main(String[] args) {
+		
+		/* Test Case 0 */
+		System.out.println("---< Test Case 0 >---");
+		
+		/* Test Case 1 */
+		System.out.println("\n---< Test Case 1 >---");
+		
+		int[] arr1 = {1, 2, 3, 4, 5};
+		TreeNode root1 = TreeNode.genBst(arr1);
+		TreeNode.printInOrder(root1);
+		
+		getVal(root1, 2, 5);
+		
+		/* Test Case 2 */
+		System.out.println("\n---< Test Case 2 >---");
+		
+		/* Test Case 3 */
+		System.out.println("---< Test Case 3 >---");
+		
 	}
 }

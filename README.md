@@ -34,7 +34,8 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Is Binary Search Tree Or Not (medium)](./src/binaryTreeRelated/IsBinarySearchTree.java)
    - [Tweaked Identical Binary Trees (medium)](./src/binaryTreeRelated/IsTweakedIdentical.java)
    - [Symmetric Binary Tree (easy)](./src/binaryTreeRelated/IsSymmetric.java)
-   - [Get Keys In Binary Search Tree In Given Range (easy)](./src/binaryTreeRelated/GetValInGivenRange.java)
+   - [Get Keys In Binary Search Tree In Given Range (easy)](./src/binaryTreeRelated/GetKeysInGivenRange.java)
+   - [Get Keys In Binary Tree Layer By Layer](./src/binaryTreeRelated/GetKeysLayerByLayer.java)
 
 ### Binary Search Tree 
    - [Insert In Binary Search Tree (easy)](./src/binarySearchTreeRelated/InsertInBinarySearchTree.java)
