@@ -42,6 +42,9 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Search In Binary Search Tree (easy)](./src/binarySearchTreeRelated/SearchInBinarySearchTree.java)
    - [Delete In Binary Search Tree (medium)](./src/BinarySearchRelated/DeleteInBst.java)
    - [Sorted Array To Binary Search Tree (medium)](./src/BinarySearchRelated/SortedArrayToBst.java)
+   
+### Heaps
+   - [Heapify (medium)](./src/heapRelated/Heapify.java)
 
 ## Algorithms
 
@@ -70,5 +73,4 @@ Progress of practicing data structures, algorithms and job interview questions.
 
 ### String
 ### Hash Tables
-### Heaps
 ### Graphs

@@ -2,9 +2,6 @@
 
 package myMain;
 
-import java.util.Deque;
-import java.util.LinkedList;
-
 class TreeNode {
 	public int value;
 	public TreeNode left;
