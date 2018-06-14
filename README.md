@@ -45,6 +45,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    
 ### Heaps
    - [Heapify (medium)](./src/heapRelated/Heapify.java)
+   - [Heap Sort (medium)](./src/heapRelated/HeapSort.java)
 
 ## Algorithms
 

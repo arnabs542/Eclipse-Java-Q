@@ -51,11 +51,6 @@ public class Heapify {
 		arr[b] = temp;
 	}
 	
-	// Time Complexity: O(?);
-	// Space Complexity: O(?);
-	
-	/* ----------------------< test stub >-------------------------*/
-	
 	private static void printArr(int[] arr) {
 		if(arr == null) {
 			System.out.println("null");
@@ -65,6 +60,11 @@ public class Heapify {
 		}
 		System.out.println("\n");
 	}
+	
+	// Time Complexity: O(?);
+	// Space Complexity: O(?);
+	
+	/* ----------------------< test stub >-------------------------*/
 	
 	public static void main(String[] args) {
 		

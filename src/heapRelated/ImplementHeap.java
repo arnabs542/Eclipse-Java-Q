@@ -107,12 +107,9 @@ public class ImplementHeap {
 	}
 	
 	private boolean less(int a, int b) {
-		if (arr[a] < arr[b]) {
-			return true;
-		} else {
-			return false;
-		}
+		return arr[a] < arr[b];
 	}
+	
 	private void swap(int a, int b) {
 		int temp = arr[a];
 		arr[a] = arr[b];
