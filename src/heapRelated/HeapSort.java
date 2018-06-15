@@ -12,8 +12,6 @@
  *
  */
 
-
-
 package heapRelated;
 
 public class HeapSort {
@@ -22,8 +20,8 @@ public class HeapSort {
 		if (array == null || array.length == 0) { // corner case
 			return array;
 		}
-		array = heapify(array); // construct a max heap
-		return sort(array);
+		array = heapify(array); // construct a max heap: O(nlogn)?
+		return sort(array); // O(nlogn)
 	}
 	
 	private int[] sort(int[] arr) {
@@ -70,6 +68,8 @@ public class HeapSort {
 		arr[b] = temp;
 	}
 	
+	/* ----------------------< test stub >-------------------------*/
+	
 	// Time Complexity: O(?);
 	// Space Complexity: O(?);
 	
@@ -82,9 +82,7 @@ public class HeapSort {
 		}
 		System.out.println("\n");
 	}
-	
-	/* ----------------------< test stub >-------------------------*/
-	
+			
 	public static void main(String[] args) {
 		
 		HeapSort heapSort = new HeapSort();

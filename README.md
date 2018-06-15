@@ -46,6 +46,7 @@ Progress of practicing data structures, algorithms and job interview questions.
 ### Heaps
    - [Heapify (medium)](./src/heapRelated/Heapify.java)
    - [Heap Sort (medium)](./src/heapRelated/HeapSort.java)
+   - [K Smallest In Unsorted Array Using Own Heap Implementation (medium)](./src/heapRelated/KSmallestInUnsortedArrayWithOwnHeap.java)
 
 ## Algorithms
 
