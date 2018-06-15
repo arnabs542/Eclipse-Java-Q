@@ -6,49 +6,46 @@
  * Mirror Question: 
  *   Implement Queue with array;
  *   Implement Queue with Linked List; 
+ *   
+ * Updated:
+ *   June 14, 2018: exception, some syntax simplification
  * 
  */
 
 package myLinkedList;
 
+import java.util.EmptyStackException;
+
 public class ImplementStack {
 	
-	public ListNode head;
+	public ListNode top;
 	public int size;
 	
 	public ImplementStack() {
-		head = null;
+		top = null;
 		size = 0;
 	}
 	
 	public void push(Integer val) {
 		ListNode node = new ListNode(val);
-		node.next = head;
-		head = node;
+		node.next = top;
+		top = node;
 		size++;	
 	}
-	// Mistake: 
-	// head.next = new ListNode(val);
-	// head = head.next;
 	
 	public Integer pop() {
-		if (this.head == null) {
-			return null;
+		if (top == null) {
+			throw new EmptyStackException();
 		} else {
-			ListNode pre = head;
-			head = head.next;
-			pre.next = null;
+			int temp = top.value;
+			top = top.next;
 			size--;
-			return pre.value;
+			return temp;
 		}
 	}
 	
 	public boolean isEmpty() {
-		if (head == null) {
-			return true;
-		} else {
-			return false;
-		}
+		return top == null;
 	}
 	
 	public Integer size() {
@@ -56,14 +53,13 @@ public class ImplementStack {
 	}
 	
 	public Integer peek() {
-		if (head == null) {
-			return null;
+		if (top == null) {
+			throw new EmptyStackException();
 		} else {
-			return head.value;
+			return top.value;
 		}
 	}
 	
-
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
 			
@@ -71,11 +67,13 @@ public class ImplementStack {
 		
 		/* Test Case 0*/
 		System.out.println("---< Test Case 0 >---");
+		
 		System.out.println(myStack.size()); // expected: 0
 		System.out.println(myStack.isEmpty()); // expected: true
 		
 		/* Test Case 1*/
 		System.out.println("---< Test Case 1 >---");
+		
 		myStack.push(1);
 		myStack.push(2);
 		myStack.push(3); // bottom || 1 2 3
@@ -84,16 +82,17 @@ public class ImplementStack {
 		
 		/* Test Case 2*/
 		System.out.println("---< Test Case 2 >---");
+		
 		System.out.println(myStack.peek()); // expected: 3
+		System.out.println(myStack.pop()); // expected: 3  // bottom || 1 2 
+		System.out.println(myStack.pop()); // expected: 2, // bottom || 1 
+		System.out.println(myStack.pop()); // expected: 1
 		
 		/* Test Case 3*/
 		System.out.println("---< Test Case 3 >---");
-		System.out.println(myStack.pop()); // expected: 3  // bottom || 1 2 
-		System.out.println(myStack.pop()); // expected: 2, // bottom || 1 
-		System.out.println(myStack.pop()); // expected: 
-		System.out.println(myStack.pop()); // expected: null
 		System.out.println(myStack.size()); // expected: 0
 		System.out.println(myStack.isEmpty()); // expected: true
+		System.out.println(myStack.pop()); // expected: throw exception: java.util.EmptyStackException		
 	}
 
 }

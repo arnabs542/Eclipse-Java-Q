@@ -67,11 +67,6 @@ public class ImplementHeap {
 	
 	public boolean isEmpty() {
 		return size == 0;
-//		if (this.size == 0) {
-//			return true;
-//		} else {
-//			return false;
-//		}
 	}
 	
 	// Bottom-up reheapify (swim)  
