@@ -24,7 +24,6 @@ package binarySearchTreeRelated;
 
 public class SortedArrayToBst {
 	
-
 	public static TreeNode sortedArrayToBST(int[] arr) {
 		if (arr == null) {
 			return null;

@@ -1,16 +1,18 @@
+package binarySearchTreeRelated;
+
 /*
  * Created Date: June 9, 2018
  * 
  * Updated:
- *   June 11, 2018: genBst(); printInOrder()
- *   
+ *   June 11, 2018: genBst(); printInOrder()   
+ *   June 14, 2018: genBalancedBst(), printLayerByLayer()
  * 
  */
 
-package binarySearchTreeRelated;
-
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 public class TreeNode {
 	
@@ -18,13 +20,33 @@ public class TreeNode {
 	public TreeNode left;
 	public TreeNode right;
 	
-	public TreeNode(int v) {
+	public TreeNode(Integer v) {
 		value = v;
 		left = null;
 		right = null;
 	}
+	
+	/* -----------< generate a height balanced BST >---------------*/	
+	public static TreeNode genBalancedBst(int[] arr) {
+		if (arr == null) {
+			return null;
+		}
+        return createTree(arr, 0, arr.length - 1);
+	}
 
-	/* -----------< generate a BST >---------------*/
+	private static TreeNode createTree(int[] arr, int left, int right) {
+		// base case
+		if (left > right) {
+			return null;
+		}
+		int mid = left + (right - left) / 2;
+		TreeNode root = new TreeNode(arr[mid]);
+		root.left = createTree(arr, left, mid - 1);
+		root.right = createTree(arr, mid + 1, right);
+		return root;
+	}
+
+	/* -----------< generate a BST, with the first element as root node >---------------*/	
 	public static TreeNode genBst(int[] arr) {
 		if (arr == null) {
 			return null;
@@ -79,6 +101,34 @@ public class TreeNode {
 		System.out.print("\n");
 	}
 	
+	/* -----------< print BST Layer By Layer >---------------*/
+	public static void printLayerByLayer(TreeNode root) {		
+		if (root == null) { // corner case
+			return;
+		}
+		Queue<TreeNode> queue = new LinkedList<>();	
+		queue.offer(root);
+		while (!queue.isEmpty()) {
+			int size = queue.size();
+			List<Integer> list = new LinkedList<>();
+			for (int i = 0; i < size; i++) {
+				TreeNode curr = queue.poll();	
+				
+				list.add(curr.value);
+				System.out.print(curr.value + " "); 
+				
+				if (curr.left != null) {
+					queue.offer(curr.left);				
+				} 
+				if (curr.right != null) {
+					queue.offer(curr.right);
+				} 
+			}
+			System.out.print(" "); 
+		}
+		System.out.print("\n"); 
+	}
+	
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
 		
@@ -91,9 +141,15 @@ public class TreeNode {
 		int[] arr1 = {1, 2, 3, 4, 5};
 		TreeNode root1 = TreeNode.genBst(arr1);
 		TreeNode.printInOrder(root1);
+		TreeNode.printLayerByLayer(root1);
 		
 		/* Test Case 2 */
-		System.out.println("---< Test Case 2 >---");
+		System.out.println("\n---< Test Case 2 >---");
+		
+		int[] arr2 = {1, 2, 3, 4, 5};
+		TreeNode root2 = TreeNode.genBalancedBst(arr2);
+		TreeNode.printInOrder(root2);
+		printLayerByLayer(root2);
 		
 		/* Test Case 3 */
 		System.out.println("---< Test Case 3 >---");

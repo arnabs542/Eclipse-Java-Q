@@ -28,9 +28,10 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Merge Sort Linked List (medium)](./src/myLinkedList/MergeSortLinkedList.java)
 
 ### Binary Tree
+   - [Height of Binary Tree (easy)](./src/binaryTreeRelated/GetHeight.java)
    - [Binary Search Tree Traversal Recursively (easy)](./src/binaryTreeRelated/RecursiveTraversal.java)
-   - BinaryTreeTraversal-20180518.java: Pre-Order, In-Order, Post-Order Binary Tree Traversal Iterative(medium)
-   - CheckBalanced-20180522.java (medium)
+   - [Binary Search Tree Traversal Iteratively (medium)]
+   - [Check If Binary Tree Is Balanced (medium)]
    - [Is Binary Search Tree Or Not (medium)](./src/binaryTreeRelated/IsBinarySearchTree.java)
    - [Tweaked Identical Binary Trees (medium)](./src/binaryTreeRelated/IsTweakedIdentical.java)
    - [Symmetric Binary Tree (easy)](./src/binaryTreeRelated/IsSymmetric.java)
@@ -40,13 +41,13 @@ Progress of practicing data structures, algorithms and job interview questions.
 ### Binary Search Tree 
    - [Insert In Binary Search Tree (easy)](./src/binarySearchTreeRelated/InsertInBinarySearchTree.java)
    - [Search In Binary Search Tree (easy)](./src/binarySearchTreeRelated/SearchInBinarySearchTree.java)
-   - [Delete In Binary Search Tree (medium)](./src/BinarySearchRelated/DeleteInBst.java)
-   - [Sorted Array To Binary Search Tree (medium)](./src/BinarySearchRelated/SortedArrayToBst.java)
+   - [Delete In Binary Search Tree (medium)](./src/binarySearchTreeRelated/DeleteInBst.java)
+   - [Sorted Array To Binary Search Tree (medium)](./src/binarySearchTreeRelated/SortedArrayToBst.java)
    
 ### Heaps
    - [Heapify (medium)](./src/heapRelated/Heapify.java)
    - [Heap Sort (medium)](./src/heapRelated/HeapSort.java)
-   - [K Smallest In Unsorted Array Using Own Heap Implementation (medium)](./src/heapRelated/KSmallestInUnsortedArrayWithOwnHeap.java)
+   - [K Smallest In Unsorted Array With Self Heap Implementation (medium)](./src/heapRelated/KSmallestInUnsortedArrayWithOwnHeap.java)
 
 ## Algorithms
 
