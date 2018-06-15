@@ -86,7 +86,7 @@ public class SortedArrayToBst {
 		/* Test Case 3 */
 		System.out.println("\n---< Test Case 3 >---");
 		
-        int[] arr3 = {1};
+		int[] arr3 = {1};
 		
 		TreeNode root3 = sortedArrayToBST(arr3);
 		TreeNode.printInOrder(root3);
