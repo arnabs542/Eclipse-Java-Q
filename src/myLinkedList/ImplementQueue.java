@@ -11,38 +11,41 @@
 
 package myLinkedList;
 
+import java.util.NoSuchElementException;
+
 public class ImplementQueue {
 	
 	public int size;
 	
 	public ListNode first;
-	public ListNode tail;
+	public ListNode last;
 	
 	public ImplementQueue() {		
 		first = null;
-		tail = null;
+		last = null;
 		size = 0;
 	}
 	
 	public void offer(int val) {
-		if (first == null) {
-			first = new ListNode(val);
-			tail = first;
-		} else {
-			tail.next = new ListNode(val);
-			tail = tail.next;		
+		ListNode newNode = new ListNode(val);
+		if (last != null) {
+			last.next = newNode;
 		}
+		last = newNode;
 		this.size++;
+		if (first == null) {
+			first = last;
+		}		
 	}
 	
 	public Integer poll() {
 		if (first == null) {
-			return null;
+			throw new NoSuchElementException();
 		} else {
 			int result = first.value;
 			first = first.next;
 			if (first == null) { // forgot to process tail!!!
-				tail = null; 
+				last = null; 
 			}
 			this.size--;
 			return result;
@@ -51,7 +54,7 @@ public class ImplementQueue {
 	
 	public Integer peek() {
 		if (first == null) {
-			return null;
+			throw new NoSuchElementException();
 		} else {
 			return first.value;
 		}
@@ -62,11 +65,7 @@ public class ImplementQueue {
 	}
 	
 	public boolean isEmpty() {
-		if (size == 0) {
-			return true;
-		} else {
-			return false;
-		}
+		return first == null;
 	}
 	
 	/* ----------------------< test stub >-------------------------*/
@@ -75,10 +74,12 @@ public class ImplementQueue {
 		ImplementQueue myQ = new ImplementQueue();
 		
 		/* Test Case 0*/
+		System.out.println("---< Test Case 0 >---");
 		System.out.println(myQ.size()); // expected: 0
 		System.out.println(myQ.isEmpty()); // expected: true
 		
 		/* Test Case 1*/
+		System.out.println("---< Test Case 1 >---");
 		myQ.offer(1);
 		myQ.offer(2);
 		myQ.offer(3); // 3 -> 2 -> 1 -- head
@@ -86,14 +87,17 @@ public class ImplementQueue {
 		System.out.println(myQ.isEmpty()); // expected: false
 		
 		/* Test Case 2*/
+		System.out.println("---< Test Case 2 >---");
 		System.out.println(myQ.peek()); // expected: 1
-		
-		/* Test Case 3*/
 		System.out.println(myQ.poll()); // expected: 1 // 3 -> 2 -- head
 		System.out.println(myQ.poll()); // expected: 2 // 3 -- head
 		System.out.println(myQ.poll()); // expected: 3
-		System.out.println(myQ.poll()); // expected: null
+		
+		/* Test Case 3*/
+		System.out.println("---< Test Case 3 >---");
 		System.out.println(myQ.size()); // expected: 0
 		System.out.println(myQ.isEmpty()); // expected: true
+		System.out.println(myQ.poll()); // expected: java.util.NoSuchElementException
+
 	}
 }
