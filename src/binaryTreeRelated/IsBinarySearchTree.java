@@ -19,6 +19,8 @@ package binaryTreeRelated;
 public class IsBinarySearchTree {
 	
 	/* -------< Method 2, better method >------- */
+	// Time Complexity: O(n)
+	// Space Complexity: O(height), worst case: O(n)
 	
 	int lastSeen = Integer.MIN_VALUE;
 	// Mistake: put this variable declaration in function.

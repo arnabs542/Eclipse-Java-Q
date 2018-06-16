@@ -17,7 +17,7 @@ package binaryTreeRelated;
 
 public class isBalancedBinaryTree {
 	
-	public boolean isBalanced(TreeNode root) {
+	public static boolean isBalanced(TreeNode root) {
 		if (root == null) {
 			return true;
 		}
@@ -28,7 +28,7 @@ public class isBalancedBinaryTree {
 		}
 	}
 	
-	private int helper(TreeNode root) {
+	private static int helper(TreeNode root) {
 		if (root == null) {
 			return 0;
 		}	
@@ -39,7 +39,10 @@ public class isBalancedBinaryTree {
 		} // post-order traversal
 		return Math.max(leftHeight, rightHeight) + 1;
 	}
-	//Mistake: didn't consider all possible situation: Math.abs(leftHeight - rightHeight) > 1!!!!!
+	// Mistake: didn't consider all possible situation: Math.abs(leftHeight - rightHeight) > 1!!!!!
+	
+	// Time Complexity: O(n), total numbers of the tree
+	// Space Complexity: O(height)
 	
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
@@ -52,19 +55,18 @@ public class isBalancedBinaryTree {
 		
 		int[] arr1 = {1, 2, 3, 4, 5};
 		TreeNode root1 = TreeNode.genBst(arr1);
-		TreeNode.printInOrder(root1);
 		TreeNode.printLayerByLayer(root1);
-		
+		System.out.println(isBalanced(root1));
+			
 		/* Test Case 2 */
 		System.out.println("\n---< Test Case 2 >---");
 		
 		int[] arr2 = {1, 2, 3, 4, 5};
-		TreeNode root2 = TreeNode.genBalancedBst(arr2);
-		TreeNode.printInOrder(root2);
+		TreeNode root2 = TreeNode.genBalancedBst(arr2);		
 		TreeNode.printLayerByLayer(root2);
+		System.out.println(isBalanced(root2));
 		
 		/* Test Case 3 */
-		System.out.println("---< Test Case 3 >---");
-		
+		System.out.println("---< Test Case 3 >---");		
 	}
 }

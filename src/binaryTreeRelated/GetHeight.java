@@ -17,6 +17,9 @@ public class GetHeight {
 		}
 		return Math.max(getHeight(root.left), getHeight(root.right)) + 1;
 	}
+	
+	// Time Complexity: O(n), total numbers of the tree
+	// Space Complexity: O(height), worst case: O(n)
 
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
@@ -40,7 +43,6 @@ public class GetHeight {
 		System.out.print("height = " + getHeight(root2)); // expected 3
 		
 		/* Test Case 3 */
-		System.out.println("\n ---< Test Case 3 >---");
-		
+		System.out.println("\n ---< Test Case 3 >---");		
 	}
 }
