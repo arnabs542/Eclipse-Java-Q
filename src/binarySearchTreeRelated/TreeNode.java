@@ -149,7 +149,7 @@ public class TreeNode {
 		int[] arr2 = {1, 2, 3, 4, 5};
 		TreeNode root2 = TreeNode.genBalancedBst(arr2);
 		TreeNode.printInOrder(root2);
-		printLayerByLayer(root2);
+		TreeNode.printLayerByLayer(root2);
 		
 		/* Test Case 3 */
 		System.out.println("---< Test Case 3 >---");

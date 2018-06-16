@@ -25,21 +25,25 @@ public class IsBinarySearchTree {
 	//	It must be a global variable, or it will be overridden
 	
 	public boolean isBST_Method2(TreeNode root) {
-		if(root == null) return true; // corner case	
+		if (root == null) return true; // corner case	
 		lastSeen = Integer.MIN_VALUE;		
 		return inOrderTraversal(root);
 	}
 	
 	private boolean inOrderTraversal(TreeNode node) {
-		if(node == null) return true;
-		
-		if(inOrderTraversal(node.left) == false) return false;
-		
-		if(node.value <= lastSeen) return false;
-		lastSeen = node.value;
-		
-		if(inOrderTraversal(node.right) == false) return false;
-		
+		if (node == null) {
+			return true;
+		}		
+		if (inOrderTraversal(node.left) == false) {
+			return false;
+		}		
+		if (node.value <= lastSeen) {
+			return false;
+		}
+		lastSeen = node.value;		
+		if (inOrderTraversal(node.right) == false) {
+			return false;
+		}		
 		return true;
 	}
 	

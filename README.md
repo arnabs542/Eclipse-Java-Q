@@ -30,8 +30,8 @@ Progress of practicing data structures, algorithms and job interview questions.
 ### Binary Tree
    - [Height of Binary Tree (easy)](./src/binaryTreeRelated/GetHeight.java)
    - [Binary Search Tree Traversal Recursively (easy)](./src/binaryTreeRelated/RecursiveTraversal.java)
-   - [Binary Search Tree Traversal Iteratively (medium)]
-   - [Check If Binary Tree Is Balanced (medium)]
+   - [Binary Search Tree Traversal Iteratively (medium)](./src/binaryTreeRelated/IterativeTraversal)
+   - [Check If Binary Tree Is Balanced (medium)](./src/binaryTreeRelated/isBalancedBinaryTree.java)
    - [Is Binary Search Tree Or Not (medium)](./src/binaryTreeRelated/IsBinarySearchTree.java)
    - [Tweaked Identical Binary Trees (medium)](./src/binaryTreeRelated/IsTweakedIdentical.java)
    - [Symmetric Binary Tree (easy)](./src/binaryTreeRelated/IsSymmetric.java)
