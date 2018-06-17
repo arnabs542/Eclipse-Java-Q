@@ -69,9 +69,13 @@ Progress of practicing data structures, algorithms and job interview questions.
 ### Recursion
    - RecursionPower-20180514.java : Calculate power using recursion
    - Fibonacci-20180514.java
+   
+### BFS 
+   - [Bipartite](./src/bfsRelated.java)
+   
+### DFS
  
 ## Future Plan
-### BFS & DFS
 ### Bit manipulation
 ### Dynamic Programming
 
