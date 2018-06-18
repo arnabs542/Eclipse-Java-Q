@@ -8,13 +8,24 @@
  *      
  *   Example: 
  *   
+ *        [1]
+ *       /   \
+ *     (2)   (3)    is a bipartite graph, use [ ] and ( ) to represent two groups
+ *       \   /
+ *        [4] 
+ *         
+ *         [1]
+ *       /  |  \
+ *     (2)  |  (3)    is not a bipartite graph
+ *       \  |  /
+ *        ([4]) 
+       
+ *   
  *   Assumptions:
  *     The graph is represented by a list of nodes, and the list of nodes is not null.
- *   
- * Need to Review in June 17!!!
  * 
  * Updated:
- * 
+ *   June 17, 2018: Review
  */
 
 package bfsRelated;
@@ -33,11 +44,17 @@ class GraphNode {
     	    this.key = key;
      	this.neighbors = new ArrayList<GraphNode>();
     }
+    
+    public void addNei(List<GraphNode> neiList) {
+
+ 	}
 }
+    
 
 public class Bipartite {
 	
-	public boolean isBipartite(List<GraphNode> graph) {
+	/* ---------------< Method 1: Use queue to do BFS >------------------------*/	
+	public static boolean isBipartite(List<GraphNode> graph) {
 		HashMap<GraphNode, Integer> visited = new HashMap<GraphNode, Integer>();
 		for (GraphNode node : graph) {
 			if(!BFS(node, visited)) {
@@ -47,7 +64,7 @@ public class Bipartite {
 		return true;
 	}
 	
-	private boolean BFS(GraphNode node, HashMap<GraphNode, Integer> visited) {
+	private static boolean BFS(GraphNode node, HashMap<GraphNode, Integer> visited) {
 		if (visited.containsKey(node)) {
 			return true;
 		}
@@ -55,18 +72,99 @@ public class Bipartite {
 		queue.offer(node);
 		visited.put(node, 0);
 		while (!queue.isEmpty()) {
-			GraphNode cur = queue.poll();
+			GraphNode cur = queue.poll(); // expand a node cur
 			int curGroup = visited.get(cur);
 			int neiGroup = curGroup == 0 ? 1 : 0;
 			for (GraphNode nei : cur.neighbors) {
 				if (!visited.containsKey(nei)) {
 					visited.put(nei, neiGroup);
-					queue.offer(nei);
+					queue.offer(nei); // generate cur's neighbor node
 				} else if (visited.get(nei) != neiGroup) {
 					return false;
 				}			
 			}
 		}
 		return true;
+	}
+	
+	// Time Complexity: O(V + E); 
+	// Space Complexity: O(?);
+	
+	/* ---------------< Method 2 >------------------------*/	
+	public static boolean isBipartiteMeth2(List<GraphNode> graph) {
+		HashMap<GraphNode, Integer> visited = new HashMap<>();
+		for (GraphNode node : graph) {
+			if (!visited.containsKey(node)) {
+				visited.put(node, 0);
+			}			
+			int neiGroup = visited.get(node) == 0 ? 1 : 0;
+			for (GraphNode nei : node.neighbors) {
+				if (!visited.containsKey(nei)) {
+					visited.put(nei, neiGroup);
+				} else if (visited.get(nei) != neiGroup) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+	
+	
+	
+	/* ----------------------< test stub >-------------------------*/
+	public static void main(String[] args) {
+		
+		System.out.print(1);
+		
+		/* Test Case 0 */
+		System.out.println("---< Test Case 0 >---");
+		
+		/* Test Case 1 */
+		System.out.println("---< Test Case 1 >---");
+		
+		 /*        [node1]
+		 *         /     \
+		 *   (node2)     (node3)   
+		 *         \     /
+		 *         [node4] 
+		 */
+		
+		List<GraphNode> graph = new LinkedList<>();
+		
+		GraphNode node1 = new GraphNode(1);
+		GraphNode node2 = new GraphNode(2);
+		GraphNode node3 = new GraphNode(3);
+		GraphNode node4 = new GraphNode(4);
+		
+		node1.neighbors.add(node2);
+		node1.neighbors.add(node3);
+		
+		node2.neighbors.add(node4);
+		node3.neighbors.add(node4);
+		
+		graph.add(node1);
+		graph.add(node2);
+		graph.add(node3);
+		graph.add(node4);
+
+		System.out.println(isBipartite(graph)); // expected: true
+		System.out.println(isBipartiteMeth2(graph)); // expected: true
+		
+		/* Test Case 2 */
+		System.out.println("---< Test Case 2 >---");
+		
+		 /*        [node1]
+		 *         /  |   \
+		 *   (node2)  |   (node3)   
+		 *         \  |   /
+		 *         [node4] 
+		 */
+		
+		node1.neighbors.add(node4);
+		System.out.println(isBipartite(graph)); // expected: false
+		System.out.println(isBipartiteMeth2(graph)); // expected: false
+		
+		/* Test Case 3 */
+		System.out.println("---< Test Case 3 >---");	
 	}
 }

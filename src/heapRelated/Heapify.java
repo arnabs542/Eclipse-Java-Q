@@ -17,21 +17,25 @@ public class Heapify {
 			return;
 		}
 		this.arr = arr;
-		for (int k = arr.length / 2 - 1; k >= 0; k--) {
-			sink(k);
+				
+		int start = arr.length / 2 - 1; // start is assigned the index of the last parent node
+		while (start >= 0) {
+			sink(start); // sift down the node to the proper place such that all nodes below are in heap order
+			start--; // go to the next parent node
 		}
 	}
 	
 	private void sink(int k) {
-		while (2 * k + 1 < arr.length) {
+		while (2 * k + 1 < arr.length) { // While the root has at least one child
 			int succ = 2 * k + 1;
+			
 			if (succ < arr.length && less(succ + 1, succ)) {
-				succ++;
+				succ++; // If there is a right child and that child is smaller
 			}
 			if (less(succ, k)) {
 				swap(succ, k);
 				k = succ;
-			} else {
+			} else { // often forget to add this part!!
 				break;
 			}
 		}

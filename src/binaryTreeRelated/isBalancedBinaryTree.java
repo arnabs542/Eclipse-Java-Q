@@ -42,7 +42,7 @@ public class isBalancedBinaryTree {
 	// Mistake: didn't consider all possible situation: Math.abs(leftHeight - rightHeight) > 1!!!!!
 	
 	// Time Complexity: O(n), total numbers of the tree
-	// Space Complexity: O(height)
+	// Space Complexity: O(height), worst case: O(logn)
 	
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
