@@ -11,6 +11,7 @@
  */
 
 package binarySearchTreeRelated;
+import binaryTreeRelated.TreeNode;
 
 public class SearchInBinarySearchTree {
 	

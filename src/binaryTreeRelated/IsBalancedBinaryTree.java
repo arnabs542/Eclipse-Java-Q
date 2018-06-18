@@ -15,7 +15,7 @@
 
 package binaryTreeRelated;
 
-public class isBalancedBinaryTree {
+public class IsBalancedBinaryTree {
 	
 	public static boolean isBalanced(TreeNode root) {
 		if (root == null) {

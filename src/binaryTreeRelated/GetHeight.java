@@ -7,8 +7,6 @@
 
 package binaryTreeRelated;
 
-import binarySearchTreeRelated.TreeNode;
-
 public class GetHeight {
 	
 	public static int getHeight(TreeNode root) {

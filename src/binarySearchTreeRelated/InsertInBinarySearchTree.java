@@ -34,6 +34,7 @@
 
 
 package binarySearchTreeRelated;
+import binaryTreeRelated.TreeNode;
 
 public class InsertInBinarySearchTree {
 	

@@ -44,10 +44,6 @@ class GraphNode {
     	    this.key = key;
      	this.neighbors = new ArrayList<GraphNode>();
     }
-    
-    public void addNei(List<GraphNode> neiList) {
-
- 	}
 }
     
 

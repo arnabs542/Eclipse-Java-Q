@@ -31,7 +31,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Height of Binary Tree (easy)](./src/binaryTreeRelated/GetHeight.java)
    - [Binary Search Tree Traversal Recursively (easy)](./src/binaryTreeRelated/RecursiveTraversal.java)
    - [Binary Search Tree Traversal Iteratively (medium)](./src/binaryTreeRelated/IterativeTraversal.java)
-   - [Check If Binary Tree Is Balanced (medium)](./src/binaryTreeRelated/isBalancedBinaryTree.java)
+   - [Check If Binary Tree Is Balanced (medium)](./src/binaryTreeRelated/IsBalancedBinaryTree.java)
    - [Is Binary Search Tree Or Not (medium)](./src/binaryTreeRelated/IsBinarySearchTree.java)
    - [Tweaked Identical Binary Trees (medium)](./src/binaryTreeRelated/IsTweakedIdentical.java)
    - [Symmetric Binary Tree (easy)](./src/binaryTreeRelated/IsSymmetric.java)
@@ -70,15 +70,17 @@ Progress of practicing data structures, algorithms and job interview questions.
    - RecursionPower-20180514.java : Calculate power using recursion
    - Fibonacci-20180514.java
    
-### BFS 
-   - [Bipartite](./src/bfsRelated.java)
+### Graph Search Algorithm: BFS 
+   - [Bipartite](./src/bfsRelated/Bipartite.java)
+   - Get Keys In Binary Tree Layer By Layer
+   - [Check If Binary Tree Is Completed](./src/bfsRelated/IsCompleteBinaryTree.java)
    
 ### DFS
  
 ## Future Plan
-### Bit manipulation
-### Dynamic Programming
-
 ### String
 ### Hash Tables
-### Graphs
+
+
+### Bit manipulation
+### Dynamic Programming
