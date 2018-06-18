@@ -5,6 +5,9 @@
  * 
  * Mirror Question:
  *   Merge Sort Linked List
+ *   
+ * Updated: 
+ *   June 18, 2018: Review
  * 
  */
 
@@ -12,83 +15,87 @@ package sortingRelated;
 
 public class MergeSort {
 	
-	public static int[] mergeSort(int[] array) {
-		if (array == null) {
-			return null;
-		}
-		if(array.length == 0) {
-			return array;	
+	public int[] mergeSort(int[] array) {
+		if (array == null || array.length == 0) { // corner case 
+			return array;
 		}		
 		int[] aux = new int[array.length];
 		mergeSort(array, aux, 0, array.length - 1);
 		return array;		
 	}
 		
-	private static int[] mergeSort(int[] array, int[] aux, int lo, int hi) {
-						
-		if (lo == hi) {
-			return array;
+	private void mergeSort(int[] arr, int[] aux, int left, int right) {						
+		if (left >= right) { // base case
+			return;
 		}
-		System.out.print("merge sort: [" + array[lo] + "," + array[hi] +"]\n");
+		System.out.print("\nmerge sort: ");
+		print(arr, left, right);
+		System.out.print("\n");
 		
-		int mid = lo + (hi - lo)/2;
+		int mid = left + (right - left) / 2;
 		
-		mergeSort(array, aux, lo, mid);
-		mergeSort(array, aux, mid + 1, hi);
-		merge(array, aux, lo, mid, hi);
-		
-		return array;
+		mergeSort(arr, aux, left, mid);
+		mergeSort(arr, aux, mid + 1, right);
+		merge(arr, aux, left, mid, right);
 	}
 	
-	private static void merge(int[] array, int[] aux, int lo, int mid, int hi) {
+	private void merge(int[] arr, int[] aux, int left, int mid, int right) {
 		
-		System.out.print("merge: [" + array[lo] + "," + array[mid] +"]");
-		System.out.print(" and [" + array[mid + 1] + "," + array[hi] +"]\n");
-	
-		for (int k = lo; k <= hi; k++) {
-			aux[k] = array[k];
+		System.out.print("merge: ");
+		print(arr, left, mid);
+		System.out.print(" and ");
+		print(arr, mid + 1, right);
+		
+		for (int k = left; k <= right; k++) {
+			aux[k] = arr[k];
 		}
-
-		int i = lo;
-		int j = mid + 1;
 		
-		for (int k = lo; k <= hi; k++) {
-			if (i > mid) {			
-				array[k] = aux[j++];
-			} 
-			else if (j > hi) {		
-				array[k] = aux[i++];						
-			} 
-			else if (aux[i] <= aux[j]) {			
-				array[k] = aux[i++];	
-			} 
-			else {			
-				array[k] = aux[j++];	
+		int leftIndex = left;
+		int rightIndex = mid + 1;
+		
+		while (left <= right) {
+			if (leftIndex > mid) {
+				break; // if there is no element in the left half, 
+				       // we don't need to copy the remaining elements in the right half, because they are already in their position
+			} else if (rightIndex > right) {
+				arr[left++] = aux[leftIndex++];
+			} else if (aux[leftIndex] <= aux[rightIndex]) {
+				arr[left++] = aux[leftIndex++];
+			} else {
+				arr[left++] = aux[rightIndex++];
 			}
 		}
 		
-		for (int index: array) {
-			System.out.print(index + " ");
-		}
-		System.out.print("\n");
+		System.out.print("\nAfter mergeing: ");
+		print(arr);
 	}
 	
+	private void print(int[] arr) {
+		for (int index: arr) {
+			System.out.print(index + " ");
+		}
+		System.out.print("\n");		
+	}
+	
+	private void print(int[] arr, int left, int right) {
+		System.out.print("[ ");
+		for (int k = left; k <= right; k++) {
+			System.out.print(arr[k] + " ");
+		}
+		System.out.print("]");		
+	}
+	
+	
 	public static void main(String[] args) {
-		int[] array = {20, 18, 5, 17, 8, 33};
+		MergeSort test = new MergeSort();
+		
+		int[] array = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
 
 		System.out.print("Original Array: ");
-		for(int i: array) {
-			System.out.print(i + " ");
-		}
-		System.out.print("\n\n");
+		test.print(array);
 		
-		mergeSort(array);
-		
-		System.out.print("\nFinal Array: ");
-		for(int i: array) {
-			System.out.print(i + " ");
-		}	
+		test.mergeSort(array);
+		test.print(array);	
 	}
 }
 
-//System.out.print("array[k]: " + array[k] + " = aux[i]: " + aux[i] +"\n");
