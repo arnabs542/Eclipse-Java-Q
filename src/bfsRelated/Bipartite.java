@@ -103,9 +103,7 @@ public class Bipartite {
 			}
 		}
 		return true;
-	}
-	
-	
+	}	
 	
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {

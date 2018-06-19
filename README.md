@@ -2,12 +2,6 @@
 
 Progress of practicing data structures, algorithms and job interview questions.
 
-## Data Structures
-
-### Array 
-   - [Move 0s To The End I (easy)](./src/arrayRelated/MoveZeroToEnd1.java)
-   - [Move 0s To The End II (easy+)](./src/arrayRelated/MoveZeroToEnd2.java)
-
 ### Stacks & Queques
    - [Queue By Two Stacks (medium)](./src/queueStackRelated/QueueByTwoStack.java)
    - [Stack With Min() (easy)](./src/queueStackRelated/QueueByTwoStack.java)
@@ -26,6 +20,12 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Implement Queue with Linked List](./src/myLinkedList/ImplementQueue.java)
    - [Implement Stack with Linked List](./src/myLinkedList/ImplementStack.java)
    - [Merge Sort Linked List (medium)](./src/myLinkedList/MergeSortLinkedList.java)
+   
+### Sorting Algorithms 
+   - [Bubble Sort, Selection Sort, Insertion Sort (easy)](./src/sortingRelated/BasicSorting.java)
+   - [Merge Sort (medium)](./src/sortingRelated/MergeSort.java)
+   - [Quick Sort (medium)](./src/sortingRelated/QuickSort.java)
+   - [Rainbow Sort (medium)](./src/sortingRelated/RainbowSort.java)   
 
 ### Binary Tree
    - [Height of Binary Tree (easy)](./src/binaryTreeRelated/GetHeight.java)
@@ -49,14 +49,6 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Heap Sort (medium)](./src/heapRelated/HeapSort.java)
    - [K Smallest In Unsorted Array With Self Heap Implementation (medium)](./src/heapRelated/KSmallestInUnsortedArrayWithOwnHeap.java)
    - [K Smallest In Unsorted Array (medium)](./src/heapRelated/KSmallestInUnsortedArray.java)
-
-## Algorithms
-
-### Sorting Algorithms 
-   - [Bubble Sort, Selection Sort, Insertion Sort (easy)](./src/sortingRelated/BasicSorting.java)
-   - [Merge Sort (medium)](./src/sortingRelated/MergeSort.java)
-   - [Quick Sort (medium)](./src/sortingRelated/QuickSort.java)
-   - [Rainbow Sort (medium)](./src/sortingRelated/RainbowSort.java)
    
 ### Binary Search
    - [Classical Binary Search (easy)](./src/BinarySearchRelated/ClassicalBinarySearch.java)
@@ -70,17 +62,19 @@ Progress of practicing data structures, algorithms and job interview questions.
    - RecursionPower-20180514.java : Calculate power using recursion
    - Fibonacci-20180514.java
    
-### Graph Search Algorithm: BFS 
-   - [Bipartite](./src/bfsRelated/Bipartite.java)
+### Graph & BFS 
+   - [Bipartite (medium)](./src/bfsRelated/Bipartite.java)
    - Get Keys In Binary Tree Layer By Layer
-   - [Check If Binary Tree Is Completed](./src/bfsRelated/IsCompleteBinaryTree.java)
+   - [Check If Binary Tree Is Completed (medium)](./src/bfsRelated/IsCompleteBinaryTree.java)
+   - [Kth Smallest Number In Sorted Matrix (medium)](./src/bfsRelated/KSmallestInUnsortedArray.java)
    
-### DFS
+### Graph & DFS
  
+### Array 
+   - [Move 0s To The End I (easy)](./src/arrayRelated/MoveZeroToEnd1.java)
+   - [Move 0s To The End II (easy+)](./src/arrayRelated/MoveZeroToEnd2.java)
+
 ## Future Plan
 ### String
-### Hash Tables
-
-
 ### Bit manipulation
 ### Dynamic Programming

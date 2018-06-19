@@ -28,9 +28,9 @@ public class MergeSort {
 		if (left >= right) { // base case
 			return;
 		}
-		System.out.print("\nmerge sort: ");
+		System.out.print("merge sort: ");
 		print(arr, left, right);
-		System.out.print("\n");
+		System.out.println("\n");
 		
 		int mid = left + (right - left) / 2;
 		
@@ -41,10 +41,7 @@ public class MergeSort {
 	
 	private void merge(int[] arr, int[] aux, int left, int mid, int right) {
 		
-		System.out.print("merge: ");
-		print(arr, left, mid);
-		System.out.print(" and ");
-		print(arr, mid + 1, right);
+		System.out.print("merge: "); print(arr, left, mid); System.out.print(" and "); print(arr, mid + 1, right);
 		
 		for (int k = left; k <= right; k++) {
 			aux[k] = arr[k];
@@ -74,7 +71,7 @@ public class MergeSort {
 		for (int index: arr) {
 			System.out.print(index + " ");
 		}
-		System.out.print("\n");		
+		System.out.println("\n");		
 	}
 	
 	private void print(int[] arr, int left, int right) {
@@ -89,13 +86,8 @@ public class MergeSort {
 	public static void main(String[] args) {
 		MergeSort test = new MergeSort();
 		
-		int[] array = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
-
-		System.out.print("Original Array: ");
-		test.print(array);
-		
+		int[] array = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};		
 		test.mergeSort(array);
-		test.print(array);	
 	}
 }
 

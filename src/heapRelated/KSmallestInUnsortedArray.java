@@ -16,9 +16,7 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class KSmallestInUnsortedArray {
-	
-	
-	
+		
 	public int[] kSmallest(int[] arr, int k) {	
 		if (arr == null || arr.length == 0) { // corner case
 			return arr;
@@ -113,8 +111,6 @@ public class KSmallestInUnsortedArray {
 		printArr(arr2);
 		
 		/* Test Case 3 */
-		System.out.println("---< Test Case 3 >---");
-		
+		System.out.println("---< Test Case 3 >---");		
 	}
-
 }
