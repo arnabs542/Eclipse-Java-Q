@@ -16,7 +16,7 @@
  *   
  *   
  * Updated: 
- *   Need to Review on June 21, 2018
+ *   June 21, 2018 : Review
  * 
  */
 
@@ -28,12 +28,21 @@ import java.util.List;
 
 public class AllSubsetsI {
 	
+	/* 1. How many levels and what does it store on each level?
+	 *    - Levels: The number of the characters in the given set. 
+	 *    - Each level decide whether or not to pick one element of the given set to the current subset
+	 * 
+	 * 2. How many different states should we try to put on this level:
+	 *    - Two. Each state consider either pick or not pick.
+	 * 
+	 * */
+	
 	public List<String> subSets(String set) {
 		List<String> result = new LinkedList<>();
 		if (set == null) {
 			return result;
 		}
-		StringBuilder sb = new StringBuilder();
+		StringBuilder sb = new StringBuilder(); // to record the current subset
 		char[] input = set.toCharArray();
 		findSub(input, 0, sb, result);
 	 	return result;
@@ -44,7 +53,7 @@ public class AllSubsetsI {
 			result.add(sb.toString());
 			return; // base case, remember to return!!!
 		}
-		
+	
 		sb.append(input[index]);
 		findSub(input, index + 1, sb, result);
 		sb.deleteCharAt(sb.length() - 1);
@@ -67,8 +76,8 @@ public class AllSubsetsI {
 		findSubset(input, index + 1, output);
 	}
 	
-	// Time Complexity: O(?);
-	// Space Complexity: O(?);
+	// Time Complexity: O(2^n);
+	// Space Complexity: O(n);
 	
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
@@ -96,8 +105,6 @@ public class AllSubsetsI {
 		System.out.println("---< Test Case 2 >---");
 		
 		/* Test Case 3 */
-		System.out.println("---< Test Case 3 >---");
-		
+		System.out.println("---< Test Case 3 >---");		
 	}
-
 }

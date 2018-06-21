@@ -69,6 +69,8 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Kth Smallest Number In Sorted Matrix (medium)](./src/bfsRelated/KSmallestInUnsortedArray.java)
    
 ### Graph & DFS
+   - [All Subsets I (medium)](./src/dfsRelated/AllSubsetsI.java)
+   - [All Permutations I (medium)](./src/dfsRelated/AllPermutationsI.java)
  
 ### Array 
    - [Move 0s To The End I (easy)](./src/arrayRelated/MoveZeroToEnd1.java)
