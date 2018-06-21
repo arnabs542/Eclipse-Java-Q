@@ -51,7 +51,7 @@ public class Bipartite {
 	
 	/* ---------------< Method 1: Use queue to do BFS >------------------------*/	
 	public static boolean isBipartite(List<GraphNode> graph) {
-		HashMap<GraphNode, Integer> visited = new HashMap<GraphNode, Integer>();
+		HashMap<GraphNode, Integer> visited = new HashMap<>();
 		for (GraphNode node : graph) {
 			if(!BFS(node, visited)) {
 				return false;
@@ -64,7 +64,7 @@ public class Bipartite {
 		if (visited.containsKey(node)) {
 			return true;
 		}
-		Queue<GraphNode> queue = new LinkedList<GraphNode>();
+		Queue<GraphNode> queue = new LinkedList<>();
 		queue.offer(node);
 		visited.put(node, 0);
 		while (!queue.isEmpty()) {

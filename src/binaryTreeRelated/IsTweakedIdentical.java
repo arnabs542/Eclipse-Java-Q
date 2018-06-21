@@ -64,7 +64,7 @@ public class IsTweakedIdentical {
                                                                                                  4 ^ 3
                                                                                                  4 ^ height = 4 ^ logn (worst case)
    
-	Time Complexity: O( 4^log_2(n) ) = O( 2^log_2(n^2) ) = O( n^2)
+	Time Complexity: O( 4^log_2(n) ) = O( 2^log_2(n^2) ) = O( n^2) )
 	Space Complexity: O(height), worst case: O(n)
 
 	*/
