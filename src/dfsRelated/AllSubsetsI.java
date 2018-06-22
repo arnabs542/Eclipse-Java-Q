@@ -11,10 +11,7 @@
  *    Set = "abc", all the subsets are [“”, “a”, “ab”, “abc”, “ac”, “b”, “bc”, “c”]
  *    Set = "", all the subsets are [""]
  *    Set = null, all the subsets are []  
- *   
- *   Follow up:
- *   
- *   
+ *     
  * Updated: 
  *   June 21, 2018 : Review
  * 
@@ -99,8 +96,7 @@ public class AllSubsetsI {
 		for (String s : result) {
 			System.out.println(s + " ");
 		}
-		
-		
+				
 		/* Test Case 2 */
 		System.out.println("---< Test Case 2 >---");
 		
