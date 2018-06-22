@@ -71,6 +71,8 @@ Progress of practicing data structures, algorithms and job interview questions.
 ### Graph & DFS
    - [All Subsets I (medium)](./src/dfsRelated/AllSubsetsI.java)
    - [All Permutations I (medium)](./src/dfsRelated/AllPermutationsI.java)
+   - [All Valid Permutations Of Parentheses I](./src/dfsRelated/PermutationsOfParenthesesI.java)
+   - [Combinations Of Coins (medium)](./src/dfsRelated/CombinationsOfCoins.java)
  
 ### Array 
    - [Move 0s To The End I (easy)](./src/arrayRelated/MoveZeroToEnd1.java)

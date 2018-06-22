@@ -46,6 +46,7 @@ public class AllPermutationsI {
         result.add(new String(input)); // don't use: input.toString()
         return;
     }
+      // all the possible characters could be placed at index are in (index, input.length - 1)
       for (int i = index; i < input.length; i++) {
         swap(input, i, index);
         helper(input, index + 1, result);
