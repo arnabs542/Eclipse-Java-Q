@@ -73,7 +73,10 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [All Permutations I (medium)](./src/dfsRelated/AllPermutationsI.java)
    - [All Valid Permutations Of Parentheses I](./src/dfsRelated/PermutationsOfParenthesesI.java)
    - [Combinations Of Coins (medium)](./src/dfsRelated/CombinationsOfCoins.java)
- 
+   
+### Hash Table 
+   - [Common Numbers Of Two Sorted Array](./src/hashTableRelated/CommonNumOfTwoSortedArr.java)
+  
 ### Array 
    - [Move 0s To The End I (easy)](./src/arrayRelated/MoveZeroToEnd1.java)
    - [Move 0s To The End II (easy+)](./src/arrayRelated/MoveZeroToEnd2.java)
