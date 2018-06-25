@@ -80,7 +80,8 @@ Progress of practicing data structures, algorithms and job interview questions.
 ### String & Array 
    - [Move 0s To The End I (easy)](./src/arrayRelated/MoveZeroToEnd1.java)
    - [Move 0s To The End II (easy+)](./src/arrayRelated/MoveZeroToEnd2.java)
-   - [Remove Spaces](./src/arrayRelated/RemoveSpaces.java)
+   - [Remove Spaces (easy+)](./src/arrayRelated/RemoveSpaces.java)
+   - [Remove Certain Characters (easy)](./src/arrayRelated/RemoveCertainCharacters.java)
 
 ## Future Plan
 ### String
