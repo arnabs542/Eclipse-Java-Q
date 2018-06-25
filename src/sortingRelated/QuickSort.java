@@ -14,17 +14,15 @@ import java.util.Random;
 
 public class QuickSort {
 	
-	public void quickSort(int[] array) {
-		// corner case
-		if (array == null) {
+	public void quickSort(int[] array) {		
+		if (array == null) { // corner case
 			return;
 		}
 		quickSort(array, 0, array.length - 1);
 	}
 
-	private void quickSort(int[] array, int left, int right) {	
-		//base case
-		if (left >= right) {
+	private void quickSort(int[] array, int left, int right) {		
+		if (left >= right) { //base case
 			return;
 		}
 		// define a pivot and use it to partition the array
@@ -40,19 +38,18 @@ public class QuickSort {
 		int pivotVal = array[pivotIndex];
 		// swap the pivot element to the rightmost element first
 		swap(array, pivotIndex, right);		
-		int leftBound = left;
 		int rightBound = right - 1;		
-		while (leftBound <= rightBound) {
-			if (array[leftBound] <= pivotVal) {
-				leftBound++;
+		while (left <= rightBound) {
+			if (array[left] <= pivotVal) {
+				left++;
 			} else {
-				swap(array, leftBound, rightBound);
+				swap(array, left, rightBound);
 				rightBound--;
 			}
 		}		
 		// swap back the pivot element
-		swap(array, leftBound, right);		// why swap with leftBound, not 	rightBound ?
-		return leftBound;
+		swap(array, left, right);		// why swap with leftBound, not 	rightBound ?
+		return left;
 	}
 	
 	private int selectPivot(int left, int right) {
