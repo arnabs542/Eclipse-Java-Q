@@ -68,7 +68,7 @@ public class TopKFrequentWords {
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
 		
-		System.out.print(1);
+		TopKFrequentWords testObj = new TopKFrequentWords();
 		
 		/* Test Case 0 */
 		System.out.println("---< Test Case 0 >---");
@@ -76,8 +76,15 @@ public class TopKFrequentWords {
 		/* Test Case 1 */
 		System.out.println("---< Test Case 1 >---");
 		
+		String[] combo1 = {"a", "a", "b", "b", "b", "b", "c", "c", "c", "d"};
+		String[] result1 = testObj.topKFrequent(combo1, 2);
+		
+		for (String s : result1) {
+			System.out.print(s + " ");
+		}
+		
 		/* Test Case 2 */
-		System.out.println("---< Test Case 2 >---");
+		System.out.println("\n---< Test Case 2 >---");
 		
 		/* Test Case 3 */
 		System.out.println("---< Test Case 3 >---");

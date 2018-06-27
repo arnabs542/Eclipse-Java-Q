@@ -76,13 +76,15 @@ Progress of practicing data structures, algorithms and job interview questions.
    
 ### Hash Table 
    - [Common Numbers Of Two Sorted Array](./src/hashTableRelated/CommonNumOfTwoSortedArr.java)
-   - [Top K Frequent Words](./src/hashTableRelated/TopKFrequentWords.java)
+   - [Top K Frequent Words (medium)](./src/hashTableRelated/TopKFrequentWords.java)
   
 ### String & Array 
    - [Move 0s To The End I (easy)](./src/arrayRelated/MoveZeroToEnd1.java)
    - [Move 0s To The End II (easy+)](./src/arrayRelated/MoveZeroToEnd2.java)
    - [Remove Spaces (easy+)](./src/arrayRelated/RemoveSpaces.java)
    - [Remove Certain Characters (easy)](./src/arrayRelated/RemoveCertainCharacters.java)
+   - [Remove Adjacent Repeated Characters I (easy)](./src/arrayRelated/RemoveAdjacentRepeatedCharactersI.java)
+   - [Remove Adjacent Repeated Characters IV (hard)](./src/arrayRelated/RemoveAdjacentRepeatedCharactersIV.java)
 
 ## Future Plan
 ### String
