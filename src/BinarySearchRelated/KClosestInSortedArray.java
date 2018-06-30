@@ -15,6 +15,9 @@
  *  Examples:
  *  		A = {1, 2, 3}, T = 2, K = 3, return {2, 1, 3} or {2, 3, 1}
  *  		A = {1, 4, 6, 8}, T = 3, K = 3, return {4, 1, 6}
+ *  
+ *  Updated:
+ *    June 30, 2018: Review
  * 
  */
 
@@ -44,7 +47,7 @@ public class KClosestInSortedArray {
 				leftBound--;
 			} else if (Math.abs(array[leftBound] - target) <= Math.abs(array[rightBound] - target)) {
 				result[i] = array[leftBound];
-			    leftBound--;
+				leftBound--;
 			} else {
 				result[i] = array[rightBound];
 				rightBound++;

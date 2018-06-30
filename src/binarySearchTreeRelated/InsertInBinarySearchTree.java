@@ -29,6 +29,9 @@
  *    /   \        \
  *            
  *   1     4        11
+ *   
+ *  Updated:
+ *   June 30, 2018
  * 
  */
 
@@ -73,5 +76,4 @@ public class InsertInBinarySearchTree {
 		}
 		return root;
 	}
-
 }

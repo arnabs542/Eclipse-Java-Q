@@ -15,7 +15,9 @@
  * 
  * Mirror Question: First Occurrence
  * 
- * Updated: June 3, 2018 : review 
+ * Updated: 
+ *   June 3, 2018 : Review 
+ *   June 30, 2018 : Review 
  * 
  */
 
@@ -31,13 +33,13 @@ public class LastOccurBinarySearch {
 		int rightBound = arr.length - 1;
 		while (leftBound + 1 < rightBound) {
 			int mid = leftBound + (rightBound - leftBound) / 2;
-			if (arr[mid] <= target) {
+			if (arr[mid] <= target) { // !!!
 				leftBound = mid;
 			} else {
 				rightBound = mid;
 			}		
 		}
-		if (arr[rightBound] == target) {
+		if (arr[rightBound] == target) { // !!! return rightBound first, if both bounds are target values
 			return rightBound;
 		} else if (arr[leftBound] == target) {
 			return leftBound;

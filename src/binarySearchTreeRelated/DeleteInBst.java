@@ -68,9 +68,8 @@ public class DeleteInBst {
 	 *         14
 	 */
 	
-	public static TreeNode delete(TreeNode root, int key) {
-		// corner case
-		if (root == null) {
+	public static TreeNode delete(TreeNode root, int key) {		
+		if (root == null) { // corner case
 		    return null;
 		}
 		// base case

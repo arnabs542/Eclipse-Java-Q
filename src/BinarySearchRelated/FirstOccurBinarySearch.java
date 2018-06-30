@@ -15,7 +15,9 @@
  * 
  * Mirror Question: Last Occurrence
  * 
- * Updated: June 3, 2018 : review 
+ * Updated: 
+ *   June 3, 2018 : Review 
+ *   June 30, 2018 : Review 
  * 
  */
 
@@ -25,9 +27,8 @@ public class FirstOccurBinarySearch {
 	
 	// Time Complexity: O(logn);
 	// Space Complexity: O(1);
-	public static int firstOccurBinarySearch(int[] arr, int target) {
-		//corner case
-		if(arr == null || arr.length == 0) {
+	public static int firstOccurBinarySearch(int[] arr, int target) {		
+		if(arr == null || arr.length == 0) { //corner case
 			return -1;
 		}
 		int leftBound = 0;
@@ -40,7 +41,7 @@ public class FirstOccurBinarySearch {
 				leftBound = mid;
 			}
 		}
-		if (arr[leftBound] == target) {
+		if (arr[leftBound] == target) { // return leftBound first, if both bounds are target values
 			return leftBound;
 		} else if (arr[rightBound] == target) {
 			return rightBound;
@@ -48,7 +49,7 @@ public class FirstOccurBinarySearch {
 			return -1;
 		}
 	}
-	// Notice: the differences with Last Occurrence question!!
+	// Notice: the differences between this problem and the Last Occurrence problem!!
 	
 	public static void main(String[] args) {	
 		

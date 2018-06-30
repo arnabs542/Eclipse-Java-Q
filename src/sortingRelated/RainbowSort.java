@@ -1,14 +1,29 @@
 /*
  * Created Date: May 28,2018
- * Application: Practice Rainbow Sort
+ * 
+ * Question - Rainbow Sort:
+ *   Given an array of balls, where the color of the balls can only be Red, Green or Blue, 
+ *    sort the balls such that all the Red balls are grouped on the left side, 
+ *    all the Green balls are grouped in the middle and all the Blue balls are grouped on the right side. 
+ *    (Red is denoted by -1, Green is denoted by 0, and Blue is denoted by 1).
+ *      
+ *   Example: 
+ *     {0} is sorted to {0}
+ *     {1, 0} is sorted to {0, 1}
+ *     {1, 0, 1, -1, 0} is sorted to {-1, 0, 0, 1, 1}
+ *       
+ *   Follow up:
+ *    Rainbow Sort with four or more colors
+ *   
+ * Updated:
+ *   June 30, 2018
  * 
  */
 
 package sortingRelated;
 
 public class RainbowSort {
-	
-	
+		
 	// Time Complexity: O(n)
 	// Space Complexity: O(1)
 	public static void rainbowSort(int[] arr) {
@@ -23,7 +38,7 @@ public class RainbowSort {
 		// [j, k] : unknown area
 		// (k, ) : 1
 		
-		while(j <= k) {
+		while (j <= k) {
 			if(arr[j] == -1) {
 				swap(arr, i, j);
 				i++;
@@ -39,30 +54,31 @@ public class RainbowSort {
 	
 	public static void rainbowSortFourColor(int[] arr) {
 		
-		// ( , i) : -1
-		// [i, j) : 0
-		// [j, k) : unknown area
-		// [k, h) : 1
-		// [h, ) : 2
+		// ( , one) : 1
+		// [one, two) : 2
+		// [two, three) : unknown area
+		// [three, four) : 3
+		// [four, ) : 4
 		
-		int i = 0;
-		int j = 0;
-		int h = arr.length - 1;
-		int k = arr.length - 1;
+		int one = 0; 
+		int two = 0; 
+		int three = arr.length - 1; 
+		int four = arr.length - 1; 
 		
-		while(j <= k ) {
-			if(arr[k] == 2) {
-				swap(arr, k, h);
-				k--;
-				h--;
-			} else if(arr[k] == 1) {
-				k--;
-			} else if(arr[k] == 0) {
-				swap(arr, k, j);
-				j++;	
+		while (two <= three) {
+			if (arr[three] == 4) {
+				swap(arr, three, four);
+				three--;
+				four--;
+			} else if (arr[three] == 3) {
+				three--;
+			} else if (arr[three] == 2) {
+				swap (arr, three, two);
+				two++;	
 			} else {
-				swap(arr, k, i);
-				i++;
+				swap (arr, three, one);
+				one++;
+				//two++;
 			}			
 		}		 		
 	}
@@ -82,12 +98,12 @@ public class RainbowSort {
 		}
 		System.out.print("\n");
 		
-		int[] arr1 = {-1, 0, 2, 0, 1, 2, 0, -1, 1, 2, 0, -1, 0, 2, 1, 1};
+		int[] arr1 = {2, 4, 2, 4, 1, 2, 3, 2, 1 , 2, 1, 3, 4, 3, 2, 1, 2, 3, 4};
 		rainbowSortFourColor(arr1);
 		for(int i : arr1) {
 			System.out.print(i + " ");
 		}
 	}
-
+// 3, 4, 3, 2, 1, 2, 3, 4
 }
 

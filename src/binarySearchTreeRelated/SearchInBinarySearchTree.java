@@ -38,7 +38,6 @@ public class SearchInBinarySearchTree {
 //	}
 	
 
-	
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
 		

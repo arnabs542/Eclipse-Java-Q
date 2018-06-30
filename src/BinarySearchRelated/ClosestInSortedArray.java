@@ -9,7 +9,7 @@
  * 		There can be duplicate elements in the array, and we can return any of the indices with same value.
  * 
  * 	Examples:
- * 			A = {1, 2, 3}, T = 2, return 
+ * 			A = {1, 2, 3}, T = 2, return 1
  * 			A = {1, 4, 6}, T = 3, return 1
  * 			A = {1, 4, 6}, T = 5, return 1 or 2
  * 			A = {1, 3, 3, 4}, T = 2, return 0 or 1 or 2
@@ -20,43 +20,60 @@
  * Follow up questions: 
  * 		K Closest In Sorted Array
  * 
+ * Updated: 
+ *   June 30, 2018: Review
+ * 
  */
 
 package BinarySearchRelated;
 
 public class ClosestInSortedArray {
 	
-	public static int closest(int[] array, int target) {
-		
-		if (array == null || array.length == 0) return -1; // corner case
-		
-		int i = 0;
-		int j = array.length - 1;
-		
-		while (i < j - 1) {
-			int mid = i + (j - i) / 2;
-			if (array[mid] == target) return mid;
-			else if(array[mid] > target) j = mid;
-			else i = mid;
+	public int closest(int[] array, int target) {
+		if (array == null || array.length == 0) {
+			return -1;
 		}
-
-		if (Math.abs(array[i] - target) <= Math.abs(array[j] - target)) return i;
-		else return j;
+		int leftBound = 0;
+		int rightBound = array.length - 1;
+		while (leftBound + 1 < rightBound) {
+			int mid = leftBound + (rightBound - leftBound) / 2;
+			if (array[mid] == target) {
+				return mid;
+			} else if (array[mid] < target) {
+				leftBound = mid;
+			} else {
+				rightBound = mid;
+			}
+		}
+		return Math.abs(array[leftBound] - target) <= Math.abs(array[rightBound] - target) ? leftBound: rightBound;
 	}	
+	
 	// Time Complexity: O(logn)
 	// Space Complexity: O(1)
 	
+	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
-		int[] arr = {3, 4, 5, 6, 6, 12, 16};
 		
-		for (int item : arr) {
-			System.out.print(item + " ");
-		}
+		ClosestInSortedArray testObj = new ClosestInSortedArray();
 		
-		int result = ClosestInSortedArray.closest(arr, 10);
+		/* Test Case 0 */
+		System.out.println("---< Test Case 0 >---");
 		
-		System.out.println("\n" + result);
-
+		/* Test Case 1 */
+		System.out.println("---< Test Case 1 >---");
+		
+		int[] arr1 = {3, 4, 5, 6, 6, 12, 16};		
+		int result1 = testObj.closest(arr1, 10);		
+		System.out.println(result1); // expected 5
+		
+		/* Test Case 2 */
+		System.out.println("---< Test Case 2 >---");
+		int[] arr2 = {1, 3, 3, 4};	
+		int result2 = testObj.closest(arr2, 2);		
+		System.out.println(result2); // expected 0 or 1 or 2
+		
+		/* Test Case 3 */
+		System.out.println("---< Test Case 3 >---");		
 	}
 }
 
@@ -65,4 +82,3 @@ public class ClosestInSortedArray {
 // arr[mid] < target
 // i = mid = 4
 // can't get out of while loop
-
