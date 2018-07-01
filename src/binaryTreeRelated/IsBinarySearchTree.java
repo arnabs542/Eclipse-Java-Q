@@ -26,24 +26,47 @@ public class IsBinarySearchTree {
 	// Mistake: put this variable declaration in function.
 	//	It must be a global variable, or it will be overridden
 	
+//	public boolean isBST_Method2(TreeNode root) {
+//		if (root == null) return true; // corner case	
+//		lastSeen = Integer.MIN_VALUE;		
+//		return inOrderTraversal(root);
+//	}
+//	
+//	private boolean inOrderTraversal(TreeNode node) {
+//		if (node == null) {
+//			return true;
+//		}		
+//		if (inOrderTraversal(node.left) == false) {
+//			return false;
+//		}		
+//		if (node.value <= lastSeen) {
+//			return false;
+//		}
+//		lastSeen = node.value;		
+//		if (inOrderTraversal(node.right) == false) {
+//			return false;
+//		}		
+//		return true;
+//	}
+	
 	public boolean isBST_Method2(TreeNode root) {
 		if (root == null) return true; // corner case	
 		lastSeen = Integer.MIN_VALUE;		
-		return inOrderTraversal(root);
+		return inOrderTraversal(root, lastSeen);
 	}
 	
-	private boolean inOrderTraversal(TreeNode node) {
+	private boolean inOrderTraversal(TreeNode node, int lastSeen) {
 		if (node == null) {
 			return true;
 		}		
-		if (inOrderTraversal(node.left) == false) {
+		if (inOrderTraversal(node.left, lastSeen) == false) {
 			return false;
 		}		
 		if (node.value <= lastSeen) {
 			return false;
 		}
 		lastSeen = node.value;		
-		if (inOrderTraversal(node.right) == false) {
+		if (inOrderTraversal(node.right, lastSeen) == false) {
 			return false;
 		}		
 		return true;

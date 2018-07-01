@@ -33,7 +33,9 @@ public class ReverseLinkedList {
 	// Space Complexity: O(1);
 	
 	public static ListNode recursiveReverse(ListNode head) {
-		if(head == null || head.next == null) return head;
+		if(head == null || head.next == null) { // the first part is base case, the second part is corner case
+			return head;
+		}
 		ListNode newHead = recursiveReverse(head.next);
 				
 		head.next.next = head;
@@ -41,7 +43,7 @@ public class ReverseLinkedList {
 		return newHead;
 	}
 	// Time Complexity: O(n);
-	// Space Complexity: O(1);
+	// Space Complexity: O(1); ?
 	
 	public static void main(String[] args) {	
 		

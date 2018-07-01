@@ -9,8 +9,11 @@
  *    Set = "", all permutations are [""]
  *    Set = null, all permutations are []
  *   
+ * Follow up:
+ *   All Permutations II, with duplicate characters
+ *     
  * Updated:
- *   June ?,2018 : Review
+ *   June 30, 2018 : Review
  * 
  */
 
@@ -45,7 +48,7 @@ public class AllPermutationsI {
       if (index == input.length) {
         result.add(new String(input)); // don't use: input.toString()
         return;
-    }
+      }
       // all the possible characters could be placed at index are in (index, input.length - 1)
       for (int i = index; i < input.length; i++) {
         swap(input, i, index);
