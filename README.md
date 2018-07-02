@@ -64,19 +64,21 @@ Progress of practicing data structures, algorithms and job interview questions.
    
 ### Graph & BFS 
    - [Bipartite (medium)](./src/bfsRelated/Bipartite.java)
-   - Get Keys In Binary Tree Layer By Layer
+   - [Get Keys In Binary Tree Layer By Layer (easy)](./src/binaryTreeRelated/GetKeysLayerByLayer.java)
    - [Check If Binary Tree Is Completed (medium)](./src/bfsRelated/IsCompleteBinaryTree.java)
    - [Kth Smallest Number In Sorted Matrix (medium)](./src/bfsRelated/KSmallestInUnsortedArray.java)
    
 ### Graph & DFS
    - [All Subsets I (medium)](./src/dfsRelated/AllSubsetsI.java)
    - [All Permutations I (medium)](./src/dfsRelated/AllPermutationsI.java)
-   - [All Valid Permutations Of Parentheses I](./src/dfsRelated/PermutationsOfParenthesesI.java)
+   - [All Valid Permutations Of Parentheses I (medium)](./src/dfsRelated/PermutationsOfParenthesesI.java)
    - [Combinations Of Coins (medium)](./src/dfsRelated/CombinationsOfCoins.java)
+   - [All Permutations II (hard)](./src/dfsRelated/AllPermutationsII.java)
    
 ### Hash Table 
-   - [Common Numbers Of Two Sorted Array](./src/hashTableRelated/CommonNumOfTwoSortedArr.java)
+   - [Common Numbers Of Two Sorted Array (easy)](./src/hashTableRelated/CommonNumOfTwoSortedArr.java)
    - [Top K Frequent Words (medium)](./src/hashTableRelated/TopKFrequentWords.java)
+   - [Kth Smallest Sum In Two Sorted Arrays (hard)](./src/hashTableRelated/KthSmallestSumInTwoSortedArrays.java)
   
 ### String & Array 
    - [Move 0s To The End I (easy)](./src/arrayRelated/MoveZeroToEnd1.java)

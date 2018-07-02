@@ -1,7 +1,7 @@
 /*
  * Created Date: June 30, 2018
  * 
- * Question - All Permutations I
+ * Question - All Permutations II (hard):
  *   Given a string with possible duplicate characters, return a list with all permutations of the characters.
  *   
  *   Example: 
@@ -12,6 +12,7 @@
  * 
  * Updated:
  *   July 1, 2018 : Review
+ *   June 30, 2018: Review, Mid term exam problem 3
  * 
  */
 

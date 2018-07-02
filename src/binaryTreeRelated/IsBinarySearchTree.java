@@ -11,6 +11,8 @@
  *  Corner Cases:
  *    What if the binary tree is null? Return true in this case.
  *   
+ * Updated:
+ *   June 30, 2018: Review, Mid term exam problem 2
  * 
  */
 
@@ -26,47 +28,26 @@ public class IsBinarySearchTree {
 	// Mistake: put this variable declaration in function.
 	//	It must be a global variable, or it will be overridden
 	
-//	public boolean isBST_Method2(TreeNode root) {
-//		if (root == null) return true; // corner case	
-//		lastSeen = Integer.MIN_VALUE;		
-//		return inOrderTraversal(root);
-//	}
-//	
-//	private boolean inOrderTraversal(TreeNode node) {
-//		if (node == null) {
-//			return true;
-//		}		
-//		if (inOrderTraversal(node.left) == false) {
-//			return false;
-//		}		
-//		if (node.value <= lastSeen) {
-//			return false;
-//		}
-//		lastSeen = node.value;		
-//		if (inOrderTraversal(node.right) == false) {
-//			return false;
-//		}		
-//		return true;
-//	}
-	
 	public boolean isBST_Method2(TreeNode root) {
-		if (root == null) return true; // corner case	
+		if (root == null) { // corner case
+			return true; 	
+		}
 		lastSeen = Integer.MIN_VALUE;		
-		return inOrderTraversal(root, lastSeen);
+		return inOrderTraversal(root);
 	}
 	
-	private boolean inOrderTraversal(TreeNode node, int lastSeen) {
-		if (node == null) {
+	private boolean inOrderTraversal(TreeNode root) {
+		if (root == null) { 
 			return true;
 		}		
-		if (inOrderTraversal(node.left, lastSeen) == false) {
+		if (!inOrderTraversal(root.left)) {
 			return false;
 		}		
-		if (node.value <= lastSeen) {
+		if (root.value <= lastSeen) {
 			return false;
 		}
-		lastSeen = node.value;		
-		if (inOrderTraversal(node.right, lastSeen) == false) {
+		lastSeen = root.value;		
+		if (!inOrderTraversal(root.right)) {
 			return false;
 		}		
 		return true;

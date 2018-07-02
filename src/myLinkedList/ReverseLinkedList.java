@@ -10,6 +10,7 @@
  * 
  * Updated:
  *  June 5, 2018: Review
+ *  June 30, 2018: Review, Mid term exam problem 1
  * 	
  */
 
@@ -37,13 +38,12 @@ public class ReverseLinkedList {
 			return head;
 		}
 		ListNode newHead = recursiveReverse(head.next);
-				
-		head.next.next = head;
+		head.next.next = head; //!!!
 		head.next = null;
 		return newHead;
 	}
 	// Time Complexity: O(n);
-	// Space Complexity: O(1); ?
+	// Space Complexity: O(n) - call stack
 	
 	public static void main(String[] args) {	
 		

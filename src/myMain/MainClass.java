@@ -4,21 +4,29 @@ package myMain;
 public class MainClass {
 	
 	public static void main(String[] args) {
+				
+		System.out.println(-7 / 2); // expected: -3
 		
-		int[] array = new int[10];
-		int lenOfArr = array.length;
+		System.out.println(-7 >> 1); // expected: -4. right shift one bit. 1001 (-7) --> 1100 (-4)
 		
-		String string = "string";
-		int lenOfStr = string.length();
+		String s1 = "bell";
+		String s2 = "bell";
+		System.out.println(s1 == s2); // expected: true -  Pooling for String object
 		
-		String[] strArr = new String[10];
-		int lenOfStrArr = strArr.length;
+		String s3 = new String("bell");
+		System.out.println(s1 == s3); // expected: false - String objects created by "new" will not use the pool
 		
-		char[] charArr = new char[10];
-		int lenOfCharArr = charArr.length;
+		// int --> String
+		int i = 1;
+		String si1 = String.valueOf(i);
+		String si2 = Integer.toString(i);
+		System.out.println(si1);
+		System.out.println(si2);
 		
-		String s = "aabbbc";
-		char[] charA = s.toCharArray();
-		System.out.print(charA[0] == charA[1]);
 	}	    	 
 }
+
+//int lenOfString = string.length();
+//int lenOfIntArray = array.length;
+//int lenOfStrArray = strArr.length;
+//int lenOfCharArray = charArr.length;

@@ -10,7 +10,8 @@
  *  
  *  Updated:
  *    Need to review!!! Consider all the situations carefully!!!
- *    Be sure the exact position of each pointer after every step!!!   
+ *    Be sure the exact position of each pointer after every step!!! 
+ *    June 30, 2018: Review, Mid term exam problem 4
  * 
  */
 

@@ -68,5 +68,4 @@ public class RemoveAdjacentRepeatedCharactersIV {
 		System.out.println("---< Test Case 3 >---");
 		
 	}
-
 }
