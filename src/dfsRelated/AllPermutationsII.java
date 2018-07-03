@@ -58,7 +58,7 @@ public class AllPermutationsII {
     }
     
 	// Time Complexity: O(n!);
-	// Space Complexity: O(n);
+	// Space Complexity: O(n^2);
 	
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {

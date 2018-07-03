@@ -88,7 +88,5 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Remove Adjacent Repeated Characters I (easy)](./src/arrayRelated/RemoveAdjacentRepeatedCharactersI.java)
    - [Remove Adjacent Repeated Characters IV (hard)](./src/arrayRelated/RemoveAdjacentRepeatedCharactersIV.java)
 
-## Future Plan
-### String
 ### Bit manipulation
 ### Dynamic Programming
