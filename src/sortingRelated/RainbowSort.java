@@ -13,10 +13,11 @@
  *     {1, 0, 1, -1, 0} is sorted to {-1, 0, 0, 1, 1}
  *       
  *   Follow up:
- *    Rainbow Sort with four or more colors
+ *    Rainbow Sort II: Rainbow Sort with four or more colors
  *   
  * Updated:
  *   June 30, 2018
+ *   July 4, finally solve Rainbow Sort II !!!
  * 
  */
 
@@ -26,7 +27,7 @@ public class RainbowSort {
 		
 	// Time Complexity: O(n)
 	// Space Complexity: O(1)
-	public static void rainbowSort(int[] arr) {
+	public void rainbowSort(int[] arr) {
 		if(arr == null || arr.length == 0) return;
 		
 		int i = 0; 
@@ -52,7 +53,9 @@ public class RainbowSort {
 		}
 	}
 	
-	public static void rainbowSortFourColor(int[] arr) {
+	// Time Complexity: O(n);
+	// Space Complexity: O(1);
+	public void rainbowSortFourColor(int[] arr) {
 		
 		// ( , one) : 1
 		// [one, two) : 2
@@ -68,7 +71,9 @@ public class RainbowSort {
 		while (two <= three) {
 			if (arr[three] == 4) {
 				swap(arr, three, four);
-				three--;
+				if (three >= four) {
+					three--;
+				}
 				four--;
 			} else if (arr[three] == 3) {
 				three--;
@@ -78,32 +83,68 @@ public class RainbowSort {
 			} else {
 				swap (arr, three, one);
 				one++;
-				//two++;
+				if (one > two) {
+					two++;
+				}
 			}			
 		}		 		
 	}
 	
-	private static void swap(int[] arr, int a, int b) {
+	private void swap(int[] arr, int a, int b) {
 		int temp = arr[a];
 		arr[a] = arr[b];
 		arr[b] = temp;
 	}
 	
-	public static void main(String[] args) {
-		int[] arr = {-1, 0, 1, 0, -1, 1, 0, -1, 0, 1, 1};
-		
-		rainbowSort(arr);
+	/* ----------------------< test stub >-------------------------*/
+	
+	private static void print (int[] arr) {
 		for(int i : arr) {
 			System.out.print(i + " ");
 		}
-		System.out.print("\n");
-		
-		int[] arr1 = {2, 4, 2, 4, 1, 2, 3, 2, 1 , 2, 1, 3, 4, 3, 2, 1, 2, 3, 4};
-		rainbowSortFourColor(arr1);
-		for(int i : arr1) {
-			System.out.print(i + " ");
-		}
 	}
-// 3, 4, 3, 2, 1, 2, 3, 4
+	
+	public static void main(String[] args) {
+		
+		RainbowSort testObj = new RainbowSort();
+		
+		/* Test Case 0 */
+		System.out.println("---< Test Case 0 >---");
+		
+		/* Test Case 1 */
+		System.out.println("\n---< Test Case 1 >---");
+		
+		int[] arr1 =  {-1, 0, 1, 0, -1, 1, 0, -1, 0, 1, 1};
+		testObj.rainbowSort(arr1);
+		print(arr1);
+		
+		/* Test Case 2 */
+		System.out.println("\n---< Test Case 2 >---");
+		
+		int[] arr2 = {2, 4, 2, 4, 1, 2, 3, 2, 1 , 2, 1, 3, 4, 3, 2, 1, 2, 3, 4};
+		testObj.rainbowSortFourColor(arr2);
+		print(arr2);
+		
+		/* Test Case 3 */
+		System.out.println("\n---< Test Case 3 >---");
+		
+		int[] arr3 = {3, 4, 3, 2, 1, 2, 3, 4};
+		testObj.rainbowSortFourColor(arr3);
+		print(arr3);	
+		
+		/* Test Case 4 */
+		System.out.println("\n---< Test Case 4 >---");
+		
+		int[] arr4 = {3, 4, 3, 2, 1, 1, 1, 1};
+		testObj.rainbowSortFourColor(arr4);
+		print(arr4);	
+		
+		/* Test Case 5 */
+		System.out.println("\n---< Test Case 5 >---");
+		
+		int[] arr5 = {1, 3, 4, 2, 1, 2, 1, 2, 1};
+		testObj.rainbowSortFourColor(arr5);
+		print(arr5);	
+	}
 }
 

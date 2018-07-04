@@ -102,7 +102,6 @@ public class AllUniqueCharactersI {
 		System.out.println(result2C);
 		
 		/* Test Case 3 */
-		System.out.println("---< Test Case 3 >---");
-		
+		System.out.println("---< Test Case 3 >---");		
 	}
 }

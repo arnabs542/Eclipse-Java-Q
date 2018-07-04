@@ -26,6 +26,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Merge Sort (medium)](./src/sortingRelated/MergeSort.java)
    - [Quick Sort (medium)](./src/sortingRelated/QuickSort.java)
    - [Rainbow Sort (medium)](./src/sortingRelated/RainbowSort.java)   
+   - [Rainbow Sort II (medium+)](./src/sortingRelated/RainbowSort.java) 
 
 ### Binary Tree
    - [Height of Binary Tree (easy)](./src/binaryTreeRelated/GetHeight.java)
@@ -39,6 +40,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Get Keys In Binary Tree Layer By Layer](./src/binaryTreeRelated/GetKeysLayerByLayer.java)
 
 ### Binary Search Tree 
+   - [Is Binary Search Tree Or Not (medium)](./src/binaryTreeRelated/IsBinarySearchTree.java)
    - [Insert In Binary Search Tree (easy)](./src/binarySearchTreeRelated/InsertInBinarySearchTree.java)
    - [Search In Binary Search Tree (easy)](./src/binarySearchTreeRelated/SearchInBinarySearchTree.java)
    - [Delete In Binary Search Tree (medium)](./src/binarySearchTreeRelated/DeleteInBst.java)
@@ -89,4 +91,9 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Remove Adjacent Repeated Characters IV (hard)](./src/arrayRelated/RemoveAdjacentRepeatedCharactersIV.java)
 
 ### Bit manipulation
+   - [Power Of Two (easy)](./src/bitMinipulation/PowerOfTwo.java)
+   - [Number Of Different Bits (medium)](./src/bitMinipulation/NumberOfDifferentBits.java)
+   - [All Unique Characters I (easy+)](./src/bitMinipulation/AllUniqueCharactersI.java)
+   - [All Unique Characters II (medium)](./src/bitMinipulation/AllUniqueCharactersII.java)
+
 ### Dynamic Programming
