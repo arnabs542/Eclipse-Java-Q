@@ -18,26 +18,26 @@ package dynamicProgramming;
 
 public class LongestAscendingSubArray {
 	
-	public int longest(int[] array) {
-		if (array.length <= 1) {
-	      return array.length;
-	    }
-	    int result = 1;
-	    int[] memory = new int[array.length];
-	    memory[0] = 1;
-	    for (int i = 1; i < array.length; i++) {
-	      if (array[i] > array[i - 1]) {
-	        memory[i] = memory[i - 1] + 1;
-	        result = Math.max(result, memory[i]);
-	      } else {
-	        memory[i] = 1;
-	      }
-	    }
-	    return result;
-	  }
+	public int longest(int[] arr) {
+		if (arr.length <= 1) {
+			return arr.length;
+		}
+		int curMem = 1;
+		int result = 1;
+		for (int i = 1; i < arr.length; i++) {
+			if (arr[i] > arr[i - 1]) {
+				curMem++;
+				result = Math.max(result, curMem);
+			} else {
+				curMem = 1;
+			}			
+		}
+		return result;
+	}
+	
 
 	// Time Complexity: O(n);
-	// Space Complexity: O(n);
+	// Space Complexity: O(1); 
 	
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
