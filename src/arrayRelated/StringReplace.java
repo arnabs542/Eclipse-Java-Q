@@ -1,7 +1,7 @@
 /*
  * Created Date: July 4, 2018
  * 
- * Question - String Replace：
+ * Question - String Replace (hard)：
  *   Given an original string input, and two strings S and T, 
  *    replace all occurrences of S in input with T.
  *   

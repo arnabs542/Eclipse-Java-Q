@@ -89,6 +89,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Remove Certain Characters (easy)](./src/arrayRelated/RemoveCertainCharacters.java)
    - [Remove Adjacent Repeated Characters I (easy)](./src/arrayRelated/RemoveAdjacentRepeatedCharactersI.java)
    - [Remove Adjacent Repeated Characters IV (hard)](./src/arrayRelated/RemoveAdjacentRepeatedCharactersIV.java)
+   - [String Replace (hard)](./src/arrayRelated/StringReplace.java)
 
 ### Bit manipulation
    - [Power Of Two (easy)](./src/bitMinipulation/PowerOfTwo.java)
@@ -97,3 +98,4 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [All Unique Characters II (medium)](./src/bitMinipulation/AllUniqueCharactersII.java)
 
 ### Dynamic Programming
+   - [Longest Ascending SubArray (easy)](./src/dynamicProgramming/LongestAscendingSubArray.java)
