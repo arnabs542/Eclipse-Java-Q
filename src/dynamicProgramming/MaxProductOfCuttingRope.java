@@ -76,7 +76,7 @@ public class MaxProductOfCuttingRope {
 	 *   case 2: _ _ | _
 	 *     tempMax: max{2, M[2]} * max{1, M[1]} = 2
 	 *     
-	 *   M[3] = max{case1, case2} = max(2, 2) = 2
+	 *     M[3] = curMax = max{case1, case2} = max(2, 2) = 2
 	 * 
 	 * size = 4 ...
 	 * 
@@ -96,8 +96,7 @@ public class MaxProductOfCuttingRope {
 		}
 		return M[len];	
 	}
-	
-	
+		
 	/* -----< Method 3: DPB - big left and small right >----------
 	 * 
 	 * 
@@ -126,7 +125,9 @@ public class MaxProductOfCuttingRope {
 		System.out.println("---< Test Case 2 >---");
 		
 		int result2A = testObj.maxProductMeth1(5);
-		System.out.println(result2A); // expected: 81
+		int result2B = testObj.maxProductMeth2(5);
+		System.out.println(result2A); // expected: 6
+		System.out.println(result2B); // expected: 6
 		
 		/* Test Case 3 */
 		System.out.println("---< Test Case 3 >---");
