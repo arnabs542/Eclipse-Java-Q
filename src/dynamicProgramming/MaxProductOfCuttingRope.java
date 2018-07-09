@@ -14,6 +14,9 @@
  *  Examples
  *    n = 12, the max product is 3 3 3 3 = 81
  *     (cut the rope into 4 pieces with length of each is 3).
+ *     
+ * Updated:
+ *   July 8, 2018: Method 3
  * 
  */
 
@@ -58,7 +61,7 @@ public class MaxProductOfCuttingRope {
 	
 	/* -----< Method 2: DPA - big left and big right >----------
 	 * 
-	 * Time Complexity: O() 
+	 * Time Complexity: O(n^2) 
 	 * Space Complexity: O(n)
 	 * 
 	 * size = 1
@@ -66,7 +69,7 @@ public class MaxProductOfCuttingRope {
 	 * 
 	 * size = 2: 
 	 *   case:  _ | _       
-	 *     M[2] = max{1, M[1]} * max{1, M[1]} = 2
+	 *     M[2] = max{1, M[1]} * max{1, M[1]} = 1
 	 *       big left part , big right part
 	 *       
 	 * size = 3:
@@ -99,10 +102,57 @@ public class MaxProductOfCuttingRope {
 		
 	/* -----< Method 3: DPB - big left and small right >----------
 	 * 
+	 * size = 1
+	 *   M[1] = 0 (invalid)
 	 * 
-	 * 
-	 * 
+	 * size = 2: 
+	 *   case:   _ | _    
+	 *        M[1] * 1   
+	 *     M[2] = max{1, M[1]} * 1} = 1
+	 *       big left part , small right part
+	 *       
+	 * size = 3:
+	 *   case 1:   _ | _ _ 
+	 *          M[1] * 2
+	 *     tempMax: max{1, M[1]} * 2]} = 2
+	 *     
+	 *   case 2: _ _ | _
+	 *         M[2]} * 1
+	 *     tempMax: max{2, M[2]} * 1} = 2
+	 *     
+	 *     M[3] = curMax = max{case1, case2} = max(2, 2) = 2
+	 *     
+	 * size = 4:
+	 *   case 1: _ | _ _ _
+	 *     tempMax: max{1, M[1]} * 3} = 3
+	 *     
+	 *   case 2: _ _ | _ _
+	 *     tempMax: max{2, M[2]} * 2} = 4
+	 *     
+	 *   case 3: _ _ _ | _
+	 *     tempMax: max{3, M[3]} * 1} = 3
+	 *     
+	 *     M[4] = curMax = max{case 1, case 2, case 3} = max(3, 4, 3) = 4
+	 *     
+	 * size = 5:
+	 * ....
 	 */
+	
+	public int maxProductMeth3(int len) {
+		int[] M = new int[len + 1];
+		M[0] = 0;
+		M[1] = 0;
+		for (int i = 1; i <= len; i++) {
+			int curMax = 0;
+			for (int k = 1; k < i; k++) {
+				int tempMax = Math.max(k, M[k]) * (i - k);
+				curMax = Math.max(curMax, tempMax);
+			}
+			M[i] = curMax;
+		}
+		return M[len];	
+	}
+	
 	
 	
 	/* ----------------------< test stub >-------------------------*/
@@ -118,16 +168,20 @@ public class MaxProductOfCuttingRope {
 		
 		int result1A = testObj.maxProductMeth1(12);
 		int result1B = testObj.maxProductMeth2(12);
+		int result1C = testObj.maxProductMeth3(12);
 		System.out.println(result1A); // expected: 81
-		System.out.println(result1B); // expected: 81
+		System.out.println(result1B); 
+		System.out.println(result1C);
 		
 		/* Test Case 2 */
 		System.out.println("---< Test Case 2 >---");
 		
 		int result2A = testObj.maxProductMeth1(5);
 		int result2B = testObj.maxProductMeth2(5);
+		int result2C = testObj.maxProductMeth3(5);
 		System.out.println(result2A); // expected: 6
-		System.out.println(result2B); // expected: 6
+		System.out.println(result2B); 
+		System.out.println(result2C); 
 		
 		/* Test Case 3 */
 		System.out.println("---< Test Case 3 >---");
