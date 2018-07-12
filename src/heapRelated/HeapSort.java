@@ -70,8 +70,8 @@ public class HeapSort {
 	
 	/* ----------------------< test stub >-------------------------*/
 	
-	// Time Complexity: O(?);
-	// Space Complexity: O(?);
+	// Time Complexity: O(nlogn);
+	// Space Complexity: O(1);
 	
 	private static void printArr(int[] arr) {
 		if(arr == null) {

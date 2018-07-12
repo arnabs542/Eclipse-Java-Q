@@ -3,6 +3,9 @@
  * 
  * Question - Heapify:
  *   Heapify an unsorted array to min heap.
+ *   
+ * Updated:
+ *   July 10, 2018: Review
  * 
  */
 
@@ -55,6 +58,11 @@ public class Heapify {
 		arr[b] = temp;
 	}
 	
+	// Time Complexity: O(n);
+	// Space Complexity: O(1);
+	
+	/* ----------------------< test stub >-------------------------*/
+	
 	private static void printArr(int[] arr) {
 		if(arr == null) {
 			System.out.println("null");
@@ -64,11 +72,6 @@ public class Heapify {
 		}
 		System.out.println("\n");
 	}
-	
-	// Time Complexity: O(?);
-	// Space Complexity: O(?);
-	
-	/* ----------------------< test stub >-------------------------*/
 	
 	public static void main(String[] args) {
 		

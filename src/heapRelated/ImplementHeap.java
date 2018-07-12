@@ -162,9 +162,7 @@ public class ImplementHeap {
 		System.out.println("size: " + heap1.size());
 		
 		/* Test Case 3 */
-		System.out.println("\n ---< Test Case 3 >---");
-
-		
+		System.out.println("\n ---< Test Case 3 >---");		
 	}
 	
 }

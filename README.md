@@ -101,3 +101,4 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Longest Ascending SubArray (easy)](./src/dynamicProgramming/LongestAscendingSubArray.java)
    - [Max Product Of Cutting Rope (medium+)](./src/dynamicProgramming/MaxProductOfCuttingRope.java)
    - [Dictionary Word I (medium+)](./src/dynamicProgramming/DictionaryWordI.java)
+   - [Array Hopper I (medium)](./src/dynamicProgramming/ArrayHopperI.java)
