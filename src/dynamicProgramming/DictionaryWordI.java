@@ -16,7 +16,7 @@
  * 
  */
 
-package practiceContent;
+package dynamicProgramming;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -48,8 +48,8 @@ public class DictionaryWordI {
 		return M[size];
 	}
 	
-	// Time Complexity: O(?);
-	// Space Complexity: O(?);
+	// Time Complexity: O(n^3)  // two nested loop * substring() -- O(n)
+	// Space Complexity: O(n);
 	
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
