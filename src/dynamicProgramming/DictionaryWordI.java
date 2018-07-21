@@ -63,6 +63,7 @@ public class DictionaryWordI {
 		System.out.println(testString.substring(0, 1)); // not "01", but "0"!!!, 
 		  //the second parameter is the size of substring, not end index
 		System.out.println(testString.substring(0, 3));
+		System.out.println(testString.substring(1));// "123456"
 		
 		/* Test Case 1 */
 		System.out.println("---< Test Case 1 >---");

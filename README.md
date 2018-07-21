@@ -104,3 +104,4 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Max Product Of Cutting Rope (medium+)](./src/dynamicProgramming/MaxProductOfCuttingRope.java)
    - [Dictionary Word I (medium+)](./src/dynamicProgramming/DictionaryWordI.java)
    - [Array Hopper I (medium)](./src/dynamicProgramming/ArrayHopperI.java)
+   - [Array Hopper II (medium)](./src/dynamicProgramming/ArrayHopperII.java)
