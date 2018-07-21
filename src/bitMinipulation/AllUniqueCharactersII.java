@@ -10,7 +10,8 @@
  *   "abA+\a88" contains duplicate characters
  *   
  * Updated:
- *  Need to Review as soon as possible!!!
+ *  July 21, 2018: Review
+ *  Need to Review Again as soon as possible!!!
  * 
  */
 
@@ -29,7 +30,7 @@ public class AllUniqueCharactersII {
 	
 	public boolean allUnique(String word) {
 		char[] input = word.toCharArray();
-		int[] vec = new int[8];
+		int[] vec = new int[8]; // use 8 * 32 bits to represent 256 ASCII characters
 		for (char c : input) {  
 			int row = c / 32;
 			int col = c % 32;

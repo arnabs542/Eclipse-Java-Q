@@ -97,6 +97,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Number Of Different Bits (medium)](./src/bitMinipulation/NumberOfDifferentBits.java)
    - [All Unique Characters I (easy+)](./src/bitMinipulation/AllUniqueCharactersI.java)
    - [All Unique Characters II (medium)](./src/bitMinipulation/AllUniqueCharactersII.java)
+   - [Hexadecimal Representation (easy+)](./src/bitMinipulation/HexadecimalRepresentation.java)
 
 ### Dynamic Programming
    - [Longest Ascending SubArray (easy)](./src/dynamicProgramming/LongestAscendingSubArray.java)
