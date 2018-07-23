@@ -63,6 +63,7 @@ Progress of practicing data structures, algorithms and job interview questions.
 ### Recursion
    - RecursionPower-20180514.java : Calculate power using recursion
    - Fibonacci-20180514.java
+   - [N Queens (medium)](./src/dfsRelated/Nqueens.java)
    
 ### Graph & BFS 
    - [Bipartite (medium)](./src/bfsRelated/Bipartite.java)
