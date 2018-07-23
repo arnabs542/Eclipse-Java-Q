@@ -23,7 +23,15 @@ public class MainClass {
 		System.out.println(si1);
 		System.out.println(si2);
 		
-	}	    	 
+		String str = "abb";
+		StringBuilder sb = new StringBuilder(str);
+		System.out.println(sb.toString());
+		
+		String rev = sb.reverse().toString();
+		System.out.println(rev);
+		
+		System.out.println(str.equals(rev));
+	}	    	 	
 }
 
 //int lenOfString = string.length();
