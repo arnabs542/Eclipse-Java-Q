@@ -92,6 +92,9 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Remove Adjacent Repeated Characters IV (hard)](./src/arrayRelated/RemoveAdjacentRepeatedCharactersIV.java)
    - [String Replace (hard)](./src/arrayRelated/StringReplace.java)
    - [Longest Substring Without Repeating Characters (medium)](./src/arrayRelated/LongestSubstringWithoutRepeatingChar.java)
+   - [Array Deduplication I](./src/arrayRelated/ArrayDeduplicationI.java)
+   - [Array Deduplication II](./src/arrayRelated/ArrayDeduplicationII.java)
+   - [Array Deduplication III](./src/arrayRelated/ArrayDeduplicationIII.java)
 
 ### Bit manipulation
    - [Power Of Two (easy)](./src/bitMinipulation/PowerOfTwo.java)
