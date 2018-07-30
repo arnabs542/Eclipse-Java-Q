@@ -33,22 +33,38 @@ public class SpiralOrderGenerateII {
 		if (rowRem <= 0 || colRem <= 0) {
 			return;
 		}
+		
 		int rowEnd = matrix.length - 1;
 		int colEnd = matrix[0].length - 1;
 		
+		if (matrix[0].length == 1) { // corner case, such as spiralGenerate(3, 1);
+			for (int i = 0; i <= rowEnd; i++) {
+				matrix[i][0] = num++;
+			}
+			return;
+		} 
+		
+		// up row 
 		for (int i = offset; i < colEnd - offset; i++) {
 			matrix[offset][i] = num++;
 		}
-		
-		for (int i = offset; i < rowEnd - offset; i++) {
-			matrix[i][colEnd - offset] = num++;
+			
+		// right column
+		if (matrix.length == 1) { // corner case, such as spiralGenerate(1, 3);
+			matrix[0][colEnd] = num++;
+		} else {
+			for (int i = offset; i < rowEnd - offset && matrix[0].length > 1; i++) {
+				matrix[i][colEnd - offset] = num++;
+			}			
 		}
-		
-		for (int i = colEnd - offset; i > offset; i--) {
+
+		// bottom row
+		for (int i = colEnd - offset; i > offset && matrix.length > 1; i--) {
 			matrix[rowEnd - offset][i] = num++;
 		}
 		
-		for (int i = rowEnd - offset; i > offset; i--) {
+		// left column		
+		for (int i = rowEnd - offset; i > offset && matrix[0].length > 1 ; i--) {
 			matrix[i][offset] = num++;
 		}
 		
@@ -62,10 +78,11 @@ public class SpiralOrderGenerateII {
 		
 		/* Test Case 0 */
 		System.out.println("---< Test Case 0 >---");
+		testObj.spiralGenerate(3, 1);
 		
 		/* Test Case 1 */
 		System.out.println("---< Test Case 1 >---");
-		testObj.spiralGenerate(3, 4);
+		testObj.spiralGenerate(1, 3);
 		
 		/* Test Case 2 */
 		System.out.println("---< Test Case 2 >---");
@@ -73,6 +90,6 @@ public class SpiralOrderGenerateII {
 		
 		/* Test Case 3 */
 		System.out.println("---< Test Case 3 >---");	
-		testObj.spiralGenerate(1, 3);
+		testObj.spiralGenerate(2, 6);
 	}
 }
