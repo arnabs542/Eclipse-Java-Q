@@ -23,6 +23,9 @@
  *                     the Queen on the second row is at y index 0, 
  *                     the Queen on the third row is at y index 3 
  *                     and the Queen on the fourth row is at y index 1.
+ *                     
+ * Updated:
+ *   July 30, 2018: Review                
  * 
  */
 
@@ -44,6 +47,7 @@ public class Nqueens {
 				System.out.print(item + " ");
 			}
 			System.out.print("\n");
+			return;
 		}
 		// for the current row, check if any column can be used to place a queen 
 		for (int col = 0; col < n; col++) {
@@ -83,6 +87,7 @@ public class Nqueens {
 		
 		/* Test Case 2 */
 		System.out.println("---< Test Case 2 >---");
+		testObj.Nqueens(8); 
 		
 		/* Test Case 3 */
 		System.out.println("---< Test Case 3 >---");
