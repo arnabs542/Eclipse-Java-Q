@@ -11,6 +11,7 @@
  *     
  *  Updated: 
  *    July 6, 2018: So many conditions!!!! 
+ *    July 31, 2018: Finish this problem by yourself next time!!!
  * 
  */
 
@@ -29,12 +30,12 @@ public class StringReplace {
 			return replaceLonger(in, origin, succ);
 		}
 	}
-
+	
 	private String replaceShorter(char[] in, String origin, String succ) {
 		int fast = 0; 
 		int slow = 0;
 		while (fast < in.length) {
-			if (fast <= in.length - origin.length() && find (in, fast, origin)) {
+			if (fast <= in.length - origin.length() && find(in, fast, origin)) {
 				copy(in, slow, succ);
 				slow += succ.length();
 				fast += origin.length();

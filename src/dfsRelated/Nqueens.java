@@ -90,8 +90,6 @@ public class Nqueens {
 		testObj.Nqueens(8); 
 		
 		/* Test Case 3 */
-		System.out.println("---< Test Case 3 >---");
-		
+		System.out.println("---< Test Case 3 >---");		
 	}
-
 }

@@ -6,7 +6,7 @@
  *   
  * Updated:
  *   July 10, 2018: Review
- * 
+ *   July 31, 2018: Forgot a lot of details already
  */
 
 package heapRelated;
@@ -21,7 +21,7 @@ public class Heapify {
 		}
 		this.arr = arr;
 				
-		int start = arr.length / 2 - 1; // start is assigned the index of the last parent node
+		int start = arr.length / 2 - 1; // start with the last parent node
 		while (start >= 0) {
 			sink(start); // sift down the node to the proper place such that all nodes below are in heap order
 			start--; // go to the next parent node
