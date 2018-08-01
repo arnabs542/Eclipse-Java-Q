@@ -2,11 +2,15 @@
  * Created Date: June 15, 2018
  * 
  * Question - K Smallest In Unsorted Array:
- *   Find the K smallest numbers in an unsorted integer array A. The returned numbers should be in ascending order.  
+ *   Find the K smallest numbers in an unsorted integer array A. 
+ *   The returned numbers should be in ascending order.  
  *   
  *   Example: 
  *     A = {3, 4, 1, 2, 5}, K = 3, the 3 smallest numbers are {1, 2, 3}
  * 
+ * Updated:
+ *   August 1, 2018: Review
+ *
  */
 
 package heapRelated;
@@ -27,12 +31,12 @@ public class KSmallestInUnsortedArray {
 			return new int[0];
 		}
 		
-		/* new a max heap */
+		// Three ways to create a max heap, begin:
 	    
-	    // Syntax 1: Use Collections
-//	     PriorityQueue<Integer> maxHeap = new PriorityQueue<>(k, Collections.reverseOrder());
-	    
-		// Syntax 2: Override Comparator
+	    /*--- < Syntax 1: Use Collections >---*/	
+		PriorityQueue<Integer> maxHeap1 = new PriorityQueue<>(k, Collections.reverseOrder());    
+		
+		/*--- < Syntax 2: Override Comparator >---*/	
 		class ReverseComparator implements Comparator<Integer> {
 			@Override
 			public int compare(Integer o1, Integer o2) {
@@ -41,36 +45,36 @@ public class KSmallestInUnsortedArray {
 				} 
 				return o1 > o2 ? -1: 1;
 			}
-		}
+		}	
+		PriorityQueue<Integer> maxHeap2 = new PriorityQueue<>(k, new ReverseComparator());
 		
-		PriorityQueue<Integer> maxHeap = new PriorityQueue<>(k, new ReverseComparator());
-		
-	    // Syntax 3: Lambda
-//		PriorityQueue<Integer> maxHeap = new PriorityQueue<>(k, new Comparator<Integer>() {
-//			@Override
-//			public int compare(Integer o1, Integer o2) {
-//				if (o1.equals(o2)) { // or o1.intValue() == o2.intValue(); cannot use o1 == o2
-//					return 0;
-//				}
-//				return o1 > o2 ? -1 : 1;
-//				// return -1 : o1 has higher priority
-//			}
-//		});
-		
+		/*--- < Syntax 3: Lambda	 >---*/		
+	   PriorityQueue<Integer> maxHeap3 = new PriorityQueue<>(k, new Comparator<Integer>() {
+	       @Override
+	       public int compare(Integer o1, Integer o2) {
+	         if (o1.equals(o2)) { // or o1.intValue() == o2.intValue(); cannot use o1 == o2
+			     return 0;
+		     }
+		     return o1 > o2 ? -1 : 1; // return -1 means o1 has higher priority
+		   }
+		});		  
+	   
+	    // Three ways to create a max heap, end
+
 		for (int i = 0; i < arr.length; i++) {
 			if (i < k) { // offer k elements to build a max heap of k size
-			    maxHeap.offer(arr[i]);
+			    maxHeap2.offer(arr[i]);
 			} else { // compare the rest of the element with the top of the heap
-				if (arr[i] <= maxHeap.peek()) {
-					maxHeap.poll();
-					maxHeap.offer(arr[i]);
+				if (arr[i] <= maxHeap2.peek()) {
+					maxHeap2.poll();
+					maxHeap2.offer(arr[i]);
 				}
 			}
 		}
 		
 		int[] result = new int[k];
 		for (int i = k - 1; i >= 0; i--) {
-			result[i] = maxHeap.poll();
+			result[i] = maxHeap2.poll();
 		}
 		return result;
 	}
@@ -102,7 +106,7 @@ public class KSmallestInUnsortedArray {
 		
 		int[] arr1 = {3, 4, 1, 2, 5};
 		arr1 = testObj.kSmallest(arr1, 3);		
-		printArr(arr1);
+		printArr(arr1); // expected: 1 2 3
 		
 		/* Test Case 2 */
 		System.out.println("---< Test Case 2 >---");
