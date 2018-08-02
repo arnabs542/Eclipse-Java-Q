@@ -22,7 +22,7 @@ public class ReverseWordsInASentenceI {
 		char[] in = input.toCharArray();
 		reverse(in, 0, in.length - 1);
 		int cur = 0;
-		while(cur < in.length){
+		while (cur < in.length) {
 			int left = cur;
 			while (cur < in.length && in[cur] != ' ') {
 				cur++;
