@@ -10,7 +10,9 @@
  *      { {1,  2,  3,  4}
  *        {10, 11, 12, 5},
  *        {9,  8,  7,  6} }
- * 
+ *  
+ *  Updated:
+ *    August 4, 2018: Review
  */
 
 package arrayRelated;
@@ -35,10 +37,15 @@ public class SpiralOrderGenerateII {
 		}
 		
 		int rowEnd = matrix.length - 1;
-		int colEnd = matrix[0].length - 1;
+		int colEnd = matrix[0].length - 1;	
 		
-		if (matrix[0].length == 1) { // corner case, such as spiralGenerate(3, 1);
-			for (int i = 0; i <= rowEnd; i++) {
+		if (rowRem == 1) { // corner case, such as spiralGenerate(1, 3);
+			for (int i = offset; i <= colEnd - offset; i++) {
+				matrix[offset][i] = num++;
+			}
+			return;
+		} else if (colRem == 1) { // corner case, such as spiralGenerate(3, 1);
+			for (int i = offset; i <= rowEnd - offset; i++) {
 				matrix[i][0] = num++;
 			}
 			return;
@@ -50,21 +57,17 @@ public class SpiralOrderGenerateII {
 		}
 			
 		// right column
-		if (matrix.length == 1) { // corner case, such as spiralGenerate(1, 3);
-			matrix[0][colEnd] = num++;
-		} else {
-			for (int i = offset; i < rowEnd - offset && matrix[0].length > 1; i++) {
-				matrix[i][colEnd - offset] = num++;
-			}			
+		for (int i = offset; i < rowEnd - offset; i++) {
+			matrix[i][colEnd - offset] = num++;
 		}
 
 		// bottom row
-		for (int i = colEnd - offset; i > offset && matrix.length > 1; i--) {
+		for (int i = colEnd - offset; i > offset; i--) {
 			matrix[rowEnd - offset][i] = num++;
 		}
 		
 		// left column		
-		for (int i = rowEnd - offset; i > offset && matrix[0].length > 1 ; i--) {
+		for (int i = rowEnd - offset; i > offset; i--) {
 			matrix[i][offset] = num++;
 		}
 		
@@ -76,20 +79,19 @@ public class SpiralOrderGenerateII {
 		
 		SpiralOrderGenerateII testObj = new SpiralOrderGenerateII();
 		
-		/* Test Case 0 */
-		System.out.println("---< Test Case 0 >---");
+		/* Test Case 0 */ System.out.println("---< Test Case 0 >---");
 		testObj.spiralGenerate(3, 1);
 		
-		/* Test Case 1 */
-		System.out.println("---< Test Case 1 >---");
+		/* Test Case 1 */ System.out.println("---< Test Case 1 >---");
 		testObj.spiralGenerate(1, 3);
 		
-		/* Test Case 2 */
-		System.out.println("---< Test Case 2 >---");
+		/* Test Case 2 */ System.out.println("---< Test Case 2 >---");
 		testObj.spiralGenerate(3, 2);
 		
-		/* Test Case 3 */
-		System.out.println("---< Test Case 3 >---");	
-		testObj.spiralGenerate(2, 6);
+		/* Test Case 3 */ System.out.println("---< Test Case 3 >---");	
+		testObj.spiralGenerate(3, 5);
+		
+		/* Test Case 4 */ System.out.println("---< Test Case 4 >---");	
+		testObj.spiralGenerate(3, 3);
 	}
 }

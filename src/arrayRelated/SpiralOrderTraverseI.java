@@ -54,4 +54,31 @@ public class SpiralOrderTraverseI {
 		
 		helper(m, size - 2, offset + 1, res);
 	}
+	
+	/* ----------------------< test stub >-------------------------*/
+	public static void main(String[] args) {
+		
+		SpiralOrderTraverseI testObj = new SpiralOrderTraverseI();
+		
+		/* Test Case 0 */
+		System.out.println("---< Test Case 0 >---");
+		
+		/* Test Case 1 */
+		System.out.println("---< Test Case 1 >---");
+		
+		int[][] m1 = {{1,2,3}, {4,5,6}, {7,8,9}};
+		
+		List<Integer> l1 = testObj.spiral(m1);
+		
+		for(int item : l1) {
+			System.out.print(item + " ");
+		} // expected: 1, 2, 3, 6, 9, 8, 7, 4, 5
+		
+		/* Test Case 2 */
+		System.out.println("\n---< Test Case 2 >---");
+		
+		/* Test Case 3 */
+		System.out.println("---< Test Case 3 >---");
+		
+	}
 }
