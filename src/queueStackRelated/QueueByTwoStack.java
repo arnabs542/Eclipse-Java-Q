@@ -8,6 +8,9 @@
  * Updated: 
  *   June 1, 2018: Time Complexity Analysis
  *   June 30, 2018: Review
+ *   August 5, 2018: Review. 
+ *     Mistakes: 1. Deque<Integer> inStack = new ArrayList<>();
+ *     Mistakes: 2. Deque don't have function top(), only peek()
  * 
  */
 
@@ -67,7 +70,7 @@ public class QueueByTwoStack {
 	
 	public Integer peek() {	
 		move();
-		return outStack.isEmpty()? null : outStack.peek();
+		return outStack.isEmpty()? null : outStack.peek(); 
 	}
 	
 	private void move() {

@@ -38,6 +38,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Symmetric Binary Tree (easy)](./src/binaryTreeRelated/IsSymmetric.java)
    - [Get Keys In Binary Search Tree In Given Range (easy)](./src/binaryTreeRelated/GetKeysInGivenRange.java)
    - [Get Keys In Binary Tree Layer By Layer](./src/binaryTreeRelated/GetKeysLayerByLayer.java)
+   - [Lowest Common Ancestor I (medium)](./src/binaryTreeRelated/LowestCommonAncestorI.java)
 
 ### Binary Search Tree 
    - [Is Binary Search Tree Or Not (medium)](./src/binaryTreeRelated/IsBinarySearchTree.java)

@@ -2,6 +2,7 @@
  * Created Date: May 24, 2018
  * 
  * Question - Height of Binary Tree:
+ *   Find the height of binary tree.
  * 
  */
 

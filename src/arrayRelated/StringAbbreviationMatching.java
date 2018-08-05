@@ -126,6 +126,10 @@ public class StringAbbreviationMatching {
 		System.out.println("---< Test Case 3 >---");
 		
 		System.out.println(testObj.matchIterative("", "b2k"));  // expected: false
-		System.out.println(testObj.matchIterative("book", ""));  // expected: false		
+		System.out.println(testObj.matchIterative("book", ""));  // expected: false	
+		System.out.println(testObj.match("", "b2k"));  // expected: false
+		
+		System.out.println(testObj.match("a", "01"));  // expected: false
+		System.out.println(testObj.matchIterative("a", "01"));  // expected: false	
 	}
 }
