@@ -39,7 +39,7 @@ public class SpiralOrderGenerateII {
 		int rowEnd = matrix.length - 1;
 		int colEnd = matrix[0].length - 1;	
 		
-		if (rowRem == 1) { // corner case, such as spiralGenerate(1, 3);
+		if (rowRem == 1) { // corner case, such as spiralGenerate(1, 3); or only one row remains
 			for (int i = offset; i <= colEnd - offset; i++) {
 				matrix[offset][i] = num++;
 			}

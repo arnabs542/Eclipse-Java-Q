@@ -41,8 +41,8 @@ public class ReverseWordsInASentenceI {
 		}
 	}
 	
-	// Time Complexity: O(?);
-	// Space Complexity: O(?);
+	// Time Complexity: O(n);
+	// Space Complexity: O(n);
 	
 	/* ----------------------< test stub >-------------------------*/
 	public static void print(char[] in) {

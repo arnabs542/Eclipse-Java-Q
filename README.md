@@ -97,8 +97,12 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Array Deduplication II](./src/arrayRelated/ArrayDeduplicationII.java)
    - [Array Deduplication III](./src/arrayRelated/ArrayDeduplicationIII.java)
    - [Spiral Order Generate I (medium)](./src/arrayRelated/SpiralOrderGenerateII.java)
-   - [Spiral Order Generate II (medium)](./src/arrayRelated/SpiralOrderGenerateI.java)
+   - [Spiral Order Generate II (medium+)](./src/arrayRelated/SpiralOrderGenerateI.java)
    - [Spiral Order Traverse I (medium)](./src/arrayRelated/SpiralOrderTraverseI.java)
+   - [Spiral Order Traverse II (medium+)](./src/arrayRelated/SpiralOrderTraverseII.java)
+   - [Reverse String Using Recursion (easy+)](./src/arrayRelated/ReverseStringUsingRecursion.java)
+   - [Reverse Words In A Sentence I (medium)](./src/arrayRelated/ReverseWordsInASentenceI.java)
+   - [String Abbreviation Matching (medium)](./src/arrayRelated/StringAbbreviationMatching.java)
 
 ### Bit manipulation
    - [Power Of Two (easy)](./src/bitMinipulation/PowerOfTwo.java)
