@@ -27,6 +27,8 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Quick Sort (medium)](./src/sortingRelated/QuickSort.java)
    - [Rainbow Sort (medium)](./src/sortingRelated/RainbowSort.java)   
    - [Rainbow Sort II (medium+)](./src/sortingRelated/RainbowSort.java) 
+   - [Largest And Smallest (medium)](./src/sortingRelated/LargestAndSmallest.java)
+   - [Tournament Sort / Largest And Second Largest (medium)](./src/sortingRelated/LargestAndSecondLargest.java)
 
 ### Binary Tree
    - [Height of Binary Tree (easy)](./src/binaryTreeRelated/GetHeight.java)

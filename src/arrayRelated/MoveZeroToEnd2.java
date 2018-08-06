@@ -17,23 +17,19 @@ package arrayRelated;
 
 public class MoveZeroToEnd2 {
 	
-	public static void moveZero(int[] arr) {
-		
+	public static void moveZero(int[] arr) {	
 		if (arr == null) {
 			return;
-		}
-		
+		}	
 		int end = 0;
-		int curr = 0;
-		
+		int curr = 0;		
 		while (curr < arr.length) {
 			if (arr[curr] != 0) {
 				arr[end] = arr[curr];	
 				end++;
 			} 
 			curr++;		
-		}	
-		
+		}			
 		for (int i = end; i < arr.length; i++) {
 			arr[i] = 0;
 		}

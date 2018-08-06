@@ -31,7 +31,7 @@ public class MoveZeroToEnd1 {
 	    int left = 0;
 	    int right = arr.length - 1;	    
 	    while (left <= right) {
-	    		if(arr[left] == 0) {	    			
+	    		if (arr[left] == 0) {	    			
 	    			arr[left] = arr[right];
 	    			arr[right] = 0;
 	    			right--;
