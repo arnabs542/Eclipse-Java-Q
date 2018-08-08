@@ -10,8 +10,7 @@ package myLinkedList;
 public class RandomListNode {
 	
 	int value;
-	ListNode next = null;
-	
+	public RandomListNode next;
 	public RandomListNode random; 
 	
 	public RandomListNode(int v) {

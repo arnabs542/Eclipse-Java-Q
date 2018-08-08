@@ -87,6 +87,8 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Common Numbers Of Two Sorted Array (easy)](./src/hashTableRelated/CommonNumOfTwoSortedArr.java)
    - [Top K Frequent Words (medium)](./src/hashTableRelated/TopKFrequentWords.java)
    - [Kth Smallest Sum In Two Sorted Arrays (hard)](./src/hashTableRelated/KthSmallestSumInTwoSortedArrays.java)
+   - [Deep Copy LinkedList With Random Pointer (medium)](./src/myLinkedList/DeepCopyLinkedListWithRandomPointer.java)
+   - [Deep Copy Undirected Graph (medium)](./src/hashTableRelated/DeepCopyUndirectedGraph.java)
   
 ### String & Array 
    - [Move 0s To The End I (easy)](./src/arrayRelated/MoveZeroToEnd1.java)
