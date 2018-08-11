@@ -41,6 +41,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Get Keys In Binary Search Tree In Given Range (easy)](./src/binaryTreeRelated/GetKeysInGivenRange.java)
    - [Get Keys In Binary Tree Layer By Layer](./src/binaryTreeRelated/GetKeysLayerByLayer.java)
    - [Lowest Common Ancestor I (medium)](./src/binaryTreeRelated/LowestCommonAncestorI.java)
+   - [Lowest Common Ancestor With Parent Node (medium)](./src/binaryTreeRelated/LowestCommonAncestorWithParentNode.java)
    - [Maximum Path Sum Binary Tree I (medium)](./src/binaryTreeRelated/MaximumPathSumBinaryTreeI.java)
 
 ### Binary Search Tree 
