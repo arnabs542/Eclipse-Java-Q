@@ -28,7 +28,7 @@ public class LowestCommonAncestorI {
 			return null;
 		}
 		if (root == one || root == two) {
-			return one;
+			return root;
 		}
 		
 	    // step1: 
@@ -38,9 +38,8 @@ public class LowestCommonAncestorI {
 	    // step2 + step 3
 	    if (left != null && right != null) {
 	      return root;
-	    } else {
-	      return left == null ? right : left;
-	    }	
+	    } 
+	    return left == null ? right : left;
 	}
 
 }
