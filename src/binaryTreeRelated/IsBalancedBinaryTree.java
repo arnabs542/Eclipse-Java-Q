@@ -10,6 +10,7 @@
  *   
  * Updated: 
  *   June 15, 2018: Review
+ *   August 13, 2018: Review, Strengthen_3 
  * 
  */
 
@@ -32,11 +33,18 @@ public class IsBalancedBinaryTree {
 		if (root == null) {
 			return 0;
 		}	
+		
+		// step 1: what do you expect from left or right child
 		int leftHeight = helper(root.left);
-		int rightHeight = helper(root.right);	
+		int rightHeight = helper(root.right); 
+		
+		// step 2: what do you want to do in the current layer
+		// post-order traversal
 		if (leftHeight == -1 || rightHeight == -1 || Math.abs(leftHeight - rightHeight) > 1) {
 			return -1;
-		} // post-order traversal
+		} 
+		
+		// step 3: what do you report to your parent (should be same as step 1)
 		return Math.max(leftHeight, rightHeight) + 1;
 	}
 	// Mistake: didn't consider all possible situation: Math.abs(leftHeight - rightHeight) > 1!!!!!

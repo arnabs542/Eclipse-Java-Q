@@ -1,7 +1,7 @@
 /*
  * Created Date: August 7, 2018
  * 
- * Question - Maximum Path Sum Binary Tree I (medium):
+ * Question - Maximum Path Sum Binary Tree I, from leaf node to leaf node (medium):
  *   Given a binary tree in which each node contains an integer number. 
  *   Find the maximum possible sum from one leaf node to another leaf node. 
  *   If there is no such path available, return Integer.MIN_VALUE(Java)/INT_MIN (C++).
@@ -31,7 +31,7 @@ public class MaximumPathSumBinaryTreeI {
 		if (root == null) {
 			return 0;
 		}
-		
+
 		int left = helper(root.left, max);
 		int right = helper(root.right, max);
 		
