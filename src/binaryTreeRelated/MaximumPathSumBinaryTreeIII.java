@@ -1,7 +1,7 @@
 /*
  * Created Date: August 13, 2018
  * 
- * Question - Maximum Path Sum Binary Tree III, from leaf node to root:
+ * Question - Maximum Path Sum Binary Tree III, subpath from leaf node to root:
  *   Given a binary tree in which each node contains an integer number. 
  *   Find the maximum possible subpath sum
  *   (both the starting and ending node of the subpath should be 
@@ -23,15 +23,20 @@
 
 package binaryTreeRelated;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MaximumPathSumBinaryTreeIII {
-	public int maxPathSum(TreeNode root) {
+	
+	// ------------ all paths from leaf to root -----------
+	public int maxPathSum1(TreeNode root) {
 		int[] globalMax = new int[] {Integer.MIN_VALUE};
 		int SumPrefix = 0;
-		helper(root, SumPrefix, globalMax);
+		helper1(root, SumPrefix, globalMax);
 		return globalMax[0];
 	}
 	
-	private void helper(TreeNode root, int SumPrefix, int[]globalMax) {
+	private void helper1(TreeNode root, int SumPrefix, int[]globalMax) {
 		if (root == null) {
 			return;
 		}
@@ -40,29 +45,81 @@ public class MaximumPathSumBinaryTreeIII {
 			globalMax[0] = Math.max(globalMax[0], SumPrefix);
 		}
 		
-		helper(root.left, SumPrefix, globalMax);
-		helper(root.right, SumPrefix, globalMax);	
+		helper1(root.left, SumPrefix, globalMax);
+		helper1(root.right, SumPrefix, globalMax);	
 	}
 	
-	// -----------------------------
-	public int maxPath(TreeNode root) {
-
-		return maxPath(root, 0);
+	
+	// ------------------------------------------------
+	public int maxPathSum(TreeNode root) {
+		int[] globalMax = new int[] {Integer.MIN_VALUE};		
+		List<Integer> prefix = new ArrayList<>();				
+		helper(root, prefix, globalMax);
+		return globalMax[0];
 	}
 	
-	private int maxPath(TreeNode root, int SumPrefix) {
+	private void helper(TreeNode root, List<Integer> prefix, int[]globalMax) {
 		if (root == null) {
-			return 0;
+			prefix.add(null);
+			return;
 		}
-		SumPrefix += root.value;
-		if (root.left == null && root.right == null) {
-			return SumPrefix;
-		} else if (root.left == null) {
-			return SumPrefix + maxPath(root.right, SumPrefix);
-		} else if (root.right == null) {
-			return SumPrefix + maxPath(root.left, SumPrefix);
+		
+		prefix.add(root.value);
+		int prefixSum = 0;
+		for (int i = prefix.size() - 1; i >= 0; i--) {
+			prefixSum += prefix.get(i);
+			globalMax[0] = Math.max(globalMax[0], prefixSum);			
 		}
+			
+		helper(root.left, prefix, globalMax);
+		prefix.remove(prefix.size() - 1);
+		
+		helper(root.right, prefix, globalMax);
+		prefix.remove(prefix.size() - 1);
+	}
 	
-		return Math.max(maxPath(root.right, SumPrefix), maxPath(root.left, SumPrefix));
+	// Time Complexity: O(n * height), worst case = O(n ^ 2)
+	//   pre-order traverse all the nodes --- O(n);
+	//   every time check prefix -- O(height)
+	
+	// Space Complexity: O(height);
+	
+	/* ----------------------< test stub >-------------------------*/
+	public static void main(String[] args) {
+		
+		MaximumPathSumBinaryTreeIII testObj = new MaximumPathSumBinaryTreeIII();
+		
+		/* Test Case 0 */
+		System.out.println("---< Test Case 0 >---");
+		
+		/* Test Case 1 */
+		System.out.println("---< Test Case 1 >---");
+		
+		TreeNode root1 = new TreeNode(6);
+		root1.left = new TreeNode(-2);
+		root1.right = new TreeNode(-6);
+		
+		root1.left.left = new TreeNode(-3);
+		root1.left.right = new TreeNode(4);
+		
+		root1.left.left.left = new TreeNode(5);
+		root1.left.right.left = new TreeNode(-5);
+		
+		//		     6
+		//	      /     \
+		//	    -2      -6
+		//	  /    \
+		//  -3      4   
+		//  /      /
+		// 5      -5
+				
+		int result1 = testObj.maxPathSum(root1);
+		System.out.println(result1);
+		
+		/* Test Case 2 */
+		System.out.println("---< Test Case 2 >---");
+		
+		/* Test Case 3 */
+		System.out.println("---< Test Case 3 >---");		
 	}
 }

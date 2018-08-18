@@ -45,6 +45,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Lowest Common Ancestor With Parent Node (medium)](./src/binaryTreeRelated/LowestCommonAncestorWithParentNode.java)
    - [Maximum Path Sum Binary Tree I, from leaf node to leat node (medium)](./src/binaryTreeRelated/MaximumPathSumBinaryTreeI.java)
    - [Maximum Path Sum Binary Tree II, from any node to any node (medium)](./src/binaryTreeRelated/MaximumPathSumBinaryTreeII.java)
+   - [Maximum Path Sum Binary Tree III, subpath from leaf node to root (medium+)](./src/binaryTreeRelated/MaximumPathSumBinaryTreeIII.java)
 
 ### Binary Search Tree 
    - [Is Binary Search Tree Or Not (medium)](./src/binaryTreeRelated/IsBinarySearchTree.java)

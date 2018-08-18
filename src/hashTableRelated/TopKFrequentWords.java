@@ -43,7 +43,8 @@ public class TopKFrequentWords {
 				return e1.getValue().compareTo(e2.getValue());
 			}
 		}
-		// line above has to be under class MapComparator
+		
+		// line below has to be under class MapComparator
 		PriorityQueue<Map.Entry<String, Integer>> minHeap = new PriorityQueue<>(k, new MapComparator());
 		
 		for (Map.Entry<String, Integer> entry : freqMap.entrySet()) {
