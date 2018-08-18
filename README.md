@@ -127,3 +127,4 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Dictionary Word I (medium+)](./src/dynamicProgramming/DictionaryWordI.java)
    - [Array Hopper I (medium)](./src/dynamicProgramming/ArrayHopperI.java)
    - [Array Hopper II (medium)](./src/dynamicProgramming/ArrayHopperII.java)
+   - [Minimum Cuts For Palindromes (medium)](./src/dynamicProgramming/MinimumCutsForPalindromes.java)

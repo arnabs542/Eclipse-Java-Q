@@ -27,6 +27,7 @@ public class TopKFrequentWords {
 		if (combo.length == 0) {
 			return new String[0];
 		}
+		
 		Map<String, Integer> freqMap = new HashMap<>();
 		for (String s : combo) {
 			if (!freqMap.containsKey(s)) {
