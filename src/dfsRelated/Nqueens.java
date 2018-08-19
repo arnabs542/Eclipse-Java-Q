@@ -36,7 +36,7 @@ import java.util.List;
 
 public class Nqueens {
 	
-	public void Nqueens(int n) {
+	public void nQueens(int n) {
 		List<Integer> cur = new ArrayList<>();
 		helper(n, cur);
 	}
@@ -83,11 +83,11 @@ public class Nqueens {
 		
 		/* Test Case 1 */
 		System.out.println("---< Test Case 1 >---");
-		testObj.Nqueens(4); // expected 1 3 0 2 , 2 0 3 1
+		testObj.nQueens(4); // expected 1 3 0 2 , 2 0 3 1
 		
 		/* Test Case 2 */
 		System.out.println("---< Test Case 2 >---");
-		testObj.Nqueens(8); 
+		testObj.nQueens(8); 
 		
 		/* Test Case 3 */
 		System.out.println("---< Test Case 3 >---");		

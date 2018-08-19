@@ -153,8 +153,6 @@ public class MaxProductOfCuttingRope {
 		return M[len];	
 	}
 	
-	
-	
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
 		

@@ -83,9 +83,10 @@ Progress of practicing data structures, algorithms and job interview questions.
 ### Graph & DFS
    - [All Subsets I (medium)](./src/dfsRelated/AllSubsetsI.java)
    - [All Permutations I (medium)](./src/dfsRelated/AllPermutationsI.java)
+   - [All Permutations II (hard)](./src/dfsRelated/AllPermutationsII.java)
    - [All Valid Permutations Of Parentheses I (medium)](./src/dfsRelated/PermutationsOfParenthesesI.java)
    - [Combinations Of Coins (medium)](./src/dfsRelated/CombinationsOfCoins.java)
-   - [All Permutations II (hard)](./src/dfsRelated/AllPermutationsII.java)
+   - [Valid If Blocks(meidum)](./src/dfsRelated/ValidIfBlocks.java)
    
 ### Hash Table 
    - [Common Numbers Of Two Sorted Array (easy)](./src/hashTableRelated/CommonNumOfTwoSortedArr.java)

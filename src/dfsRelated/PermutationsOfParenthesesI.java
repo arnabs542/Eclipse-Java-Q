@@ -8,18 +8,15 @@
  *    N = 1, all valid permutations are ["()"]
  *    N = 3, all valid permutations are ["((()))", "(()())", "(())()", "()(())", "()()()"]
  *    N = 0, all valid permutations are [""]
- *   
- *   
- * Updated:
  * 
  */
+
 package dfsRelated;
 
 import java.util.LinkedList;
 import java.util.List;
 
 public class PermutationsOfParenthesesI {
-	
 	
 	/* 1. How many levels and what does it store on each level?
 	 *    - Levels: 2 * pairs of parentheses ( = how many position we need to fill) 
