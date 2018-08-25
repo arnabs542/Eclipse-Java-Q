@@ -53,6 +53,10 @@ public class ValidIfBlocks {
 		
 		/* Test Case 0 */
 		System.out.println("---< Test Case 0 >---");
+		StringBuilder sb = new StringBuilder("abc");
+		sb.insert(3, " ");
+		System.out.println(sb.toString());
+		
 		
 		/* Test Case 1 */
 		System.out.println("---< Test Case 1 >---");
