@@ -28,6 +28,9 @@ public class InsertSpace {
 	 * 2. How many different states should we try to put on this level:
 	 *    - Two. Each state consider either add or not add space to the current position.
 	 * 
+	 * 3. Base Case 
+	 *    - When all the positions have been traversed
+	 * 
 	 *               ABC
 	 *               
 	 *          /            \

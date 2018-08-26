@@ -64,8 +64,8 @@ public class GetKeysLayerByLayer {
 		return result;
 	}
 	
-	// Time Complexity: O(?);
-	// Space Complexity: O(?);
+	// Time Complexity: O(n);
+	// Space Complexity: O(number of nodes of the layer with the largest number of nodes), worst case O(n/2) = O(n);
 	
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
