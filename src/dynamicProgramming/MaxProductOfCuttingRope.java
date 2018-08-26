@@ -117,7 +117,7 @@ public class MaxProductOfCuttingRope {
 	 *     tempMax: max{1, M[1]} * 2]} = 2
 	 *     
 	 *   case 2: _ _ | _
-	 *         M[2]} * 1
+	 *         M[2]  * 1
 	 *     tempMax: max{2, M[2]} * 1} = 2
 	 *     
 	 *     M[3] = curMax = max{case1, case2} = max(2, 2) = 2
