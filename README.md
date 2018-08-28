@@ -132,4 +132,5 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Array Hopper I (medium)](./src/dynamicProgramming/ArrayHopperI.java)
    - [Array Hopper II (medium)](./src/dynamicProgramming/ArrayHopperII.java)
    - [Minimum Cuts For Palindromes (medium)](./src/dynamicProgramming/MinimumCutsForPalindromes.java)
+   - [Minimum Cut For Square Value (medium)](./src/dynamicProgramming/MinimumCutForSquareValue.java)
    

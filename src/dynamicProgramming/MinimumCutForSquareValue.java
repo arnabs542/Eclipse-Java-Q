@@ -7,6 +7,9 @@
  *   Example: 
  *     4 can be split to 1+1+1+1 (4 items) or 2^2 (1 item, which is the solution), Return 1
  *     10 can be split to two items 3^2 + 1^2 (solution) or four items 2^2 + 2^2 + 1^2 +1^2, Return 2
+ *     
+ *   Notes: 
+ *     Final problem 3
  * 
  */
 
@@ -28,8 +31,8 @@ public class MinimumCutForSquareValue {
 		return dp[n];
 	}
 	
-	// Time Complexity: O(?);
-	// Space Complexity: O(?);
+	// Time Complexity: O(n^2);
+	// Space Complexity: O(n);
 	
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
