@@ -5,6 +5,7 @@
  * 
  * Updated:
  * 	June, 8, 2018: Review
+ *  August, 28, 2018: Review
  * 
  */
 
@@ -93,12 +94,8 @@ public class QuickSort {
 //new function:
 //rand.nextInt(x) -> randomly select a number in [0, x)
 
-/*1st Review
-package myMain;
 
-import java.util.Random;
-
-public class MainClass {
+class MistakesRecord {
 	
 	public void quickSort(int[] arr) {
 		if (arr == null || arr.length == 0) {
@@ -121,7 +118,6 @@ public class MainClass {
 		// mistake: put pivot in the sorting part, 
 		// pivot is already at the right position!!! don't confusing with merge sort
 	}
-	
 
 	private int partition(int[] arr, int left, int right) {
 		Random rand = new Random();
@@ -150,16 +146,6 @@ public class MainClass {
 		int temp = arr[a];
 		arr[a] = arr[b];
 		arr[b] = temp;
-	}
-	
-	public static void main(String[] args) {
-		int[] arr = {3, 5, 1, 9};
-		MainClass myMain = new MainClass();
-		myMain.quickSort(arr);
-		for (int i : arr) {
-			System.out.print(i + " ");
-		}
 	}	    	 
 }
- 
-*/
+
