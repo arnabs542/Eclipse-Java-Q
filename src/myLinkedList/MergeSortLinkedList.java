@@ -6,6 +6,8 @@
  *   sort it in ascending order. 
  *   The merge sort algorithm should be used to solve this problem.
  * 
+ * Updated:
+ *   August 30, 2018: Review
  */
 
 package myLinkedList;
@@ -16,13 +18,13 @@ public class MergeSortLinkedList {
 	// Space Complexity: O(logn);
 	
 	public ListNode mergeSort(ListNode head) {
-		if (head == null || head.next == null) {
+		if (head == null || head.next == null) { //!!! don't forget the base case "head.next == null"
 			return head;
 		}
 		
 		ListNode mid = findMidNode(head);
 		ListNode rightHalf = mid.next;
-		mid.next = null;
+		mid.next = null; // !!! de-link the first half from the second
 		
 		ListNode leftHalf = mergeSort(head);
 		rightHalf = mergeSort(rightHalf);
@@ -53,9 +55,6 @@ public class MergeSortLinkedList {
 	}
 	
 	private ListNode findMidNode(ListNode head) {
-		if (head == null) {
-			return head;
-		}
 		ListNode slow = head;
 		ListNode fast = head;
 		while (fast.next != null && fast.next.next != null) {
