@@ -20,8 +20,6 @@ public class QuickSortLinkedList {
 		while (tail.next != null) {
 			tail = tail.next;
 		}
-		System.out.println(head.value);
-		System.out.println(tail.value);
 		return quickSort(head, tail);
 	}
 	
@@ -36,8 +34,7 @@ public class QuickSortLinkedList {
 		ListNode rightCur = tail;
 		
 		int pivotVal = tail.value; // choose the last node as the pivot
-		
-		while (head != tail)  {
+		while (head != null && head != tail)  {
 			if (head.value <= pivotVal) {
 				leftCur.next = head;
 				leftCur = leftCur.next;
@@ -45,16 +42,23 @@ public class QuickSortLinkedList {
 				rightCur.next = head;
 				rightCur = rightCur.next;
 			}
+			head = head.next;
 		}
 		
 		ListNode leftTail = leftCur;
 		ListNode rightTail = rightCur;
+		rightTail.next  = null;
 		
-		leftTail.next = tail;
-		
-		ListNode newHead = quickSort(leftDummyHead.next, leftTail);
-		quickSort(tail, rightTail);
-		return newHead;
+		if (leftDummyHead.next != null) {
+			leftTail.next = tail;
+			ListNode newHead = quickSort(leftDummyHead.next, leftTail);
+			ListNode rightHead = quickSort(tail.next, rightTail);
+
+			tail.next = rightHead;
+			return newHead;
+		} else {
+			return quickSort(tail, rightTail);
+		}
 	}
 	
 	/* ----------------------< test stub >-------------------------*/
@@ -84,7 +88,7 @@ public class QuickSortLinkedList {
 		/* Test Case 2 */
 		System.out.println("---< Test Case 2 >---");
 		
-		int[] arr2 = {20, 18, 6, 9, 6, 32};
+		int[] arr2 = {6, 3, 5, 4, 2, 1};
 		ListNode head2 = new ListNode(0);
 		head2 = ListNode.genLinkedList(arr2);
 		head2.printList(head2);
