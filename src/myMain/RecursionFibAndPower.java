@@ -31,55 +31,18 @@ public class RecursionFibAndPower {
 	public static long fibonacci1(int K) {
 		
 	    long[] fib = new long[K + 1];
-	    if(K <= 0) return 0;
-	    if(K == 1) return 1;
+	    if (K <= 0) return 0;
+	    if (K == 1) return 1;
 	    	
 	    fib[0] = 0;
 	    fib[1] = 1;
 	    
-	    for(int i = 2; i <= K; i++) {
+	    for (int i = 2; i <= K; i++) {
 	    		fib[i] = fib[i - 1] + fib[i - 2];
 	    }	    	
 	    return fib[K]; 		
 	}
 	// n <= 39: time: 12ms, space：9392k
-	
-	// Time Complexity: O(b)
-	// Space Complexity: O(1)
-    public static long powerB1(int a, int b) {  	
-    		// bad algorithm, too much iterations
-    		// will fail in this case: [1,2147483647] 
-		 
-		 if(b == 0) return 1;		   
-		 if(a == 0) return 0;			  
-		 long result = 1;
-		 
-		 for(long i = 0; i < b; i++) {
-			 result *= a;
-		 }		 
-		return result;	 
-	}	
-
-	// Time Complexity: O(b)
-	// Space Complexity: O(b)
-	public static long powerB2(int a, int b) {
-		//bad algorithm, too much recursion
-		if(a == 0) return 0;
-		if(b == 0) return 1;
-		
-		return a * powerB2(a, b - 1);			    
-	}
-
-	// Time Complexity: O(log(b))
-	// Space Complexity: O(log(b))
-	public static long power(int a, int b) {
-		if(a == 0) return 0;
-		if(b == 0) return 1;
-		long half = power(a, b/2);
-		
-		if(b % 2 == 0) return half * half;
-		else return half * half * a;	
-	}	
 		
  	public static void main(String[] args) {	
 		//System.out.print(RecursionFibAndPower.power(1,2147483647)); 

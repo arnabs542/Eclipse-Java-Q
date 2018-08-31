@@ -20,6 +20,8 @@ public class QuickSortLinkedList {
 		while (tail.next != null) {
 			tail = tail.next;
 		}
+		System.out.println(head.value);
+		System.out.println(tail.value);
 		return quickSort(head, tail);
 	}
 	
@@ -27,14 +29,14 @@ public class QuickSortLinkedList {
 		if (head == tail) {
 			return head;
 		}
-		// choose the last node as the pivot
+		
 		ListNode leftDummyHead = new ListNode(0);
 		ListNode leftCur = leftDummyHead;
 		
-		ListNode rightDummyHead = new ListNode(0);
-		ListNode rightCur = rightDummyHead;
+		ListNode rightCur = tail;
 		
-		int pivotVal = tail.value;
+		int pivotVal = tail.value; // choose the last node as the pivot
+		
 		while (head != tail)  {
 			if (head.value <= pivotVal) {
 				leftCur.next = head;
@@ -48,10 +50,10 @@ public class QuickSortLinkedList {
 		ListNode leftTail = leftCur;
 		ListNode rightTail = rightCur;
 		
-		leftTail.next = rightDummyHead.next;
+		leftTail.next = tail;
 		
 		ListNode newHead = quickSort(leftDummyHead.next, leftTail);
-		quickSort(rightDummyHead.next, rightTail);
+		quickSort(tail, rightTail);
 		return newHead;
 	}
 	
