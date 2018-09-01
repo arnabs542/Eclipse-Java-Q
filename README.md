@@ -88,9 +88,11 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Insert Space (medium)](./src/dfsRelated/dfsRelated.java)
    - [All Permutations I (medium)](./src/dfsRelated/AllPermutationsI.java)
    - [All Permutations II (hard)](./src/dfsRelated/AllPermutationsII.java)
+   - [Chained To Circle (hard)](./src/dfsRelated/ChainedToCircle.java)
    - [All Valid Permutations Of Parentheses I (medium)](./src/dfsRelated/PermutationsOfParenthesesI.java)
-   - [Combinations Of Coins (medium)](./src/dfsRelated/CombinationsOfCoins.java)
    - [Valid If Blocks(meidum)](./src/dfsRelated/ValidIfBlocks.java)
+   - [Combinations Of Coins (medium)](./src/dfsRelated/CombinationsOfCoins.java)
+   - [All Factors Of A Number (medium)](./src/dfsRelated/AllFactorsOfANumber.java)
    
 ### Hash Table 
    - [Common Numbers Of Two Sorted Array (easy)](./src/hashTableRelated/CommonNumOfTwoSortedArr.java)
