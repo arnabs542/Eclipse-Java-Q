@@ -40,10 +40,26 @@ public class CombinationsOfCoins {
 		
 		List<List<Integer>> result = new ArrayList<>();
 		List<Integer> curr = new ArrayList<>();
-	    helper(target, 0, coins, curr, result);
+		combinations(target, 0, coins, curr, result);
 	    return result;
 	}
 	
+	private void combinations(int moneyLeft, int index, int[]coins, List<Integer> curr, List<List<Integer>> result) {
+		if (index == coins.length) {
+			if (moneyLeft == 0) {
+				result.add(new ArrayList<Integer>(curr)); 
+			}
+			return;
+		}
+
+		for (int num = 0; num * coins[index] <= moneyLeft; num++) {
+			curr.add(num);
+			combinations(moneyLeft - num * coins[index], index + 1, coins, curr, result); 
+			curr.remove(curr.size() - 1);
+		}
+	}
+	
+	// different syntax
 	private void helper(int moneyLeft, int index, int[]coins, List<Integer> curr, List<List<Integer>> result) {
 		if (index == coins.length - 1) {
 			if (moneyLeft % coins[index] == 0) {
@@ -57,16 +73,13 @@ public class CombinationsOfCoins {
 		System.out.println("moneyLeft = " + moneyLeft);
 		for (int num = 0; num <= max; num++) {
 			curr.add(num);
-			//moneyLeft = moneyLeft - num * coins[index];
-			//moneyLeft -= num * coins[index];
-			//System.out.println("moneyLeft = " + moneyLeft);
 			helper(moneyLeft - num * coins[index], index + 1, coins, curr, result); 
 			curr.remove(curr.size() - 1);
 		}
 	}
 
-	// Time Complexity: O(?);
-	// Space Complexity: O(?);
+	// Time Complexity: O(branches ^ number of coins); ?
+	// Space Complexity: O(number of coins);
 	
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
