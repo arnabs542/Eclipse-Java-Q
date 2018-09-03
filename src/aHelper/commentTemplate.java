@@ -1,36 +1,32 @@
 /*
- * Created Date: September ?, 2018
+ * == Created Date ==
+ * September ?, 2018
  * 
- * Question - :
+ * == Question - ==
  *   
  *   
- *   Example: 
+ * == Example == 
+ *   
+ * == Notes == 
+ *  
  * 
  */
 
 /*
- * Created Date: September ?, 2018
+ * == Created Date ==
+ * September ?, 2018
  * 
- * Question - :
+ * == Question - ==
  *   
  *   
- *   Example: 
+ * == Example == 
  *   
- *   Follow up:
+ * == Mirror Question == 
  *   
- *   Mirror Question:
- *   
- * Updated:
+ * == Updated ==
  * 
  */
 
-
-/*
- * Created Date: September ?, 2018
- * 
- * Application: 
- * 
- */
 
 package aHelper;
 

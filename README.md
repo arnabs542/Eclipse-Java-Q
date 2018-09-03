@@ -128,6 +128,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Hexadecimal Representation (easy+)](./src/bitMinipulation/HexadecimalRepresentation.java)
 
 ### Dynamic Programming
+   - [Fibonacci Number (easy)](./src/dynamicProgramming/FibonacciNumber.java)
    - [Longest Ascending SubArray (easy)](./src/dynamicProgramming/LongestAscendingSubArray.java)
    - [Max Product Of Cutting Rope (medium+)](./src/dynamicProgramming/MaxProductOfCuttingRope.java)
    - [Dictionary Word I (medium+)](./src/dynamicProgramming/DictionaryWordI.java)

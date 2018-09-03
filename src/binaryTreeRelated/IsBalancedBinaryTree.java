@@ -1,16 +1,18 @@
 /*
- * Created Date: May 24, 2018
+ * == Created Date == 
+ * May 24, 2018
  * 
- * Question - Check If Binary Tree Is Balanced:
- *   Check if a given binary tree is balanced. A balanced binary tree is 
- *   one in which the depths of every node’s left and right subtree differ by at most 1.
+ * == Question - Check If Binary Tree Is Balanced ==
+ * Check if a given binary tree is balanced. 
+ * A balanced binary tree is one in which the depths of every node’s left and right subtree differ by at most 1.
  *   
- *   Corner Cases:
- *   	What if the binary tree is null? Return true in this case.  
+ * == Corner Cases ==
+ * What if the binary tree is null? Return true in this case.  
  *   
- * Updated: 
- *   June 15, 2018: Review
- *   August 13, 2018: Review, Strengthen_3 
+ * == Updated ==
+ * June 15, 2018: Review
+ * August 13, 2018: Review, Strengthen_3 
+ * September 3, 2018: Review
  * 
  */
 
@@ -19,24 +21,17 @@ package binaryTreeRelated;
 public class IsBalancedBinaryTree {
 	
 	public static boolean isBalanced(TreeNode root) {
-		if (root == null) {
-			return true;
-		}
-		if (helper(root) != -1) {
-			return true;
-		} else {
-			return false;
-		}
+		return checkBalanced(root) == -1? false: true;
 	}
 	
-	private static int helper(TreeNode root) {
+	private static int checkBalanced(TreeNode root) {
 		if (root == null) {
 			return 0;
 		}	
 		
 		// step 1: what do you expect from left or right child
-		int leftHeight = helper(root.left);
-		int rightHeight = helper(root.right); 
+		int leftHeight = checkBalanced(root.left);
+		int rightHeight = checkBalanced(root.right); 
 		
 		// step 2: what do you want to do in the current layer
 		// post-order traversal

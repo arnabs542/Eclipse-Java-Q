@@ -110,7 +110,7 @@ public class Power {
 /* Systematic way of thinking 
  * 
  *  Common mistakes:
- *  1. 
+ *  1. 0 ^ (-1)
  *  
  *  
  */
