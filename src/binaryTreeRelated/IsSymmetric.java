@@ -50,7 +50,6 @@ public class IsSymmetric {
 		if (root == null) { // corner case
 			return true;
 		} 
-		
 		// if a tree is symmetric to itself, it's a Symmetric Binary Tree
 		return isSymmetricHelper(root, root); 
 	}
