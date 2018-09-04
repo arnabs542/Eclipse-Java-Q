@@ -45,9 +45,12 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Lowest Common Ancestor I (medium)](./src/binaryTreeRelated/LowestCommonAncestorI.java)
    - [Lowest Common Ancestor With Parent Node (medium)](./src/binaryTreeRelated/LowestCommonAncestorWithParentNode.java)
    - [Lowest Common Ancestor For K Nodes (medium)](./src/binaryTreeRelated/LowestCommonAncestorI.java)
+   - [Path Sum To Target I (easy)](./src/binaryTreeRelated/PathSumToTargetI.java)
+   - [Path Sum To Target II (easy)](./src/binaryTreeRelated/PathSumToTargetII.java)
+   - [Path Sum To Target III (medium)](./src/binaryTreeRelated/PathSumToTargetIII.java)
    - [Maximum Path Sum Binary Tree I, from leaf node to leat node (medium)](./src/binaryTreeRelated/MaximumPathSumBinaryTreeI.java)
    - [Maximum Path Sum Binary Tree II, from any node to any node (medium)](./src/binaryTreeRelated/MaximumPathSumBinaryTreeII.java)
-   - [Maximum Path Sum Binary Tree III, subpath from leaf node to root (medium+)](./src/binaryTreeRelated/MaximumPathSumBinaryTreeIII.java)
+   - [Maximum Path Sum Binary Tree III, root-to-leaf sub-path (medium+)](./src/binaryTreeRelated/MaximumPathSumBinaryTreeIII.java)
    - [Cousins In Binary Tree (medium)](./src/binaryTreeRelated/AreCousinNodes.java)
 
 ### Binary Search Tree 

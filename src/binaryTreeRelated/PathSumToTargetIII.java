@@ -1,13 +1,14 @@
 /*
- * Created Date: August 14, 2018
+ * == Created Date ==
+ * August 14, 2018
  * 
- * Question - Binary Tree Path Sum To Target III:
- *   Given a binary tree in which each node contains an integer number. 
- *   Determine if there exists a path 
- *    (the path can only be from one node to itself or to any of its descendants), 
- *    the sum of the numbers on the path is the given target number.
+ * == Question - Binary Tree Path Sum To Target III, node to its descendants ==
+ * Given a binary tree in which each node contains an integer number. 
+ * Determine if there exists a path 
+ * (the path can only be from one node to itself or to any of its descendants), 
+ * the sum of the numbers on the path is the given target number.
  *     
- *   Example: 
+ * == Example ==
  *       5
  *     /    \
  *    2      11
@@ -29,7 +30,7 @@ package binaryTreeRelated;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BinaryTreePathSumToTargetIII {
+public class PathSumToTargetIII {
 	
 	public boolean exist(TreeNode root, int target)  {
 		List<Integer> prefix = new ArrayList<>();	
