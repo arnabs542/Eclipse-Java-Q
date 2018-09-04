@@ -1,12 +1,13 @@
 /*
- * Created Date: August 13, 2018
+ * == Created Date == 
+ * August 13, 2018
  * 
- * Question - Maximum Path Sum Binary Tree II, from any node to any node:
- *   Given a binary tree in which each node contains an integer number. 
- *   Find the maximum possible sum from any node to any node (the start node and the end node can be the same). 
+ * == Question - Maximum Path Sum Binary Tree II, from any node to any node ==
+ * Given a binary tree in which each node contains an integer number. 
+ * Find the maximum possible sum from any node to any node (the start node and the end node can be the same). 
  *   
  *   
- *   Example: 
+ * == Example ==
  *   
  *       -1
  *     /    \
@@ -17,6 +18,9 @@
  *   one example of paths could be -14 -> 11 -> -1 -> 2
  *   another example could be the node 11 itself
  *   The maximum path sum in the above binary tree is 6 + 11 + (-1) + 2 = 18
+ * 
+ * == Update ==
+ * September 4, 2018: Update to fix a fail test case in LeetCode, missing test case in LaiCode
  * 
  */
 
@@ -54,22 +58,6 @@ public class MaximumPathSumBinaryTreeII {
 		
 		// step 3: what do you report to your parent (should be same as step 1)
 		int maxChild = Math.max(left, right);		
-		return maxChild + root.value;
-	}
-	
-	// fancy syntax:
-	private int helper1(TreeNode root, int[]max) {
-		if (root == null) {
-			return 0;
-		}
-		
-		int left = helper1(root.left, max);
-		int right = helper1(root.right, max);
-		
-		left = left > 0 ? left : 0;
-		right = right > 0 ? right : 0;
-		max[0] = Math.max(max[0], root.value + left + right);
-				
-		return Math.max(left, right) + root.value;
+		return maxChild > 0 ? maxChild + root.value : root.value;
 	}
 }

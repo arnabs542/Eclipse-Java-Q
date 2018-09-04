@@ -17,7 +17,7 @@ public class MainClass {
 		System.out.println(s1 == s3); // expected: false - String objects created by "new" will not use the pool
 		
 		// int --> String
-		int i = 1;
+		int i = 111;
 		String si1 = String.valueOf(i);
 		String si2 = Integer.toString(i);
 		System.out.println(si1);

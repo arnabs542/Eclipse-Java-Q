@@ -19,6 +19,10 @@
  *            /
  *          -3
  *  The maximum path sum is 11 + 14 = 25
+ *  
+ * == Update == 
+ * September 3, 2018: 
+ *   Update method2 from Class Recursion3, similar to Dynamic Programming question "Largest SubArray Sum"
  * 
  */
 
@@ -79,6 +83,27 @@ public class MaximumPathSumBinaryTreeIII {
 		prefix.remove(prefix.size() - 1);
 	}
 	
+	// ------------------------------------------------
+	public int maxPathSumMeth2(TreeNode root) {
+		int[] globalMax = new int[] {Integer.MIN_VALUE};		
+		preOrder(root, 0, globalMax);		
+		return globalMax[0];
+	}
+	
+	private void preOrder(TreeNode root, int sum, int[] globalMax) {
+		if (root == null) {
+			return;
+		}
+		if (sum + root.value >= root.value) {
+			sum += root.value;
+		} else {
+			sum = root.value;
+		}
+		globalMax[0] = Math.max(globalMax[0], sum);
+		preOrder(root.left, sum, globalMax);
+		preOrder(root.right, sum, globalMax);
+	}
+	
 	// Time Complexity: O(n * height), worst case = O(n ^ 2)
 	//   pre-order traverse all the nodes --- O(n);
 	//   every time check prefix -- O(height)
@@ -114,8 +139,9 @@ public class MaximumPathSumBinaryTreeIII {
 		//  /      /
 		// 5      -5
 				
-		int result1 = testObj.maxPathSum(root1);
-		System.out.println(result1);
+		System.out.println(testObj.maxPathSum(root1));
+		
+		System.out.println(testObj.maxPathSumMeth2(root1));
 		
 		/* Test Case 2 */
 		System.out.println("---< Test Case 2 >---");
