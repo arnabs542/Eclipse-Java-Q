@@ -1,13 +1,12 @@
 /*
- * Created Date: June 12, 2018
+ * == Created Date == 
+ * June 12, 2018
  * 
- * Question - Get Keys In Binary Tree Layer By Layer:
- *   Get the list of list of keys in a given binary tree layer by layer. 
- *   Each layer is represented by a list of keys and the keys are traversed from left to right.
- * 
- *   Example: 
+ * == Question - Get Keys In Binary Tree Layer By Layer ==
+ * Get the list of list of keys in a given binary tree layer by layer. 
+ * Each layer is represented by a list of keys and the keys are traversed from left to right.
  *   
- *   Examples
+ * == Examples ==
  *   
  *         5
  * 
@@ -21,8 +20,11 @@
  * 
  *  the result is [ [5], [3, 8], [1, 4, 11] ]
  * 
- * Corner Cases:
- *   What if the binary tree is null? Return an empty list of list in this case.
+ * == Corner Cases == 
+ * What if the binary tree is null? Return an empty list of list in this case.
+ * 
+ * == Updates ==
+ * September 3, 2018: DSF way
  * 
  */
 
@@ -35,7 +37,8 @@ import java.util.Queue;
 
 public class GetKeysLayerByLayer {
 	
-	public static List<List<Integer>> getKeysLayerByLayer(TreeNode root) {
+	/* ----------------------< Iterative & BFS Method >-------------------------*/
+	public List<List<Integer>> getKeysLayerByLayer(TreeNode root) {
 		List<List<Integer>> result = new ArrayList<List<Integer>>();		
 		if (root == null) { // corner case
 			return result;
@@ -48,9 +51,7 @@ public class GetKeysLayerByLayer {
 			for (int i = 0; i < size; i++) {
 				TreeNode curr = queue.poll();	
 				
-				list.add(curr.value);
-				System.out.print(curr.value + " "); 
-				
+				list.add(curr.value);				
 				if (curr.left != null) {
 					queue.offer(curr.left);				
 				} 
@@ -58,7 +59,6 @@ public class GetKeysLayerByLayer {
 					queue.offer(curr.right);
 				}
 			}
-			System.out.print("\n"); 
 			result.add(list);
 		}
 		return result;
@@ -67,8 +67,42 @@ public class GetKeysLayerByLayer {
 	// Time Complexity: O(n);
 	// Space Complexity: O(number of nodes of the layer with the largest number of nodes), worst case O(n/2) = O(n);
 	
+	/* ----------------------< Recursive & DFS Method >-------------------------*/
+	public List<List<Integer>> leverOrderRecursion(TreeNode root) {
+		List<List<Integer>> result = new ArrayList<List<Integer>>();	
+		DFS(root, result, 0);
+		return result;
+	}
+	
+	private void DFS(TreeNode root, List<List<Integer>> result, int level) {
+		if (root == null) {
+			return;
+		}
+		if (result.size() == level) {
+			result.add(new ArrayList<Integer>());
+		}
+		result.get(level).add(root.value);
+		DFS(root.left, result, level + 1);
+		DFS(root.right, result, level + 1);
+	}
+	
+	// Time Complexity: O(n);
+	// Space Complexity: O(height), worst case O(n)
+		
 	/* ----------------------< test stub >-------------------------*/
+	private static void print(List<List<Integer>> result) {
+		System.out.print("\n");
+		for (List<Integer> list : result) {
+			for (int item : list) {
+				System.out.print(item + " ");
+			}
+			System.out.print("\n");
+		}
+	}
+
 	public static void main(String[] args) {
+		
+		GetKeysLayerByLayer testObj = new GetKeysLayerByLayer();
 		
 		/* Test Case 0 */
 		System.out.println("---< Test Case 0 >---");
@@ -80,7 +114,11 @@ public class GetKeysLayerByLayer {
 		TreeNode root1 = TreeNode.genBst(arr1);
 		TreeNode.printInOrder(root1);
 		
-		getKeysLayerByLayer(root1);
+		List<List<Integer>> result1a = testObj.getKeysLayerByLayer(root1);
+		print(result1a);
+		
+		List<List<Integer>> result1b = testObj.leverOrderRecursion(root1);
+		print(result1b);
 		
 		/* Test Case 2 */
 		System.out.println("\n---< Test Case 2 >---");

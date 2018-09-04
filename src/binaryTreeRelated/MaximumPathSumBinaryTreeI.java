@@ -1,12 +1,14 @@
 /*
- * Created Date: August 7, 2018
+ * == Created Date == 
+ * August 7, 2018
  * 
- * Question - Maximum Path Sum Binary Tree I, from leaf node to leaf node (medium):
- *   Given a binary tree in which each node contains an integer number. 
- *   Find the maximum possible sum from one leaf node to another leaf node. 
- *   If there is no such path available, return Integer.MIN_VALUE(Java)/INT_MIN (C++).
+ * == Question - Maximum Path Sum Binary Tree I, from leaf node to leaf node (medium) ==
+ * Given a binary tree in which each node contains an integer number. 
+ * Find the maximum possible sum from one leaf node to another leaf node. 
+ * If there is no such path available, return Integer.MIN_VALUE(Java)/INT_MIN (C++).
  *   
- *   Example: 
+ * == Example ==
+ * 
  *       -15
  *      /    \
  *     2      11 
@@ -14,7 +16,8 @@
  *  6     14
  *  The maximum path sum is 6 + 11 + 14 = 31.
  *  
- *  Notes: MidTerm 2
+ * == Notes ==
+ * MidTerm 2
  * 
  */
 
