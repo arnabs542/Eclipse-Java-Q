@@ -33,30 +33,15 @@ import java.util.List;
 
 public class MaximumPathSumBinaryTreeIII {
 	
-	// ------------ all paths from leaf to root -----------
-	public int maxPathSum1(TreeNode root) {
-		int[] globalMax = new int[] {Integer.MIN_VALUE};
-		int SumPrefix = 0;
-		helper1(root, SumPrefix, globalMax);
-		return globalMax[0];
-	}
+	/* -----------------< Not so good Method >--------------------*/
 	
-	private void helper1(TreeNode root, int SumPrefix, int[]globalMax) {
-		if (root == null) {
-			return;
-		}
-		SumPrefix += root.value;
-		if (root.left == null && root.right == null) {
-			globalMax[0] = Math.max(globalMax[0], SumPrefix);
-		}
-		
-		helper1(root.left, SumPrefix, globalMax);
-		helper1(root.right, SumPrefix, globalMax);	
-	}
+	// Time Complexity: O(n * height), worst case = O(n ^ 2)
+	//   pre-order traverse all the nodes --- O(n);
+	//   every time check prefix -- O(height)
 	
+	// Space Complexity: O(height);
 	
-	// ------------------------------------------------
-	public int maxPathSum(TreeNode root) {
+	public int maxPathSumMeth1(TreeNode root) {
 		int[] globalMax = new int[] {Integer.MIN_VALUE};		
 		List<Integer> prefix = new ArrayList<>();				
 		helper(root, prefix, globalMax);
@@ -83,8 +68,35 @@ public class MaximumPathSumBinaryTreeIII {
 		prefix.remove(prefix.size() - 1);
 	}
 	
-	// ------------------------------------------------
+	/* -----------------< Three-Step Method, bottom-up >--------------------*/
+	// Time Complexity: O(n)	
+	// Space Complexity: O(height);
+	
 	public int maxPathSumMeth2(TreeNode root) {
+		int[] globalMax = new int[] {Integer.MIN_VALUE};
+		postOrder(root, globalMax);
+		return globalMax[0];
+	}
+	
+	private int postOrder(TreeNode root, int[]globalMax) {
+		if (root == null) {
+			return 0;
+		}
+		
+		int left = postOrder(root.left, globalMax);
+		int right = postOrder(root.right, globalMax);	
+		
+		int temp = Math.max(0, Math.max(left, right));
+		globalMax[0] = Math.max(globalMax[0], temp + root.value);
+		return temp + root.value;
+	}
+	
+	
+	/* -----------------< DP Method, top-down >--------------------*/
+	// Time Complexity: O(n)	
+	// Space Complexity: O(height);
+	
+	public int maxPathSumMeth3(TreeNode root) {
 		int[] globalMax = new int[] {Integer.MIN_VALUE};		
 		preOrder(root, 0, globalMax);		
 		return globalMax[0];
@@ -94,7 +106,7 @@ public class MaximumPathSumBinaryTreeIII {
 		if (root == null) {
 			return;
 		}
-		if (sum + root.value >= root.value) {
+		if (sum + root.value >= root.value) { // sum >= 0
 			sum += root.value;
 		} else {
 			sum = root.value;
@@ -103,12 +115,6 @@ public class MaximumPathSumBinaryTreeIII {
 		preOrder(root.left, sum, globalMax);
 		preOrder(root.right, sum, globalMax);
 	}
-	
-	// Time Complexity: O(n * height), worst case = O(n ^ 2)
-	//   pre-order traverse all the nodes --- O(n);
-	//   every time check prefix -- O(height)
-	
-	// Space Complexity: O(height);
 	
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
@@ -139,9 +145,9 @@ public class MaximumPathSumBinaryTreeIII {
 		//  /      /
 		// 5      -5
 				
-		System.out.println(testObj.maxPathSum(root1));
-		
+		System.out.println(testObj.maxPathSumMeth1(root1));
 		System.out.println(testObj.maxPathSumMeth2(root1));
+		System.out.println(testObj.maxPathSumMeth3(root1));
 		
 		/* Test Case 2 */
 		System.out.println("---< Test Case 2 >---");
