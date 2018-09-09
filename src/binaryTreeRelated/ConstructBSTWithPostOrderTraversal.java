@@ -15,13 +15,16 @@
  *  /   \       \
  * 1      4      11
  *  
+ * == Similar Question == 
+ * Reconstruct Binary Search Tree With Pre-order Traversal
  * 
  */
 
 package binaryTreeRelated;
 
-public class ReconstructBSTWithPostOrderTraversal {
+public class ConstructBSTWithPostOrderTraversal {
 	
+	/* ----------------------< Reconstruct BST With Post Order Traversal >-------------------------*/
 	public TreeNode reconstruct(int[] post) {
 		int[] index = new int[] {post.length - 1};
 		return buildTree(post, index, Integer.MIN_VALUE);
@@ -37,13 +40,29 @@ public class ReconstructBSTWithPostOrderTraversal {
 		return root;
 	}
 	
-	// Time Complexity: O(?);
-	// Space Complexity: O(?);
+	// Time Complexity: O(n);
+	// Space Complexity: O(height);
+	
+	/* ----------------------< Reconstruct BST With Pre Order Traversal >-------------------------*/
+	public TreeNode reconstructWithPre(int[] pre) {
+		int[] index = new int[]{0};
+		return buildTree(pre, index, Integer.MAX_VALUE);
+	}
+	
+	private TreeNode buildTreeWithPre(int[] pre, int[] index, int max) {
+		if (index[0] >= pre.length || pre[index[0]] >= max) {
+			return null;
+		}
+		TreeNode root = new TreeNode(pre[index[0]++]);
+		root.left = buildTree(pre, index, root.value);
+		root.right = buildTree(pre, index, max);
+		return root;
+	}
 	
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
 		
-		ReconstructBSTWithPostOrderTraversal testObj = new ReconstructBSTWithPostOrderTraversal();
+		ConstructBSTWithPostOrderTraversal testObj = new ConstructBSTWithPostOrderTraversal();
 		
 		/* Test Case 0 */
 		System.out.println("---< Test Case 0 >---");
