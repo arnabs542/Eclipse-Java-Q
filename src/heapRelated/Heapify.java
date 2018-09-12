@@ -1,42 +1,39 @@
 /*
- * Created Date: June 13, 2018
+ * == Created Date == June 13, 2018
  * 
- * Question - Heapify:
- *   Heapify an unsorted array to min heap.
+ * == Question - Heapify ==
+ * Heapify an unsorted array to min heap.
  *   
- * Updated:
- *   July 10, 2018: Review
- *   July 31, 2018: Forgot a lot of details already
+ * == Updated == 
+ * July 10, 2018: Review
+ * July 31, 2018: Forgot a lot of details already
  */
 
 package heapRelated;
 
 public class Heapify {
 	
-	private int[] arr;
-	
-	public void heapifyBottomUp(int[] arr) {
+	public int[] heapifyBottomUp(int[] arr) {
 		if (arr == null || arr.length == 0) { // corner case
-			return;
-		}
-		this.arr = arr;
-				
+			return arr;
+		}				
 		int start = arr.length / 2 - 1; // start with the last parent node
 		while (start >= 0) {
-			sink(start); // sift down the node to the proper place such that all nodes below are in heap order
+			sink(start, arr); // sift down the node to the proper place such that all nodes below are in heap order
 			start--; // go to the next parent node
 		}
+		return arr;
 	}
 	
-	private void sink(int k) {
+	private void sink(int k, int[] arr) {
 		while (2 * k + 1 < arr.length) { // While the root has at least one child
 			int succ = 2 * k + 1;
 			
-			if (succ < arr.length && less(succ + 1, succ)) {
+			if (succ < arr.length && less(arr, succ + 1, succ)) {
 				succ++; // If there is a right child and that child is smaller
 			}
-			if (less(succ, k)) {
-				swap(succ, k);
+			if (less(arr, succ, k)) {
+				swap(arr, succ, k);
 				k = succ;
 			} else { // often forget to add this part!!
 				break;
@@ -44,7 +41,7 @@ public class Heapify {
 		}
 	}
 	
-	private boolean less(int a, int b) {
+	private boolean less(int[] arr, int a, int b) {
 		if (arr[a] < arr[b]) {
 			return true;
 		} else {
@@ -52,7 +49,7 @@ public class Heapify {
 		}
 	}
 	
-	private void swap(int a, int b) {
+	private void swap(int[] arr, int a, int b) {
 		int temp = arr[a];
 		arr[a] = arr[b];
 		arr[b] = temp;
@@ -75,6 +72,8 @@ public class Heapify {
 	
 	public static void main(String[] args) {
 		
+		Heapify testObj = new Heapify();
+		
 		/* Test Case 0 */
 		System.out.println("---< Test Case 0 >---");
 		
@@ -82,23 +81,20 @@ public class Heapify {
 		System.out.println("---< Test Case 1 >---");
 		int[] arr1 = {5, 4, 3, 2, 1};
 		printArr(arr1);
-		
-		Heapify heap1 = new Heapify();
-		heap1.heapifyBottomUp(arr1);
-		printArr(heap1.arr);
+				
+		arr1 = testObj.heapifyBottomUp(arr1);
+		printArr(arr1);
 		
 		/* Test Case 2 */
 		System.out.println("---< Test Case 2 >---");
 		
 		int[] arr2 = {6, 5, 8, 4, 10, 1, 3, 2, 1};
 		printArr(arr2);
-		
-		Heapify heap2 = new Heapify();
-		heap2.heapifyBottomUp(arr2);
-		printArr(heap2.arr);
+
+		arr2 = testObj.heapifyBottomUp(arr2);
+		printArr(arr2);
 		
 		/* Test Case 3 */
-		System.out.println("---< Test Case 3 >---");
-		
+		System.out.println("---< Test Case 3 >---");		
 	}
 }

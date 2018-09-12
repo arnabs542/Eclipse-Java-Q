@@ -1,10 +1,10 @@
 /*
- * Created Date: August 5, 2018
+ * == Created Date == August 5, 2018
  * 
- * Question - Lowest Common Ancestor I (medium):
- *   Given two nodes in a binary tree, find their lowest common ancestor.
+ * == Question - Lowest Common Ancestor I (medium) ==
+ * Given two nodes in a binary tree, find their lowest common ancestor.
  *   
- *   Example: 
+ * == Example ==  
  *   
  *           5          
  *         /   \
@@ -14,6 +14,9 @@
  *   
  *  The lowest common ancestor of 2 and 14 is 5
  *  The lowest common ancestor of 2 and 9 is 9
+ *  
+ *  == Note == 
+ *  Sept.11, 2018: Review
  * 
  */
 
@@ -41,5 +44,10 @@ public class LowestCommonAncestorI {
 	    } 
 	    return left == null ? right : left;
 	}
+	
+// 	  mistakes:
+//    if (left == p && right == q || left == q && right == p) {
+//        return root;
+//    } 
 
 }

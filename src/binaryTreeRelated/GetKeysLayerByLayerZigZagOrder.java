@@ -1,10 +1,11 @@
 /*
- * Created Date: August 11, 2018
+ * == Created Date == 
+ * August 11, 2018
  * 
- * Question - Get Keys In Binary Tree Layer By Layer Zig-Zag Order:
- *   Get the list of keys in a given binary tree layer by layer in zig-zag order.
+ * == Question - Get Keys In Binary Tree Layer By Layer Zig-Zag Order ==
+ * Get the list of keys in a given binary tree layer by layer in zig-zag order.
  *    
- *   Example: 
+ * == Example ==
  *   
  *           5
  *        /    \
@@ -13,6 +14,11 @@
  *   1     4        11 
  *   
  *   The result is [5, 3, 8, 11, 4, 1]
+ * 
+ * == Note == 
+ * Sept. 10, 2018: Review
+ * Don't just think the situations in your head, write all the cases down
+ * Don't rush to write the code, think through the algorithm process
  * 
  */
 

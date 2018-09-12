@@ -1,13 +1,13 @@
 /*
- * Created Date: July 19, 2018
+ * == Created Date == 
+ * July 19, 2018
  * 
- * Question - Longest Substring Without Repeating Characters (medium):
- *   Given a string, find the longest substring without any repeating characters 
- *     and return the length of it. 
- *     The input string is guaranteed to be not null.   
+ * == Question - Longest Substring Without Repeating Characters (medium) == 
+ * Given a string, find the longest substring without any repeating characters and return the length of it. 
+ * The input string is guaranteed to be not null.   
  *   
- *   Example: 
- *    for "bcdfbd", return 4
+ * == Example ==
+ * for "bcdfbd", return 4
  * 
  */
 
