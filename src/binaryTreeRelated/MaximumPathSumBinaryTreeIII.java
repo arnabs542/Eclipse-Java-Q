@@ -91,7 +91,6 @@ public class MaximumPathSumBinaryTreeIII {
 		return temp + root.value;
 	}
 	
-	
 	/* -----------------< DP Method, top-down >--------------------*/
 	// Time Complexity: O(n)	
 	// Space Complexity: O(height);
