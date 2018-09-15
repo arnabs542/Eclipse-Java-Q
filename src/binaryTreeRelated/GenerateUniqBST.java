@@ -1,39 +1,40 @@
 package binaryTreeRelated;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class GenerateUniqBST {
 	
     public List<TreeNode> generateTrees(int n) {
-        List<TreeNode> res = new LinkedList<>();
-        dfs(res, 1, n, n);
-        return res;
+        if (n == 0) {
+            return new ArrayList<TreeNode>();
+        }
+        return helper(1, n);
     }
-    
-    private TreeNode dfs(List<TreeNode> res, int left, int right, int n) {
+
+    public List<TreeNode> helper(int left, int right) {
+        List<TreeNode> result = new ArrayList<TreeNode>();
         if (left > right) {
-            return null;
+            result.add(null);
+            return result;
         }
-        TreeNode root = null;
-        boolean flag = false;
-        if (left + right - 1 == n) {
-            flag = true;
-        }
+
         for (int i = left; i <= right; i++) {
-            root = new TreeNode(i);           
-            if (left <= i - 1) {
-            		root.left = dfs(res, left, i - 1, n);
-            } 
-            if (i + 1 <= right) {
-            		root.right = dfs(res, i + 1, right, n);
+            List<TreeNode> leftList = helper(left, i - 1);
+            List<TreeNode> rigthList = helper(i + 1, right);
+
+            for (TreeNode leftChild: leftList) {
+
+                for (TreeNode rightChild: rigthList) {
+                		
+                    TreeNode curr = new TreeNode(i);
+                    curr.left = leftChild;
+                    curr.right = rightChild;
+                    result.add(curr);               
+                }
             }
-            if (flag) {
-                res.add(root);
-                TreeNode.printLayerByLayer(root);
-            } 
         }
-        return root;
+        return result;
     }
     
 	// Time Complexity: O(?);
@@ -49,7 +50,7 @@ public class GenerateUniqBST {
 		
 		/* Test Case 1 */
 		System.out.println("---< Test Case 1 >---");
-		List<TreeNode> res = testObj.generateTrees(4);
+		List<TreeNode> res = testObj.generateTrees(3);
 		
 		for (TreeNode root : res) {
 			System.out.println("Tree");
