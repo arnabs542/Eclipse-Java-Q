@@ -32,7 +32,7 @@ import java.util.PriorityQueue;
 
 public class KthSmallestInSortedMatrix {
 	
-	static class Cell implements Comparable<Cell>{
+	static class Cell implements Comparable<Cell> {
 		int row;
 		int col;
 		int val;

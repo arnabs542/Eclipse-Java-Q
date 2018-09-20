@@ -61,7 +61,7 @@ public class DeepCopyUndirectedGraph {
 				DFS(node, map);
 			}
 		}
-		return new ArrayList<>(map.values());
+		return new ArrayList<>(map.values()); // the biggest difference from above syntax
 	}
 	
 	private void DFS(GraphNode node, Map<GraphNode, GraphNode> map) {
@@ -73,4 +73,23 @@ public class DeepCopyUndirectedGraph {
 			map.get(node).neighbors.add(nei);
 		}
 	}
+	
+	/* Same problem in LeetCode but different given signature */
+	
+    public GraphNode cloneGraph(GraphNode node) {
+        Map<GraphNode, GraphNode> map = new HashMap<>();
+        map.put(node, new GraphNode(node.key));
+        DFS_LeetCode(node, map);
+        return map.get(node);
+    }
+    
+    private void DFS_LeetCode(GraphNode node, Map<GraphNode, GraphNode> map) {
+        for (GraphNode nei : node.neighbors) {
+            if (!map.containsKey(nei)) {
+                map.put(nei, new GraphNode(nei.key));
+                DFS_LeetCode(nei, map); // made a mistake here, only DFS a node that hasn't been visited, or the recursion will not end 
+            } 
+            map.get(node).neighbors.add(map.get(nei));
+        }
+    }
 }
