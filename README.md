@@ -107,6 +107,10 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Kth Smallest Sum In Two Sorted Arrays (hard)](./src/hashTableRelated/KthSmallestSumInTwoSortedArrays.java)
    - [Deep Copy LinkedList With Random Pointer (medium)](./src/myLinkedList/DeepCopyLinkedListWithRandomPointer.java)
    - [Deep Copy Undirected Graph (medium)](./src/hashTableRelated/DeepCopyUndirectedGraph.java)
+   - [Two Sum (easy)](./src/hashTableRelated/TwoSum.java)
+   - [Two Sum All Pairs I (easy)](./src/hashTableRelated/TwoSum.java)
+   - [Two Sum All Pairs II, distinct pairs (medium)](./src/hashTableRelated/TwoSum.java)
+   - [Three Sum All Pairs (medium)](./src/hashTableRelated/ThreeSum.java)
   
 ### String & Array 
    - [Move 0s To The End I (easy)](./src/arrayRelated/MoveZeroToEnd1.java)
