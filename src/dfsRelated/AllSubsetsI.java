@@ -14,6 +14,7 @@
  *     
  * Updated: 
  *   June 21, 2018 : Review
+ *   September 20, 2018 : Review
  * 
  */
 
@@ -59,7 +60,7 @@ public class AllSubsetsI {
 	}
 
 		  
-    /* ----------------------< the same as above, different input type >-------------------------*/
+    /* -----------< the same as above, different input type >----------------*/
 	
 	public void findSubset(char[] input, int index, StringBuilder output) {
 		if (index == input.length) { 
@@ -89,14 +90,14 @@ public class AllSubsetsI {
 		
 		char[] input = {'a', 'b', 'c'};
 		StringBuilder output = new StringBuilder();
-		testObj.findSubset(input, 0, output);
-		
 		List<String> result  = testObj.subSets("abc");
 		 
 		for (String s : result) {
 			System.out.println(s + " ");
 		}
-				
+		
+		testObj.findSubset(input, 0, output);
+		
 		/* Test Case 2 */
 		System.out.println("---< Test Case 2 >---");
 		
