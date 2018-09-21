@@ -41,6 +41,8 @@ public class TwoSum {
 		return false;
 	}
 	
+	/* Method 2: use hash table */
+	
 	/* == Question 2 - 2 Sum All Pair I == 
 	 * Find all pairs of elements in a given array that sum to the given target number. 
 	 * Return all the pairs of indices.

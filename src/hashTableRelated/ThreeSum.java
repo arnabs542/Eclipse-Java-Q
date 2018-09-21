@@ -56,8 +56,8 @@ public class ThreeSum {
         continue;
     }
     ```
-    This is wrong. Think a sorted array -1, -1, 0, 2
-    if i equals that last duplicate -1, then the right pair [-1, -1, 2] will be missed
+    This is wrong. Think of a sorted array {-1, -1, 0, 2}.
+    If i equals that last duplicate -1, then the right pair [-1, -1, 2] will be missed
     
     */
 }
