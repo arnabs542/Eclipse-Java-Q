@@ -111,6 +111,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Two Sum All Pairs I (easy)](./src/hashTableRelated/TwoSum.java)
    - [Two Sum All Pairs II, distinct pairs (medium)](./src/hashTableRelated/TwoSum.java)
    - [Three Sum All Pairs (medium)](./src/hashTableRelated/ThreeSum.java)
+   - [Subarray Sum Equals K (medium)](./src/hashTableRelated/SubarraySumEqualsK.java)
   
 ### String & Array 
    - [Move 0s To The End I (easy)](./src/arrayRelated/MoveZeroToEnd1.java)
@@ -131,6 +132,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Reverse Words In A Sentence I (medium)](./src/arrayRelated/ReverseWordsInASentenceI.java)
    - [String Abbreviation Matching (medium)](./src/arrayRelated/StringAbbreviationMatching.java)
    - [Valid Palindrome](./src/arrayRelated/ValidPalindrome.java)
+   - [Subarray Sum Equals K (medium)](./src/hashTableRelated/SubarraySumEqualsK.java)
 
 ### Bit manipulation
    - [Power Of Two (easy)](./src/bitMinipulation/PowerOfTwo.java)
