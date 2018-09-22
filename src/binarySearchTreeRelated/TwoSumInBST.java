@@ -1,3 +1,14 @@
+/*
+ * == Created Date ==
+ * September 20, 2018
+ * 
+ * == Question - 2 Sum In a Binary Search Tree ==
+ * Given a Binary Search Tree and a target number, 
+ * return true if there exist two elements in the BST such that their sum is equal to the given target.  
+ *   
+ * 
+ */
+
 package binarySearchTreeRelated;
 
 import java.util.HashSet;
