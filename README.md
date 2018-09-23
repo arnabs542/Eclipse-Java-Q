@@ -133,6 +133,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [String Abbreviation Matching (medium)](./src/arrayRelated/StringAbbreviationMatching.java)
    - [Valid Palindrome](./src/arrayRelated/ValidPalindrome.java)
    - [Subarray Sum Equals K (medium)](./src/hashTableRelated/SubarraySumEqualsK.java)
+   - [Maximum Size Subarray Sum Equals K (medium)](./src/hashTableRelated/SubarraySumEqualsK.java)
 
 ### Bit manipulation
    - [Power Of Two (easy)](./src/bitMinipulation/PowerOfTwo.java)

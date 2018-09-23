@@ -2,7 +2,7 @@
  * == Created Date ==
  * September 21, 2018
  * 
- * == Question - Subarray Sum Equals K ==
+ * == Question - Subarray Sum Equals K (medium) ==
  * Given an array of integers and an integer k, 
  * you need to find the total number of continuous subarrays whose sum equals to k.  
  *   
@@ -13,6 +13,9 @@
  * == Notes == 
  * Frequent question
  * 
+ * == Similar Question == 
+ * Maximum Size Subarray Sum Equals K, see the end below
+ * 
  */
 
 package hashTableRelated;
@@ -21,8 +24,6 @@ import java.util.*;
 
 public class SubarraySumEqualsK {
 	
-	private static final int HashMap = 0;
-
 	/* == Solution 1: Brute Force == 
 	 * Time Complexity: O(n ^ 3), Time Limit Exceeded 
 	 * 
@@ -114,4 +115,34 @@ public class SubarraySumEqualsK {
 		}
 		return count;
 	}
+	
+	/* ----- Similar Question - Maximum Size Subarray Sum Equals K --- */
+	/* Given an array nums and a target value k, find the maximum length of a subarray that sums to k. 
+	 * If there isn't one, return 0 instead.
+	 * 
+	 * == Example ==
+	 * Given nums = [1, -1, 5, -2, 3], k = 3
+	 * return 4. (because the subarray [1, -1, 5, -2] sums to 3 and is the longest)
+	 * 
+	 * 
+	 * */
+	
+	  public int maxSubArrayLen(int[] nums, int k) {
+		  Map<Integer, Integer> map = new HashMap<>();
+		  int maxSize = 0;
+		  int prefixSum = 0;
+		  map.put(0, -1);
+		  for (int i = 0; i < nums.length; i++) {
+			  prefixSum += nums[i];
+			  if (map.containsKey(prefixSum - k)) {
+				  maxSize = Math.max(maxSize, i - map.get(prefixSum - k));
+				  // mistakes here: the size of the subarray is not i - map.get(prefixSum - k) + 1
+				  // because sum of subarray (i, j) is prefixSum[j] - prefixSum[i - 1]
+			  } 
+			  if (!map.containsKey(prefixSum)) {
+			      map.put(prefixSum, i);
+			  }
+		  }
+		  return maxSize;
+	  }
 }
