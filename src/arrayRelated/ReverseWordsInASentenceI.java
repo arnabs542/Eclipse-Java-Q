@@ -1,16 +1,16 @@
 /*
- * Created Date: August 2, 2018
+ * == Created Date ==
+ * August 2, 2018
  * 
- * Question - Reverse Words In A Sentence I (medium):
- *   Reverse the words in a sentence.
+ * == Question - Reverse Words In A Sentence I (medium) == 
+ * Reverse the words in a sentence.
+ * There are no heading or tailing white spaces
  *   
- *   Example: 
- *     “I love Google” → “Google love I”
+ * == Example ==
+ * “I love Google” → “Google love I”
  *   
- *   Follow up:
- *   
- *   Mirror Question:
- *   
+ * == Note == 
+ * September 23, 2018: fix the code for a bunch of painful corner cases 
  * 
  */
 
@@ -18,7 +18,13 @@ package arrayRelated;
 
 public class ReverseWordsInASentenceI {
 	
-	public String reverseWords(String input) {
+	/* == Assumption == 
+	 * 1. The words are separated by one space character
+	 * 2. There are no leading and trailing space
+	 * 3. Input is not null
+	 * */
+	
+	public String reverseWordsWithoutSomeCornerCase(String input) {
 		char[] in = input.toCharArray();
 		reverse(in, 0, in.length - 1);
 		int cur = 0;
@@ -33,24 +39,67 @@ public class ReverseWordsInASentenceI {
 	    return new String(in);
 	}
 	
-	private void reverse(char[] in, int left, int right) {
-		while (left < right) {
-			char temp = in[left];
-			in[left++] = in[right];
-			in[right--] = temp;
-		}
-	}
+	// -- < Without the above assumptions > --
+	
+    public String reverseWords(String s) {
+    		s = preProcess(s.toCharArray());
+    		return reverseWordsWithoutSomeCornerCase(s);
+    }
+    
+    private String preProcess(char[] in) { 	
+    		// remove the leading and trailing spaces. 
+    		// Or we can use string.trim() method
+        int start = 0;
+        while (start < in.length && in[start] == ' ') {
+        		start++;
+        }     
+    
+        int end = in.length - 1;
+        while (end >= 0 && in[end] == ' ') {
+        		end--;     
+        }
+        
+        // adjust the spaces between words to only one
+    		StringBuilder sb = new StringBuilder();
+    		int index = start;
+    		while (index <= end) {
+    			sb.append(in[index]);
+    			if (in[index] == ' ') {
+    				while (index <= end && in[index] == ' ') {
+    					index++;
+    				}
+    			} else {
+    				index++;
+    			}
+    		}
+    		return sb.toString();
+    }
+    
+    private void reverse(char[] in, int start, int end) {       
+        while (start < end) {
+            char temp = in[start];
+            in[start++] = in[end];
+            in[end--] = temp;
+        }
+    }
 	
 	// Time Complexity: O(n);
 	// Space Complexity: O(n);
 	
 	/* ----------------------< test stub >-------------------------*/
-	public static void print(char[] in) {
+	public static void print(char[] in) {	
 		for(char c : in) {
 			System.out.print(c + " ");
 		}
 		System.out.print("\n");
 	}
+	
+	public static void print(String in) {	
+		System.out.print("\"");
+		System.out.print(in);
+		System.out.println("\"");
+	}
+	
 	public static void main(String[] args) {
 		
 		ReverseWordsInASentenceI testObj = new ReverseWordsInASentenceI();
@@ -61,24 +110,32 @@ public class ReverseWordsInASentenceI {
 		testObj.reverse(c0A, 0, c0A.length - 1);
 		print(c0A);
 		
-		String s0B = "abcd";
-		char[] c0B = s0B.toCharArray(); 
-		testObj.reverse(c0B, 0, c0B.length - 1);
-		print(c0B);
-		
 		/* Test Case 1 */
 		System.out.println("---< Test Case 1 >---");
-		String s1 = "I love Google";
-		String result1 = testObj.reverseWords(s1);
-		System.out.println(result1);
+		print(testObj.reverseWords("I love Google"));
 		
 		/* Test Case 2 */
 		System.out.println("---< Test Case 2 >---");
-		String s2 = "A B C D";
-		String result2 = testObj.reverseWords(s2);
-		System.out.println(result2);
+		print(testObj.reverseWords(" 1"));
 		
 		/* Test Case 3 */
-		System.out.println("---< Test Case 3 >---");		
+		System.out.println("---< Test Case 3 >---");	
+		print(testObj.reverseWords("  "));
+		
+		/* Test Case 4 */
+		System.out.println("---< Test Case 4 >---");
+		print(testObj.reverseWords("a   "));
+		
+		/* Test Case 5 */
+		System.out.println("---< Test Case 5 >---");
+		print(testObj.reverseWords("   a   "));
+		
+		/* Test Case 6 */
+		System.out.println("---< Test Case 6 >---");
+		print(testObj.reverseWords("   a   b "));
+		
+		/* Test Case 7 */
+		System.out.println("---< Test Case 7 >---");
+		print(testObj.reverseWords("   a   b  c d   e  "));		
 	}
 }
