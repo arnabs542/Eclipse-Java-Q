@@ -20,7 +20,7 @@ public class ReverseWordsInASentenceI {
 	
 	/* == Assumption == 
 	 * 1. The words are separated by one space character
-	 * 2. There are no leading and trailing space
+	 * 2. There are no leading and tailing space
 	 * 3. Input is not null
 	 * */
 	
@@ -38,6 +38,14 @@ public class ReverseWordsInASentenceI {
 		}
 	    return new String(in);
 	}
+	
+    private void reverse(char[] in, int start, int end) {       
+        while (start < end) {
+            char temp = in[start];
+            in[start++] = in[end];
+            in[end--] = temp;
+        }
+    }
 	
 	// -- < Without the above assumptions > --
 	
@@ -75,14 +83,6 @@ public class ReverseWordsInASentenceI {
     		return sb.toString();
     }
     
-    private void reverse(char[] in, int start, int end) {       
-        while (start < end) {
-            char temp = in[start];
-            in[start++] = in[end];
-            in[end--] = temp;
-        }
-    }
-	
 	// Time Complexity: O(n);
 	// Space Complexity: O(n);
 	
@@ -106,9 +106,6 @@ public class ReverseWordsInASentenceI {
 		
 		/* Test Case 0 */
 		System.out.println("---< Test Case 0 >---");
-		char[] c0A = {'a', 'b', 'c'};
-		testObj.reverse(c0A, 0, c0A.length - 1);
-		print(c0A);
 		
 		/* Test Case 1 */
 		System.out.println("---< Test Case 1 >---");
