@@ -20,6 +20,7 @@
 package dfsRelated;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class AllPermutationsI {
@@ -45,7 +46,7 @@ public class AllPermutationsI {
 	}
 		  
     private void helper(char[] input, int index, List<String> result) {
-      if (index == input.length) {
+      if (index == input.length - 1) {
         result.add(new String(input)); // don't use: input.toString()
         return;
       }
@@ -65,6 +66,39 @@ public class AllPermutationsI {
     
 	// Time Complexity: O(n!);
 	// Space Complexity: O(n);
+    
+    /* ----------------------< same problem, different signature >-------------------------*/
+    
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> result = new LinkedList<>();
+        dfs(nums, 0, result);
+        return result;
+    }
+    
+    private void dfs(int[] nums, int index, List<List<Integer>> result) {
+        if (index == nums.length - 1) {
+        		// Another way to convert int[] to list: 
+        		//	List<Integer> cur = Arrays.stream(nums).boxed().collect(Collectors.toList());
+            List<Integer> cur = new LinkedList<>(); 
+            for (int ele : nums) {
+                cur.add(ele);
+            }
+            result.add(new LinkedList<Integer>(cur));
+            return;
+        }
+        for (int i = index; i < nums.length; i++) {
+            swap(nums, i, index);
+            dfs(nums, index + 1, result);
+            swap(nums, i, index);
+        }
+    }
+    
+    private void swap(int[] input, int a, int b) {
+        int temp = input[a];
+        input[a] = input[b];
+        input[b] = temp;
+    }
+    
 	
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
