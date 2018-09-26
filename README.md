@@ -124,6 +124,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Longest Substring Without Repeating Characters (medium)](./src/arrayRelated/LongestSubstringWithoutRepeatingChar.java)
    - [Array Deduplication II](./src/arrayRelated/ArrayDeduplicationII.java)
    - [Array Deduplication III](./src/arrayRelated/ArrayDeduplicationIII.java)
+   - [Array Deduplication V](./src/arrayRelated/ArrayDeduplicationII.java)
    - [Spiral Order Generate I (medium)](./src/arrayRelated/SpiralOrderGenerateII.java)
    - [Spiral Order Generate II (medium+)](./src/arrayRelated/SpiralOrderGenerateI.java)
    - [Spiral Order Traverse I (medium)](./src/arrayRelated/SpiralOrderTraverseI.java)
