@@ -58,8 +58,7 @@ public class KClosestInSortedArray {
 	// Time Complexity: O(logn + k)
 	// Space Complexity: O(k)
 	
-	public static void main(String[] args) {	
-			
+	public static void main(String[] args) {				
 		int[] testArr1 = {1, 2, 3};
 		int[] rst1 = kClosest(testArr1, 2, 3);
 		for (int item : rst1) {

@@ -31,8 +31,29 @@ public class KSmallestInUnsortedArray {
 			return new int[0];
 		}
 		
-		// Three ways to create a max heap, begin:
-	    
+		PriorityQueue<Integer> maxHeap = getMaxHeap(k);
+
+		for (int i = 0; i < arr.length; i++) {
+			if (i < k) { // offer k elements to build a max heap of k size
+				maxHeap.offer(arr[i]);
+			} else { // compare the rest of the element with the top of the heap
+				if (arr[i] <= maxHeap.peek()) {
+					maxHeap.poll();
+					maxHeap.offer(arr[i]);
+				}
+			}
+		}
+		
+		int[] result = new int[k];
+		for (int i = k - 1; i >= 0; i--) {
+			result[i] = maxHeap.poll();
+		}
+		return result;
+	}
+	
+	/* ============= Three ways to create a max heap =============== */	
+	private PriorityQueue<Integer> getMaxHeap(int k) {
+		
 	    /*--- < Syntax 1: Use Collections >---*/	
 		PriorityQueue<Integer> maxHeap1 = new PriorityQueue<>(k, Collections.reverseOrder());    
 		
@@ -49,7 +70,7 @@ public class KSmallestInUnsortedArray {
 		PriorityQueue<Integer> maxHeap2 = new PriorityQueue<>(k, new ReverseComparator());
 		
 		/*--- < Syntax 3: Lambda	 >---*/		
-	   PriorityQueue<Integer> maxHeap3 = new PriorityQueue<>(k, new Comparator<Integer>() {
+	    PriorityQueue<Integer> maxHeap3 = new PriorityQueue<>(k, new Comparator<Integer>() {
 	       @Override
 	       public int compare(Integer o1, Integer o2) {
 	         if (o1.equals(o2)) { // or o1.intValue() == o2.intValue(); cannot use o1 == o2
@@ -57,26 +78,9 @@ public class KSmallestInUnsortedArray {
 		     }
 		     return o1 > o2 ? -1 : 1; // return -1 means o1 has higher priority
 		   }
-		});		  
-	   
-	    // Three ways to create a max heap, end
-
-		for (int i = 0; i < arr.length; i++) {
-			if (i < k) { // offer k elements to build a max heap of k size
-			    maxHeap2.offer(arr[i]);
-			} else { // compare the rest of the element with the top of the heap
-				if (arr[i] <= maxHeap2.peek()) {
-					maxHeap2.poll();
-					maxHeap2.offer(arr[i]);
-				}
-			}
-		}
-		
-		int[] result = new int[k];
-		for (int i = k - 1; i >= 0; i--) {
-			result[i] = maxHeap2.poll();
-		}
-		return result;
+		});	
+	    
+	    return maxHeap1;
 	}
 	
 	// Time Complexity: O( klogk + (n - k)logk );
