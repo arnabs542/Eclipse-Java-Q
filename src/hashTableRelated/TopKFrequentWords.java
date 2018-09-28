@@ -21,8 +21,6 @@ package hashTableRelated;
 
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
 
@@ -32,25 +30,10 @@ public class TopKFrequentWords {
 			return new String[0];
 		}
 		// Step1: use a hash table to record the value and frequency 
-		Map<String, Integer> freqMap = new HashMap<>();
-		for (String s : combo) {
-			if (!freqMap.containsKey(s)) {
-				freqMap.put(s, 1);
-			} else {
-				int freq = freqMap.get(s);
-				freqMap.put(s, freq + 1);
-			}
-		}
-		
+		Map<String, Integer> freqMap = getFreqMap(combo);
+			
 		// Step 2: create a min Heap
-		class MapComparator implements Comparator<Map.Entry<String, Integer>> {
-			@Override
-			public int compare(Map.Entry<String, Integer> e1, Map.Entry<String, Integer> e2) {
-				return e1.getValue().compareTo(e2.getValue());
-			}
-		}		
-		// line below has to be under class MapComparator
-		PriorityQueue<Map.Entry<String, Integer>> minHeap = new PriorityQueue<>(k, new MapComparator());
+		PriorityQueue<Map.Entry<String, Integer>> minHeap = getMinHeap(freqMap);
 		
 	    // Step 3, iterate the frequency map, get the top frequency elements in the heap
 		for (Map.Entry<String, Integer> entry : freqMap.entrySet()) {
@@ -69,7 +52,26 @@ public class TopKFrequentWords {
 		return result;
 	}
 	
-	// Time Complexity: O(n);
+	private PriorityQueue<Map.Entry<String, Integer>> getMinHeap(Map<String, Integer> freqMap) {
+		class MapComparator implements Comparator<Map.Entry<String, Integer>> {
+			@Override
+			public int compare(Map.Entry<String, Integer> e1, Map.Entry<String, Integer> e2) {
+				return e1.getValue().compareTo(e2.getValue());
+			}
+		}		
+		// line below has to be under class MapComparator
+		return new PriorityQueue<>(new MapComparator());
+	}
+	
+	private Map<String, Integer> getFreqMap(String[] combo) {
+		Map<String, Integer> freqMap = new HashMap<>();
+		for (String s : combo) {
+			freqMap.put(s, freqMap.getOrDefault(s, 0) + 1); // a more consice syntax 
+		}
+		return freqMap;
+	}
+		
+	// Time Complexity: O( n log(k) );
 	// Space Complexity: O(n);
 	
 	/* ----------------------< test stub >-------------------------*/
