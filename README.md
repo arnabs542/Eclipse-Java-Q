@@ -20,6 +20,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Implement Queue with Linked List](./src/myLinkedList/ImplementQueue.java)
    - [Implement Stack with Linked List](./src/myLinkedList/ImplementStack.java)
    - [Merge Sort Linked List (medium)](./src/myLinkedList/MergeSortLinkedList.java)
+   - [Merge k Sorted Lists (hard)](./src/myLinkedList/MergeKSortedLists.java)
    - [Add Two Numbers (medium)](./src/myLinkedList/AddTwoNumbers.java)
    
 ### Sorting Algorithms 
@@ -42,6 +43,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Get Keys In Binary Search Tree In Given Range (easy)](./src/binaryTreeRelated/GetKeysInGivenRange.java)
    - [Get Keys In Binary Tree Layer By Layer](./src/binaryTreeRelated/GetKeysLayerByLayer.java)
    - [Get Keys Layer By Layer Zig Zag Order](./src/binaryTreeRelated/GetKeysLayerByLayerZigZagOrder.java)
+   - [Vertical Order Traversal(medium+)](./src/binaryTreeRelated/VerticalOrderTraversal.java)
    - [Lowest Common Ancestor I (medium)](./src/binaryTreeRelated/LowestCommonAncestorI.java)
    - [Lowest Common Ancestor With Parent Node (medium)](./src/binaryTreeRelated/LowestCommonAncestorWithParentNode.java)
    - [Lowest Common Ancestor For K Nodes (medium)](./src/binaryTreeRelated/LowestCommonAncestorI.java)
