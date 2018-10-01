@@ -145,7 +145,6 @@ public class VerticalOrderTraversal {
 	    }
 	    return res;
     }
-   
     
 	/* ----------------------< test stub >-------------------------*/
     public static void main(String[] args) { 

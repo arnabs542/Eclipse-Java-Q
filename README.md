@@ -134,9 +134,11 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Reverse String Using Recursion (easy+)](./src/arrayRelated/ReverseStringUsingRecursion.java)
    - [Reverse Words In A Sentence I (medium)](./src/arrayRelated/ReverseWordsInASentenceI.java)
    - [String Abbreviation Matching (medium)](./src/arrayRelated/StringAbbreviationMatching.java)
-   - [Valid Palindrome](./src/arrayRelated/ValidPalindrome.java)
+   - [Valid Palindrome (easy)](./src/arrayRelated/ValidPalindrome.java)
+   - [Valid Palindrome II (easy)](./src/arrayRelated/ValidPalindromeII.java)
    - [Subarray Sum Equals K (medium)](./src/hashTableRelated/SubarraySumEqualsK.java)
    - [Maximum Size Subarray Sum Equals K (medium)](./src/hashTableRelated/SubarraySumEqualsK.java)
+   - [Minimum Size Subarray Sum (medium)](./src/arrayRelated/MinimumSizeSubarraySum.java)
 
 ### Bit manipulation
    - [Power Of Two (easy)](./src/bitMinipulation/PowerOfTwo.java)
