@@ -1,14 +1,17 @@
 /*
- * Created Date: June 7,2018
+ * == Created Date ==
+ * June 7,2018
  * 
- * Practice Class 7: Implement data structure Stack with Linked List
+ * == Application ==
+ * Practice Class 6: Implement data structure Stack with Linked List
  * 
- * Mirror Question: 
- *   Implement Queue with array;
- *   Implement Queue with Linked List; 
+ * == Mirror Question ==
+ * Implement Queue with array;
+ * Implement Queue with Linked List; 
  *   
- * Updated:
- *   June 14, 2018: exception, some syntax simplification
+ * == Updated ==
+ * June 14, 2018: exception, some syntax simplification
+ * October 1, 2018: Review. Fall 1, Practice Class
  * 
  */
 
@@ -94,5 +97,4 @@ public class ImplementStack {
 		System.out.println(myStack.isEmpty()); // expected: true
 		System.out.println(myStack.pop()); // expected: throw exception: java.util.EmptyStackException		
 	}
-
 }
