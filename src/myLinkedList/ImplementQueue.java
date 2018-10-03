@@ -6,12 +6,48 @@
  * Mirror Question: 
  *   Implement Queue with array;
  *   Implement Stack with Linked List;
+ *   
+ *   3 -> 2 -> 1
+ *  first      last
+ *  
+ *  offer() :  4 -> 3 ..
+ *           first 
+ * 
+ *  poll()
+ * 
+ * 
+ *  1 -> 2 -> 3
+ * first     tail
+ * 
+ * 
  * 
  */
 
 package myLinkedList;
 
 import java.util.NoSuchElementException;
+
+/*   
+ * 
+ * 
+ *    3 -> 2 -> 1
+ *  first      last
+ *  
+ *  offer() :  4 -> 3 ..
+ *           first 
+ * 
+ *  poll() : fail, becase we lost the previous node of last
+ * -----------------------------------------------------------
+ * 
+ *  1 -> 2 -> 3
+ * first     tail
+ * 
+ * offer() :  ... 3 -> 4
+ *                 tail
+ *                 
+ * poll() :   1   2 -> 3             
+ *              first
+ */
 
 public class ImplementQueue {
 	

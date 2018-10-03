@@ -21,8 +21,8 @@ import java.util.EmptyStackException;
 
 public class ImplementStack {
 	
-	public ListNode top;
-	public int size;
+	private ListNode top;
+	private int size;
 	
 	public ImplementStack() {
 		top = null;

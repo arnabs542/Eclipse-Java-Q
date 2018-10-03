@@ -26,8 +26,10 @@ public class QuickSort {
 		if (left >= right) { //base case
 			return;
 		}
+		
 		// define a pivot and use it to partition the array
 		int pivotPos = partition(array, left, right);		
+		
 		// do the recursive call on the two partitions
 		quickSort(array, left, pivotPos - 1);
 		quickSort(array, pivotPos + 1, right);		
@@ -37,8 +39,10 @@ public class QuickSort {
 		// randomly select a pivot index from the part to be partitioned
 		int pivotIndex = selectPivot(left, right);
 		int pivotVal = array[pivotIndex];
+		
 		// swap the pivot element to the rightmost element first
 		swap(array, pivotIndex, right);		
+		
 		int rightBound = right - 1;		
 		while (left <= rightBound) {
 			if (array[left] <= pivotVal) {
@@ -55,8 +59,7 @@ public class QuickSort {
 	
 	private int selectPivot(int left, int right) {
 		Random rand = new Random();
-		// pick random element in the range of [left, right]
-		return left + rand.nextInt(right - left + 1); 	
+		return left + rand.nextInt(right - left + 1); // pick random element in the range of [left, right]
 	}
 		
 	private void swap(int[] array, int a, int b) {		

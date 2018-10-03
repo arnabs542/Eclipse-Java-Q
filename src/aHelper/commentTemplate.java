@@ -1,6 +1,6 @@
 /*
  * == Created Date ==
- * September ?, 2018
+ * October ?, 2018
  * 
  * == Question - ==
  *   
@@ -9,21 +9,6 @@
  *   
  * == Notes == 
  *  
- * 
- */
-
-/*
- * == Created Date ==
- * September ?, 2018
- * 
- * == Question - ==
- *   
- *   
- * == Example == 
- *   
- * == Mirror Question == 
- *   
- * == Updated ==
  * 
  */
 

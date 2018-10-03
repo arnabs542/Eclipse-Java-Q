@@ -56,6 +56,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Cousins In Binary Tree (medium)](./src/binaryTreeRelated/AreCousinNodes.java)
    - [Reconstruct Binary Search Tree With Post-order Traversal (medium)](./src/binaryTreeRelated/ConstructBSTWithPostOrderTraversal.java)
    - [Construct Binary Tree from In-order and Level-order Traversal (hard)](./src/binaryTreeRelated/ConstructFormInorderAndLevelOrder.java)
+   - [Count Complete Tree Nodes (M)](./src/binaryTreeRelated/CountCompleteTreeNodes.java)
 
 ### Binary Search Tree 
    - [Is Binary Search Tree Or Not (medium)](./src/binaryTreeRelated/IsBinarySearchTree.java)
