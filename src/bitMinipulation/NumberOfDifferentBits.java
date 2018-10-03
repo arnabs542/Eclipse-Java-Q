@@ -23,7 +23,7 @@ public class NumberOfDifferentBits {
 			if ((c & 1) == 1) { // bit tester. remember to add parenthesis
 				count++;
 			}
-			c >>>= 1; // >>> logical right shift
+			c >>>= 1; // >>> logical right shift, add 0 to left side
 		}
 		return count;
 	}

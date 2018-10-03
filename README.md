@@ -140,6 +140,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Subarray Sum Equals K (medium)](./src/hashTableRelated/SubarraySumEqualsK.java)
    - [Maximum Size Subarray Sum Equals K (medium)](./src/hashTableRelated/SubarraySumEqualsK.java)
    - [Minimum Size Subarray Sum (medium)](./src/arrayRelated/MinimumSizeSubarraySum.java)
+   - [Plus One (easy+)](./src/arrayRelated/PlusOne.java)
 
 ### Bit manipulation
    - [Power Of Two (easy)](./src/bitMinipulation/PowerOfTwo.java)
@@ -147,6 +148,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [All Unique Characters I (easy+)](./src/bitMinipulation/AllUniqueCharactersI.java)
    - [All Unique Characters II (medium)](./src/bitMinipulation/AllUniqueCharactersII.java)
    - [Hexadecimal Representation (easy+)](./src/bitMinipulation/HexadecimalRepresentation.java)
+   - [Number Of 1 Bits](./src/bitMinipulation/NumberOf1Bits.java)
 
 ### Dynamic Programming
    - [Fibonacci Number (easy)](./src/dynamicProgramming/FibonacciNumber.java)
