@@ -1,16 +1,17 @@
 /*
- * Created Date: June 19, 2018
+ * == Created Date ==
+ * June 19, 2018
  * 
- * Question - Kth Smallest Number In Sorted Matrix:
- *   Given a matrix of size N x M. 
- *   For each row the elements are sorted in ascending order, and for each column the elements are also sorted in ascending order. 
- *   Find the Kth smallest number in it.
+ * == Question - Kth Smallest Number In Sorted Matrix ==
+ * Given a matrix of size N x M. 
+ * For each row the elements are sorted in ascending order, and for each column the elements are also sorted in ascending order. 
+ * Find the Kth smallest number in it.
  *   
- *   Assumptions:
- *     the matrix is not null, N > 0 and M > 0
- *     K > 0 and K <= N * M
+ * == Assumptions ==
+ * The matrix is not null, N > 0 and M > 0
+ * K > 0 and K <= N * M
  *     
- *   Example: 
+ * == Example ==
  *   
  *   { {1,  3,  5,   7},
  *     {2,  4,  8,   9},
@@ -20,9 +21,12 @@
  *     the 5th smallest number is 4
  *     the 8th smallest number is 6
  *   
- *   Mirror Question:
- *     Search In Sorted Matrix I (binary search)
- *     Dijkstra's Algorithm
+ * == Mirror Question ==
+ * Search In Sorted Matrix I (binary search)
+ * Dijkstra's Algorithm
+ * 
+ * == Update ==
+ * October 6, 2018: Review, in Fall 1 class
  * 
  */
 
@@ -31,6 +35,8 @@ package bfsRelated;
 import java.util.PriorityQueue;
 
 public class KthSmallestInSortedMatrix {
+	
+	
 	
 	static class Cell implements Comparable<Cell> {
 		int row;

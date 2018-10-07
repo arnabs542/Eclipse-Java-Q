@@ -1,15 +1,17 @@
 /*
- * Created Date: June 15, 2018
+ * == Created Date == 
+ * June 15, 2018
  * 
- * Question - K Smallest In Unsorted Array:
- *   Find the K smallest numbers in an unsorted integer array A. 
- *   The returned numbers should be in ascending order.  
+ * == Question - K Smallest In Unsorted Array ==
+ * Find the K smallest numbers in an unsorted integer array A. 
+ * The returned numbers should be in ascending order.  
  *   
- *   Example: 
- *     A = {3, 4, 1, 2, 5}, K = 3, the 3 smallest numbers are {1, 2, 3}
+ * == Example ==
+ * A = {3, 4, 1, 2, 5}, K = 3, the 3 smallest numbers are {1, 2, 3}
  * 
- * Updated:
- *   August 1, 2018: Review
+ * == Updated ==
+ * August 1, 2018: Review
+ * October 6, 2018: Add two more methods
  *
  */
 
@@ -21,7 +23,12 @@ import java.util.PriorityQueue;
 
 public class KSmallestInUnsortedArray {
 		
-	public int[] kSmallest(int[] arr, int k) {	
+	/* --------------------< Solution 1 - Use a Max heap >----------------------
+	 * Time Complexity: O( klogk + (n - k)logk ) // O( k + (n - k)logk )
+	 * Space Complexity: O(k);
+	 * 
+	 * */
+	public int[] kSmallestMeth1(int[] arr, int k) {	
 		if (arr == null || arr.length == 0) { // corner case
 			return arr;
 		}
@@ -51,7 +58,7 @@ public class KSmallestInUnsortedArray {
 		return result;
 	}
 	
-	/* ============= Three ways to create a max heap =============== */	
+	/* == Three ways to create a max heap == */	
 	private PriorityQueue<Integer> getMaxHeap(int k) {
 		
 	    /*--- < Syntax 1: Use Collections >---*/	
@@ -83,8 +90,24 @@ public class KSmallestInUnsortedArray {
 	    return maxHeap1;
 	}
 	
-	// Time Complexity: O( klogk + (n - k)logk );
-	// Space Complexity: O(k);
+	/* --------------------< Solution 2 - Use a Min heap >----------------------
+	 * Time Complexity: O( n + klogn )
+	 * Space Complexity: O(n);
+	 * 
+	 * 
+	 * */
+	
+	public int[] kSmallestMeth2(int[] arr, int k)  {
+		PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+		int[] res = new int[k];
+		for (int ele : arr) {
+			minHeap.offer(ele);
+		}
+		for (int i = 0; i < k; i++) {
+			res[i] = minHeap.poll();
+		}
+		return res;
+	}
 	
 	/* ----------------------< test stub >-------------------------*/
 	
@@ -100,7 +123,7 @@ public class KSmallestInUnsortedArray {
 	
 	public static void main(String[] args) {
 		
-		KSmallestInUnsortedArrayWithOwnHeap testObj = new KSmallestInUnsortedArrayWithOwnHeap();
+		KSmallestInUnsortedArray testObj = new KSmallestInUnsortedArray();
 		
 		/* Test Case 0 */
 		System.out.println("---< Test Case 0 >---");
@@ -109,14 +132,20 @@ public class KSmallestInUnsortedArray {
 		System.out.println("---< Test Case 1 >---");
 		
 		int[] arr1 = {3, 4, 1, 2, 5};
-		arr1 = testObj.kSmallest(arr1, 3);		
+		arr1 = testObj.kSmallestMeth1(arr1, 3);		
+		printArr(arr1); // expected: 1 2 3
+		
+		arr1 = testObj.kSmallestMeth2(arr1, 3);		
 		printArr(arr1); // expected: 1 2 3
 		
 		/* Test Case 2 */
 		System.out.println("---< Test Case 2 >---");
 		int[] arr2 = {5, 3, 4, 2, 1, 1, 2, 1, 8, 4, 4, 9, 13, 5, 8}; 
-		arr2 = testObj.kSmallest(arr2, 10);		
-		printArr(arr2);
+		arr2 = testObj.kSmallestMeth1(arr2, 10);		
+		printArr(arr2);// expected: 1 1 1 2 2 3 4 4 4 5 
+				
+		arr2 = testObj.kSmallestMeth2(arr2, 10);	
+		printArr(arr2);// expected: 1 1 1 2 2 3 4 4 4 5 
 		
 		/* Test Case 3 */
 		System.out.println("---< Test Case 3 >---");		

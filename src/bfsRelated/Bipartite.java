@@ -1,12 +1,13 @@
 /*
- * Created Date: June 16, 2018
+ * == Created Date == 
+ * June 16, 2018
  * 
- * Question - Bipartite:  
- *   Determine if an undirected graph is bipartite. 
- *   A bipartite graph is one in which the nodes can be divided into two groups 
- *     such that no nodes have direct edges to other nodes in the same group.
+ * == Question - Bipartite == 
+ * Determine if an undirected graph is bipartite. 
+ * A bipartite graph is one in which the nodes can be divided into two groups 
+ *  such that no nodes have direct edges to other nodes in the same group.
  *      
- *   Example: 
+ * == Example ==
  *   
  *        [1]
  *       /   \
@@ -21,11 +22,13 @@
  *        ([4]) 
        
  *   
- *   Assumptions:
- *     The graph is represented by a list of nodes, and the list of nodes is not null.
+ * == Assumptions ==
+ * The graph is represented by a list of nodes, and the list of nodes is not null.
  * 
- * Updated:
- *   June 17, 2018: Review
+ * == Updated ==
+ * June 17, 2018: Review
+ * October 6, 2018: Review, in Fall 1 class
+ * 
  */
 
 package bfsRelated;
@@ -49,18 +52,41 @@ class GraphNode {
 
 public class Bipartite {
 	
-	/* ---------------< Method 1: Use queue to do BFS >------------------------*/	
+	/* ---------------< Method 1: Use queue to do BFS >------------------------
+	 * Data Strucuture: 
+	 * 
+	 * == Init ==
+	 * Enque the start node and color it with a color
+	 * 
+	 * == For each step ==
+	 * Expand: dequeue the first element(x) of the queue
+	 * 
+	 * Generate: enqueue all the neighbors(y) and color them with the other color
+	 *   case 1: y has been generated before
+	 * 	    case 1.1: y's color is different from x, no conflict
+	 * 	    case 1.2: y's color is the same as x, CONFLICT, return false
+	 *   case 2: y has not been generated before
+	 * 	     color y with the other color other than x's
+	 * 
+	 * == Termination ==
+	 * Queue is empty or there is conflict
+	 * 
+	 * Time Complexity: O(V + E); 
+	 * Space Complexity: O(V);
+	 * 
+	 * */	
+	
 	public static boolean isBipartite(List<GraphNode> graph) {
 		HashMap<GraphNode, Integer> visited = new HashMap<>();
 		for (GraphNode node : graph) {
-			if(!BFS(node, visited)) {
+			if(!bfs(node, visited)) {
 				return false;
 			}
 		}
 		return true;
 	}
 	
-	private static boolean BFS(GraphNode node, HashMap<GraphNode, Integer> visited) {
+	private static boolean bfs(GraphNode node, HashMap<GraphNode, Integer> visited) {
 		if (visited.containsKey(node)) {
 			return true;
 		}
@@ -82,9 +108,6 @@ public class Bipartite {
 		}
 		return true;
 	}
-	
-	// Time Complexity: O(V + E); 
-	// Space Complexity: O(?);
 	
 	/* ---------------< Method 2 >------------------------*/	
 	public static boolean isBipartiteMeth2(List<GraphNode> graph) {
