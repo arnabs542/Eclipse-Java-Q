@@ -4,7 +4,8 @@
  * 
  * == Question - Kth Smallest Number In Sorted Matrix ==
  * Given a matrix of size N x M. 
- * For each row the elements are sorted in ascending order, and for each column the elements are also sorted in ascending order. 
+ * For each row the elements are sorted in ascending order, 
+ * and for each column the elements are also sorted in ascending order. 
  * Find the Kth smallest number in it.
  *   
  * == Assumptions ==
@@ -27,6 +28,7 @@
  * 
  * == Update ==
  * October 6, 2018: Review, in Fall 1 class
+ * Don't be intimadated by the long statements below, just basic operations to matrix... 	
  * 
  */
 
@@ -35,9 +37,13 @@ package bfsRelated;
 import java.util.PriorityQueue;
 
 public class KthSmallestInSortedMatrix {
-	
-	
-	
+		
+	/* ------< Method 1 - Use Min Heap + Selp-defined Data Structure >------
+	 * 
+	 * Time Complexity: O( k * logk );
+	 * Space Complexity: O( k + n * m );
+	 * 
+	 */
 	static class Cell implements Comparable<Cell> {
 		int row;
 		int col;
@@ -82,8 +88,51 @@ public class KthSmallestInSortedMatrix {
 		return minHeap.peek().val;		
 	}	
 	
-	// Time Complexity: O( k * logk );
-	// Space Complexity: O( k + n * m );
+	/* ------< Method 2 - Binary Search >------
+	 * 
+	 * Time Complexity: O( k * logk );
+	 * Space Complexity: O( k + n * m );
+	 * 
+	 */
+	
+	public int kthSmallestMeth2(int[][] matrix, int k) {
+		if (k == 1) {
+			return matrix[0][0];
+		}
+		int n = matrix.length;
+		if (k == n * n) {
+			return matrix[n - 1][n - 1];
+		}
+		    
+	    int min = matrix[0][0];
+	    int max = matrix[n - 1][n - 1];
+	    
+	    while (min <= max) {
+	      int mid = min + (max - min) / 2;
+	      int count = countLessEqual(matrix, mid);
+	      if (count < k) {
+	        min = mid + 1;
+	      } else {
+	        max = mid - 1;
+	      }
+	    }
+	    return min;
+	}
+		    
+	private int countLessEqual(int[][] matrix, int target) {
+		int count = 0;
+		int row = matrix.length - 1, col = 0;
+		while (row >= 0 && col < matrix.length) {
+		  if (matrix[row][col] <= target) {
+		    col++;
+		    count += row + 1;
+		  } else {
+		    row--;
+		  }
+		}
+		return count;
+	}
+
 	
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
@@ -106,6 +155,8 @@ public class KthSmallestInSortedMatrix {
 		
 		result = testObj.kthSmallest(matrix, 8); 
 		System.out.println(result);// expected: 6
+		
+		result = testObj.kthSmallestMeth2(matrix, 5); 
 		
 		/* Test Case 2 */
 		System.out.println("---< Test Case 2 >---");
