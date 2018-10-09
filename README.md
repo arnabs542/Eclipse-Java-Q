@@ -103,6 +103,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Combinations Of Coins (medium)](./src/dfsRelated/CombinationsOfCoins.java)
    - [All Factors Of A Number (medium)](./src/dfsRelated/AllFactorsOfANumber.java)
    - [Deep Copy Undirected Graph (medium)](./src/hashTableRelated/DeepCopyUndirectedGraph.java)
+   - [Word Search (medium+)](./src/hashTableRelated/WordSearch.java)
    
 ### Hash Table 
    - [Common Numbers Of Two Sorted Array (easy)](./src/hashTableRelated/CommonNumOfTwoSortedArr.java)

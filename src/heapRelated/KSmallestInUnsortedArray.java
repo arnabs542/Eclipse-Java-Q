@@ -28,6 +28,16 @@ public class KSmallestInUnsortedArray {
 	 * Time Complexity: O( klogk + (n - k)logk ) // O( k + (n - k)logk )
 	 * Space Complexity: O(k);
 	 * 
+	 * Advantage: 
+	 * 1. In reality, k << n, so Max Heap Solution is better than Min Heap
+	 * 
+	 * 2. Online Algorithm, Stream Processing (Use Max Heap) 
+	 * 
+	 *    VS 
+	 * 
+	 *    Offline, Batch Processin (Use Min Heap, Quick Select)
+	 * 
+	 * 
 	 */
 	public int[] kSmallestMeth1(int[] arr, int k) {	
 		if (arr == null || arr.length == 0) { // corner case
