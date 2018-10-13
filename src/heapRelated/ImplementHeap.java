@@ -1,7 +1,9 @@
 /*
- * Created Date: June 13, 2018
+ * == Created Date == 
+ * June 13, 2018
  * 
- * Application: Implement a Min Heap
+ * == Application ==
+ * Implement a Min Heap
  * 
  */
 
@@ -12,6 +14,7 @@ public class ImplementHeap {
 	private Integer[] arr;
 	private int size;
 	
+	/* --------------------< Constructor >------------------*/
 	ImplementHeap(int capacity) {
 		size = 0;
 		arr = new Integer[capacity];
@@ -22,6 +25,17 @@ public class ImplementHeap {
 		this.arr = arr;
 		heapify();
 	}
+	
+	/* --------------------< Public Interface >------------------*/
+	/*     0
+	 *  1    2 
+	 * 3 4   5 6 
+	 *  
+	 * for i, its parent index is (i - 1) / 2
+	 *      
+	 * Parent index of the last element: ((size - 1) - 1) / 2 = size / 2 - 1,
+	 * so the index of the last node that has a child: size / 2 - 1
+	 */
 	
 	public void heapify() {
 		for (int k = size / 2 - 1; k >= 0; k--) {
@@ -69,6 +83,8 @@ public class ImplementHeap {
 		return size == 0;
 	}
 	
+	/* --------------------< Private Helper Functions >------------------*/
+	
 	// Bottom-up reheapify (swim)  
 	private void swim(int k) {
 		if (k > this.size) { // corner case
@@ -111,6 +127,8 @@ public class ImplementHeap {
 		arr[b] = temp;
 	}
 	
+	/* ----------------------< test stub >-------------------------*/
+	
 	private void printHeap() {
 		if(arr == null) {
 			System.out.println("null");
@@ -120,8 +138,6 @@ public class ImplementHeap {
 		}
 		System.out.print("\n");
 	}
-	
-	/* ----------------------< test stub >-------------------------*/
 	
 	public static void main(String[] args) {
 		
