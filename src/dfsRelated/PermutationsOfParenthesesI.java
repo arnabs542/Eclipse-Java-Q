@@ -74,6 +74,12 @@ public class PermutationsOfParenthesesI {
 		/* Test Case 2 */
 		System.out.println("---< Test Case 2 >---");
 		
+		List<String> result2  = testObj.validParentheses(2);
+		 
+		for (String s : result2) {
+			System.out.println(s + " ");
+		}
+		
 		/* Test Case 3 */
 		System.out.println("---< Test Case 3 >---");		
 	}

@@ -80,6 +80,9 @@ public class DictionaryWordI {
 		
 		/* Test Case 3 */
 		System.out.println("---< Test Case 3 >---");
+		String[] dict3 = {"leet","code"};
+		boolean result3 = testObj.canBreak("leetcode", dict3); 
+		System.out.println(result3);
 		
 	}
 
