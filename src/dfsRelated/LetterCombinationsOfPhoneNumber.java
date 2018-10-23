@@ -36,14 +36,14 @@ public class LetterCombinationsOfPhoneNumber {
             result.add(sb.toString());
             return;
         }
-        int curDig = digits.charAt(index) - '1' + 1;
+        int curDig = digits.charAt(index) - '0';
         for (int i = 0; i < map.get(curDig).length(); i++) {     		
             sb.append(map.get(curDig).charAt(i));
             dfs(digits, index + 1, result, sb);
             sb.deleteCharAt(sb.length() - 1);
         }
     }
-    
+  
     private Map<Integer, String> getMatchingMap() {
         Map<Integer, String> map = new HashMap<>();
         map.put(2, "abc");
@@ -57,9 +57,36 @@ public class LetterCombinationsOfPhoneNumber {
         return map;
     }
     
-	// Time Complexity: O(?);
-	// Space Complexity: O(?);
+	// Time Complexity: O(3^n); // n is the number of given digits
+	// Space Complexity: O(n);
 	
+    
+    /* ----------< Use an String arry to replace the Hash Table >-------------------*/
+   
+    public List<String> letterCombinationsMeth2(String digits) {
+    	    String[] map = {"abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+        List<String> result = new ArrayList<>();
+        StringBuilder sb = new StringBuilder();
+        if (digits == null || digits.length() == 0) {
+            return result;
+        }
+        dfsMeth1(digits, 0, result, sb, map);
+        return result;
+    }
+    
+    private void dfsMeth1(String digits, int index, List<String> result, StringBuilder sb, String[] map) {
+        if (index == digits.length()){
+            result.add(sb.toString());
+            return;
+        }
+        int curDig = digits.charAt(index) - '2';
+        for (int i = 0; i < map[curDig].length(); i++) {     		
+            sb.append(map[curDig].charAt(i));
+            dfsMeth1(digits, index + 1, result, sb, map);
+            sb.deleteCharAt(sb.length() - 1);
+        }
+    }
+    
 	/* ----------------------< test stub >-------------------------*/
     private static void print(List<String> list) {
     		for (String s: list) {
@@ -77,10 +104,12 @@ public class LetterCombinationsOfPhoneNumber {
 		/* Test Case 1 */
 		System.out.println("---< Test Case 1 >---");		
 		print(testObj.letterCombinations("23"));
+		print(testObj.letterCombinationsMeth2("23"));
 		
 		/* Test Case 2 */
 		System.out.println("---< Test Case 2 >---");
-		print(testObj.letterCombinations("234"));
+		print(testObj.letterCombinations("983"));
+		print(testObj.letterCombinationsMeth2("983"));
 		
 		/* Test Case 3 */
 		System.out.println("---< Test Case 3 >---");
