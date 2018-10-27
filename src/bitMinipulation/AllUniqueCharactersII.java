@@ -1,17 +1,18 @@
 /*
- * Created Date: July 3, 2018
+ * == Created Date == 
+ * July 3, 2018
  * 
- * Question - All Unique Characters II:
- *   We are using ASCII charset, the value of valid characters are from 0 to 255
- *   The given string is not null
+ * == Question - All Unique Characters II ==
+ * We are using ASCII charset, the value of valid characters are from 0 to 255
+ * The given string is not null
  * 
- * Examples
- *   all the characters in "abA+\8" are unique
- *   "abA+\a88" contains duplicate characters
+ * == Examples == 
+ * all the characters in "abA+\8" are unique
+ * "abA+\a88" contains duplicate characters
  *   
- * Updated:
- *  July 21, 2018: Review
- *  Need to Review Again as soon as possible!!!
+ * == Updated ==
+ * July 21, 2018: Review. Need to Review Again as soon as possible!!!
+ * October 24, 2018: Fall class review
  * 
  */
 
@@ -29,11 +30,10 @@ public class AllUniqueCharactersII {
 	 * */
 	
 	public boolean allUnique(String word) {
-		char[] input = word.toCharArray();
 		int[] vec = new int[8]; // use 8 * 32 bits to represent 256 ASCII characters
-		for (char c : input) {  
-			int row = c / 32;
-			int col = c % 32;
+		for (int i = 0; i < word.length(); i++) {  
+			int row = word.charAt(i) / 32;
+			int col = word.charAt(i) % 32;
 			if (((vec[row] >>> col) & 1) == 1) { // bit tester
 				return false;
 			} else {
@@ -67,7 +67,9 @@ public class AllUniqueCharactersII {
 		System.out.println(result2);
 		
 		/* Test Case 3 */
-		System.out.println("---< Test Case 3 >---");		
+		System.out.println("---< Test Case 3 >---");	
+		boolean result3 = testObj.allUnique("abA+>8");
+		System.out.println(result3);
 	}
 
 }

@@ -53,16 +53,15 @@ public class AllUniqueCharactersI {
 	// Time Complexity: O(26);
 	// Space Complexity: O(26);
 	
-	public boolean allUnique3(String word) {
-		char[] input = word.toCharArray();
+	public boolean allUnique3(String word) {		
 		int occurredChars = 0;
-		for (char c : input) {  
-			int index = c - 'a';
+		for (int i = 0; i < word.length(); i++) {
+			int index = word.charAt(i) - 'a';
 			if (((occurredChars >>> index) & 1) == 1) { // bit tester
 				return false;
 			} else {
-				occurredChars |= (1 << index); // bit setter
-			}
+			occurredChars |= (1 << index); // bit setter
+			}			
 		}
 		return true;
 	}

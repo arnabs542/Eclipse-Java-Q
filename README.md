@@ -143,6 +143,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Maximum Size Subarray Sum Equals K (medium)](./src/hashTableRelated/SubarraySumEqualsK.java)
    - [Minimum Size Subarray Sum (medium)](./src/arrayRelated/MinimumSizeSubarraySum.java)
    - [Plus One (easy+)](./src/arrayRelated/PlusOne.java)
+   - [Minimum Window Substring (hard)] (./src/arrayRelated/MinimumWindowSubstring.java)
 
 ### Bit manipulation
    - [Power Of Two (easy)](./src/bitMinipulation/PowerOfTwo.java)

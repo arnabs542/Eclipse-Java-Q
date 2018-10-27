@@ -1,14 +1,17 @@
 /*
- * Created Date: July ?21 2018
+ * == Created Date == 
+ * July 21 2018
  * 
- * Question - Hexadecimal Representation (easy):
- *   Generate the hexadecimal representation for a given non-negative integer number as a string. 
- *   The hex representation should start with "0x".
- *   There should not be extra zeros on the left side.
+ * == Question - Hexadecimal Representation (easy) == 
+ * Given an integer, write an algorithm to convert it to hexadecimal. 
+ * For negative integer, two’s complement method is used.
  *  
- *  Examples:
- *    0's hex representation is "0x0"
- *    255's hex representation is "0xFF" 
+ * == Examples == 
+ * 0's hex representation is "0x0"
+ * 255's hex representation is "0xFF" 
+ * 
+ * == Note == 
+ * LeetCode 405
  * 
  */
 
@@ -16,10 +19,17 @@ package bitMinipulation;
 
 public class HexadecimalRepresentation {
 	
+	/* --- Solution1 --- 
+	 * doesn't know how to process the negative value 
+	 * 
+	 */
 	public String hex(int number) {
 		String prefix = "0x";	
-	    if (number <= 0) { // corner case
-	        return prefix + 0;
+	    if (number == 0) { // corner case
+	        return prefix + 0;	    		
+	    }
+	    if (number < 0) {
+	    		number = Integer.MAX_VALUE;
 	    }
 	    
 		char[] set = {'A', 'B', 'C', 'D', 'E', 'F'};
@@ -38,6 +48,34 @@ public class HexadecimalRepresentation {
 	
 	// Time Complexity: O(n);
 	// Space Complexity: O(n);
+	
+    
+	/* ---------------- Solution2 ---------------------
+	 * 
+	 *  -1: 11111...11..1111
+	 *  15: 00000...00..1111
+	 *  				    1111 = 15, map[15] = f
+	 *  
+	 *  -2: 11111...11..1110
+	 *  15: 00000...00..1111
+	 *                  1110 = 14, map[14] = 2
+	 *  
+	 *  
+	 */
+	
+    char[] map = {'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'};
+    
+    public String toHex(int num) {
+        if (num == 0) {
+        		return "0";
+        }
+        String result = "";
+        while (num != 0){
+            result = map[(num & 15)] + result; 
+            num >>>= 4;
+        }
+        return result;
+    }
 
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
@@ -54,17 +92,22 @@ public class HexadecimalRepresentation {
 		System.out.println(1 + 'A'); // 66
 		System.out.println((char)(1 + 'A')); // B
 		
+		
 		String result0 = testObj.hex(0);
 		System.out.println(result0);
 		
 		/* Test Case 1 */
 		System.out.println("---< Test Case 1 >---");
 		
-		String result1 = testObj.hex(255);
-		System.out.println(result1);
+		System.out.println(testObj.hex(255));
+		System.out.println(testObj.toHex(255));
 		
 		/* Test Case 2 */
 		System.out.println("---< Test Case 2 >---");
+		
+		System.out.println(testObj.hex(-1));
+		System.out.println(testObj.toHex(-1));
+		System.out.println(testObj.toHex(-2));
 		
 		/* Test Case 3 */
 		System.out.println("---< Test Case 3 >---");
