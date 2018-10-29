@@ -2,8 +2,6 @@ package practiceContent;
 
 public class CharIntRelated {
 	
-	
-
 	public static void main(String[] args) {
 		
 		
@@ -11,29 +9,7 @@ public class CharIntRelated {
 		
 		System.out.println(-7 >> 1); // expected: -4. right shift one bit. 1001 (-7) --> 1100 (-4)
 		
-		/* ----------------------< Pooling >-------------------------*/
-		System.out.println("---< Pooling >---");
-		String s1 = "bell";
-		String s2 = "bell";
-		System.out.println(s1 == s2); // expected: true -  Pooling for String object
-		
-		Integer int1 = 12;
-		Integer int2 = 12;
-		System.out.println(int1 == int2); // expected: true -  Pooling for -128 ~ 127
-		
-		Integer int3 = -129;
-		Integer int4 = -129;
-		System.out.println(int3 == int4); // expected: false
-		System.out.println(int3.equals(int4)); // so we should use equals() to compare value of two integers
-
-		
-		String s3 = new String("bell");
-		System.out.println(s1 == s3); // expected: false - String objects created by "new" will not use the pool
-		
-		Integer int5 = new Integer(12);
-		Integer int6 = new Integer(12);
-		System.out.println(int5 == int6); // expected: false, no Pooling now
-		
+	
 		/* ----------------------< Character to String >-------------------------*/
 		System.out.println("---< Character to String >---");
 		char char1 = 'a';
