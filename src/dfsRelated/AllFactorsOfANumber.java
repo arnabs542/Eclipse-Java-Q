@@ -1,16 +1,20 @@
 /*
- * Created Date: August 31, 2018
+ * == Created Date == 
+ * August 31, 2018
  * 
- * Question - All Factors Of A Number:
- *   Get all possible combinations of factors that can multiply to a target number.
- *   The given number is guaranteed to be >= 2.
+ * == Question - All Factors Of A Number ==
+ * Get all possible combinations of factors that can multiply to a target number.
+ * The given number is guaranteed to be >= 2.
  *     
- *   Example: 
- *     12 -->  [ [2, 2, 3], [2, 6], [3, 4], [12] ]
- *     5 --> [ [5] ]
+ * == Example == 
+ * 12 -->  [ [2, 2, 3], [2, 6], [3, 4], [12] ]
+ * 5 --> [ [5] ]
  *     
- *  Mirror Question:
- *    Combinations Of Coins
+ * == Mirror Question ==
+ * Combinations Of Coins
+ * 
+ * == Note ==
+ * Octorber 29, 2019: Review, Fall Class 13 - DFS2
  * 
  */
 package dfsRelated;
@@ -21,9 +25,9 @@ import java.util.List;
 public class AllFactorsOfANumber {
 	public List<List<Integer>> factors(int n) {
 		List<List<Integer>> result = new ArrayList<>();
-		List<Integer> facts = findFactors(n);
+		List<Integer> factors = findFactors(n);
 		List<Integer> curr = new ArrayList<>();
-		dfs(n, 0, facts, curr, result);
+		dfs(n, 0, factors, curr, result);
 		return result;
 	}
 	
