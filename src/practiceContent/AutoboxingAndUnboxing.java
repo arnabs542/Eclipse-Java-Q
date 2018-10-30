@@ -72,6 +72,17 @@ public class AutoboxingAndUnboxing {
 		System.out.println(s1 == s3); // expected: false - String objects created by "new" will not use the pool
 		System.out.println(s3.equals(s4)); //  expected: true, we should use equals() to compare value of two integers
 		
+		
+		/* ---------< Concatenate Strings >-----------
+		 * 
+		 */
+		System.out.println("---< Concatenate Strings >---");
+		String str1 = "bell is";
+		String str2 = "the best";
+				
+		// concat() will create a new String object rather that change the value of s1 or s2 - Immutability
+		str1.concat(str2); 
+		
 	}
 
 }

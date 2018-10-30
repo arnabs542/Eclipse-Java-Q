@@ -29,15 +29,18 @@ import java.util.List;
 public class AllSubsetsWithDup {
 	
 	 /* == Example ==
-	  * Input: [1,2,2]
-	  *                                     [ ]
-	  *                            /                   \
-	  * index = 0               1                        [ ]
-	  *                      /     \                   /    \
-	  *         1          1 2       1                2      [ ]
-	  *                  /    \       \              / \       \
-	  *         2    [1 2 2]   [1 2]   [1]       [2, 2] [2]     [ ]
-	*/
+	  * Input: [a,b,b]
+	  *                                     		         [ ]
+	  *                     		          /                                 \
+	  * index = 0 (for a)                a                                   [ ]
+	  *                     			 /      \                             /     \
+	  *         1 (for b1)          a b1       a                         b1       [ ]
+	  *                 			 /      \       \ skip b2             /    \       \
+	  *         2 (for b2)   [a b1 b2]   [a b1]   [a]              [b1, b2] [b1]     [ ]
+	  *         
+	  *         
+	  *         
+	  */
 	
 	public List<String> subSets(String set) {
 		List<String> result = new LinkedList<>();
@@ -47,21 +50,25 @@ public class AllSubsetsWithDup {
 		char[] arraySet =  set.toCharArray();
 		Arrays.sort(arraySet); // See sort() to character array for the first time 
 		StringBuilder sb = new StringBuilder();
-		subSets(arraySet, sb, 0, result);
+		dfs(arraySet, sb, 0, result);
 		return result;
 	}
 	
-	private void subSets(char[] set, StringBuilder sb, int index, List<String> result) {
-		if (index == set.length) {
+	private void dfs(char[] set, StringBuilder sb, int index, List<String> result) {
+		if (index == set.length) { // base case
 			result.add(sb.toString());
 			return;
 		}
-		subSets(set, sb.append(set[index]), index + 1, result);
+		// Case1: Add set[index]
+		dfs(set, sb.append(set[index]), index + 1, result);
 		sb.deleteCharAt(sb.length() - 1);
+		
 		// skip all the consecutive and duplicate elements
 		while (index < set.length - 1 && set[index] == set[index + 1]) {
 			index++;
 		}
-		subSets(set, sb, index + 1, result);
+		
+		// Case2: Do not add set[index]
+		dfs(set, sb, index + 1, result);
 	}
 }
