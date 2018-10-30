@@ -1,19 +1,20 @@
 /*
- * Created Date: July 23, 2018
+ * == Created Date == 
+ * July 23, 2018
  * 
- * Question - N Queens:
- *   Get all valid ways of putting N Queens on an N * N chess board 
- *     so that no two Queens threaten each other.
+ * == Question - N Queens == 
+ * Get all valid ways of putting N Queens on an N * N chess board 
+ *   so that no two Queens threaten each other.
  *     
- *  Assumptions:
+ * == Assumptions ==
  *    N > 0
  *   
- *  Return:
- *    A list of ways of putting the N Queens
- *    Each way is represented by a list of the Queen's y index for x indices of 0 to (N - 1)
+ * == Return ==
+ * A list of ways of putting the N Queens
+ * Each way is represented by a list of the Queen's y index for x indices of 0 to (N - 1)
  *    
- *  Example:
- *   N = 4, there are two ways of putting 4 queens:
+ * == Example ==
+ * N = 4, there are two ways of putting 4 queens:
  *    [1, 3, 0, 2] --> the Queen on the first row is at y index 1, 
  *                     the Queen on the second row is at y index 3, 
  *                     the Queen on the third row is at y index 0 
@@ -24,8 +25,9 @@
  *                     the Queen on the third row is at y index 3 
  *                     and the Queen on the fourth row is at y index 1.
  *                     
- * Updated:
- *   July 30, 2018: Review                
+ * == Updated ==
+ * July 30, 2018: Review
+ * Octorber 29, 2019: Review, Fall Class 13 - DFS2                
  * 
  */
 
@@ -38,10 +40,10 @@ public class Nqueens {
 	
 	public void nQueens(int n) {
 		List<Integer> cur = new ArrayList<>();
-		helper(n, cur);
+		dfs(n, cur);
 	}
 	
-	private void helper(int n, List<Integer> cur) {
+	private void dfs(int n, List<Integer> cur) {
 		if (cur.size() == n) { // base case, when we have positioned n-th queen to the n-th row
 			for (int item : cur) {
 				System.out.print(item + " ");
@@ -53,7 +55,7 @@ public class Nqueens {
 		for (int col = 0; col < n; col++) {
 			if (validate(cur, col)) {
 				cur.add(col);
-				helper(n, cur); // check the next row
+				dfs(n, cur); // check the next row
 				cur.remove(cur.size() - 1); // remember this step for dfs backtracking
 			}
 		}

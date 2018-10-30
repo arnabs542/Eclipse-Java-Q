@@ -1,13 +1,13 @@
 /*
- * Created Date: June 21, 2018
+ * == Created Date: June 21, 2018 == 
  * 
- * Question - All Valid Permutations Of Parentheses I:
- *   Given N pairs of parentheses “()”, return a list with all the valid permutations.
+ * == Question - All Valid Permutations Of Parentheses I == 
+ * Given N pairs of parentheses “()”, return a list with all the valid permutations.
  *      
- *   Example: 
- *    N = 1, all valid permutations are ["()"]
- *    N = 3, all valid permutations are ["((()))", "(()())", "(())()", "()(())", "()()()"]
- *    N = 0, all valid permutations are [""]
+ * == Example == 
+ * N = 1, all valid permutations are ["()"]
+ * N = 3, all valid permutations are ["((()))", "(()())", "(())()", "()(())", "()()()"]
+ * N = 0, all valid permutations are [""]
  * 
  */
 

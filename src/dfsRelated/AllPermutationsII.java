@@ -1,18 +1,19 @@
 /*
- * Created Date: June 30, 2018
+ * == Created Date: June 30, 2018 == 
  * 
- * Question - All Permutations II (hard):
- *   Given a string with possible duplicate characters, return a list with all permutations of the characters.
+ * == Question - All Permutations II (hard) ==
+ * Given a string with possible duplicate characters, return a list with all permutations of the characters.
  *   
- *   Example: 
- *   Set = “abc”, all permutations are [“abc”, “acb”, “bac”, “bca”, “cab”, “cba”]
- *   Set = "aba", all permutations are ["aab", "aba", "baa"]
- *   Set = "", all permutations are [""]
- *   Set = null, all permutations are []
+ * == Example == 
+ * Set = “abc”, all permutations are [“abc”, “acb”, “bac”, “bca”, “cab”, “cba”]
+ * Set = "aba", all permutations are ["aab", "aba", "baa"]
+ * Set = "", all permutations are [""]
+ * Set = null, all permutations are []
  * 
- * Updated:
- *   July 1, 2018 : Review
- *   June 30, 2018: Review, Mid term exam problem 3
+ * == Updated == 
+ * July 1, 2018 : Review
+ * June 30, 2018: Review, Mid term exam problem 3
+ * Octorber 29, 2019: Review, Fall Class 13 - DFS2
  * 
  */
 
@@ -77,7 +78,7 @@ public class AllPermutationsII {
 		 
 		for (String s : result0) {
 			System.out.println(s + " ");
-		} // expected: [“”]
+		} // expected: [""]
 		
 		/* Test Case 1 */
 		System.out.println("---< Test Case 1 >---");
