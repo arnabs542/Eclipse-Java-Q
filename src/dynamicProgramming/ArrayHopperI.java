@@ -1,16 +1,17 @@
 /*
- * Created Date: July 10, 2018
+ * == Created Date == 
+ * July 10, 2018
  * 
- * Question - Array Hopper I (medium) :
- *   Given an array A of non-negative integers, you are initially positioned at index 0 of the array. 
- *   A[i] means the maximum jump distance from that position 
- *    (you can only jump towards the end of the array). 
- *   Determine if you are able to reach the last index.
+ * == Question - Array Hopper I (medium) ==
+ * Given an array A of non-negative integers, you are initially positioned at index 0 of the array. 
+ * A[i] means the maximum jump distance from that position 
+ * (you can only jump towards the end of the array). 
+ * Determine if you are able to reach the last index.
  * 
- *  Assumptions:
- *    The given array is not null and has length of at least 1.
+ * == Assumptions ==
+ * The given array is not null and has length of at least 1.
  *   
- *  Example: 
+ * == Example 
  *   
  *   {1, 3, 2, 0, 3}, we are able to reach the end of array
  *     (jump to index 1 then reach the end of the array).
