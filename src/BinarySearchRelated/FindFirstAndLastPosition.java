@@ -16,10 +16,10 @@ package BinarySearchRelated;
 
 public class FindFirstAndLastPosition {
     public int[] searchRange(int[] nums, int target) {
+    		int[] res = new int[]{-1, -1};
         if (nums == null || nums.length == 0) {
-            return new int[]{-1, -1};
-        }
-    	int[] res = new int[2];
+            return res;
+        }    		
         int left = 0; 
         int right = nums.length - 1;
         while (left + 1 < right) {
