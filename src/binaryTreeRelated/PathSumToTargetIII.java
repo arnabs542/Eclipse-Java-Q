@@ -66,5 +66,7 @@ public class PathSumToTargetIII {
 	//   every time check prefix -- O(height)
 	
 	// Space Complexity: O(height), , worst case = O(n)
+	
+	//TODO O(n) method using hash table
 
 }

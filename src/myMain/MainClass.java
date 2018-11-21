@@ -6,30 +6,12 @@ public class MainClass {
 	public static void main(String[] args) {
 				
 		
-		System.out.println("---< Ingeger to String >---");
-		int i = 111;
-		String si1 = String.valueOf(i);
-		String si2 = Integer.toString(i);
-		System.out.println(si1);
-		System.out.println(si2);
-		
-		String str = "abb";
-		StringBuilder sb = new StringBuilder(str);
-		System.out.println(sb.toString());
-		
-		String rev = sb.reverse().toString();
-		System.out.println(rev);
-		
-		System.out.println(str.equals(rev));
-		
-
-		
-//		if (test > 'a' && test < 'z' || test > 'A' && test < 'Z' || test > '0' && test < '9') {
-//			System.out.println("true");
-//		} else {
-//			System.out.println("false");
-//		}
-		
+		String s1 = "g1 act car";
+		String s2 = "a8 act zoo";
+				
+		System.out.println(s1.substring(s1.indexOf(' ') + 1)); 
+		int result = s1.substring(s1.indexOf(' ') + 1).compareTo(s2.substring(s2.indexOf(' ') + 1));
+		System.out.println(result);
 
 	}	    	 	
 }

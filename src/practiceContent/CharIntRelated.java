@@ -4,12 +4,31 @@ public class CharIntRelated {
 	
 	public static void main(String[] args) {
 		
+		/* ----------------------< reverse() will not change original object >-------------------------*/
+		System.out.println("---< reverse() will not change original object >---");
+		String str = "abb";
+		StringBuilder sb = new StringBuilder(str);
+		System.out.println(sb.toString());
 		
+		String rev = sb.reverse().toString();
+		System.out.println(rev);
+		
+		System.out.println(str.equals(rev));
+		
+		/* ----------------------< / & >> >-------------------------*/
+		System.out.println("---< / & >> >---");
 		System.out.println(-7 / 2); // expected: -3
 		
 		System.out.println(-7 >> 1); // expected: -4. right shift one bit. 1001 (-7) --> 1100 (-4)
 		
-	
+		/* ----------------------< Ingeger to String >-------------------------*/
+		System.out.println("---< Ingeger to String >---");
+		int i = 111;
+		String si1 = String.valueOf(i);
+		String si2 = Integer.toString(i);
+		System.out.println(si1);
+		System.out.println(si2);
+		
 		/* ----------------------< Character to String >-------------------------*/
 		System.out.println("---< Character to String >---");
 		char char1 = 'a';
