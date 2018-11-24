@@ -28,7 +28,9 @@
 package binaryTreeRelated;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class PathSumToTargetIII {
 	
@@ -67,6 +69,67 @@ public class PathSumToTargetIII {
 	
 	// Space Complexity: O(height), , worst case = O(n)
 	
-	//TODO O(n) method using hash table
+	//TODO O(n) method using prefixSum
+    public int pathSum(TreeNode root, int sum) {        
+        Map<Integer, Integer> prefixSumMap = new HashMap<>(); // key: prefixSum, value: frequency
+        prefixSumMap.put(0, 1);
+        
+        int[] pathCount = {0};
+        preOrder(root, sum, 0, prefixSumMap, pathCount);
+        return pathCount[0];
+    }
+    
+    private void preOrder(TreeNode root, int target, int curSum, Map<Integer, Integer> prefixSumMap, int[] pathCount) {
+        if (root == null) {
+            return;
+        }
+        
+        curSum += root.value;
+                       
+        if (prefixSumMap.containsKey(curSum - target) && prefixSumMap.get(curSum - target) > 0) {
+            pathCount[0] += prefixSumMap.get(curSum - target);
+        }
+        
+        prefixSumMap.put(curSum, prefixSumMap.getOrDefault(curSum, 0) + 1);
+        
+        if (root.left != null) {
+            preOrder(root.left, target, curSum, prefixSumMap, pathCount);
+            prefixSumMap.put(curSum + root.left.value, prefixSumMap.get(curSum + root.left.value) - 1);
+        }
 
+        if (root.right != null) {
+            preOrder(root.right, target, curSum, prefixSumMap, pathCount);
+            prefixSumMap.put(curSum + root.right.value, prefixSumMap.get(curSum + root.right.value) - 1);
+        }
+    }
+	// Time Complexity: O(?);
+	// Space Complexity: O(?);
+	
+	/* ----------------------< test stub >-------------------------*/
+	public static void main(String[] args) {
+		
+		PathSumToTargetIII testObj = new PathSumToTargetIII();
+		
+		/* Test Case 0 */
+		System.out.println("---< Test Case 0 >---");
+		
+		/* Test Case 1 */
+		System.out.println("---< Test Case 1 >---");
+		TreeNode root = new TreeNode(1);
+		root.left = new TreeNode(-2);
+		root.right = new TreeNode(-3);
+		
+		System.out.println(testObj.pathSum(root, -1)); // 1
+		
+		/* Test Case 2 */
+		System.out.println("---< Test Case 2 >---");
+		TreeNode root1 = new TreeNode(0);
+		root1.left = new TreeNode(1);
+		root1.right = new TreeNode(1);
+		System.out.println(testObj.pathSum(root1, 1)); // 4
+		
+		/* Test Case 3 */
+		System.out.println("---< Test Case 3 >---");
+		
+	}
 }
