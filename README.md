@@ -5,6 +5,8 @@ Progress of practicing data structures, algorithms and job interview questions.
 ### Stacks & Queques
    - [Queue By Two Stacks (medium)](./src/queueStackRelated/QueueByTwoStack.java)
    - [Stack With Min() (easy)](./src/queueStackRelated/QueueByTwoStack.java)
+   - [Ticket Resellers (medium)](./src/queueStackRelated/TicketResellers.java)
+   - [Daily Temperatures (medium)](./src/queueStackRelated/DailyTemperatures.java)
 
 ### LinkedList
    - [Reverse a singly-linked list iteratively and recursively (easy)](./src/myLinkedList/ReverseLinkedList.java)

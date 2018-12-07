@@ -33,7 +33,7 @@ public class TopKFrequentWords {
 		Map<String, Integer> freqMap = getFreqMap(combo);
 			
 		// Step 2: create a min Heap
-		PriorityQueue<Map.Entry<String, Integer>> minHeap = getMinHeap(freqMap);
+		PriorityQueue<Map.Entry<String, Integer>> minHeap = getMinHeap();
 		
 	    // Step 3, iterate the frequency map, get the top frequency elements in the heap
 		for (Map.Entry<String, Integer> entry : freqMap.entrySet()) {
@@ -52,7 +52,7 @@ public class TopKFrequentWords {
 		return result;
 	}
 	
-	private PriorityQueue<Map.Entry<String, Integer>> getMinHeap(Map<String, Integer> freqMap) {
+	private PriorityQueue<Map.Entry<String, Integer>> getMinHeap() {
 		class MapComparator implements Comparator<Map.Entry<String, Integer>> {
 			@Override
 			public int compare(Map.Entry<String, Integer> e1, Map.Entry<String, Integer> e2) {
