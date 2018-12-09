@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class TecentProblem1 {
 	
+	
+//	public static int
+	
 	public static int findOneNum(int k, String s) {
 		int res = 0;
 		for (int i = 0; i < s.length(); i++) {		

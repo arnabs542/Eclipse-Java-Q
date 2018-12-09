@@ -5,7 +5,7 @@
  * == Question - Final Discounted Price ==
  *   
  * == Notes == 
- * Airbnb Practice Coding Challenge 1
+ * Airbnb Practice Coding Challenge 
  * 
  */
 

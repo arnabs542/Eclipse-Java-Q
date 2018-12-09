@@ -5,8 +5,8 @@ Progress of practicing data structures, algorithms and job interview questions.
 ### Stacks & Queques
    - [Queue By Two Stacks (medium)](./src/queueStackRelated/QueueByTwoStack.java)
    - [Stack With Min() (easy)](./src/queueStackRelated/QueueByTwoStack.java)
-   - [Ticket Resellers (medium)](./src/queueStackRelated/TicketResellers.java)
    - [Daily Temperatures (medium)](./src/queueStackRelated/DailyTemperatures.java)
+   - [Ticket Resellers (medium)](./src/heapRelated/TicketResellers.java)
 
 ### LinkedList
    - [Reverse a singly-linked list iteratively and recursively (easy)](./src/myLinkedList/ReverseLinkedList.java)
@@ -74,6 +74,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Heap Sort (medium)](./src/heapRelated/HeapSort.java)
    - [K Smallest In Unsorted Array With Self Heap Implementation (medium)](./src/heapRelated/KSmallestInUnsortedArrayWithOwnHeap.java)
    - [K Smallest In Unsorted Array (medium)](./src/heapRelated/KSmallestInUnsortedArray.java)
+   - [Ticket Resellers (medium)](./src/heapRelated/TicketResellers.java)
    
 ### Binary Search
    - [Classical Binary Search (easy)](./src/BinarySearchRelated/ClassicalBinarySearch.java)

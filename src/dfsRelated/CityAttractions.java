@@ -1,3 +1,14 @@
+/*
+ * == Created Date ==
+ * Dec 6, 2018
+ * 
+ * == Question - City Attractions ==
+ *   
+ * == Notes == 
+ * Airbnb Practice Coding Challenge 
+ * 
+ */
+
 package dfsRelated;
 
 import java.util.*;
@@ -23,7 +34,7 @@ public class CityAttractions {
         private int beautyValue;
         private Map<Integer, Integer> travelTimeMap = null; // key: neighbor; val: travel time
         private List<Integer> neighbors = null; // a list of neighbors
-        private boolean visited = false;
+        private boolean visited = false; // used to deduplicate during travesing
         Square(int n, int b) {
             this.num = n;
             this.beautyValue = b;
@@ -76,7 +87,8 @@ public class CityAttractions {
             } else {
             		sight.visited = true;
             		traverse(sightsList, sightsList.get(nei), timeLeft - travelTime, beautySum + sight.beautyValue);
-            		sight.visited = false;
+            		sight.visited = false; // restore the status of "visited" when backtracking, or the beautyValue will 
+            							   // be calculated repeatedly 
             }   
         }
     }
