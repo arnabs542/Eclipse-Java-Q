@@ -1,9 +1,8 @@
-package practiceContent;
+package Concurrency;
 
 import java.util.Arrays;
 
-public class MyHashMap<K, V> {
-	
+public class ThreadSafeHashMap<K, V>  {
 	/////////////////////////////////////////////////////////////////////////
 	/* ----------------------< Nested Class Node >-------------------------*/
 	/////////////////////////////////////////////////////////////////////////
@@ -44,16 +43,16 @@ public class MyHashMap<K, V> {
 	private float loadFactor;
 	
 	/* --------------< Constructor >-------------------*/
-	public MyHashMap(int cap, float loadFactor) {
-		if (cap <= 0) {
+	public ThreadSafeHashMap(int capacity, float loadFactor) {
+		if (capacity <= 0) {
 			
 		}
-		array = (Node<K, V>[])(new Node[cap]);
+		array = (Node<K, V>[])(new Node[capacity]);
 		this.loadFactor = loadFactor;
 		size = 0;
 	}
 	
-	public MyHashMap() {
+	public ThreadSafeHashMap() {
 		this(DEFAULT_CAPACITY, DEFAULT_LOAD_FACTOR);
 	}
 	
@@ -167,10 +166,17 @@ public class MyHashMap<K, V> {
 //	public synchronized V remove(K key) {
 //		
 //	}
-	
 }
 
-/* Frequently asked in real-left interviews
+/* Frequently asked interviews questions related to concurrency
+ * 
+ * 1. HashMap
+ * 2. Blocking Queue
+ * 3. Volatile Test
+ * 
+ * */
+
+/* Frequently asked in real-life interviews
  * 
  * 1. If we want to make it thread safe, where shall we put synchronized keyword to? Why? 
  * 
@@ -179,11 +185,14 @@ public class MyHashMap<K, V> {
  * 	- number of operations to read >> write : use ReadWriteLock
  *  - Synchronized hash map VS concurrent hash map (ConcurrentHashMap)
  * 
+ * Trick: Separating HashMap into segments and perform sync operations on each one of them 
+ * separately (sharding)
+ * 
  * */
 
 /*
 
- Conditions to form a deadlock
+ # Conditions to form a deadlock
  
  ==  1. Mutulal Exclusion ==
  At least one resource must be helad in a non-shareable mode.
@@ -201,21 +210,7 @@ public class MyHashMap<K, V> {
  acquire the locks in order
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ # Deadlock vs. Livelock
  
  
  * */
