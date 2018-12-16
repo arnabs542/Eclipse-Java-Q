@@ -9,6 +9,11 @@
  * == Example ==
  * for "bcdfbd", return 4
  * 
+ * == Note ==
+ * LeetCode 3
+ * 
+ * Dec 16, 2018: Review for BB phone interivew
+ * 
  */
 
 package arrayRelated;

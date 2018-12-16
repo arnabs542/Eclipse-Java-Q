@@ -12,10 +12,10 @@
  * Input: arr[] = {"aaa", "bbb", "baa", "aab"}, Output: True
  * 
  * == Mirror Question ==
- * All Permutations 
+ * All PermutationsI
  *     
  * == Notes == 
- * Final problem 4
+ * Lai Course - Final problem 4
  * 
  */
 
@@ -47,7 +47,7 @@ public class ChainedToCircle {
 		if (words == null || words.length == 0) {
 			return false;
 		}
-		return dfs(words, 1);
+		return dfs(words, 1); // the cycle can start anywhere
 	}
 	
 	private boolean dfs(String[] words, int index) {

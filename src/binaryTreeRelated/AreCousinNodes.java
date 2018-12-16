@@ -1,11 +1,12 @@
 /*
- * Created Date: August 26, 2018
+ * == Created Date == 
+ * August 26, 2018
  * 
- * Question - Cousins In Binary Tree:
- *   Given a binary Tree and the two keys, determine whether the two nodes are cousins of each other or not. 
- *   Two nodes are cousins of each other if they are at the same level and have different parents.
+ * == Question - Cousins In Binary Tree ==
+ * Given a binary Tree and the two keys, determine whether the two nodes are cousins of each other or not. 
+ * Two nodes are cousins of each other if they are at the same level and have different parents.
  *     
- *   Example: 
+ * == Example ==
  *   
  *        6
  *      /   \
@@ -17,8 +18,8 @@
  *   3 and 5, result is false.
  *   7 and 5, result is false.
  *   
- *   Notes: 
- *   	Final problem 2
+ * == Notes ==
+ * Lai Course - Final problem 2
  * 
  */
 
