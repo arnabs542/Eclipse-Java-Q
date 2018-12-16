@@ -27,6 +27,10 @@ public class StringUtilityFunction {
 		String log2 = "ab1 add key dog";
         int cmpRes = log1.substring(log1.indexOf(' ') + 1).compareTo(log2.substring(log2.indexOf(' ') + 1));
         //System.out.println(cmpRes);
+        
+        /* ------------------< string.trim() >----------------------*/
+        String str1 = "   a b  ";
+        System.out.println(str1.trim());
 	}
 	
 }
