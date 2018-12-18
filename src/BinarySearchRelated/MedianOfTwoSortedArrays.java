@@ -13,6 +13,12 @@ package BinarySearchRelated;
 
 public class MedianOfTwoSortedArrays {
 	
+    /* ----------------------< Brute force Solution >-------------------------
+     * Time Complexity: O(m + n), m and n are the len of nums1 and nums2
+     * Space Complexity: O(1)
+     * 
+     * */
+	
     public double findMedianSortedArraysBF(int[] nums1, int[] nums2) {
         int i = 0;
         int j = 0;
@@ -72,7 +78,11 @@ public class MedianOfTwoSortedArrays {
         return arr1[a] <= arr2[b] ? arr1[a] : arr2[b];
     }
     
-    //
+    /* ----------------------< Binary Search Solution >-------------------------
+     * Time Complexity: O( log( min(m,n) ) ), m and n are the len of nums1 and nums2
+     * Space Complexity: O(1)
+     * 
+     * */
     
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
     		return 0;

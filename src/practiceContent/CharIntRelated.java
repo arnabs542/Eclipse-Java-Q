@@ -72,6 +72,7 @@ public class CharIntRelated {
 		char c1 = (char)i1;
 		System.out.println(c1);
 		
+		
 		/* Test Case 2 */
 		System.out.println("---< Test Case 2 >---");
 		

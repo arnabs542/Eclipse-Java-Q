@@ -31,6 +31,11 @@ public class StringUtilityFunction {
         /* ------------------< string.trim() >----------------------*/
         String str1 = "   a b  ";
         System.out.println(str1.trim());
+        
+        /* ------------------< string.toUpperCase() >----------------------*/
+        
+		String Str = new String("A-Bcdef-ghI").toUpperCase();
+		System.out.println(Str);
 	}
 	
 }
