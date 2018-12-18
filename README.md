@@ -7,6 +7,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Stack With Min() (easy)](./src/queueStackRelated/QueueByTwoStack.java)
    - [Daily Temperatures (medium)](./src/queueStackRelated/DailyTemperatures.java)
    - [Ticket Resellers (medium)](./src/heapRelated/TicketResellers.java)
+   - [Largest Rectangle Area (hard)](./src/heapRelated/LargestRectangleArea.java)
 
 ### LinkedList
    - [Reverse a singly-linked list iteratively and recursively (easy)](./src/myLinkedList/ReverseLinkedList.java)
@@ -146,7 +147,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Maximum Size Subarray Sum Equals K (medium)](./src/hashTableRelated/SubarraySumEqualsK.java)
    - [Minimum Size Subarray Sum (medium)](./src/arrayRelated/MinimumSizeSubarraySum.java)
    - [Plus One (easy+)](./src/arrayRelated/PlusOne.java)
-   - [Minimum Window Substring (hard)] (./src/arrayRelated/MinimumWindowSubstring.java)
+   - [Minimum Window Substring (hard)](./src/arrayRelated/MinimumWindowSubstring.java)
 
 ### Bit manipulation
    - [Power Of Two (easy)](./src/bitMinipulation/PowerOfTwo.java)
