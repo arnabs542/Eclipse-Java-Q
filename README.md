@@ -91,13 +91,13 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [N Queens (medium)](./src/dfsRelated/Nqueens.java)
    - [Reverse Linked List In Pairs (medium)](./src/myLinkedList/ReverseLinkedListInPairs.java)
    
-### Graph & BFS 
+### BFS 
    - [Bipartite (medium)](./src/bfsRelated/Bipartite.java)
    - [Get Keys In Binary Tree Layer By Layer (easy)](./src/binaryTreeRelated/GetKeysLayerByLayer.java)
    - [Check If Binary Tree Is Completed (medium)](./src/bfsRelated/IsCompleteBinaryTree.java)
    - [Kth Smallest Number In Sorted Matrix (medium)](./src/bfsRelated/KSmallestInUnsortedArray.java)
    
-### Graph & DFS
+### DFS
    - [All Subsets I (medium)](./src/dfsRelated/AllSubsetsI.java)
    - [Insert Space (medium)](./src/dfsRelated/dfsRelated.java)
    - [All Permutations I (medium)](./src/dfsRelated/AllPermutationsI.java)

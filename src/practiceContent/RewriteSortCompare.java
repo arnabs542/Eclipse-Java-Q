@@ -28,20 +28,28 @@ class AgeComparator implements Comparator<Person> {
 class ArrComparator implements Comparator<Integer> {
 	@Override
 	public int compare(Integer o1, Integer o2) {
-		return o2.compareTo(o1); 
+		return o1.compareTo(o2);
 	}
 }
 
 
-
 public class RewriteSortCompare {
-
+	  
 	private static void print(List<Person> list) {
 		for (Person p : list) {
 			System.out.println(p.name);
 		}
 	}
 	
+	private static void print2DArr(int[][] arr) {
+		for (int i = 0; i < arr.length; i++) {
+			for (int j  = 0; j < arr[0].length; j++) {
+				System.out.print(arr[i][j] + " ");
+			}
+			System.out.println();
+		}
+		System.out.println();
+	}
 	public static void main(String[] args) {
 		
 		List<Person> list1 = new ArrayList<>();
@@ -75,25 +83,48 @@ public class RewriteSortCompare {
 		Collections.sort(list1, (a, b) -> (a.age - b.age));
 		print(list1);
 		
-		/* -------------< Override Comparator of Arrays.sort() >----------------*/
+		/* -------------< Override Comparator of Arrays.sort() for 2D array >----------------*/
 		System.out.println("---< Override Comparator of Arrays.sort() >---");
 		
-		int[] arr1 = new int[] {5, 4, 5, 6, 3, 2};
-		
-//       Arrays.sort(arr1, Comparator.comparing((int[] arr) -> arr[0]).reversed());
+        Integer[] arr2 = new Integer[] {5, 4, 5, 6, 3, 2};
         
-//		Arrays.sort(arr1, new Comparator<int[]>() {
-//		    @Override
-//		    public int compare(int[] o1, int[] o2) {
-//		        return ((Integer) o2[0]).compareTo(o1[0]);
-//		    }
-//		});
+		Arrays.sort(arr2, new Comparator<Integer>() {
+			@Override
+			public int compare(Integer o1, Integer o2) {
+				return o2.compareTo(o1);
+			}
+		}); // but this Comparator doesn't work for int[]
 		
-//		Arrays.sort(arr1, (int[] o1, int[] o2) -> o2[0] - o1[0]);
-		
-		for (int item : arr1) {
-			System.out.println(item);
+		for (int item : arr2) {
+			System.out.print(item + " ");
 		}
+		System.out.println();
+		
+		/* -------------< Override Comparator of Arrays.sort() for 2D array >----------------*/
+		System.out.println("---< Override Comparator of Arrays.sort() for 2D array>---");
+		
+		int[][] arr1 = new int[][] {{1, 2, 3}, {2, 1, 6}};
+		
+		// compare arrays using the first element
+		Arrays.sort(arr1, Comparator.comparingInt(arr -> arr[0])); 
+		print2DArr(arr1);
+		
+		// compare arrays using the first element, but in reverse priority
+		Arrays.sort(arr1, Comparator.comparing((int[] arr) -> arr[0]).reversed());
+		print2DArr(arr1);
+		
+		// compare arrays using the third element
+		Arrays.sort(arr1, Comparator.comparingInt(arr -> arr[2])); 
+		print2DArr(arr1);
+		
+		// Or use new Comparator and override compare()
+		Arrays.sort(arr1, new Comparator<int[]>() {
+		    @Override
+		    public int compare(int[] o1, int[] o2) {
+		        return ((Integer) o1[0]).compareTo(o2[0]);
+		    }
+		});
+		print2DArr(arr1);
 		
 		/* Test Case 2 */
 		System.out.println("---< Test Case 2 >---");

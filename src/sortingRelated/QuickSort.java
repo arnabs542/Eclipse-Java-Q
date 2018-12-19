@@ -97,7 +97,6 @@ public class QuickSort {
 //new function:
 //rand.nextInt(x) -> randomly select a number in [0, x)
 
-
 class MistakesRecord {
 	
 	public void quickSort(int[] arr) {
