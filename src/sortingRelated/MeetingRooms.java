@@ -26,6 +26,27 @@ import java.util.List;
 
 public class MeetingRooms {
 	
+	// Same question, different input data type
+	public boolean canAttendMeetings(Interval[] intervals) {
+		if (intervals == null || intervals.length <= 1) {
+			return true;
+		}
+		Arrays.sort(intervals, new Comparator<Interval>() {
+			@Override
+			public int compare(Interval o1, Interval o2) {
+				return o1.start - o2.start;
+			}
+		});
+		
+		for (int i = 1; i < intervals.length; i++) {
+			if (intervals[i].start < intervals[i - 1].end) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	// Same question, different input data type
     public boolean canAttendMeetings(List<Interval> intervals) {
     		if (intervals == null || intervals.size() <= 1) {
     			return true;
