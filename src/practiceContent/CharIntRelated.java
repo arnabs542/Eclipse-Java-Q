@@ -31,12 +31,12 @@ public class CharIntRelated {
 		
 		/* ----------------------< Character to String >-------------------------*/
 		System.out.println("---< Character to String >---");
-		char char1 = 'a';
+		char char1 = 'a'; // 97
 		char char2 = 'z';
-		char char5 = 'A';
+		char char5 = 'A'; // 65
 		char char6 = 'Z';
 		
-		char char3 = '0';
+		char char3 = '0'; // 48
 		char char4 = '9';
 
 		System.out.println((int)char1);

@@ -25,9 +25,11 @@ public class StackWithMinOpe {
 	}
 	
 	public int pop() {
-		if(stack.size() == 0) return -1;
+		if (stack.size() == 0) {
+			return -1;
+		}
 		
-		if(stack.peek() == minStack.peek()) {
+		if (stack.peek() == minStack.peek()) {
 			minStack.pop();
 		}		
 		return stack.pop();
@@ -35,11 +37,10 @@ public class StackWithMinOpe {
 	
 	public void push(int element) {
 			
-		if(stack.size() == 0) {			
+		if (stack.size() == 0) {			
 			minStack.push(element);
-		}
-		else {			
-			if(element <= minStack.peekFirst()) {
+		} else {			
+			if (element <= minStack.peekFirst()) {
 				minStack.push(element);
 			}
 		}
@@ -47,12 +48,16 @@ public class StackWithMinOpe {
 	}
 	  
 	public int top() {
-		if(stack.size() == 0) return -1;		
+		if (stack.size() == 0) {
+			return -1;	
+		}
 		return stack.peek();
 	}
 	  	    
 	public int min() {
-		if(stack.size() == 0) return -1;	
+		if (stack.size() == 0) {
+			return -1;	
+		}
 		return minStack.peek();
 	}
 	  	  

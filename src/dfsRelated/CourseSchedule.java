@@ -5,7 +5,7 @@
  * == Question - Course Schedule==  
  *     
  * == Notes == 
- * LeetCode 207 
+ * LeetCode 207，medium
  * 
  */
 
@@ -27,8 +27,8 @@ public class CourseSchedule {
 	 * Not the solution of this problem 
 	 *
 	 * Data Structure:
-	 * 	1. Set to remember all the visited node.
-	 * 	2. Stack to remmber the order
+	 * 	1. A set to remember all the visited node.
+	 * 	2. A stack to remmber the order
 	 * 
 	 * Steps: 
 	 * 1. Pick a random node from the graph to start. 
