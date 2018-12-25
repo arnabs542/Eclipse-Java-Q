@@ -1,3 +1,14 @@
+/*
+ * == Created Date ==
+ * Dec 21, 2018
+ * 
+ * == Question - Lottery Game==
+ * 
+ * == Notes == 
+ * 2018.12.21 Google OA
+ * 
+ */
+
 package hashTableRelated;
 
 import java.util.HashMap;
