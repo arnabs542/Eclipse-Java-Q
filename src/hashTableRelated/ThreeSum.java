@@ -14,6 +14,9 @@
  * 		[-1, -1, 2]
  * 	 ]   
  * 
+ * == Notes == 
+ * Similar question: LeetCode 15, medium
+ * 
  */
 
 package hashTableRelated;
