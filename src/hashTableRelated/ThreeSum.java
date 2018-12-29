@@ -26,11 +26,18 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ThreeSum {
+	
+	/* ----- < Algorithm: Sorting + Two Pointers > -----
+	 * Time Complexity: O(n^2);
+	 * Space Complexity: O(?); // sorting ?
+	 * 
+	 * */
+
 	public List<List<Integer>> allTriples(int[] array, int target) {
 		List<List<Integer>> result = new ArrayList<>();
 		Arrays.sort(array);
 		for (int i = 0; i < array.length - 2; i++) {
-			if (i > 0 && array[i] == array[i - 1]) {
+			if (i > 0 && array[i] == array[i - 1]) { // * 
 				continue;
 			}
 			int left = i + 1;

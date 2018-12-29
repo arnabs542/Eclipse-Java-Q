@@ -2,17 +2,21 @@ package practiceContent;
 
 public class HandleException {
 	
-	static void fun() throws IllegalAccessException, NullPointerException {
+	static void fun(String str) throws IllegalAccessException, NullPointerException {
+		if (str == null) {
+			throw new NullPointerException();
+		}
 		System.out.println("Inside fun() ");
-		throw new IllegalAccessException("demo");
+//		throw new IllegalAccessException("demo");
 	}
 	
 	public static void main(String args[]) {
 		
 		//fun(); // compile error, unhandle exception
 		
+		String str = null;
 		try {
-			fun();
+			fun(str);
 		} catch (NullPointerException e) {
 			e.printStackTrace();
 //			throw e;
@@ -20,7 +24,7 @@ public class HandleException {
 			e.printStackTrace();
 //			throw e;
 		} finally {
-			
+			System.out.println("\nfinally");
 		}
 	}
 }

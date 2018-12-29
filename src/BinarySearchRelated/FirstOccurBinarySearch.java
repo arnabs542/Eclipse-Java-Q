@@ -1,23 +1,25 @@
 /*
- * Created Date: May 18,2018
+ * == Created Date: May 18,2018 ==
  * 
- * Question - First Occurrence:
- * 	Given a target integer T and an integer array A sorted in ascending order, 
- *  find the index of the first occurrence of T in A or return -1 if there is no such index.
+ * == Question - First Occurrence ==
+ * Given a target integer T and an integer array A sorted in ascending order, 
+ * find the index of the first occurrence of T in A or return -1 if there is no such index.
  *  
- *  Assumption:
- *  Corner case: What if A is null or A of zero length? We should return -1 in this case.
+ * == Assumption ==
+ * Corner case: What if A is null or A of zero length? We should return -1 in this case.
  *  
- *  Examples:
+ * == Examples ==
  *  A = {1, 2, 3}, T = 2, return 1
  *  A = {1, 2, 3}, T = 4, return -1
  *  A = {1, 2, 2, 2, 3}, T = 2, return 1
  * 
- * Mirror Question: Last Occurrence
+ * == Mirror Question ==
+ * Last Occurrence
  * 
- * Updated: 
- *   June 3, 2018 : Review 
- *   June 30, 2018 : Review 
+ * == Updated == 
+ * June 3, 2018 : Review 
+ * June 30, 2018 : Review 
+ * December 27, similar question: LeetCode 278 (E) - First Bad Version
  * 
  */
 
