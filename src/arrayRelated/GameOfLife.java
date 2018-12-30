@@ -2,7 +2,7 @@
  * == Created Date ==
  * Dec 28, 2018
  * 
- * == Question - Game Of Life==
+ * == Question - Game Of Life ==
  *   
  * == Notes == 
  * LeetCode 289, medium
@@ -10,7 +10,6 @@
  */
 
 package arrayRelated;
-
 
 public class GameOfLife {
 	

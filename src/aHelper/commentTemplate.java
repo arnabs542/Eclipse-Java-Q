@@ -15,15 +15,21 @@
 
 package aHelper;
 
+
 public class commentTemplate {
 	
 	// Time Complexity: O(?);
 	// Space Complexity: O(?);
 	
+    /* -- < Lessons Learned > --
+     * 
+     * 
+     * */
+	
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
 		
-		System.out.print(1);
+		// Class testObj = new Class();
 		
 		/* Test Case 0 */
 		System.out.println("---< Test Case 0 >---");
