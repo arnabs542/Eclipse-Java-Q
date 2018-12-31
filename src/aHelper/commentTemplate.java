@@ -18,13 +18,21 @@ package aHelper;
 
 public class commentTemplate {
 	
-	// Time Complexity: O(?);
-	// Space Complexity: O(?);
+
 	
     /* -- < Lessons Learned > --
      * 
      * 
      * */
+	
+	/* ----- < Method X - > -----
+	 * Time Complexity: O(?);
+	 * Space Complexity: O(?);
+	 * 
+	 * */
+	
+	// Time Complexity: O(?);
+	// Space Complexity: O(?);
 	
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {

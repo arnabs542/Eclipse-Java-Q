@@ -5,8 +5,8 @@
  * == Question - Baseball Game ==
  *   
  * == Notes == 
- * LeetCode 682, easy
- * 
+ * LeetCode 682(E)
+ *   
  */
 
 package queueStackRelated;
