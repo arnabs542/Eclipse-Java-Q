@@ -15,7 +15,7 @@ import java.util.Deque;
 
 public class BasicCalculatorII {
 
-	/* ----- < Method 1 - Using stack > -----
+	/* ----- < Method - Using stack > -----
 	 * Time Complexity: O(N);
 	 * Space Complexity: O(N);
 	 * 
