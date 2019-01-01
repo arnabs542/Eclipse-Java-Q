@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 public class RoundingInPriceBreakDown {
 	
 	    
-    /* ----------------------< Solution: DFS >-------------------------
+    /* ----------------------< Method 1: DFS >-------------------------
      * 
      * Time Complexity: O(2^n);
      * Space Complexity: O(n);	
@@ -69,7 +69,7 @@ public class RoundingInPriceBreakDown {
 	}
 	
 	
-	/* ----------------------< Solution: Using Max Heap >-------------------------
+	/* ----------------------< Method 2: Use Max Heap + self-defined class "Pair" >-------------------------
 	 * 
      * Time Complexity: O(nlogn);
      * Space Complexity: O(n);
@@ -124,7 +124,7 @@ public class RoundingInPriceBreakDown {
 		return result;
 	}
 	
-	/* ----------------------< Solution: Using Min Heap >-------------------------
+	/* ----------------------< Method 3: Use Min Heap + self-defined class "Pair" >-------------------------
 	 * 
      * Time Complexity: O(nlogk), worst case O(nlogn)
      * Space Complexity: O(n);
@@ -182,7 +182,7 @@ public class RoundingInPriceBreakDown {
 	}
 	
 	
-	/* ----------------------< Solution: Using Min Heap & Hash Table >-------------------------
+	/* ----------------------< Method 4: Use Min Heap & Hash Table >-------------------------
 	 * 
      * Time Complexity: O(nlogk), worst case O(nlogn)
      * Space Complexity: O(n);
@@ -247,11 +247,10 @@ public class RoundingInPriceBreakDown {
 	}
 	
 	
-    /* ----------------------< Solution using sort >-------------------------
+    /* ----------------------< Method 5 : Use sort >-------------------------
      * 
      * Time Complexity: O(nlogn);
      * Space Complexity: O(n);	
-     * 
      * 
      * */
 	
