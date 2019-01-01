@@ -1,18 +1,13 @@
 /*
- * Created Date: June 25, 2018
+ * == Created Date: June 25, 2018 ==
  * 
- * Question - Common Numbers Of Two Sorted Array
- *   Find all numbers that appear in both of two sorted arrays
- *    (the two arrays are all sorted in ascending order). 
+ * == Question - Common Numbers Of Two Sorted Array ==
+ * Find all numbers that appear in both of two sorted arrays 
+ *   (the two arrays are all sorted in ascending order). 
  *    
- *   Example:
- *     A = {1, 1, 2, 2, 3}, B = {1, 1, 2, 5, 6}, common numbers are [1, 1, 2] 
- *   
- *   Follow up:
- *   
- *   Mirror Question:
- *   
- * Updated:
+ * == Example ==
+ * A = {1, 1, 2, 2, 3}, B = {1, 1, 2, 5, 6}, common numbers are [1, 1, 2] 
+ *  
  * 
  */
 

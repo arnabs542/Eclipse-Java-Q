@@ -8,7 +8,9 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Daily Temperatures (medium)](./src/queueStackRelated/DailyTemperatures.java)
    - [Ticket Resellers (medium)](./src/heapRelated/TicketResellers.java)
    - [Largest Rectangle Area (hard)](./src/heapRelated/LargestRectangleArea.java)
-
+   - [Basic Calculator (hard)](./src/heapRelated/BasicCalculator.java)
+   - [Basic Calculator II (medium)](./src/heapRelated/BasicCalculatorII.java)
+   
 ### LinkedList
    - [Reverse a singly-linked list iteratively and recursively (easy)](./src/myLinkedList/ReverseLinkedList.java)
    - [Check If Linked List Has A Cycle (easy)](./src/myLinkedList/HasCycle.java)

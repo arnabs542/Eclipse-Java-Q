@@ -27,7 +27,7 @@ public class MinimumWindowSubstring {
         int minLen = Integer.MAX_VALUE;
         int index = 0;
         
-        for (int right = 0; right < s.length(); right++){       
+        for (int right = 0; right < s.length(); right++) {       
             char rightVal = s.charAt(right);
             if (charMap.containsKey(rightVal)) {
                 if (charMap.get(rightVal) == 1) { // 1 -> 0
