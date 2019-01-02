@@ -10,8 +10,10 @@ package heapRelated;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Set;
 
@@ -95,8 +97,29 @@ public class DijkstraAlgorithm {
         System.out.println();
     }
     
-	// Time Complexity: O(?);
-	// Space Complexity: O(?);
+    public int dijkstraAlgorithmII(int n, int[][] edges, int src, int dst) {
+    		List<Map<Integer,Integer>> graph = getGraph(n, edges);
+    		
+    		PriorityQueue<Map.Entry<Integer,Integer>> minHeap = new PriorityQueue<>((a, b) -> a.getValue() - b.getValue());
+//    		minHeap.offer(new Map.Entry<Integer,Integer>(0, 0));
+    		
+    		return 0;
+    }
+
+	private List<Map<Integer,Integer>> getGraph(int n, int[][] edges) {
+		// Use List<Map<Integer,Integer>> to store the source node, target node and the distance between them.
+		List<Map<Integer,Integer>> graph = new ArrayList<>();
+		for (int i = 0; i < n; i++) {
+            graph.add(new HashMap<Integer,Integer>());
+        }
+        
+		for (int i = 0; i < edges.length; i++) {
+            graph.get(edges[i][0]).put(edges[i][1], edges[i][2]);
+		}
+		return graph;
+	}
+	// Time Complexity: O(E + VlogV); // E = (V ^ 2)
+	// Space Complexity: O(V);
 	
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {

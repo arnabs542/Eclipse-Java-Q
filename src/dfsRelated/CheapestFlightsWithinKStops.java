@@ -79,6 +79,7 @@ public class CheapestFlightsWithinKStops {
 	}
 	
 	private List<Map<Integer,Integer>> getCityGraph(int n, int[][] flights) {
+		// Use List<Map<Integer,Integer>> to store the source node, target node and the distance between them.
 		List<Map<Integer,Integer>> graph = new ArrayList<>();
 		for (int i = 0; i < n; i++) {
             graph.add(new HashMap<Integer,Integer>());
@@ -92,8 +93,8 @@ public class CheapestFlightsWithinKStops {
 	
     /* ----------------------< Method 2 : Modified Dijkstra Algorithm >-------------------------
      * 
-     * Time Complexity: O(?);
-     * Space Complexity: O(?);	
+     * Time Complexity: O(E + V * logE); // E = (V^2)  // not sure though... 
+     * Space Complexity: O(E);	
      * 
      * */
     private class City implements Comparable<City> {
