@@ -2,7 +2,7 @@
  * == Created Date ==
  * October 26, 2018
  * 
- * == Question - Course Schedule==  
+ * == Question - Course Schedule ==  
  *     
  * == Notes == 
  * LeetCode 207，medium
@@ -64,7 +64,7 @@ public class CourseSchedule {
 		for (int nei : graph.get(cur)) {
 			dfsForTopoSort(graph, visited, nei, ordreStack);
 		}
-		ordreStack.add(cur);
+		ordreStack.push(cur);
 	}
 	
     private void printForTopoSort(Deque<Integer> ordreStack) {
@@ -114,6 +114,7 @@ public class CourseSchedule {
     		return false;
     }
        
+    // Create the adjacency list representation of the graph
     private List<List<Integer>> getGraph(int numCourses,int[][] prerequisites) {
         List<List<Integer>> graph = new ArrayList<>();
         for (int i = 0; i < numCourses; i++) {
@@ -135,6 +136,7 @@ public class CourseSchedule {
     		Queue<Integer> queue = new ArrayDeque<>();
     		
     		for (int i = 0; i < numCourses; i++) {
+    			// Add all vertices with 0 in-degree to the queue
     			if (inDegree[i] == 0) {
     				queue.offer(i);
     			}
@@ -142,6 +144,7 @@ public class CourseSchedule {
     		
     		while (!queue.isEmpty()) {
     			int cur = queue.poll();
+    			// Reduce the in-degree of each neighbor by 1
     			for (int nei : graph.get(cur)) {
     				inDegree[nei]--;
     				if (inDegree[nei] == 0) {
@@ -152,6 +155,7 @@ public class CourseSchedule {
     			}
     		}
     		
+    		
     		for (int i = 0; i < numCourses; i++) {
     			if (inDegree[i] != 0) {
     				return false;
@@ -160,6 +164,7 @@ public class CourseSchedule {
     		return true;
     }
 
+    // Create the adjacency list representation of the graph and record in-degree of each vertex
     private Map<Integer, List<Integer>> getGraph(int[][] prerequisites, int[] inDegree) {       
    		Map<Integer, List<Integer>> graph = new HashMap<>();
    		

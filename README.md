@@ -98,6 +98,8 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Get Keys In Binary Tree Layer By Layer (easy)](./src/binaryTreeRelated/GetKeysLayerByLayer.java)
    - [Check If Binary Tree Is Completed (medium)](./src/bfsRelated/IsCompleteBinaryTree.java)
    - [Kth Smallest Number In Sorted Matrix (medium)](./src/bfsRelated/KSmallestInUnsortedArray.java)
+   - [Cheapest Flights Within K Stops](./src/dfsRelated/CheapestFlightsWithinKStops.java)
+   - [Course Schedule](./src/dfsRelated/CourseSchedule.java)
    
 ### DFS
    - [All Subsets I (medium)](./src/dfsRelated/AllSubsetsI.java)
@@ -111,6 +113,8 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [All Factors Of A Number (medium)](./src/dfsRelated/AllFactorsOfANumber.java)
    - [Deep Copy Undirected Graph (medium)](./src/hashTableRelated/DeepCopyUndirectedGraph.java)
    - [Word Search (medium+)](./src/hashTableRelated/WordSearch.java)
+   - [Cheapest Flights Within K Stops](./src/dfsRelated/CheapestFlightsWithinKStops.java)
+   - [Course Schedule](./src/dfsRelated/CourseSchedule.java)
    
 ### Hash Table 
    - [Common Numbers Of Two Sorted Array (easy)](./src/hashTableRelated/CommonNumOfTwoSortedArr.java)

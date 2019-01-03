@@ -16,10 +16,10 @@
  * 
  */
 
-
 package heapRelated;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,7 +27,76 @@ import java.util.PriorityQueue;
 
 public class NetworkDelayTime {
 	
-	public int networkDelayTime(int[][] times, int N, int K) {
+    /* ----------------------< Syntax 1 >-------------------------
+     * 
+     * Time Complexity: O();
+     * Space Complexity: O();	
+     * 
+     * */
+    public int networkDelayTime(int[][] times, int N, int K) {
+    	
+        List<Map<Integer, Integer>> graph = getGraph(N + 1, times);
+        
+        int[] cost = new int[N + 1];
+        Arrays.fill(cost, Integer.MAX_VALUE);
+        
+        PriorityQueue<int[]> minHeap = new PriorityQueue<>((a, b) -> (a[1] - b[1]));
+        
+        minHeap.add(new int[] {K, 0});
+        cost[K] = 0;
+        int visitedNodes = 0;
+        
+        while (!minHeap.isEmpty() && visitedNodes < N) {
+            int[] cur = minHeap.poll();
+            if (cur[1] > cost[cur[0]]) {
+                continue;
+            }
+            visitedNodes++;
+            
+            for (Map.Entry<Integer, Integer> nei : graph.get(cur[0]).entrySet()) {
+            		int neiNode = nei.getKey();
+                int newCost = cur[1] + nei.getValue();
+                if (newCost >= cost[neiNode]) {
+                    continue;
+                }
+                cost[neiNode] = newCost;
+                minHeap.add(new int[] {neiNode, newCost});
+            }
+        }
+        
+        if (visitedNodes != N) {
+            return -1;
+        }
+        
+        int result = 0;
+        for (int i = 1; i <= N; i++) {
+            result = Math.max(result, cost[i]);
+        }
+        return result;
+    }
+
+    private List<Map<Integer,Integer>> getGraph(int n, int[][] edges) {
+		// Use List<Map<Integer,Integer>> to store the source node, target node and the distance between them.
+		List<Map<Integer,Integer>> graph = new ArrayList<>();
+		for (int i = 0; i < n; i++) {
+            graph.add(new HashMap<Integer,Integer>());
+        }
+        
+		for (int i = 0; i < edges.length; i++) {
+            graph.get(edges[i][0]).put(edges[i][1], edges[i][2]);
+		}
+		return graph;
+	}
+
+
+    
+    /* ----------------------< Syntax 2 >-------------------------
+     * 
+     * Time Complexity: O();
+     * Space Complexity: O();	
+     * 
+     * */
+	public int networkDelayTimeII(int[][] times, int N, int K) {
         Map<Integer, List<int[]>> graph = new HashMap<>();
         for (int[] edge: times) {
             if (!graph.containsKey(edge[0])) {
