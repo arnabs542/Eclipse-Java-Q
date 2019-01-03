@@ -13,7 +13,7 @@ package arrayRelated;
 
 import java.util.*;
 
-public class cutTheSticks {
+public class CutTheSticks {
 	
     public static List<Integer> cutSticks(List<Integer> lengths) {
         List<Integer> result = new ArrayList<>();
@@ -90,7 +90,7 @@ public class cutTheSticks {
 		System.out.println("---< Test Case 1 >---");
 		
 		int[] arr = {3, 2, 1, 2, 7};
-		int[] arr1 = cutTheSticks.cutSticks(arr);
+		int[] arr1 = CutTheSticks.cutSticks(arr);
 		for (int a : arr1) {
 			System.out.print(a + " ");
 		}
@@ -105,6 +105,6 @@ public class cutTheSticks {
 		lengths.add(2);
 		lengths.add(2);
 		lengths.add(8);
-		cutTheSticks.cutSticks(lengths);
+		CutTheSticks.cutSticks(lengths);
 	}
 }

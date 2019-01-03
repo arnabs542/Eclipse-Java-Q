@@ -37,6 +37,7 @@ public class MeetingRooms {
 				return o1.start - o2.start;
 			}
 		});
+		// equals to ``` Arrays.sort(intervals, (a, b) -> a.start - b.start); ```
 		
 		for (int i = 1; i < intervals.length; i++) {
 			if (intervals[i].start < intervals[i - 1].end) {
@@ -75,7 +76,8 @@ public class MeetingRooms {
 	    });
 		
 	    // Or using lambda:
-		// Arrays.sort(intervals, Comparator.comparingInt(arr -> arr[0]));
+		// ``` Arrays.sort(intervals, Comparator.comparingInt(arr -> arr[0])); ```
+	    // ``` Arrays.sort(intervals, (a, b) -> a[0] - b[0]); ```
 		    
 		for (int i = 1; i < intervals.length; i++) {
 		   if (intervals[i][0] > intervals[i - 1][1]) {
