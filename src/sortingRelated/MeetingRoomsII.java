@@ -40,6 +40,8 @@ public class MeetingRoomsII {
 	    			return o1.end - o2.end;
 	    		}
 	    });
+	    // Or use Lambda:
+	    // ``` new PriorityQueue<Interval>(intervals.length, (a, b) -> a.end - b.end); ```
 	    
 	    for (Interval interval : intervals) {
 	    		if (minStack.isEmpty() || minStack.peek().end > interval.start) {

@@ -1,20 +1,24 @@
 /*
- * Created Date: June 20, 2018
+ * == Created Date ==
+ * June 20, 2018
  * 
- * Question - All Subsets I
- *   Given a set of characters represented by a String, return a list containing all subsets of the characters.
+ * == Question - All Subsets I ==
+ * Given a set of characters represented by a String, return a list containing all subsets of the characters.
  *   
- *  Assumptions:
- *    There are no duplicate characters in the original set.
+ * == Assumptions ==
+ * There are no duplicate characters in the original set.
  *  
- *  Examples:
+ * == Examples ==
  *    Set = "abc", all the subsets are [“”, “a”, “ab”, “abc”, “ac”, “b”, “bc”, “c”]
  *    Set = "", all the subsets are [""]
  *    Set = null, all the subsets are []  
- *     
- * Updated: 
- *   June 21, 2018 : Review
- *   September 20, 2018 : Review
+ * 
+ * == Notes ==
+ * LeetCode 90 (M)- Subsets II
+ * 
+ * == Updated ==
+ * June 21, 2018 : Review
+ * September 20, 2018 : Review
  * 
  */
 
