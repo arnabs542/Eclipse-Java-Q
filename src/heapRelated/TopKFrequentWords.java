@@ -26,6 +26,7 @@
 package heapRelated;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -60,23 +61,26 @@ public class TopKFrequentWords {
     }
     
     /* ------------------< Different syntax >----------------------*/
-    public List<String> topKFrequent(String[] words, int k) {
-        Map<String, Integer> count = new HashMap();
+    public List<String> topKFrequentII(String[] words, int k) {
+        Map<String, Integer> freqMap = new HashMap<>();
         for (String word: words) {
-            count.put(word, count.getOrDefault(word, 0) + 1);
+        		freqMap.put(word, freqMap.getOrDefault(word, 0) + 1);
         }
-        PriorityQueue<String> heap = new PriorityQueue<String>(
-                (w1, w2) -> count.get(w1).equals(count.get(w2)) ?
-                w2.compareTo(w1) : count.get(w1) - count.get(w2) );
+        PriorityQueue<String> minHeap = new PriorityQueue<String>(
+        (w1, w2) -> freqMap.get(w1).equals(freqMap.get(w2)) ? w2.compareTo(w1) : freqMap.get(w1) - freqMap.get(w2) );
 
-        for (String word: count.keySet()) {
-            heap.offer(word);
-            if (heap.size() > k) heap.poll();
+        for (String word: freqMap.keySet()) {
+        		minHeap.offer(word);
+            if (minHeap.size() > k) {
+            		minHeap.poll();
+            }
         }
 
-        List<String> ans = new ArrayList();
-        while (!heap.isEmpty()) ans.add(heap.poll());
-        Collections.reverse(ans);
-        return ans;
+        List<String> topK = new ArrayList<>();
+        while (!minHeap.isEmpty()) {
+        		topK.add(minHeap.poll());
+        }
+        Collections.reverse(topK);
+        return topK;
     }
 }

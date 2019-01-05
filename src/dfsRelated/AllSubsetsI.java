@@ -2,7 +2,7 @@
  * == Created Date ==
  * June 20, 2018
  * 
- * == Question - All Subsets I ==
+ * == Question - Subsets ==
  * Given a set of characters represented by a String, return a list containing all subsets of the characters.
  *   
  * == Assumptions ==
@@ -14,7 +14,7 @@
  *    Set = null, all the subsets are []  
  * 
  * == Notes ==
- * LeetCode 90 (M)- Subsets II
+ * LeetCode 78 (M)- Subsets
  * 
  * == Updated ==
  * June 21, 2018 : Review

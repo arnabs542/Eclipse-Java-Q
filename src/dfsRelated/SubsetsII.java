@@ -2,7 +2,7 @@
  * == Created Date ==
  * September 21, 2018
  * 
- * == Question - All Subsets II ==
+ * == Question - Subsets II ==
  * Given a collection of integers that might contain duplicates, nums, 
  * return all possible subsets (the power set).
  *   
@@ -32,7 +32,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-public class AllSubsetsWithDup {
+public class SubsetsII {
 	
 	 /* == Example ==
 	  * Input: [a,b,b]

@@ -102,7 +102,8 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Course Schedule](./src/dfsRelated/CourseSchedule.java)
    
 ### DFS
-   - [All Subsets I (medium)](./src/dfsRelated/AllSubsetsI.java)
+   - [Subsets (medium)](./src/dfsRelated/Subsets.java)
+   - [SubsetsII (medium)](./src/dfsRelated/SubsetsII.java)
    - [Insert Space (medium)](./src/dfsRelated/dfsRelated.java)
    - [All Permutations I (medium)](./src/dfsRelated/AllPermutationsI.java)
    - [All Permutations II (hard)](./src/dfsRelated/AllPermutationsII.java)
@@ -115,6 +116,7 @@ Progress of practicing data structures, algorithms and job interview questions.
    - [Word Search (medium+)](./src/hashTableRelated/WordSearch.java)
    - [Cheapest Flights Within K Stops](./src/dfsRelated/CheapestFlightsWithinKStops.java)
    - [Course Schedule](./src/dfsRelated/CourseSchedule.java)
+   - [Number of Islands](./src/dfsRelated/NumberOfIslands.java)
    
 ### Hash Table 
    - [Common Numbers Of Two Sorted Array (easy)](./src/hashTableRelated/CommonNumOfTwoSortedArr.java)
