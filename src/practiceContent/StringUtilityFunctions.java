@@ -37,6 +37,10 @@ public class StringUtilityFunctions {
         int cmpRes = log1.substring(log1.indexOf(' ') + 1).compareTo(log2.substring(log2.indexOf(' ') + 1));
         System.out.println(cmpRes);
         
+        String s11 = "i";
+        String s12 = "love";
+        System.out.println(s11.compareTo(s12));
+        
         /* ------------------< string.trim() >----------------------
          * - remove leading and tailing spaces
          * */

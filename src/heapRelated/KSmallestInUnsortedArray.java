@@ -98,7 +98,10 @@ public class KSmallestInUnsortedArray {
 		   }
 		});	
 	    
-	    return maxHeap1;
+	    /*--- < Syntax 4: Lambda	II >---*/	
+	    PriorityQueue<Integer> maxHeap4 = new PriorityQueue<>(k, (a, b) -> b.compareTo(a));
+	    
+	    return maxHeap4;
 	}
 	
 	/* --------------------< Solution 2 - Use a Min heap >----------------------
@@ -179,7 +182,7 @@ public class KSmallestInUnsortedArray {
 		array[b] = temp;
 	}
 	
-	/* ----------------------< test stub >-------------------------*/
+	/* ----------------------------------------< test stub >-------------------------------------------*/
 	
 	private static void printArr(int[] arr) {
 		if(arr == null) {

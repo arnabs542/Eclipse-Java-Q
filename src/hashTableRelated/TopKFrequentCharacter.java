@@ -14,6 +14,7 @@
  * == Updated ==
  * June 27, 2018: Review
  * Sept. 28, 2018: Review
+ * Jan 4, 2019: Becareful! The output requirements are less than LeetCode 347 (M) - Top K Frequent Elements 
  * 
  */
 
@@ -24,7 +25,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
-public class TopKFrequentWords {
+public class TopKFrequentCharacter {
 	public String[] topKFrequent(String[] combo, int k)  {
 		if (combo.length == 0) {
 			return new String[0];
@@ -77,7 +78,7 @@ public class TopKFrequentWords {
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
 		
-		TopKFrequentWords testObj = new TopKFrequentWords();
+		TopKFrequentCharacter testObj = new TopKFrequentCharacter();
 		
 		/* Test Case 0 */
 		System.out.println("---< Test Case 0 >---");
