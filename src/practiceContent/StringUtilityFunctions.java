@@ -15,8 +15,14 @@ public class StringUtilityFunctions {
 			System.out.println(s);
 		}
 		
+		System.out.println(); // . 、 | 和 * 等转义字符，必须得加 \\。
+		String ip = "255.0.0.7"; 
+        for (String x: ip.split("\\.", 4)) {
+        		System.out.print(x + " ");
+        }
+        
 		/* ------------------< Character.isDigit() >--------------------*/
-		System.out.println("-------< Character.isDigit() >------------");
+		System.out.println("\n-------< Character.isDigit() >------------");
 		
 		boolean isDigit1 = Character.isDigit(split1[0].charAt(0));
 		System.out.println(isDigit1);

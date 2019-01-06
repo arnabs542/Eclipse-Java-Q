@@ -61,7 +61,7 @@ public class EmployeeFreeTime {
         return freeTimeInteval;
     }
     
-	/* ---------------< Solution : virtually merge interval >--------------
+	/* ---------------< Solution : Heap >--------------
 	 * 
 	 * 1. Sort all intervals by start time
 	 * 2. Scan each interval,

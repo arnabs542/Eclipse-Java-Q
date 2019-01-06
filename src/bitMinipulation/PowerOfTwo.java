@@ -42,7 +42,7 @@ public class PowerOfTwo {
 	}
 	
     /* --< Mehod 2 : AND with X - 1 >--
-     * If x is power of 2, all the bits of x will be different then all the bits of (x - 1).
+     * If x is power of 2, all the bits of x will be different than all the bits of (x - 1).
      * So if x AND (x - 1) == 0, x is a power of 2; else not.    
      * 
      * 2^4     = Ob 00010000
