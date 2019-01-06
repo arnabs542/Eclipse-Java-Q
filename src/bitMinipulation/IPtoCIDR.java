@@ -122,9 +122,8 @@ public class IPtoCIDR {
             while (step > n) {
                 step /= 2;
             }
-            
-            //不大于需要的range，开始处理
-            //求出现在能表示的step个地址的地址块
+            //不大于需要的range，开始处理，step 表示包括此IP在内的step个IPs可以用一个ICDR来表示
+            //接下来求出这些IPs所处的CIDR
             ans.add(longToIP(x, (int)step));
             
             //x加上以求出的地址块
@@ -212,7 +211,5 @@ public class IPtoCIDR {
 		
 		/* Test Case 3 */
 		System.out.println("---< Test Case 3 >---");
-		
 	}
-
 }
