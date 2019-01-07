@@ -58,9 +58,9 @@ public class WordLadder {
 	 * Enque the beginWord
 	 * 
 	 * == For each step ==
-	 * Expand: dequeue
+	 * Expansion: dequeue
 	 * 
-	 * Generate: generate its neighbor nodes 
+	 * Generation: generate its neighbor nodes 
 	 * case 1: enqueue the words that being changed one character and exist in dictionary
 	 * case 2: neighbor node is the endWord, return distance + 1
 	 *  
@@ -113,7 +113,10 @@ public class WordLadder {
     /* -- < Lessons Learned > --
      * 
      * char[] chars = word.toCharArray();
-     * new String(chars) VS chars.toString()
+     * 
+     * new String(chars) 
+     * VS.
+     * chars.toString(), this will return the address, don't use this to convert char array to string
      * 
      * */
 
