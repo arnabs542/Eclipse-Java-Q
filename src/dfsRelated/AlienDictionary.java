@@ -62,6 +62,7 @@ public class AlienDictionary {
     public String alienOrder(String[] words) {
         Map<Character, Integer> inDegree = new HashMap<>();
 		Map<Character, List<Character>> graph = getGraph(words, inDegree);
+		
 		Queue<Character> queue = new ArrayDeque<>();
 		int numOfChar = graph.size();
 		StringBuilder order = new StringBuilder();
@@ -79,13 +80,11 @@ public class AlienDictionary {
 			char cur = queue.remove();
 			count++;
 			order.append(cur);
-			if (graph.containsKey(cur)) {
-				for (char nei : graph.get(cur)) { // Reduce the in-degree of each neighbor by 1
-					inDegree.put(nei, inDegree.getOrDefault(nei, 0) - 1);
-					if (inDegree.get(nei) == 0) { // If in-degree of a neighbor becomes 0, add it to the queue
-						queue.add(nei);
-					}    					
-				}
+			for (char nei : graph.get(cur)) { // Reduce the in-degree of each neighbor by 1
+				inDegree.put(nei, inDegree.getOrDefault(nei, 0) - 1);
+				if (inDegree.get(nei) == 0) { // If in-degree of a neighbor becomes 0, add it to the queue
+					queue.add(nei);
+				}    					
 			}
 		}
 		
@@ -125,6 +124,7 @@ public class AlienDictionary {
 		}
 		return graph;
 	}
+    
 	
 	/* ----------------------< test stub >-------------------------*/
 	
