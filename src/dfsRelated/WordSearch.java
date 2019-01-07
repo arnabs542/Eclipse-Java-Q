@@ -2,24 +2,28 @@
  * == Created Date ==
  * Oct 9, 2018
  * 
- * == Question - Employee Free Time ==
- * We are given a list schedule of employees, which represents the working time for each employee.
- * Each employee has a list of non-overlapping Intervals, and these intervals are in sorted order.
- * Return the list of finite intervals representing common, positive-length free time for all employees, also in sorted order.
+ * == Question - Word Searchr ==
+ * Given a 2D board and a word, find if the word exists in the grid.
  * 
- * == Example ==
+ * The word can be constructed from letters of sequentially adjacent cell,
+ *    where "adjacent" cells are those horizontally or vertically neighboring. 
+ * The same letter cell may not be used more than once.
+ *  
+ *   
+ * == Example == 
+ * board =
+ * [
+ *   ['A','B','C','E'],
+ *   ['S','F','C','S'],
+ *   ['A','D','E','E']
+ * ]
  * 
- * Input: schedule = [[[1,2],[5,6]],[[1,3]],[[4,10]]]
- * 
- * Output: [[3,4]]
- * 
- * Explanation:
- * There are a total of three employees, and all common
- * free time intervals would be [-inf, 1], [3, 4], [10, inf].
- * We discard any intervals that contain inf as they aren't finite.
+ * Given word = "ABCCED", return true
+ * Given word = "SEE", return true
+ * Given word = "ABCB", return false.
  * 
  * == Notes == 
- * LeetCode 759* - (H-)
+ * LeetCode 79(M)
  * 
  */
 

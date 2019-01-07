@@ -56,7 +56,8 @@ public class MeetingRoomsII {
 		return res;
     }
     
-    // Actuall in the above solution, the minStack don't need to store class Interval,
+    /* ----------------------< Syntax 2 >-------------------------*/
+    // Actually in the above solution, the minStack don't need to store class Interval,
     // just the ending time of each interval
     public int minMeetingRoomsSyntax2(List<Interval> intervals) {
     		if (intervals == null || intervals.size() == 0) {

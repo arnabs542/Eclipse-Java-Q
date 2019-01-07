@@ -34,10 +34,9 @@ public class NetworkDelayTime {
      * 
      * */
     public int networkDelayTime(int[][] times, int N, int K) {
-    	
-        List<Map<Integer, Integer>> graph = getGraph(N + 1, times);
-        
-        int[] cost = new int[N + 1];
+    		List<Map<Integer, Integer>> graph = getGraph(N + 1, times);
+    		
+    		int[] cost = new int[N + 1];
         Arrays.fill(cost, Integer.MAX_VALUE);
         
         PriorityQueue<int[]> minHeap = new PriorityQueue<>((a, b) -> (a[1] - b[1]));
@@ -55,12 +54,12 @@ public class NetworkDelayTime {
             
             for (Map.Entry<Integer, Integer> nei : graph.get(cur[0]).entrySet()) {
             		int neiNode = nei.getKey();
-                int newCost = cur[1] + nei.getValue();
-                if (newCost >= cost[neiNode]) {
-                    continue;
-                }
-                cost[neiNode] = newCost;
-                minHeap.add(new int[] {neiNode, newCost});
+            		int newCost = cur[1] + nei.getValue();
+            		if (newCost >= cost[neiNode]) {
+            			continue;
+            		}
+            		cost[neiNode] = newCost;
+            		minHeap.add(new int[] {neiNode, newCost});
             }
         }
         
@@ -87,8 +86,6 @@ public class NetworkDelayTime {
 		}
 		return graph;
 	}
-
-
     
     /* ----------------------< Syntax 2 >-------------------------
      * 

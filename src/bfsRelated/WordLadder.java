@@ -37,8 +37,10 @@ import java.util.Set;
 public class WordLadder {
 	
 	/* ----- < Method 1 - BFS > -----
-	 * Time Complexity: O(N * M), where N is size of the dictionary and M is length of the word.
-	 * Space Complexity: O(N);
+	 * 
+	 * == Data Strucuture ==
+	 * FIFO queue
+	 * A Set to record all the words in the word lists
 	 * 
 	 * ["hot","dot","dog","lot","log","cog"]
 	 *                 
@@ -51,7 +53,25 @@ public class WordLadder {
 	 *           dog       log                         ["cog"]
 	 *           /
 	 *         cog
+	 *  
+	 * == Init ==
+	 * Enque the beginWord
+	 * 
+	 * == For each step ==
+	 * Expand: dequeue
+	 * 
+	 * Generate: generate its neighbor nodes 
+	 * case 1: enqueue the words that being changed one character and exist in dictionary
+	 * case 2: neighbor node is the endWord, return distance + 1
+	 *  
+	 * == Termination ==
+	 * Queue is empty or return in the process
+	 * 
+	 * Time Complexity: O(N * 26^L), where N is size of the dictionary and L is length of the word.
+	 * Space Complexity: O(N);
+	 * 
 	 * */
+	
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
         Set<String> dictionary = new HashSet<>(wordList);
         if (!dictionary.contains(endWord)) {
@@ -68,7 +88,7 @@ public class WordLadder {
             		String word = queue.poll(); 
             		char[] chars = word.toCharArray();
             		
-            		// generate its neighbor nodes - O(26 * M), M is the len of one word
+            		// generate its neighbor nodes - O(26 ^ L), L is the len of one word
             		// (words that being changed one character and exist in dictionary)
                 for (int i = 0; i < chars.length; i++) {
                 		char temp = chars[i]; 

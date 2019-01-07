@@ -2,7 +2,7 @@
  * == Created Date ==
  * September 28, 2018
  * 
- * == Question - Vertical Order Traversal(M) ==
+ * == Question - Binary Tree Vertical Order Traversal ==
  * Given a binary tree, return the vertical order traversal of its nodes' values.
  * (ie, from top to bottom, column by column).
  * If two nodes are in the same row and column, the order should be from left to right.
@@ -38,7 +38,9 @@
 	return its vertical order traversal as:
 	
 	[4,9,5,3,0,1,8,2,7]  
- *  
+ * 
+ *  == Notes ==
+ *  LeetCode 314*(M) 
  * 
  */
 
@@ -91,6 +93,7 @@ public class VerticalOrderTraversal {
         for (Entry<Integer, List<Integer>> entry : map.entrySet()) { 
             System.out.println(entry.getValue()); 
         } 
+        System.out.println();
     } 
     
     /* ----------< Solution, level order traversal + self-defined data structure >-------------------------*/
@@ -104,10 +107,10 @@ public class VerticalOrderTraversal {
         }
     }
     
-    public List<Integer> verticalOrder(TreeNode root) {
-    		List<Integer> res = new ArrayList<>();
-	    if(root == null) {
-	      return res;
+    public List<List<Integer>> verticalOrder(TreeNode root) { 
+        List<List<Integer>> result = new ArrayList<>();
+	    if (root == null) {
+	      return result;
 	    }
 	    Queue<TreeNodeWithHorizDis> queue = new LinkedList<>();
 	    Map<Integer, List<Integer>> map = new HashMap<>();
@@ -116,34 +119,32 @@ public class VerticalOrderTraversal {
 	    int maxHorizDis = 0;
 	
 	    while (!queue.isEmpty()) {    		
-	    		for (int size = queue.size(); size > 0; size--) {
-	    			TreeNodeWithHorizDis nodeWithHorizDis = queue.poll();
-			    if (map.containsKey(nodeWithHorizDis.horizDis)) {
-		        		map.get(nodeWithHorizDis.horizDis).add(nodeWithHorizDis.treeNode.value);
-		        } else {
-		        		List<Integer> newList = new ArrayList<Integer>();
-		        		newList.add(nodeWithHorizDis.treeNode.value);
-		        		map.put(nodeWithHorizDis.horizDis, newList);
-		        }
-		
-		        if (nodeWithHorizDis.treeNode.left != null) {
-		        		queue.offer(new TreeNodeWithHorizDis(nodeWithHorizDis.treeNode.left, nodeWithHorizDis.horizDis - 1));
-		        		minHorizDis = Math.min(nodeWithHorizDis.horizDis - 1, minHorizDis);
-		        }
-		        if (nodeWithHorizDis.treeNode.right != null) {
-		        		queue.offer(new TreeNodeWithHorizDis(nodeWithHorizDis.treeNode.right, nodeWithHorizDis.horizDis + 1));
-		        		maxHorizDis = Math.max(nodeWithHorizDis.horizDis + 1, maxHorizDis);
-			    }
+            for (int size = queue.size(); size > 0; size--) {
+                TreeNodeWithHorizDis curNode = queue.poll();
+                if (map.containsKey(curNode.horizDis)) {
+                    map.get(curNode.horizDis).add(curNode.treeNode.value);
+                } else {
+                    List<Integer> newList = new ArrayList<Integer>();
+                    newList.add(curNode.treeNode.value);
+                    map.put(curNode.horizDis, newList);
+                }
+
+                if (curNode.treeNode.left != null) {
+                    queue.offer(new TreeNodeWithHorizDis(curNode.treeNode.left, curNode.horizDis - 1));
+                    minHorizDis = Math.min(curNode.horizDis - 1, minHorizDis);
+                }
+                if (curNode.treeNode.right != null) {
+                    queue.offer(new TreeNodeWithHorizDis(curNode.treeNode.right, curNode.horizDis + 1));
+                    maxHorizDis = Math.max(curNode.horizDis + 1, maxHorizDis);
+                }
 	        }
 	    }
 	    
 	    for (int i = minHorizDis; i <= maxHorizDis; i++) {   
 	    		System.out.println(map.get(i)); 
-	    		for (int ele : map.get(i)){
-	    			res.add(ele);
-	    		}
+	    		result.add(map.get(i)); 
 	    }
-	    return res;
+	    return result;
     }
     
 	/* ----------------------< test stub >-------------------------*/

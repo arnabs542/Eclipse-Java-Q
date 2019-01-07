@@ -36,7 +36,7 @@ public class DijkstraAlgorithm {
     }
 
     public int dijkstraAlgorithm(int n, int[][] edges, int src, int dst) {
-    		// Use adjacency matrix to represent city graph
+    		// Use adjacency matrix to represent graph
         int[][] srcToDst = new int[n][n];
         for (int i = 0; i < edges.length; i++) {
             srcToDst[edges[i][0]][edges[i][1]] = edges[i][2]; 
@@ -49,19 +49,19 @@ public class DijkstraAlgorithm {
         Arrays.fill(cost, Integer.MAX_VALUE);
         cost[src] = 0;
         
-        int[] from = new int[n];
-        Arrays.fill(from, Integer.MAX_VALUE);
-        from[src] = 0;
+        int[] parent = new int[n];
+        Arrays.fill(parent, Integer.MAX_VALUE);
+        parent[src] = 0;
         
         Set<Integer> visted = new HashSet<>();
         
         while (!minHeap.isEmpty()) {
         		Node curNode = minHeap.poll();
         		if (visted.add(curNode.id)) {
-            		from[curNode.id] = curNode.from;
+        			parent[curNode.id] = curNode.from;
             		
                 if (curNode.id == dst) {
-                		printPath(from, src, dst);
+                		printPath(parent, src, dst);
                     return curNode.costFromSrc;
                 }
 
@@ -78,7 +78,7 @@ public class DijkstraAlgorithm {
         		}
         }
        
-        printPath(from, src, dst);
+        printPath(parent, src, dst);
         return cost[dst] == Integer.MAX_VALUE ? -1 : cost[dst];
     }
 
