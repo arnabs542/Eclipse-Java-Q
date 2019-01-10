@@ -2,7 +2,7 @@
  * == Created Date ==
  * Jan 6, 2019
  * 
- * == Question - File System ==
+ * == Question - Simplified ZooKeeper ==
  * 
  * Write a file system class, which has two functions: create, and get
  * 
@@ -18,13 +18,6 @@
  * - are the format of input paths are valid ?
  * - what's the return types
  * 
- * 
- * == Example == 
- * wizard[0] list: 1, 4, 5
- * wizard[4] list: 9
- *   
- * wizard 0 to 9 min distance is (0-4) ^ 2 + (4-9) ^ 2 = 41 (wizard[0]->wizard[4]->wizard[9])]
- * 
  * == Notes == 
  * Airbnb Interview Problem
  * 
@@ -35,51 +28,52 @@ package hashTableRelated;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FileSystemAirbnb {
+public class SimplifiedZooKeeper {
 	
     Map<String, Integer> pathMap;
     Map<String, Runnable> callbackMap;
     
-    public FileSystemAirbnb() {
+    public SimplifiedZooKeeper() {
         this.pathMap = new HashMap<>();
         pathMap.put("", 0);
         
         this.callbackMap = new HashMap<>();
     }
     
-    public boolean create(String key, int value) {
-        if (pathMap.containsKey(key)) {
+    public boolean create(String path, int value) {
+        if (pathMap.containsKey(path)) {
             return false;
         }
-        String prefix = key.substring(0, key.lastIndexOf("/"));
-        System.out.println("prefix: " + prefix);
+        String prefix = path.substring(0, path.lastIndexOf("/"));
         if (!pathMap.containsKey(prefix)) {
             return false;
         }
-        pathMap.put(key, value);
+        pathMap.put(path, value);
         return true;
     }
     
-    public boolean set(String key, int value) {
-        if (!pathMap.containsKey(key)) {
+    public boolean set(String path, int value) {
+        if (!pathMap.containsKey(path)) {
             return false;
         }
-        pathMap.put(key, value);
-        String curt = key;
-        while (curt.length() > 0) {
-            if (callbackMap.containsKey(curt)) {
-                callbackMap.get(curt).run();
+        pathMap.put(path, value);
+        
+        // When the value of node get modified, trigger callback for every parent nodes along the path
+        // eg: if path = '/A/B/C', then the callback functions of '/A/B/C', '/A/B', '/A' needs to be triggered
+        while (path.length() > 0) {
+            if (callbackMap.containsKey(path)) {
+                callbackMap.get(path).run();
             }
-            curt = curt.substring(0, curt.lastIndexOf("/"));
+            path = path.substring(0, path.lastIndexOf("/"));
         }
         return true;
     }
      
-    public int get(String key) {
-        if (!pathMap.containsKey(key)) {
-            return -1; // throw new java.util.NoSuchElementException();
+    public Integer get(String path) {
+        if (!pathMap.containsKey(path)) {
+            return null; // or ``` throw new java.util.NoSuchElementException(); ```
         }
-        return pathMap.get(key);
+        return pathMap.get(path);
     }
     
     public void watch(String path, String alert) {
@@ -91,9 +85,9 @@ public class FileSystemAirbnb {
         callbackMap.put(path, runnable);
     }
     
-    /*
-     * 
-     *   Map<String, Integer> pathMap;
+/*
+   
+  Map<String, Integer> pathMap;
   Map<String, Runnable> callbackMap;
   
   
@@ -178,32 +172,39 @@ public class FileSystemAirbnb {
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
 		
-		FileSystemAirbnb testObj = new FileSystemAirbnb();
+		SimplifiedZooKeeper zooKeeper = new SimplifiedZooKeeper();
 		
 		/* Test Case 0 */
 		System.out.println("---< Test Case 0 >---");
 		
 		/* Test Case 1 */
-		System.out.println("---< Test Case 1 >---");
-        
-		testObj.create("/a", 1);
-        System.out.println(testObj.get("/a"));
-        
-        testObj.create("/a/b", 2);
-        System.out.println(testObj.get("/a/b"));
-        
-        testObj.create("/a/b/c", 3);
-        System.out.println(testObj.get("/a/b/c"));
-        
-        testObj.create("/c/d", 4);
-        System.out.println(testObj.get("/c"));
-        
-        
+		System.out.println("---< Test Case 1 - Test creat(), get() >---");
+		
+	    System.out.println(zooKeeper.create("/app1", 0)); // expected: true
+	    System.out.println(zooKeeper.create("/app1", 0)); // expected: false
+	    
+	    System.out.println(zooKeeper.create("/app2/p1", 1)); // expected: false
+	    System.out.println(zooKeeper.create("/app1/p1", 1)); // expected: true
+	    
+	    System.out.println(zooKeeper.get("/app1")); // expected: 0
+	    System.out.println(zooKeeper.get("/app2")); // expected: null
+	    System.out.println(zooKeeper.get("/app1/p1")); // expected: 1
+	    
 		/* Test Case 2 */
-		System.out.println("---< Test Case 2 >---");
+		System.out.println("---< Test Case 2 - Test set() >---");
+		
+	    System.out.println(zooKeeper.set("/app1", 3)); // expected: true
+	    System.out.println(zooKeeper.get("/app1")); // expected: 3
+	    
+	    System.out.println(zooKeeper.set("/app2", 3)); // expected: false
 		
 		/* Test Case 3 */
-		System.out.println("---< Test Case 3 >---");
+		System.out.println("---< Test Case 3 - Test watch() >---");
+	    zooKeeper.watch("/app1", "callback from app1");
+	    System.out.println(zooKeeper.set("/app1", 4)); // expected: "callback from app1"
+	    
+	    zooKeeper.watch("/app1/p1", "callback from p1");
+	    System.out.println(zooKeeper.set("/app1/p1", 5)); // expected: "callback from p1", "callback from app1" 
 		
 	}
 }
