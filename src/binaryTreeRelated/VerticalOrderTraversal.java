@@ -70,7 +70,7 @@ public class VerticalOrderTraversal {
                   
         List<Integer> get =  map.get(hd); //get the vector list at 'hd' 
           
-        // Store current node in map 'm' 
+        // Store current node in map 'm'
         if (get == null) { 
             get = new ArrayList<>(); 
             get.add(root.value); 
