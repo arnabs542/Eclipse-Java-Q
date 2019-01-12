@@ -114,21 +114,26 @@ public class VerticalOrderTraversal {
 	    }
 	    Queue<TreeNodeWithHorizDis> queue = new LinkedList<>();
 	    Map<Integer, List<Integer>> map = new HashMap<>();
+	    
+	    // Initilization
 	    queue.offer(new TreeNodeWithHorizDis(root, 0));
 	    int minHorizDis = 0;
 	    int maxHorizDis = 0;
 	
 	    while (!queue.isEmpty()) {    		
             for (int size = queue.size(); size > 0; size--) {
+            	
+            		// Expand a nodes from queue
                 TreeNodeWithHorizDis curNode = queue.poll();
-                if (map.containsKey(curNode.horizDis)) {
-                    map.get(curNode.horizDis).add(curNode.treeNode.value);
-                } else {
+                
+                if (!map.containsKey(curNode.horizDis)) {
                     List<Integer> newList = new ArrayList<Integer>();
                     newList.add(curNode.treeNode.value);
                     map.put(curNode.horizDis, newList);
                 }
+                map.get(curNode.horizDis).add(curNode.treeNode.value);
 
+                // Generate children nodes
                 if (curNode.treeNode.left != null) {
                     queue.offer(new TreeNodeWithHorizDis(curNode.treeNode.left, curNode.horizDis - 1));
                     minHorizDis = Math.min(curNode.horizDis - 1, minHorizDis);
