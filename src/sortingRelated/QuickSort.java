@@ -31,13 +31,14 @@ public class QuickSort {
 		int pivotPos = partition(array, left, right);		
 		
 		// do the recursive call on the two partitions
+		// noted that the current pivotPos is in the correct place, no need to move it!
 		quickSort(array, left, pivotPos - 1);
 		quickSort(array, pivotPos + 1, right);		
 	}
 	
 	private int partition(int[] array, int left, int right) {	
 		// randomly select a pivot index from the part to be partitioned
-		int pivotIndex = selectPivot(left, right);
+		int pivotIndex = left + new Random().nextInt(right - left + 1);
 		int pivotVal = array[pivotIndex];
 		
 		// swap the pivot element to the rightmost element first
@@ -56,11 +57,6 @@ public class QuickSort {
 		swap(array, left, right);		// why swap with leftBound, not 	rightBound ?
 		return left;
 	}
-	
-	private int selectPivot(int left, int right) {
-		Random rand = new Random();
-		return left + rand.nextInt(right - left + 1); // pick random element in the range of [left, right]
-	}
 		
 	private void swap(int[] array, int a, int b) {		
 		int temp = array[a];
@@ -68,13 +64,20 @@ public class QuickSort {
 		array[b] = temp;
 	}
 	
-	/* ----------------------< test stub >-------------------------*/
 	
+	// Time Complexity: O(nlogn);
+	// Space Complexity: O(1);
+	
+	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
 		
 		QuickSort myQuickSort = new QuickSort();
 		
-		/* Test Case 1*/
+		/* Test Case 0 */
+		System.out.println("---< Test Case 0 >---");
+		
+		/* Test Case 1 */
+		System.out.println("---< Test Case 1 >---");
 		int[] array1 = {20, 18, 5, 21, 8, 4, 4};
 		
 		myQuickSort.quickSort(array1);
@@ -83,14 +86,18 @@ public class QuickSort {
 		}
 		System.out.print("\n");
 		
-		/* Test Case 1*/
-		
+		/* Test Case 2 */
+		System.out.println("---< Test Case 2 >---");
 		int[] array2 = {1, 4, 6, 5, 3, 2};
 		
 		myQuickSort.quickSort(array2);
 		for (int i : array2) {
 			System.out.print(i + " ");
 		}
+		
+		/* Test Case 3 */
+		System.out.println("---< Test Case 3 >---");
+		
 	}
 }
 
