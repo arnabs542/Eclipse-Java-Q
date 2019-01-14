@@ -53,14 +53,11 @@ public class EvaluateDivision {
         for (int i = 0; i < equations.length; i++) {
             String first = equations[i][0];
             String second = equations[i][1];
-            if (!graph.containsKey(first)) {
-                graph.put(first, new HashMap<>());
-            }
+            
+            graph.putIfAbsent(first, new HashMap<>());
             graph.get(first).put(second, values[i]);
             
-            if (!graph.containsKey(second)) {
-                graph.put(second, new HashMap<>());
-            }
+            graph.putIfAbsent(second, new HashMap<>());
             graph.get(second).put(first, 1.0 / values[i]);
         }
         return graph;

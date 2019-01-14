@@ -40,8 +40,6 @@ import java.util.Queue;
 public class CourseScheduleII {
 	
 	/* ------------------- < Method 1: Topological Sort Graph Algorithm with DFS >------------------
-	 * Not the solution of this problem 
-	 *
 	 * Data Structure:
 	 * 	1. A state array to record the states of nodes (0: unknown; 1: visiting; 2: visited    )
 	 * 	2. A stack to record the order
@@ -127,7 +125,6 @@ public class CourseScheduleII {
 	 *
 	 * Data Structure:
 	 * 
-	 * 
 	 * Steps: 
 	 * 
 	 * Time Complexity: O(N) // N: nodes
@@ -140,8 +137,7 @@ public class CourseScheduleII {
 		Queue<Integer> queue = new ArrayDeque<>();
 		int[] topologicalOrder = new int[numCourses];
 		
-		for (int i = 0; i < numCourses; i++) {
-			// Add all vertices with 0 in-degree to the queue
+		for (int i = 0; i < numCourses; i++) { // Add all vertices with 0 in-degree to the queue
 			if (inDegree[i] == 0) {
 				queue.add(i);
 			}
@@ -149,11 +145,12 @@ public class CourseScheduleII {
 		
 		int i = 0;
 		while (!queue.isEmpty()) {
-			int cur = queue.remove();
+			int cur = queue.remove(); // Expand a node from queue
 			topologicalOrder[i++] = cur;
-			if (graph.containsKey(cur)) {
-				// Reduce the in-degree of each neighbor by 1
-				for (int nei : graph.get(cur)) {
+			
+			if (graph.containsKey(cur)) { // This check is needed because we don't put nodes without neighbors to the graph
+				// Generate neighbor nodes
+				for (int nei : graph.get(cur)) { // Reduce the in-degree of each neighbor by 1
 					inDegree[nei]--;
 					// If in-degree of a neighbor becomes 0, add it to the queue
 					if (inDegree[nei] == 0) {

@@ -22,60 +22,8 @@ import java.util.Queue;
 import java.util.Set;
 
 public class CourseSchedule {
-	
-	/* ------------------- < Topological Sort Graph Algorithm >------------------
-	 * Not the solution of this problem 
-	 *
-	 * Data Structure:
-	 * 	1. A set to remember all the visited node.
-	 * 	2. A stack to remmber the order
-	 * 
-	 * Steps: 
-	 * 1. Pick a random node from the graph to start. 
-	 * 2. Use DFS to recursively check its neighbors, use a Set to remember all the visited node.
-	 * 3. If all the neighbors have been visited, put this node into the ordreStack
-	 * 
-	 * 4. Repeat 1 ~ 3, until all the nodes in the graph have been visited
-	 * 
-	 * Topological order is the reverse order of the ordreStack
-	 * 
-	 * Time Complexity: O(N) // N: nodes
-	 * Space Complexity: O(N)
-	 * 
-	 */
-	
-    public void topologicalSort(int nums, int[][] edges) {
-		List<List<Integer>> graph = getGraph(nums, edges);
-		Deque<Integer> ordreStack = new ArrayDeque<>();
-		Set<Integer> visited = new HashSet<>();		
-		for (int i = 0; i < nums; i++) {
-			if (!visited.contains(i)) {
-				dfsForTopoSort(graph, visited, i, ordreStack);
-			}		
-		}
-		printForTopoSort(ordreStack);
-    }
-    
-	private void dfsForTopoSort(List<List<Integer>> graph, Set<Integer> visited, int cur, Deque<Integer> ordreStack) {
-		if (visited.contains(cur)) {
-			return;
-		}
-		visited.add(cur);
-		for (int nei : graph.get(cur)) {
-			dfsForTopoSort(graph, visited, nei, ordreStack);
-		}
-		ordreStack.push(cur);
-	}
-	
-    private void printForTopoSort(Deque<Integer> ordreStack) {
-		System.out.println("\nTopological Sort: ");
-		while (!ordreStack.isEmpty()) {
-			System.out.print(ordreStack.pop() + " ");
-		}
-		System.out.println();
-    }
 
-	/* ------------- < Solution1: Use DFS to detect if cycle exists in a Directed Graph >------------ 
+	/* ------------- < Solution: Use DFS to detect if cycle exists in a Directed Graph >------------ 
 	 * 
 	 * The problem equals to detect whether a cycle exists in a Directed Graph or not
 	 * 
@@ -206,7 +154,6 @@ public class CourseSchedule {
 		/* Test Case 0 */
 		System.out.println("---< Test Case 0 >---");
 		testObj.print(testObj.getGraph(6, prerequisites));
-		testObj.topologicalSort(6, prerequisites);
 		
 		/* Test Case 1 */
 		System.out.println("---< Test Case 1 >---");
