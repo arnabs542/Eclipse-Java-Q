@@ -42,16 +42,20 @@ public class SlidingWindowMaximum {
 		int start = 0;
 		int end = 0;
 		while (end < nums.length) {
-			if (end < start + k - 1) {
+            // the size of the sliding window is less than k, move end pointer
+			if (end <= start + k - 1) {
 				monotonicQ.offer(nums[end]);
 				end++;
-			} else {
-				list.add(monotonicQ.max());
-				if (nums[start] == monotonicQ.max()) {
-					monotonicQ.poll();
-				}
-				start++;
-			}
+                if (end < nums.length) { // this is for not missing the last sliding window
+                    continue;
+                }
+			} 
+            // the size of sliding window is k, record the max value and move start pointer
+            list.add(monotonicQ.max());
+            if (nums[start] == monotonicQ.max()) {
+                monotonicQ.poll();
+            }
+            start++;
 		}
 		int[] result = new int[list.size()];
 		for (int i = 1; i < result.length; i++) {
@@ -68,8 +72,8 @@ public class SlidingWindowMaximum {
 	 * ---------------              ---------------    -----
 	 * 0   1    2   3  4  5  6  7
 	 * [1] 3   -1  -3  5  3  6  7       [-1]          3 3
-	 *         s
-	 *                  e
+	 *                    s
+	 *                          e
 	 *
 	 * 
 	 */
