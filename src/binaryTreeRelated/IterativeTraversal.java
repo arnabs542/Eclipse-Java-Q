@@ -1,15 +1,19 @@
 /*
- * Created Date: May 20, 2018
+ * == Created Date ==
+ * May 20, 2018
  * 
- * Question - Binary Search Tree Traversal Iteratively  
+ * == Question ==
+ * Binary Search Tree Traversal Iteratively  
  *   
- * Updated:
- *   June 10, 2018: Review, Practice Class 7 
+ * == Updated ==
+ * June 10, 2018: Review, Practice Class 7 
+ * Jan 14, 2019: Add post order
  * 
  */
 
 package binaryTreeRelated;
 
+import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.LinkedList;
 
@@ -57,6 +61,40 @@ public class IterativeTraversal {
 		}		
 	}	
 	
+	// Iterative function to perform post-order traversal of the tree
+	public static void postOrderIterative(TreeNode root) {
+		// create an empty stack and push root node
+		Deque<TreeNode> stack = new ArrayDeque<>();
+		stack.push(root);
+
+		// create another stack to store post-order traversal
+		Deque<Integer> out = new ArrayDeque<>();
+
+		// run till stack is not empty
+		while (!stack.isEmpty()) {
+			// we pop a node from the stack and push the data to output stack
+			TreeNode curr = stack.pop();
+			out.push(curr.value);
+
+			// push left and right child of popped node to the stack
+			if (curr.left != null) {
+				stack.push(curr.left);
+			}
+
+			if (curr.right != null) {
+				stack.push(curr.right);
+			}
+		}
+
+		// stack: 
+		// out: 10 15 20 13 5 7 2 1
+		
+		// print post-order traversal
+		while (!out.isEmpty()) {
+			System.out.print(out.pop() + " ");
+		}
+	}
+	
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
 		
@@ -84,6 +122,9 @@ public class IterativeTraversal {
 		System.out.print("\n");
 		
 		inOrderIterative(root);
+		System.out.print("\n");
+		
+		postOrderIterative(root);
 		System.out.print("\n");
 		
 		
