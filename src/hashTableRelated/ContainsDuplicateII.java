@@ -40,16 +40,24 @@ public class ContainsDuplicateII {
 	/* ----- < Method 2 - Use Map > -----
 	 * Time Complexity: O(N);
 	 * Space Complexity: O(N);
+	 *            i
+	 *  0 1 2 3 4 5
+	 * [1,2,3,1,2,3]
 	 * 
+	 * map 
+	 * 1 3
+	 * 2 1
+	 * 3 2
 	 * */
     public boolean containsNearbyDuplicateII(int[] nums, int k) {
-        Map<Integer, Integer> visited = new HashMap<>();
+    		// key: number, value: the last index we have seen for this number
+        Map<Integer, Integer> indexMap = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-            if (visited.containsKey(nums[i]) && Math.abs(visited.get(nums[i]) - i) <= k) {
-                return true;
-            } else {
-                visited.put(nums[i], i);
-            }
+        		Integer lastIndex = indexMap.get(nums[i]);
+        		if (lastIndex != null && Math.abs(lastIndex - i) <= k) {
+        			return true;
+        		}
+            indexMap.put(nums[i], i);
         }
         return false;
     }

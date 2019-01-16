@@ -258,7 +258,7 @@ public class BusRoutes {
     }
     
 	/* ----- < Method 2 - Treat stops as the nodes, then BFS > -----
-	 * Time Complexity: O(m * n), m is the number of bus, 
+	 * Time Complexity: O(m * n), m is the number of bus, n is the route
 	 * Space Complexity: O(m * n);
 	 * 
 	 * == Steps ==
