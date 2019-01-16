@@ -52,7 +52,53 @@ import java.util.TreeSet;
 
 public class KEmptySlots {
 	
-	/* ----- < Method 1 - Binary Search Tree > -----
+	/* ----- < Method 1 - Brute Force > -----
+	 * Time Complexity: O(N * 2k); // each step - O(2k)
+	 * Space Complexity: O(N);
+	 * 
+	 */
+    public int kEmptySlotsI(int[] flowers, int k) {
+        if (flowers.length == 0 || k >= flowers.length) {
+        		return -1;
+        }
+        int[] states = new int[flowers.length + 1]; // 1: bloom, 0: doesn't bloom
+        
+        for (int i = 0; i < flowers.length; i++) {
+            if (IsValid(flowers[i], k, flowers.length, states)) {
+            		return i + 1;
+            }
+        }
+        return -1;
+    }
+    
+    private boolean IsValid(int curPos, int k, int n, int[] states) {
+    		states[curPos] = 1; // marked it as bloom
+    		
+    		// check if there exists an eligible flower in the right side
+        searchRight: if (curPos + k + 1 <= n && states[curPos + k + 1] == 1) {
+            // check if the flowers in between are blooming
+            for (int i = 1; i <= k; i++) {
+                if (states[curPos + i] == 1) {
+                    break searchRight; 
+                }
+            }
+            return true;
+        }
+        
+        // check if there exists an eligible flower in the left side
+        if (curPos - k - 1 > 0 && states[curPos - k - 1] == 1) {
+            for (int i = 1; i <= k; i++) {
+            		if (states[curPos - i] == 1) {
+            			return false;
+            		}
+            }
+            return true;
+        }
+        return false;
+   } 
+
+        
+	/* ----- < Method 2 - Binary Search Tree > -----
 	 * Time Complexity: O(NlogN); // N is the length of flowers, each step is O(logN)
 	 * Space Complexity: O(N);
 	 * 
@@ -73,16 +119,18 @@ public class KEmptySlots {
 	 *  null  3
 	 *  
 	 * */
-    public int kEmptySlotsI(int[] flowers, int k) {
+    public int kEmptySlotsII(int[] flowers, int k) {
         TreeSet<Integer> bst = new TreeSet<>();
         for (int day = 0; day < flowers.length; day++) {
         		int curBloom = flowers[day];
         		bst.add(curBloom);
+        		
         		Integer leftBloom = bst.lower(curBloom);
-        		Integer rightBloom = bst.higher(curBloom);
         		if (leftBloom != null && curBloom - leftBloom - 1 == k) {
         			return day;
         		}
+        		
+        		Integer rightBloom = bst.higher(curBloom);
         		if (rightBloom != null && rightBloom - curBloom - 1 == k) {
         			return day;
         		}
@@ -90,7 +138,7 @@ public class KEmptySlots {
         return -1;
     }
 	
-	/* ----- < Method 2 - Buckets > -----
+	/* ----- < Method 3 - Buckets > -----
 	 * Time Complexity: O(N); 
 	 * Space Complexity: O(n / (k + 1));
 	 * 
@@ -108,7 +156,7 @@ public class KEmptySlots {
 	 *  - if x is the min in the bucket, check if the max is x - k - 1
 	 *  - if x is the max in the bucket, check if the min of next bucket is x + k + 1
 	 * */
-    public int kEmptySlotsII(int[] flowers, int k) {
+    public int kEmptySlotsIII(int[] flowers, int k) {
     	
     	
     	return 0;
