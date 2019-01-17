@@ -74,10 +74,7 @@ public class SlidingWindowMaximum {
 	 * [1] 3   -1  -3  5  3  6  7       [-1]          3 3
 	 *                    s
 	 *                          e
-	 *
-	 * 
 	 */
-	
 	class MonotonicQueue {
 		private Deque<Integer> queue = new ArrayDeque<>();
 		

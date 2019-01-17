@@ -18,7 +18,7 @@
  * 
  */
 
-package unionFind;
+package dfsRelated;
 
 import java.util.HashMap;
 import java.util.HashSet;

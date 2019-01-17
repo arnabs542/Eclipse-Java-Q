@@ -159,13 +159,57 @@ public class KEmptySlots {
     public int kEmptySlotsIII(int[] flowers, int k) {
     	
     	
-    	return 0;
-    	
-    	
-    	
-    	
-    	
-    	
-    	
+    		return 0;
+
+    }
+    
+    /* ----- < Method 4 - Sliding Window > -----
+     * Time Complexity: O(N); 
+     * Space Complexity: O(N);
+     * 
+     * 
+     * Use posAndBloomDay[x] to record the time that the flower at position x blooms. 
+     * We wanted to find candidate intervals [left, right] 
+     *   where posAndBloomDay[left], posAndBloomDay[right] (right - left = k + 1) are the two smallest values in 
+     *   posAndBloomDay [left, right]
+     *   
+     * If we can find a smaller one in int interval posAndBloomDay [left, right], update left and the slingding window
+     * 
+     */
+    public int kEmptySlotsIV(int[] flowers, int k) {
+    	    // posAndBloomDay is for the time that the flower at position x blooms
+    		// eg: posAndBloomDay[i] = 2 means the flower at (i-th + 1) slot bloom at Day2
+        int[] posAndBloomDay = new int[flowers.length]; 
+        
+        /*          0  1  2
+         * flowers: 1  3  2
+         *    
+         *                 0   1   2
+         * posAndBloomDay: 1   3   2
+         * 
+         * */
+        for (int day = 0; day < flowers.length; day++) {
+        		int slotIndex = flowers[day] - 1;
+        		posAndBloomDay[slotIndex] = day + 1;
+        }
+
+        int result = Integer.MAX_VALUE;
+        int left = 0;
+        int right = k + 1;
+        int numSlots = flowers.length;
+        
+        search: while (right < numSlots) {
+            for (int i = left + 1; i < right; i++) {
+                if (posAndBloomDay[i] < posAndBloomDay[left] || posAndBloomDay[i] < posAndBloomDay[right]) {
+                    left = i;
+                    right = i + k + 1;
+                    continue search;
+                }
+            }
+            result = Math.min(result, Math.max(posAndBloomDay[left], posAndBloomDay[right]));
+            left = right;
+            right = left + k + 1;
+        }
+        return result < Integer.MAX_VALUE ? result : -1;
     }
 }
