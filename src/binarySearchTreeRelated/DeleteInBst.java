@@ -47,7 +47,7 @@ public class DeleteInBst {
 	 *       / 
 	 *      8        
 	 * 
-	 * case 4.1 - has children, and the right child is the smallest node of right subtree
+	 * case 4.1 - has children, and the right child is the successor
 	 * 
 	 * 	   5                  5
 	 *   /   \       -->    /   \
@@ -74,7 +74,7 @@ public class DeleteInBst {
 		if (root == null) { // corner case
 		    return null;
 		}
-		// base case
+		// base case, we found the node to delete
 		if (root.value == key) { 
 			if (root.left == null) { // case 2, no left child
 				return root.right;

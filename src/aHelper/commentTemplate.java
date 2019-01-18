@@ -12,13 +12,9 @@
  * 
  */
 
-
 package aHelper;
 
-
 public class commentTemplate {
-	
-
 	
     /* -- < Lessons Learned > --
      * 

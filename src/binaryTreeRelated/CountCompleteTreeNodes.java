@@ -21,6 +21,11 @@
  *  
  *  Output: 6
  * 
+ * == Notes ==
+ * LeetCode 222(M)
+ * 
+ * Jan 17, 2019 - G phone inverview question
+ * 
  */
 
 package binaryTreeRelated;
@@ -37,17 +42,18 @@ public class CountCompleteTreeNodes {
         return 1 + postOrder(root.left) + postOrder(root.right);
 	}
 
-	/* == Better Solution == 
+	/* == Solution 1 == 
 	 * To avoid redundant calculation, utilize the feature of a full tree: number of nodes = 2 ^ height - 1; 
 	 * 
 	 * For a current node, if its left height == right height, 
 	 * number of nodes can be calcuted directly from its height, so don't need to traverse this subtree; 
 	 * if not, we continue to count the nodes
 	 * 
+	 * Time: O(logN ^ 2)
+	 * Time: O(logN)
+	 * 
 	 */
-	
-    public int countNodesMeth1(TreeNode root) {
-        
+    public int countNodesI(TreeNode root) {
         if (root == null) {
             return 0;
         }
@@ -64,22 +70,22 @@ public class CountCompleteTreeNodes {
             rightHeight++;
             right = right.right;
         }
+        
         if (leftHeight == rightHeight) {
             return (1 << (leftHeight + 1)) - 1; // pow(2, leftHeight + 1) - 1
         }
-        return countNodesMeth1(root.left) + countNodesMeth1(root.right) + 1;
+        return countNodesI(root.left) + countNodesI(root.right) + 1;
     }
     
-    /* == Better Solution 2 == 
+    /* == Solution 1* Optimized == 
      * We can continue to optimize the above solution
      * 
-     * 
      * */
-    public int countNodesMeth2(TreeNode root) {
-        return countNodes(root, -1, -1);
+    public int countNodesII(TreeNode root) {
+        return countNodesII(root, -1, -1);
     }
  
-    public int countNodes(TreeNode node, int leftHeight, int rightHeight) {
+    public int countNodesII(TreeNode node, int leftHeight, int rightHeight) {
         if (node == null) {
             return 0;
         }
@@ -102,10 +108,41 @@ public class CountCompleteTreeNodes {
             }
         }
  
-        if (leftHeight == rightHeight) { // found complete tree           
+        if (leftHeight == rightHeight) { // found a full tree           
             return (1 << (leftHeight + 1)) - 1; // 2^(leftHeight + 1) - 1
         }
  
-        return 1 + countNodes(node.left, leftHeight - 1, -1) + countNodes(node.right, -1, rightHeight - 1);
+        return 1 + countNodesII(node.left, leftHeight - 1, -1) + countNodesII(node.right, -1, rightHeight - 1);
+    }
+    
+    /* == Solution 2  == 
+	 * Time: O(logN ^ 2)
+	 * Time: O(logN)
+	 * 
+     * */
+    public int countNodes(TreeNode root) {
+        if (root == null) {
+        		return 0;
+        }
+        int leftHeight = height(root.left);
+        int rightHeight= height(root.right);     
+        if (leftHeight == rightHeight) {
+            // if left and right height is the same, the left subtree is a full tree
+            // check the nodes of right subtree recursively
+            return (1 << leftHeight) + countNodes(root.right); 
+            // actually is : ((1 << leftHeight) - 1)  + 1 + countNodes(root.right); 
+        } else {
+            // othwise, the right subtree is a full tree
+            // check the nodes of left subtree recursively
+            return (1 << rightHeight) + countNodes(root.left); 
+            // actually is : ((1 << rightHeight) - 1) + 1 + countNodes(root.left);
+        }
+    }
+    
+    private int height(TreeNode root) { //get the height of a complete binary tree (the lenght of left side)
+        if (root == null) {
+        		return 0;
+        }
+        return 1 + height(root.left);
     }
 }
