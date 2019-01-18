@@ -24,7 +24,7 @@
  * == Notes ==
  * LeetCode 222(M)
  * 
- * Jan 17, 2019 - G phone inverview question
+ * Jan 17, 2019 - G phone inverview question, add Solution 2
  * 
  */
 
@@ -132,7 +132,7 @@ public class CountCompleteTreeNodes {
             return (1 << leftHeight) + countNodes(root.right); 
             // actually is : ((1 << leftHeight) - 1)  + 1 + countNodes(root.right); 
         } else {
-            // othwise, the right subtree is a full tree
+            // otherwise, the right subtree is a full tree
             // check the nodes of left subtree recursively
             return (1 << rightHeight) + countNodes(root.left); 
             // actually is : ((1 << rightHeight) - 1) + 1 + countNodes(root.left);
