@@ -46,7 +46,6 @@ public class Executors101 {
 		 * 
 		 * - Executors have to be stopped explicitly - otherwise they keep listening for new tasks.
 		 * */
-		
 		ExecutorService executor1 = Executors.newSingleThreadExecutor();
 		executor1.submit(() -> {
 		    String threadName = Thread.currentThread().getName();
