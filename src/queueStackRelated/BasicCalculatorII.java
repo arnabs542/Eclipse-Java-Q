@@ -60,7 +60,7 @@ public class BasicCalculatorII {
 	    }
 
 	    int result = 0;
-	    for (int digit : stack){
+	    for (int digit : stack) {
 	    		result += digit;
 	    }
 	    return result;

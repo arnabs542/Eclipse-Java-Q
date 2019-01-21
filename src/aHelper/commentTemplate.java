@@ -8,7 +8,7 @@
  * == Example == 
  *   
  * == Notes == 
- * LeetCode X(X)
+ * LeetCode X(E/M/H)
  * 
  */
 
@@ -21,7 +21,7 @@ public class commentTemplate {
      * 
      * */
 	
-	/* ----- < Method X - > -----
+	/* ----- < Solution X - > -----
 	 * Time Complexity: O(?);
 	 * Space Complexity: O(?);
 	 * 

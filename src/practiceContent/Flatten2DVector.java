@@ -3,12 +3,21 @@
  * Jan 6, 2019
  * 
  * == Question - Flatten 2D Vector ==
- * 
+ * Implement an iterator to flatten a 2d vector.
  *   
  * == Example == 
- *   
+ * Input: 2d vector =
+ * [
+ *   [1,2],
+ *   [3],
+ *   [4,5,6]
+ * ]
+ * Output: [1,2,3,4,5,6]
+ * Explanation: By calling next repeatedly until hasNext returns false, 
+ *              the order of elements returned by next should be: [1,2,3,4,5,6].
+ *                           
  * == Notes == 
- *  
+ * LeetCode 251(M) 
  * 
  */
 package practiceContent;
@@ -18,9 +27,14 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Flatten2DVector {
-	
+		
+	/* ----- < Solution - Using only iterators in C++ or iterators in Java > -----
+	 * Time Complexity: O(?);
+	 * Space Complexity: O(?);
+	 * 
+	 * */
 	private final Iterator<List<Integer>> listIterator;
-    private Iterator<Integer> sublistIterator;
+    private Iterator<Integer> intIterator;
     
     public Flatten2DVector(List<List<Integer>> vec2d) {
         listIterator = vec2d.iterator();
@@ -29,8 +43,8 @@ public class Flatten2DVector {
 
     private void advanceListIterator() {
         while (listIterator.hasNext()) {
-            sublistIterator = listIterator.next().iterator();
-            if (sublistIterator.hasNext()) {
+        		intIterator = listIterator.next().iterator();
+            if (intIterator.hasNext()) {
                 break;
             }
         }
@@ -40,15 +54,19 @@ public class Flatten2DVector {
         if (!hasNext()) {
             throw new java.util.NoSuchElementException();
         }
-        Integer ret = sublistIterator.next();
-        if (!sublistIterator.hasNext()) {
+        Integer ret = intIterator.next();
+        if (!intIterator.hasNext()) {
             advanceListIterator();
         }
         return ret;
     }
 
     public boolean hasNext() {
-        return sublistIterator != null && sublistIterator.hasNext();
+        return intIterator != null && intIterator.hasNext();
+    }
+    
+    public void remove() {
+    	
     }
     
 	/* ----------------------< test stub >-------------------------*/

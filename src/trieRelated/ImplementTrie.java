@@ -26,6 +26,7 @@ public class ImplementTrie {
 	class TrieNode {
 		private boolean isWord;
 		Map<Character, TrieNode> children; // key: char, value: children TrieNode 
+		
 		public TrieNode() {
             children = new HashMap<>();
             isWord = false;

@@ -60,10 +60,4 @@ public class BasicCalculator {
         }
         return result;
     	}	
-    
-	/* ----- < Method - Using stack > -----
-	 * Time Complexity: O(N);
-	 * Space Complexity: O(N);
-	 * 
-	 * */
 }
