@@ -33,18 +33,19 @@ public class Flatten2DVector {
 	 * Space Complexity: O(?);
 	 * 
 	 * */
-	private final Iterator<List<Integer>> listIterator;
-    private Iterator<Integer> intIterator;
+	private final Iterator<List<Integer>> rowIterator;
+    private Iterator<Integer> colIterator;
+    private Iterator<Integer> preIterator;
     
     public Flatten2DVector(List<List<Integer>> vec2d) {
-        listIterator = vec2d.iterator();
+    		rowIterator = vec2d.iterator();
         advanceListIterator();
     }
 
     private void advanceListIterator() {
-        while (listIterator.hasNext()) {
-        		intIterator = listIterator.next().iterator();
-            if (intIterator.hasNext()) {
+        while (rowIterator.hasNext()) {
+        		colIterator = rowIterator.next().iterator();
+            if (colIterator.hasNext()) {
                 break;
             }
         }
@@ -54,29 +55,57 @@ public class Flatten2DVector {
         if (!hasNext()) {
             throw new java.util.NoSuchElementException();
         }
-        Integer ret = intIterator.next();
-        if (!intIterator.hasNext()) {
+        preIterator = colIterator;
+        Integer ret = colIterator.next();
+        if (!colIterator.hasNext()) {
             advanceListIterator();
         }
         return ret;
     }
 
     public boolean hasNext() {
-        return intIterator != null && intIterator.hasNext();
+        return colIterator != null && colIterator.hasNext();
     }
     
     public void remove() {
-    	
+    		preIterator.remove();
     }
     
 	/* ----------------------< test stub >-------------------------*/
+    private static void print2dVector(List<List<Integer>> vec2d) {
+		for (List<Integer> row : vec2d) {
+			for (int num : row) {
+				System.out.print(num + " ");
+			}
+		}
+		System.out.println();
+    }
+    
 	public static void main(String[] args) {
-		
-		
-		
+			
 		/* Test Case 0 */
-		System.out.println("---< Test Case 0 >---");
+		System.out.println("---< Test Case 0 - Test iterator in Java >---");
 		
+		List<Integer> testList = new ArrayList<>();
+		testList.add(1);
+		testList.add(2);
+		testList.add(3);
+		testList.add(4);
+		
+		Iterator<Integer> iter = testList.iterator();
+		
+		// Remove the next element in the iteration
+		// This method can be called only once per call to next()
+		while (iter.hasNext()) {
+			System.out.println("next = " + iter.next() + " ");
+			iter.remove();
+			
+			for (int num : testList) {
+				System.out.print(num + " ");
+			}
+			System.out.println();
+		}
+
 		/* Test Case 1 */
 		System.out.println("---< Test Case 1 >---");
 		List<Integer> list1 = new ArrayList<>();
@@ -92,6 +121,8 @@ public class Flatten2DVector {
 		list4.add(4);
 		list4.add(5);
 		
+		//   0 1   2    3 4
+		// [[1,2] [3], [4,5]]
 		List<List<Integer>> vec2d = new ArrayList<>();
 		vec2d.add(list1);
 		vec2d.add(list2);
@@ -101,8 +132,11 @@ public class Flatten2DVector {
 		Flatten2DVector testObj = new Flatten2DVector(vec2d);
 		
 		while (testObj.hasNext()) {
-			System.out.print(testObj.next() + " ");
+			System.out.println("next = " + testObj.next() + " ");
+			testObj.remove();
+			print2dVector(vec2d);
 		}
+
 		/* Test Case 2 */
 		System.out.println("\n---< Test Case 2 >---");
 		

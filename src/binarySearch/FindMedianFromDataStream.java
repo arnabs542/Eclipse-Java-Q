@@ -73,7 +73,7 @@ public class FindMedianFromDataStream {
         		return (smallerHalf.peek() + largerHalf.peek()) / 2.0;
         }        
     }
-	
+    
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
 		
