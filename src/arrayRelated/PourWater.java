@@ -16,7 +16,6 @@ package arrayRelated;
 
 public class PourWater {
 	
-
 	/* ---------< Situation 1 - Assume the left and right borders have infinite hight >-------------------------
 	 * Time Complexity: O(V * N), where N is the length of heights. 
 	 * Space Complexity: O(1)

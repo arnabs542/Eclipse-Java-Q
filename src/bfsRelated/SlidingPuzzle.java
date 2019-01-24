@@ -56,7 +56,6 @@ public class SlidingPuzzle {
 	 * 
 	 * 
 	 * */
-	
     class BoardState {
         int[][] board;
         String boardstring;
@@ -75,7 +74,7 @@ public class SlidingPuzzle {
     public int slidingPuzzle(int[][] board) {
         int R = board.length, C = board[0].length;
         
-        // Initialize the starting Board State,
+        // Initialize the starting Board State
         int[] zeroPos = findOriginalZeroPos(board); // find the zero position on the board
         BoardState start = new BoardState(board, zeroPos[0], zeroPos[1], 0);
         
@@ -216,7 +215,6 @@ public class SlidingPuzzle {
             		newboard[t++] = row.clone();
             }
   
-                
             // swap position
             newboard[curBoard.zeroRowPos][curBoard.zeroColPos] = newboard[neiRowPos][neiColPos];
             newboard[neiRowPos][neiColPos] = 0;
@@ -238,7 +236,7 @@ public class SlidingPuzzle {
 			System.out.println();
 		}
 		System.out.println("--------------");
-}
+    }
     
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {

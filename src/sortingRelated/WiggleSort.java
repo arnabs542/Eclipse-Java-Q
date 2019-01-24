@@ -48,7 +48,7 @@ public class WiggleSort {
     		if (nums == null || nums.length == 1) {
     			return;
     		}
-        for (int i = 0; i < nums.length; i += 2) {  // Traverse all even elements 
+        for (int i = 0; i < nums.length; i += 2) {  // Traverse all elements with even index
             // If current even element is larger than previous 
             if (i > 0 && nums[i] > nums[i - 1]) {
             		swap(nums, i - 1, i); 
@@ -83,7 +83,7 @@ public class WiggleSort {
 	 *                    L     L     M
 	 *                    
 	 * Mapped index:   1  3  5  0  2  4
-
+	 *                 L  L  M  M  S  S
 	 *                    
 	 * Array:         13  6  5  5  4  2
 	 * 
@@ -98,19 +98,21 @@ public class WiggleSort {
 
         while (i <= right) {
             if (nums[newIndex(i,n)] > median) {
-                swap(nums, newIndex(left++,n), newIndex(i++,n));
-            }
-            else if (nums[newIndex(i,n)] < median) {
-                swap(nums, newIndex(right--,n), newIndex(i,n));
-            }
-            else {
+            		// swaping elements larger than median to the left part of the mapped index (1, 3, 5)
+                swap(nums, newIndex(left,n), newIndex(i,n));
+                left++;
+                i++;
+            } else if (nums[newIndex(i,n)] < median) {
+            		// swaping elements smaller than median to the right part of the mapped index (0, 2, 4)
+                swap(nums, newIndex(right,n), newIndex(i,n));
+                right--;
+            } else {
                 i++;
             }
         }
     }
     
     /* 
-     * 
 	 * Original index: 0  1  2  3  4  5
 	 * 
 	 * Mapped index:   1  3  5  0  2  4

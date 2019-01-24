@@ -4,6 +4,30 @@ import java.util.Arrays;
 
 public class DebugPractice {
 	
+	public static void reverseArray(int[] arr) {
+		int temp, len = arr.length;
+		for (int i = 0; i < arr.length / 2; i++) {
+			temp = arr[len - 1];
+			arr[len - 1] = arr[i];
+			arr[i] = temp;
+			len--;
+		}
+		for (int i : arr) {
+			System.out.print(i + " ");
+		}
+		System.out.println();
+	}
+	
+	public static int digitCount(int num) {
+		int count = 0;
+		int temp = num; // Original is without this variable to store the original num
+		while (temp != 0) {
+			temp /= 10;
+			count++;
+		}
+		return count;
+	}
+	
 	public static int checkArmstrong(int num) {
 		int digitCount = 0, res = 0;
 		int temp = num;
@@ -69,27 +93,35 @@ public class DebugPractice {
 		System.out.println(count);
 		return count;
 	}
+	
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
 		
-		// Class testObj = new Class();
+		/* Test Case - reverseArray */
+		System.out.println("---< Test Case for reverseArray >---");
+		reverseArray(new int[] {3, 2, 1});
+		reverseArray(new int[] {4, 3, 2, 1});
 		
-		/* Test Case 0 */
-		System.out.println("---< Test Case 0 >---");
+		reverseArray(new int[] {4});
 		
-		/* Test Case 1 */
-		System.out.println("---< Test Case 1 >---");
+		/* Test Case - digitCount */
+		System.out.println("---< Test Case for digitCount >---");
+		System.out.println(digitCount(100));
+		
+		
+		/* Test Case - distinctCount */
+		System.out.println("---< Test Case for distinctCount >---");
 		
 		distinctCount(new int[] {4, 4, 4, 4});
 		distinctCount(new int[] {2, 4, 2, 4});
 		
-		/* Test Case 2 */
-		System.out.println("---< Test Case 2 >---");
+		/* Test Case - appearsK */
+		System.out.println("---< Test Case for appearsK >---");
 		
 		appearsK(new int[] {4, 4, 4, 4}, 4);
 		
-		/* Test Case 3 */
-		System.out.println("---< Test Case 3 >---");
+		/* Test Case - checkArmstrong */
+		System.out.println("---< Test Case for checkArmstrong >---");
 		checkArmstrong(371);
 	}
 }

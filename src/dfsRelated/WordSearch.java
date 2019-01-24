@@ -73,11 +73,11 @@ public class WordSearch {
     
    
     /* ------------------------ < Solution 1 - DFS with boolean[][] visited >--------------------------- 
-     * TC: O(4 ^ N * M) 
+     * TC: O(4 ^ N * L) 
      * SC: O(M) 
      * 
-     * M: number of elements in the board
-     * N: number of characters of the given word 
+     * N: number of elements in the board
+     * L: number of characters of the given word 
      *  
      */
     public boolean existMeth1(char[][] board, String word) {
@@ -151,15 +151,18 @@ public class WordSearch {
     
     private boolean dfs(char[][] board, int row, int col, String word, int index) {
             
+    		// if the index is out of bound
         if (row < 0 || row >= board.length || col < 0 || col >= board[0].length) {
             return false;
         }
 
+        // if the word is already visited(#) or cannot match the char
         if (board[row][col] != word.charAt(index)) {
             return false;           
         } 
         
-        if (index + 1 == word.length()) {
+       
+        if (index + 1 == word.length()) { // we found a path
             return true;
         }
         

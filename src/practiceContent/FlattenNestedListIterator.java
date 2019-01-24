@@ -152,7 +152,6 @@ class NestedIterator implements Iterator<Integer> {
     }
 }
 
-
 public class FlattenNestedListIterator  {
 
 

@@ -63,7 +63,7 @@ public class GuessTheWord {
 	 * */
     public void findSecretWordII(String[] wordlist, Master master) {
         for (int i = 0; i < 10; i++) {
-        		// key: word; value: the frequency that it has zero mathes with other words in the wordList
+        		// key: word; value: the frequency that it has zero matches with other words in the wordList
             HashMap<String, Integer> count = new HashMap<>();
             for (String w1 : wordlist) {
                 for (String w2 : wordlist) {
