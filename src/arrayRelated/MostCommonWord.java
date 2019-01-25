@@ -1,3 +1,15 @@
+/*
+ * == Created Date ==
+ * Jan 24, 2019
+ * 
+ * == Question - Most Common Word ==
+ *   
+ * == Smilar Question == 
+ * LeetCode 819 (E), Most Common Word
+ * Amazon OA2, fail 3/20 hidden test cases
+ * 
+ */
+
 package arrayRelated;
 
 import java.util.List;
@@ -10,8 +22,7 @@ import java.util.ArrayList;
 public class MostCommonWord {
     // METHOD SIGNATURE BEGINS, THIS METHOD IS REQUIRED
     List<String> retrieveMostFrequentlyUsedWords(String literatureText, 
-                                                 List<String> wordsToExclude)
-    {
+                                                 List<String> wordsToExclude) {
         // WRITE YOUR CODE HER
         if (literatureText == null || wordsToExclude == null) {
             return new ArrayList<>();
@@ -30,8 +41,7 @@ public class MostCommonWord {
         //        except the wordsToExclude
         Map<String, Integer> frequencyMap = new HashMap<>(); // key-value : word-frequency
         int highestFrequency = 0;
-        for (String word : wordList) 
-        {
+        for (String word : wordList) {
             if (!excludedWordSet.contains(word)) { // skip the excluded word
                 frequencyMap.put(word, frequencyMap.getOrDefault(word, 0) + 1); 
                 
@@ -42,8 +52,7 @@ public class MostCommonWord {
         
         // Step4: Find the words with highest frequency
         List<String> result = new ArrayList<>();
-        for (String word : frequencyMap.keySet()) 
-        { 
+        for (String word : frequencyMap.keySet()) { 
             if (frequencyMap.get(word) == highestFrequency) {
                 result.add(word);
             }
@@ -56,21 +65,17 @@ public class MostCommonWord {
         String text = str.toLowerCase();
         List<String> wordList = new ArrayList<>();
         int left = 0;
-        while (left < text.length()) 
-        {
-            while (left < text.length() && !Character.isAlphabetic(text.charAt(left))) 
-            {
+        while (left < text.length()) {
+            while (left < text.length() && !Character.isAlphabetic(text.charAt(left))) {
                 left++;
             }
             int right = left;
             
-            while (right < text.length() && Character.isAlphabetic(text.charAt(right)))
-            {
+            while (right < text.length() && Character.isAlphabetic(text.charAt(right))) {
                 right++;
             }
             
-            if (left != right || left < text.length() && Character.isAlphabetic(text.charAt(left))) 
-            {
+            if (left != right || left < text.length() && Character.isAlphabetic(text.charAt(left))) {
                 wordList.add(text.substring(left, right));
             }
             
