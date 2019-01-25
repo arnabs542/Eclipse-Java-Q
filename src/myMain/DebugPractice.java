@@ -28,7 +28,7 @@ public class DebugPractice {
 		return count;
 	}
 	
-	public static int checkArmstrong(int num) {
+	public static int checkArmstrong(int num) { //!
 		int digitCount = 0, res = 0;
 		int temp = num;
 		while (temp != 0) {

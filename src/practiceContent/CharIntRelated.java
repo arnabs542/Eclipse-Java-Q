@@ -47,7 +47,7 @@ public class CharIntRelated {
 		System.out.println((int)char3);
 		System.out.println((int)char4);
 		
-		char test = ' ';
+		char test = 'g';
 		System.out.println(test > 'a' && test < 'z' || test > 'A' && test < 'Z' || test > '0' && test < '9');
 		
 		System.out.println('a' - 'A');

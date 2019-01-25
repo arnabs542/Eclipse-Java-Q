@@ -56,10 +56,14 @@ public class LongestPalindromicSubstring {
 		
 		/* Test Case 1 */
 		System.out.println("---< Test Case 1 >---");
-		testObj.longestPalindrome("dababa");
+		System.out.println(testObj.longestPalindrome("dababa"));
+		
 		
 		/* Test Case 2 */
 		System.out.println("---< Test Case 2 >---");
+		System.out.println(testObj.longestPalindrome("abcbx"));
+		
+		System.out.println(testObj.longestPalindrome("xyzzyabc"));
 		
 		/* Test Case 3 */
 		System.out.println("---< Test Case 3 >---");
