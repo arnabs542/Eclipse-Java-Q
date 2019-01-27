@@ -29,7 +29,7 @@ public class CharIntRelated {
 		System.out.println(si1);
 		System.out.println(si2);
 		
-		/* ----------------------< Character to String >-------------------------*/
+		/* ----------------------< Character to Int >-------------------------*/
 		System.out.println("---< Character to String >---");
 		char char1 = 'a'; // 97
 		char char2 = 'z';
