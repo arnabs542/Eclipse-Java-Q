@@ -5,6 +5,8 @@ import java.util.Deque;
 
 public class MainClass {
 
+    
+
 	public static void main(String[] args) {
         
 		Deque<Integer> queue = new ArrayDeque<>();
@@ -25,6 +27,8 @@ public class MainClass {
 //		System.out.println(queue.peek());
 ////		System.out.println(queue.pollLast());
 ////		System.out.println(queue.pollLast());
+		
+		
 		
 	}	    	 	
 }

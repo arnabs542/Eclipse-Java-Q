@@ -123,7 +123,6 @@ public class SpiralOrderTraverseII {
         return result;
     }
 	
-	
 	/* ----------------------< test stub >-------------------------*/
 	private static void print(List<Integer> list) {
 		for (int item : list) {
