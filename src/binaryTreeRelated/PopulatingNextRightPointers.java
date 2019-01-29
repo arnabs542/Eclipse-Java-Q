@@ -1,6 +1,6 @@
 /*
  * == Created Date ==
- * Nov ?, 2018
+ * Nov 12, 2018
  * 
  * == Question - ==
  * Populating Next Right Pointers in Each Node
@@ -22,7 +22,8 @@ class TreeLinkNode {
 }
 
 public class PopulatingNextRightPointers {
-    public void connect(TreeLinkNode root) {
+	
+    public void connectI(TreeLinkNode root) {
         Deque<TreeLinkNode> queue = new ArrayDeque<>();
         queue.offer(root);
         while (root != null && !queue.isEmpty()) {
@@ -44,9 +45,37 @@ public class PopulatingNextRightPointers {
         }
     }
     
-	// Time Complexity: O(?);
-	// Space Complexity: O(?);
+	// Time Complexity: O(n);
+	// Space Complexity: O(n);
 	
+    public void connectII(TreeLinkNode root) {
+        if (root == null) {
+            return;
+        }
+        // keep the dummy as the start of a linekd list to linked next for children level for the 
+        TreeLinkNode dummy = new TreeLinkNode(0);
+        TreeLinkNode cur = dummy; 
+        
+        while (root != null) {
+            if (root.left != null) { // linked the left child 
+                cur.next = root.left;
+                cur = cur.next;
+            }
+            if (root.right != null) { // linked the right child 
+                cur.next = root.right;
+                cur = cur.next;
+            }
+            root = root.next; // update root to its next node
+            if (root == null) { 
+                // if root doesn't have a next node, we finishing linking the child node for this level
+                // use the head of the linked list as the new root, and delink the dummy
+                root = dummy.next;
+                dummy.next = null;
+                cur = dummy;
+            }
+        }
+    }
+    
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
 		

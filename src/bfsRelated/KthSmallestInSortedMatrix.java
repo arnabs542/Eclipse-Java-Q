@@ -2,10 +2,11 @@
  * == Created Date ==
  * June 19, 2018
  * 
- * == Question - Kth Smallest Number In Sorted Matrix ==
+ * == Question - Kth Smallest Element in a Sorted Matrix ==
  * Given a matrix of size N x M. 
  * For each row the elements are sorted in ascending order, 
- * and for each column the elements are also sorted in ascending order. 
+ *   and for each column the elements are also sorted in ascending order. 
+ *   
  * Find the Kth smallest number in it.
  *   
  * == Assumptions ==
@@ -13,14 +14,14 @@
  * K > 0 and K <= N * M
  *     
  * == Example ==
- *   
- *   { {1,  3,  5,   7},
- *     {2,  4,  8,   9},
- *     {3,  5,  11, 15},
- *     {6,  8,  13, 18} }
- *     
- *     the 5th smallest number is 4
- *     the 8th smallest number is 6
+ *   matrix = 
+ *   [
+ *     [ 1,  5,  9],
+ *     [10, 11, 13],
+ *     [12, 13, 15]
+ *   ],
+ *   k = 8,
+ *   return 13.
  *   
  * == Mirror Question ==
  * Search In Sorted Matrix I (binary search)
@@ -30,6 +31,8 @@
  * October 6, 2018: Review, in Fall 1 class
  * Don't be intimadated by the long statements below, just basic operations to matrix... 	
  * 
+ * LeetCode 378 (M) - Kth Smallest Element in a Sorted Matrix
+ * 
  */
 
 package bfsRelated;
@@ -38,8 +41,7 @@ import java.util.PriorityQueue;
 
 public class KthSmallestInSortedMatrix {
 		
-	/* ------< Method 1 - Use Min Heap + Selp-defined Data Structure >------
-	 * 
+	/* ------< Method 1 - BFS, Use Min Heap + Selp-defined Data Structure >------
 	 * Time Complexity: O( k * logk );
 	 * Space Complexity: O( k + n * m );
 	 * 
@@ -66,22 +68,26 @@ public class KthSmallestInSortedMatrix {
 		// k > 0 && k <= N * M
 		
 		PriorityQueue<Cell> minHeap = new PriorityQueue<>(k); // supported only by Java 8
-		int rows = matrix.length;
-		int cols = matrix[0].length;
-		boolean[][] visited = new boolean[rows][cols];
+		int numRows = matrix.length;
+		int numCols = matrix[0].length;
+		boolean[][] visited = new boolean[numRows][numCols];
 		
 		minHeap.offer(new Cell(0, 0, matrix[0][0])); // initial state
 		visited[0][0] = true; // deduplication: all generated cells will be marked true to avoid being generated more than once
 		
 		// iterate k - 1 rounds!!!, keep the Kth smallest at the top of the heap when exit the loop
 		for (int i = 0; i < k - 1; i++) {
-			Cell cur = minHeap.poll(); // expand a node
-			if (cur.col + 1 < cols && !visited[cur.row][cur.col + 1]) {
-				minHeap.offer(new Cell(cur.row, cur.col + 1, matrix[cur.row][cur.col + 1])); // generate
+			// expand a node from min heap  
+			Cell cur = minHeap.poll(); 
+			// generate the right node of the cur
+			if (cur.col + 1 < numCols && !visited[cur.row][cur.col + 1]) {
+				minHeap.offer(new Cell(cur.row, cur.col + 1, matrix[cur.row][cur.col + 1])); 
 				visited[cur.row][cur.col + 1] = true;
 			}
-			if (cur.row + 1 < rows && !visited[cur.row + 1][cur.col]) {
-				minHeap.offer(new Cell(cur.row + 1, cur.col, matrix[cur.row + 1][cur.col])); // generate
+			
+			// generate the node under the cur
+			if (cur.row + 1 < numRows && !visited[cur.row + 1][cur.col]) {
+				minHeap.offer(new Cell(cur.row + 1, cur.col, matrix[cur.row + 1][cur.col])); 
 				visited[cur.row + 1][cur.col] = true;			
 			}
 		}
@@ -94,18 +100,14 @@ public class KthSmallestInSortedMatrix {
 	 * Space Complexity: O( k + n * m );
 	 * 
 	 */
-	
 	public int kthSmallestMeth2(int[][] matrix, int k) {
-		if (k == 1) {
-			return matrix[0][0];
-		}
 		int n = matrix.length;
-		if (k == n * n) {
-			return matrix[n - 1][n - 1];
-		}
-		    
 	    int min = matrix[0][0];
 	    int max = matrix[n - 1][n - 1];
+	    
+	    if (k == 1 || k == n * n) { // corner case
+	    		return k == 1 ? min : max;
+	    }
 	    
 	    while (min <= max) {
 	      int mid = min + (max - min) / 2;
