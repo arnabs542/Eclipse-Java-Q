@@ -2,11 +2,12 @@
  * == Created Date ==
  * Nov 12, 2018
  * 
- * == Question - ==
- * Populating Next Right Pointers in Each Node
+ * == Question - Populating Next Right Pointers in Each Node II ==
+ * 
  * 
  * == Notes == 
- * LeeCode 116 
+ * LeeCode 116 (M) - Populating Next Right Pointers in Each Node
+ * LeeCode 116 (M) - Populating Next Right Pointers in Each Node II
  * 
  */
 
@@ -23,6 +24,11 @@ class TreeLinkNode {
 
 public class PopulatingNextRightPointers {
 	
+	/* ----- < Solution 1 - BFS > -----
+	 * Time Complexity: O(n);
+	 * Space Complexity: O(n);
+	 * 
+	 * */
     public void connectI(TreeLinkNode root) {
         Deque<TreeLinkNode> queue = new ArrayDeque<>();
         queue.offer(root);
@@ -45,9 +51,11 @@ public class PopulatingNextRightPointers {
         }
     }
     
-	// Time Complexity: O(n);
-	// Space Complexity: O(n);
-	
+	/* ----- < Solution 1 - Use Linked List > -----
+	 * Time Complexity: O(n);
+	 * Space Complexity: O(1);
+	 * 
+	 * */
     public void connectII(TreeLinkNode root) {
         if (root == null) {
             return;
