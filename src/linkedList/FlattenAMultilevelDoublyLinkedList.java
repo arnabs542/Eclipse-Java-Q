@@ -36,9 +36,25 @@ import java.util.Deque;
 
 public class FlattenAMultilevelDoublyLinkedList {
 
+    class Node {
+	    public int val;
+	    public Node prev;
+	    public Node next;
+	    public Node child;
+
+	    public Node() {}
+
+	    public Node(int _val,Node _prev,Node _next,Node _child) {
+	        val = _val;
+	        prev = _prev;
+	        next = _next;
+	        child = _child;
+	    }
+	};
+	
 	/* ----- < Solution 1 - Recursion > -----
 	 * Time Complexity: O(N), N is the number total nodes 
-	 * Space Complexity: O(N); 
+	 * Space Complexity: O(L); L is the deepest children level
 	 * 
 	 * */
     public Node flatten(Node head) {
@@ -50,15 +66,16 @@ public class FlattenAMultilevelDoublyLinkedList {
         if (head == null) { // base case
             return head;
         }
-        if (head.child == null && head.next == null) { // base case
+        if (head.child == null && head.next == null) { // reach a tail, base case
             return head;
         }
         Node next = head.next;
         if (head.child != null) {
             Node childTail = flattenTail(head.child);
-            head.next = head.child;
             
+            head.next = head.child;        
             head.child.prev = head;
+            
             head.child = null;
             
             if (next != null) {
@@ -74,6 +91,7 @@ public class FlattenAMultilevelDoublyLinkedList {
 	 * Time Complexity: O(N), N is the number total nodes 
 	 * Space Complexity: O(N); 
 	 * 
+	 * Similar to the post order tree traversal
 	 * */
      public Node flattenII(Node head) {
          if (head == null) {
@@ -87,7 +105,7 @@ public class FlattenAMultilevelDoublyLinkedList {
         
          while (!stack.isEmpty()) {
              Node top = stack.pop();
-             cur.next = new Node(top.val, cur, null, null);
+             cur.next = new Node(top.val, cur, null, null); // public Node(int _val, Node _prev, Node _next, Node _child) 
              cur = cur.next;
             
              if (top.next != null) {
@@ -101,20 +119,4 @@ public class FlattenAMultilevelDoublyLinkedList {
          dummy.next.prev = null; // set the prev of new head node as null
          return dummy.next;
      }
-     
-     class Node {
-    	    public int val;
-    	    public Node prev;
-    	    public Node next;
-    	    public Node child;
-
-    	    public Node() {}
-
-    	    public Node(int _val,Node _prev,Node _next,Node _child) {
-    	        val = _val;
-    	        prev = _prev;
-    	        next = _next;
-    	        child = _child;
-    	    }
-    	};
 }
