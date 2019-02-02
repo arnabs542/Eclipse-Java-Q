@@ -29,6 +29,14 @@ public class CharIntRelated {
 		System.out.println(si1);
 		System.out.println(si2);
 		
+		/* ----------------------< Ingeger to Character >-------------------------*/
+		int count = 817;
+		char[] chars = new char[10];
+		int index = 0;
+        for (char c : Integer.toString(count).toCharArray()) {
+            chars[index++] = c;
+        }
+		
 		/* ----------------------< Character to Int >-------------------------*/
 		System.out.println("---< Character to String >---");
 		char char1 = 'a'; // 97

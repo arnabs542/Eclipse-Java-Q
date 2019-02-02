@@ -1,19 +1,29 @@
 /*
- * Created Date: July 8, 2018
+ * == Created Date ==
+ * July 8, 2018
  * 
- * Question - Dictionary Word I (medium+):
- *   Given a word and a dictionary, 
- *    determine if it can be composed by concatenating words from the given dictionary.
+ * == Question - Word Break ==
+ * Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, 
+ *   determine if s can be segmented into a space-separated sequence of one or more dictionary words.
  *   
- *   Assumptions:
- *     The given word is not null and is not empty
- *     The given dictionary is not null and is not empty and all the words in the dictionary are not null or empty
+ * == Assumptions ==
+ * The same word in the dictionary may be reused multiple times in the segmentation.
+ * You may assume the dictionary does not contain duplicate words.
  *     
- *   Examples:
- *     Dictionary: {“bob”, “cat”, “rob”}
- *     Word: “robob” return false
- *     Word: “robcatbob” return true since it can be composed by "rob", "cat", "bob"
+ * == Examples 1 == 
+ * Dictionary: {“bob”, “cat”, “rob”}
+ * Word: “robob” return false
+ * Word: “robcatbob” return true since it can be composed by "rob", "cat", "bob"
  * 
+ * == Examples 2 == 
+ * Input: s = "applepenapple", wordDict = ["apple", "pen"]
+ * Output: true
+ * Explanation: Return true because "applepenapple" can be segmented as "apple pen apple".
+ *              Note that you are allowed to reuse a dictionary word.
+ *              
+ * == Note == 
+ * LeetCode 139 (M) - Word Break
+ *                            
  */
 
 package dynamicProgramming;

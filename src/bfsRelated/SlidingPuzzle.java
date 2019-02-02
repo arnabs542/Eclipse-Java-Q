@@ -54,7 +54,6 @@ public class SlidingPuzzle {
 	 * Set
 	 * Node: represent each board state
 	 * 
-	 * 
 	 * */
     class BoardState {
         int[][] board;

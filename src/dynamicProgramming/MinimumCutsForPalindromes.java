@@ -1,13 +1,14 @@
 /*
- * Created Date: August 18, 2018
+ * == Created Date ==
+ * August 18, 2018
  * 
- * Question - Minimum Cuts For Palindromes (medium):
- *   Given a string, a partitioning of the string is a palindrome partitioning if every substring of the partition is a palindrome. 
- *   Determine the fewest cuts needed for a palindrome partitioning of a given string.
+ * == Question - Minimum Cuts For Palindromes (medium) ==
+ * Given a string, a partitioning of the string is a palindrome partitioning if every substring of the partition is a palindrome. 
+ * Determine the fewest cuts needed for a palindrome partitioning of a given string.
  *   
- *   Example: 
- *     “a | babbbab | bab | aba” is a palindrome partitioning of “ababbbabbababa”.
- *     The minimum number of cuts needed is 3.
+ * == Example ==
+ * “a | babbbab | bab | aba” is a palindrome partitioning of “ababbbabbababa”.
+ * The minimum number of cuts needed is 3.
  * 
  */
 
@@ -16,7 +17,7 @@ package dynamicProgramming;
 public class MinimumCutsForPalindromes {
 	
 	public int minCuts(String input) {
-		if(input == null || input.length() <= 1) {
+		if (input == null || input.length() <= 1) {
 	        return 0;
 	    }
 		char[] in = input.toCharArray();

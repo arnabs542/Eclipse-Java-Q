@@ -1,13 +1,14 @@
 /*
- * Created Date: June 27, 2018
+ * == Created Date == 
+ * June 27, 2018
  * 
- * Question - Remove Adjacent Repeated Characters IV:
- *   Repeatedly remove all adjacent, repeated characters in a given string from left to right.
- *   No adjacent characters should be identified in the final string.
+ * == Question - Remove Adjacent Repeated Characters IV == 
+ * Repeatedly remove all adjacent, repeated characters in a given string from left to right.
+ * No adjacent characters should be identified in the final string.
  *   
- *   Example: 
- *     "abbbaaccz" → "aaaccz" → "ccz" → "z"
- *     "aabccdc" → "bccdc" → "bdc"
+ * == Example ==
+ * "abbbaaccz" → "aaaccz" → "ccz" → "z"
+ * "aabccdc" → "bccdc" → "bdc"
  * 
  */
 
