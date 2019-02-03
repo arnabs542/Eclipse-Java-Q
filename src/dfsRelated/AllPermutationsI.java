@@ -41,33 +41,54 @@ public class AllPermutationsI {
 			return result;
 		}
 		char[] input = set.toCharArray();
-		helper(input, 0, result);
+		dfs(input, 0, result);
 		return result;
 	}
 		  
-    private void helper(char[] input, int index, List<String> result) {
-      if (index == input.length - 1) {
-        result.add(new String(input)); // don't use: input.toString()
-        return;
-      }
-      // all the possible characters could be placed at index are in (index, input.length - 1)
-      for (int i = index; i < input.length; i++) {
-        swap(input, i, index);
-        helper(input, index + 1, result);
-        swap(input, i, index); // swap back when backtracking to the previous level
-      }
+    private void dfs(char[] input, int index, List<String> result) {
+    		if (index == input.length - 1) {
+    			result.add(new String(input)); // don't use: input.toString()
+    			return;
+    		}
+    		
+    		// all the possible characters could be placed at index are in (index, input.length - 1)
+    		for (int i = index; i < input.length; i++) {
+    			swap(input, i, index);
+    			dfs(input, index + 1, result);
+    			swap(input, i, index); // swap back when backtracking to the previous level
+    		}
     }
 		  
     private void swap(char[] input, int a, int b) {
-      char temp = input[a];
-      input[a] = input[b];
-      input[b] = temp;
+    		char temp = input[a];
+    		input[a] = input[b];
+    		input[b] = temp;
     }
     
 	// Time Complexity: O(n!);
 	// Space Complexity: O(n);
     
-    /* ----------------------< same problem, different signature >-------------------------*/
+    /* ----------------------< same problem, different signature >-------------------------
+     * 
+     * [p0 p1 p2 p3]
+     *               
+     *  index
+     *  
+     *   0                            p0 [p1 p2 p3]                          p1 [p0 p2 p3]          p2 [p0 p1 p3]       p3 [p0 p1 p2] 
+     *    
+     *                  /                       \             \                    / | \                 / | \              / | \
+     *             
+     *   1      p0 p1 [p2 p3]              p0 p2 [p1 p3]    p0 p3 [p1 p2]            ...
+     *  
+     *           /           \                 / \               / \
+     *         
+     *   2    p0 p1 p2 [p3]  p0 p1 p3 [p2]      ...             ...
+     *   
+     *         |                |
+     *   
+     *   3  {p0 p1 p2 p3}   {p0 p1 p2 p3 p2}
+     *   
+     * */
     
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> result = new LinkedList<>();
@@ -76,9 +97,7 @@ public class AllPermutationsI {
     }
     
     private void dfs(int[] nums, int index, List<List<Integer>> result) {
-        if (index == nums.length - 1) {
-        		// Another way to convert int[] to list: 
-        		//	List<Integer> cur = Arrays.stream(nums).boxed().collect(Collectors.toList());
+        if (index == nums.length - 1) { // base case
             List<Integer> cur = new LinkedList<>(); 
             for (int ele : nums) {
                 cur.add(ele);
@@ -86,6 +105,7 @@ public class AllPermutationsI {
             result.add(new LinkedList<Integer>(cur));
             return;
         }
+        
         for (int i = index; i < nums.length; i++) {
             swap(nums, i, index);
             dfs(nums, index + 1, result);
@@ -98,8 +118,10 @@ public class AllPermutationsI {
         input[a] = input[b];
         input[b] = temp;
     }
-    
 	
+	// Another way to convert int[] to list: 
+	//	``` List<Integer> cur = Arrays.stream(nums).boxed().collect(Collectors.toList()); ```
+    
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
 		
