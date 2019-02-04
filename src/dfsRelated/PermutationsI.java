@@ -1,19 +1,21 @@
 /*
- * Created Date: June 21, 2018
+ * == Created Date == 
+ * June 21, 2018
  * 
- * Question - All Permutations I
- *   Given a string with no duplicate characters, return a list with all permutations of the characters.
+ * == Question - Permutations ==
+ * Given a string with no duplicate characters, return a list with all permutations of the characters.
  *   
- *   Example: 
- *    Set = “abc”, all permutations are [“abc”, “acb”, “bac”, “bca”, “cab”, “cba”]
- *    Set = "", all permutations are [""]
- *    Set = null, all permutations are []
+ * == Example ==
+ * Set = “abc”, all permutations are [“abc”, “acb”, “bac”, “bca”, “cab”, “cba”]
+ * Set = "", all permutations are [""]
+ * Set = null, all permutations are []
  *   
- * Follow up:
- *   All Permutations II, with duplicate characters
+ * == Follow up ==
+ * Permutations II, with duplicate characters
  *     
- * Updated:
- *   June 30, 2018 : Review
+ * == Updated == 
+ * LeetCode 46 (M) - Permutations
+ * June 30, 2018 : Review
  * 
  */
 
@@ -23,7 +25,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class AllPermutationsI {
+public class PermutationsI {
 	
 	/* 1. How many levels and what does it store on each level?
 	 *    - Levels: The number of the characters in the given set. 
@@ -34,7 +36,6 @@ public class AllPermutationsI {
 	 *      If we are at i-th level, there are (n - i) states/branches
 	 * 
 	 * */
-	
 	public List<String> permutations(String set) {
 		List<String> result = new ArrayList<>();
 		if (set == null) { // corner case
@@ -125,7 +126,7 @@ public class AllPermutationsI {
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
 		
-		AllPermutationsI testObj = new AllPermutationsI();
+		PermutationsI testObj = new PermutationsI();
 		
 		/* Test Case 0 */
 		System.out.println("---< Test Case 0 >---");
