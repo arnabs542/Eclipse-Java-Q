@@ -110,8 +110,8 @@ public class PermutationInString {
     }
     
 	/* ----- < Solution 3 - Slinding Window, one hash tables > -----
-	 * Time Complexity: O( l1 + 26 * (l2 - l1) );
-	 * Space Complexity: O(1);
+	 * Time Complexity: O( L1 + 26 * L2 );
+	 * Space Complexity: O(L1);
 	 * 
 	 * */
     public boolean checkInclusionIII(String s1, String s2) {        

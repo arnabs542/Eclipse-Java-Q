@@ -1,13 +1,15 @@
 /*
- * Created Date: June 27, 2018
+ * == Created Date ==
+ * June 27, 2018
  * 
- * Question - Remove Adjacent Repeated Characters I (easy):
- *   Remove adjacent, repeated characters in a given string, 
+ * == Question - Remove Adjacent Repeated Characters I (easy) ==
+ * Remove adjacent, repeated characters in a given string, 
  *   leaving only one character for each group of such characters.
- *   Try to do it in place.
+ * 
+ * Try to do it in place.
  *    
- *   Example: 
- *     “aaaabbbc” is transferred to “abc”  
+ * == Example ==
+ * “aaaabbbc” is transferred to “abc”  
  * 
  */
 
