@@ -21,8 +21,8 @@ import java.util.Set;
 public class WordBreakII {
 	
 	/* ----- < Solution - Memorized Recursion > -----
-	 * Time Complexity: O(?);
-	 * Space Complexity: O(?);
+	 * Time Complexity: O(2^n);
+	 * Space Complexity: O(2^n);
 	 * 
 	 *                        pineapplepenapple
 	 *                     /

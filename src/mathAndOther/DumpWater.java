@@ -13,7 +13,7 @@
  * 
  */
 
-package myMain;
+package mathAndOther;
 
 public class DumpWater {
 	

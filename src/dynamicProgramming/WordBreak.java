@@ -127,6 +127,7 @@ public class WordBreak {
     		for (int i = 1; i < s.length(); i++) {
     			String left = s.substring(0, i);
     			String right = s.substring(i);
+    			// if right part is a word, recursivly check the left part
     			if (canBreak(left, memo, dict) && dict.contains(right)) { 
     				// we find a valid break point for s, record it in the memo and return true
     				memo.put(s, true);

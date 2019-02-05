@@ -73,8 +73,8 @@ public class CopyListWithRandomPointer {
 		RandomListNode dummy = new RandomListNode(0);
 		RandomListNode cur = dummy;
 		
-		// Use a hash table to maintain the node in the original list 
-		// and its corresponding node in the new list		
+		// Use a hash table to maintain mappinng between the node in the original list 
+		// and the corresponding node in the new list		
 		Map<RandomListNode, RandomListNode> map = new HashMap<>();
 		
 		while (head != null) {
@@ -82,6 +82,7 @@ public class CopyListWithRandomPointer {
 			if (!map.containsKey(head)) {
 				map.put(head, new RandomListNode(head.label));
 			}
+			// connect the copied node to the deep copy list
 			cur.next = map.get(head);
 			
 			// copy the random node if necessary
@@ -89,6 +90,7 @@ public class CopyListWithRandomPointer {
 				if (!map.containsKey(head.random)) {
 					map.put(head.random, new RandomListNode(head.random.label));
 				}
+				// connect the copied node to the random pointer
 				cur.next.random = map.get(head.random); // !!! not cur.random = ....
 			}
 			
@@ -98,7 +100,7 @@ public class CopyListWithRandomPointer {
 		return dummy.next;		
 	}
 	
-	/* ----- < Solution 3 - Constance space > -----
+	/* ----- < Solution 3 - Three pass using constance space > -----
 	 * Time Complexity: O(N);
 	 * Space Complexity: O(1);
 	 * 
@@ -108,8 +110,10 @@ public class CopyListWithRandomPointer {
 			return null;
 		}
 		
-		// Step1: For each node in the original list, insert a copied node between the node and the node.next, 
-		//        creating a new weaved list of original and copied nodes.
+		// First pass: For each node in the original list, insert a copied node between the node and the node.next, 
+		//             creating a new weaved list of original and copied nodes.
+		// A -> B -> C
+		// A -> A' -> B -> B' -> C -> C'
 		RandomListNode cur = head;
 		while (cur != null) {
 			// Make a copy of cur node, insert it to the middle of cur and cur.next
@@ -119,8 +123,17 @@ public class CopyListWithRandomPointer {
 			cur = cur.next.next;
 		}
 		
-		// Step2: Link the random pointer for the copied node
-		cur = head;
+		// Second pass: Link the random pointer for the copied node
+		// 
+		//          
+		//  A -> B ->  C
+        //  |          ^
+		//  |__________|
+		
+		// A -> A' -> B -> B' -> C -> C'
+        //      |                     ^
+		//      |_____________________|
+		
 		while (cur != null) {
 			if (cur.random != null) {
 				cur.next.random = cur.random.next;
@@ -128,8 +141,12 @@ public class CopyListWithRandomPointer {
 			cur = cur.next.next;
 		}
 		
-		// Step3: Unweave the linked list to get back the original linked list and the cloned list.
-	    //        i.e. A->A'->B->B'->C->C' would be broken to A->B->C and A'->B'->C'
+		// Third pass: Unweave the linked list to get back the original linked list and the cloned list.
+		// A -> A' -> B -> B' -> C -> C'
+		
+		//  A -> B ->  C
+		//  A' -> B' ->  C'
+		
 		cur = head;
 		RandomListNode dummy = new RandomListNode(0);
 		RandomListNode newListCur = dummy;

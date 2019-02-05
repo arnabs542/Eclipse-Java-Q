@@ -12,7 +12,7 @@
  */
 
 
-package arrayRelated;
+package myMain;
 
 public class PourWater {
 	

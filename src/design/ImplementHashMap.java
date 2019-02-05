@@ -1,4 +1,4 @@
-package practiceContent;
+package design;
 
 public class ImplementHashMap <K, V> {
 	

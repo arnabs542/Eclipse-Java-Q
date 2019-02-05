@@ -16,7 +16,7 @@
  * LeetCode 341(M)  
  * 
  */
-package practiceContent;
+package design;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
