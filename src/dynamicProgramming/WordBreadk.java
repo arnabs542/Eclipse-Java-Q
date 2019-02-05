@@ -29,10 +29,16 @@
 package dynamicProgramming;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
-public class DictionaryWordI {
+public class WordBreadk {
 	
+	/* ----- < Solution 1 - Dynamic Programing > -----
+	 * Time Complexity: O(n^3)  // two nested loop * substring() -- O(n)
+	 * Space Complexity: O(n);
+	 * 
+	 * */
 	public boolean canBreak(String input, String[] dict) {
 		
 		Set<String> dictionary = new HashSet<>();
@@ -57,14 +63,36 @@ public class DictionaryWordI {
 		}
 		return M[size];
 	}
-	
-	// Time Complexity: O(n^3)  // two nested loop * substring() -- O(n)
-	// Space Complexity: O(n);
-	
+
+	/* ----- < Solution 2 - Recursion > -----
+	 * Time Complexity: O(?);
+	 * Space Complexity: O(?);
+	 * 
+	 * */
+    public boolean wordBreak(String s, List<String> wordDict) {
+        return word_Break(s, new HashSet(wordDict), 0, new Boolean[s.length()]);
+    }
+    public boolean word_Break(String s, Set<String> wordDict, int start, Boolean[] memo) {
+        if (start == s.length()) {
+            return true;
+        }
+        if (memo[start] != null) {
+            return memo[start];
+        }
+        for (int end = start + 1; end <= s.length(); end++) {
+            if (wordDict.contains(s.substring(start, end)) && word_Break(s, wordDict, end, memo)) {
+                return memo[start] = true;
+            }
+        }
+        return memo[start] = false;
+    }
+    
+
+    
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {
 		
-		DictionaryWordI testObj = new DictionaryWordI();
+		WordBreadk testObj = new WordBreadk();
 		
 		/* Test Case 0 */
 		System.out.println("---< Test Case 0 >---");
