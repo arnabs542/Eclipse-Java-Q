@@ -64,7 +64,7 @@ public class SparseMatrixMultiplication {
 	 * */
 	public int[][] multiplyII(int[][] A, int[][] B) {
 	    int m = A.length;
-	    int n = A[0].length;
+	    int n = A[0].length; // or B.length;
 	    int nB = B[0].length;
 	    int[][] C = new int[m][nB];
 	

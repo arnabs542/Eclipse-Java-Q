@@ -39,24 +39,22 @@ public class SlidingWindowMaximum {
 	public int[] maxSlidingWindowI(int[] nums, int k) {
 		List<Integer> list = new ArrayList<>();
 		MonotonicQueue monotonicQ = new MonotonicQueue();
-		int start = 0;
-		int end = 0;
-		while (end < nums.length) {
-            // the size of the sliding window is less than k, move end pointer
-			if (end <= start + k - 1) {
-				monotonicQ.offer(nums[end]);
-				end++;
-                if (end < nums.length) { // this is for not missing the last sliding window
-                    continue;
+		int fast = 0; 
+		int slow = 0; 
+		while (fast < nums.length) {
+            monotonicQ.offer(nums[fast]);
+            fast++;
+            if (fast - slow == k) { 
+            		// if we form a slinding window of size k, add the max of queue to result list
+            		// move slow pointer and update the queue accordingly
+                list.add(monotonicQ.max());
+                if (nums[slow] == monotonicQ.max()) {
+                    monotonicQ.poll();
                 }
-			} 
-            // the size of sliding window is k, record the max value and move start pointer
-            list.add(monotonicQ.max());
-            if (nums[start] == monotonicQ.max()) {
-                monotonicQ.poll();
+                slow++;
             }
-            start++;
 		}
+		
 		int[] result = new int[list.size()];
 		for (int i = 1; i < result.length; i++) {
 			result[i] = list.get(i);
@@ -64,16 +62,18 @@ public class SlidingWindowMaximum {
 		return result;	
 	}
 	
-	/* ----- < Method 1 - Monotonic Queue > -----
+	/* ----- < Solution - Monotonic Queue > -----
 	 * Time Complexity: O(n);
 	 * Space Complexity: O(k);
 	 * 
-	 * Window position              Monotonic Queue 	   Max
-	 * ---------------              ---------------    -----
-	 * 0   1    2   3  4  5  6  7
-	 * [1] 3   -1  -3  5  3  6  7       [-1]          3 3
-	 *                    s
-	 *                          e
+	 * Window position                   Monotonic Queue 	   
+	 * ---------------                   ---------------    
+	 * 0   1    2   3   4   5   6   7
+	 * 1,  3,  -1, -3,  5,  3,  6,  7       [6]          
+	 *                      s
+	 *                                 f
+	 *              
+	 * result list : 3 3 5 5 6 7
 	 */
 	class MonotonicQueue {
 		private Deque<Integer> queue = new ArrayDeque<>();
@@ -100,6 +100,18 @@ public class SlidingWindowMaximum {
 			return queue.peekFirst();
 		}
 	}
+	
+	/* ----- < Sliding Window Miniimum - Monotonic Queue > -----
+	 * 
+	 * Window position                   Monotonic Queue 	   
+	 * ---------------                   ---------------    
+	 * 0   1    2   3   4   5    6   7
+	 * 1,  3,  -1, -3,  5,  3,   4,  7       [3 4 7]          
+	 *                      s
+	 *                                  f
+	 *              
+	 * result list : -1 -3 -3 -3 3 3
+	 */
 	
 	/* ----------------------< test stub >-------------------------*/
 	public static void main(String[] args) {

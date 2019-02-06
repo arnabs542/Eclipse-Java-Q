@@ -86,7 +86,7 @@ public class LRUCache {
     }
     
     public void put(int key, int value) {
-    		// case1 - If the key is alreay in the cache, update its value and move it to the head
+    		// case1 - If the key is already in the cache, update its value and move it to the head
         if (map.containsKey(key)) {
         		map.get(key).value = value;
         		Node node = map.get(key);

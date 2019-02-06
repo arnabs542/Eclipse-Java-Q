@@ -25,7 +25,8 @@ public class TrappingRainWater {
 	public int trapI(int[] height) {
 	    int waterToTrap = 0;
 	    for (int i = 0; i < height.length; i++) {
-	        int max_left = 0, max_right = 0;
+	        int max_left = 0;
+	        int max_right = 0;
 	        for (int j = i; j >= 0; j--) { //Search the left part for max bar size
 	            max_left = Math.max(max_left, height[j]);
 	        }
