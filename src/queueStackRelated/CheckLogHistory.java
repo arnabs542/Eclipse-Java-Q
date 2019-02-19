@@ -27,6 +27,7 @@ import java.util.Set;
 
 public class CheckLogHistory {
 	
+	
 	// Time Complexity: O(N);
 	// Space Complexity: O(N);
 	public static int checkLogHistory(List<String> events) {

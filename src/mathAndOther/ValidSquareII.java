@@ -96,8 +96,8 @@ public class ValidSquareII {
     
     
     // Notes from the phone interview with PureStorage
-    /*
- // (x, y) * 4
+ /*
+ (x, y) * 4
 
  a     b
 
@@ -158,10 +158,10 @@ public class ValidSquareII {
  set: 
  numSquare 4
 
-     // O(n^4)
-     // => O(n^3) => O(n^2)
-     // magic (p1, p2, p3) => p4 or null
-     // newMagic(p1, p2) => (p3, p4);
+     O(n^4)
+     => O(n^3) => O(n^2)
+     magic (p1, p2, p3) => p4 or null
+     newMagic(p1, p2) => (p3, p4);
       
           p3
      

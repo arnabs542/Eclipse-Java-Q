@@ -29,6 +29,13 @@ public class CharIntRelated {
 		System.out.println(si1);
 		System.out.println(si2);
 		
+		/* ----------------------< String to Ingeger >-------------------------*/
+		System.out.println("---< String to Ingeger >---");
+		
+		String si3 = "3";
+		int int1 = Integer.valueOf(si3);
+		System.out.println(int1);
+		
 		/* ----------------------< Ingeger to Character >-------------------------*/
 		int count = 817;
 		char[] chars = new char[10];

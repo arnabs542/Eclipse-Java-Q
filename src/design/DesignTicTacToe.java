@@ -5,7 +5,7 @@
  * == Question - Design Tic-Tac-Toe ==
  * 
  * == Notes == 
- * LeetCode 348(M) - Design Tic-Tac-Toe
+ * LeetCode 348* (M) - Design Tic-Tac-Toe
  * 
  */
 package design;
