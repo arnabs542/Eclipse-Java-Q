@@ -2,7 +2,7 @@
  * == Created Date ==
  * September 4, 2018
  * 
- * == Question - Largest SubArray Sum ==
+ * == Question - Maximum Subarray ==
  * Given an unsorted integer array, 
  * find the contiguous subarray (containing at least one number) which has the largest sum 
  * and return its sum.
@@ -11,15 +11,17 @@
  * {2, -1, 4, -2, 1}, the largest subarray sum is 2 + (-1) + 4 = 5
  * 
  * {-2, -1, -3}, the largest subarray sum is -1 
- *  
+ * 
+ * == Notes ==
+ * LeetCode 52 (E)
  * 
  */
 
 package dynamicProgramming;
 
-public class LargestSubArraySum {
+public class MaximumSubarray {
 	
-	public int largestSum(int[] array) {
+	public int maxSubArray(int[] array) {
 		int max = array[0];
 		int preSum = 0;
 		for (int element : array) {
