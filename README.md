@@ -6,7 +6,7 @@ Progress of practicing data structures, algorithms and job interview questions.
 
 ### Stacks & Queques
    
-### LinkedList
+### Linked List
 
 ### Hash Table 
 
