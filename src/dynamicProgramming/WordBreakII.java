@@ -75,7 +75,7 @@ public class WordBreakII {
     			// get the result list for left part
     			String left = s.substring(0, pos);
     			
-    			List<String> tempList = find(left, memo, dict);
+    			List<String> tempList = find(left, memo, dict); 
     			List<String> leftList = append(tempList, right);
     			
     			for (String element : leftList) {
