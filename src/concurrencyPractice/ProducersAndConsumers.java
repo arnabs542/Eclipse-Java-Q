@@ -32,7 +32,7 @@ class BlockingQueue {
 	}
 	
 	public synchronized void put(Integer element) { // synchronized(this)
-		// Use "while" because after being waken up, queue may still be full
+		// Use "while" because after being woken up, queue may still be full
 		while (queue.size() == limit) {
 			try {
 				this.wait(); // this.wait(); back to room#2 (wait queue)

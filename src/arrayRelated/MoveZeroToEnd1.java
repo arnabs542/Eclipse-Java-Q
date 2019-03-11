@@ -1,18 +1,20 @@
 /*
- * Created Date: May 29,2018
+ * == Created Date ==
+ * May 29,2018
  * 
- * Question - Move 0s To The End I (easy):
- * 	Given an array of integers, move all the 0s to the right end of the array.
- * 	The relative order of the elements in the original array does not need to be maintained.
+ * == Question - Move 0s To The End I (easy) ==
+ * Given an array of integers, move all the 0s to the right end of the array.
+ * The relative order of the elements in the original array does not need to be maintained.
  * 
- * 	Examples:
- * 		{1} --> {1} 
- * 		{1, 0, 3, 0, 1} --> {1, 3, 1, 0, 0} or {1, 1, 3, 0, 0} or {3, 1, 1, 0, 0}
+ * == Examples ==
+ * {1} --> {1} 
+ * {1, 0, 3, 0, 1} --> {1, 3, 1, 0, 0} or {1, 1, 3, 0, 0} or {3, 1, 1, 0, 0}
  * 
- * Follow up questions: 
- * 	Move 0s To The End I
+ * == Follow up questions ==
+ * Move 0s To The End II
  * 
- * Updated: June 7, 2018 : review 
+ * == Updated ==
+ * June 7, 2018 : review 
  * 
  */
 

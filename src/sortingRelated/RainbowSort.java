@@ -28,7 +28,7 @@ public class RainbowSort {
 	// Time Complexity: O(n)
 	// Space Complexity: O(1)
 	public void rainbowSort(int[] arr) {
-		if(arr == null || arr.length == 0) return;
+		if (arr == null || arr.length == 0) return;
 		
 		int i = 0; 
 		int j = 0;
@@ -40,14 +40,14 @@ public class RainbowSort {
 		// (k, ) : 1
 		
 		while (j <= k) {
-			if(arr[j] == -1) {
+			if (arr[j] == -1) {
 				swap(arr, i, j);
 				i++;
 				j++;
-			} else if(arr[j] == 0) {
+			} else if (arr[j] == 0) {
 				j++;
 			} else {
-				swap(arr, j, k);
+				swap (arr, j, k);
 				k--;
 			}
 		}
