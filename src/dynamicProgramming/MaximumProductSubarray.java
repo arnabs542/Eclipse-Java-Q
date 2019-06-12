@@ -5,8 +5,6 @@
  * == Question - Maximum Product Subarray ==
  * 
  *   
- * == Example == 
- *   
  * == Notes == 
  * LeetCode 152(M)
  * 
