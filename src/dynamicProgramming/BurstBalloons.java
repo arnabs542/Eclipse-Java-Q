@@ -1,7 +1,4 @@
 /*
- * == Created Date ==
- * Jan 25, 2019
- * 
  * == Question - Burst Balloons ==
  * Given n balloons, indexed from 0 to n-1. 
  * Each balloon is painted with a number on it represented by array nums. 
@@ -27,6 +24,9 @@
 
  * == Notes == 
  * LeetCode 312(H)
+ * 
+ * == Created Date ==
+ * Jan 25, 2019
  * 
  */
 
